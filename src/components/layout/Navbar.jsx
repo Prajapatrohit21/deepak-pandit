@@ -56,14 +56,15 @@ export default function Navbar() {
         }`}
         role="navigation"
         aria-label="Main Navigation"
+        style={{ maxWidth: '100vw', overflowX: 'hidden' }}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6 flex items-center justify-between gap-2" style={{ maxWidth: '100%' }}>
           {/* Brand Image Logo */}
-          <Link to="/" className="flex items-center group py-0.5" aria-label="Home">
+        <Link to="/" className="flex items-center group py-0.5 shrink-0" aria-label="Home">
             <img
               src={logoImg}
               alt="मंगल पूजा - Mangal Puja"
-              className="h-20 sm:h-28 md:h-32 w-auto object-contain transition-all duration-300 group-hover:scale-105 filter drop-shadow-[0_0_12px_rgba(255,215,0,0.5)]"
+              className="h-14 sm:h-20 md:h-24 lg:h-28 w-auto object-contain transition-all duration-300 group-hover:scale-105 filter drop-shadow-[0_0_12px_rgba(255,215,0,0.5)]"
             />
           </Link>
 
@@ -87,7 +88,7 @@ export default function Navbar() {
           </div>
 
           {/* Right: Lang Toggle + Book Now + Hamburger */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
             {/* Language Toggle */}
             <div className="lang-toggle" role="group" aria-label="Language toggle">
               <button
@@ -116,14 +117,14 @@ export default function Navbar() {
 
             {/* Hamburger (mobile) */}
             <button
-              className="lg:hidden flex flex-col gap-1.5 p-2 rounded-lg hover:bg-white/10 transition-colors"
+              className="lg:hidden flex flex-col gap-1.5 p-2 rounded-lg hover:bg-white/10 transition-colors shrink-0"
               onClick={() => setMenuOpen(!menuOpen)}
               aria-label="Toggle menu"
               aria-expanded={menuOpen}
             >
-              <span className={`block w-6 h-0.5 bg-gold transition-all duration-300 ${menuOpen ? 'rotate-45 translate-y-2' : ''}`} />
-              <span className={`block w-6 h-0.5 bg-gold transition-all duration-300 ${menuOpen ? 'opacity-0' : ''}`} />
-              <span className={`block w-6 h-0.5 bg-gold transition-all duration-300 ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
+              <span className={`block w-5 h-0.5 bg-gold transition-all duration-300 ${menuOpen ? 'rotate-45 translate-y-2' : ''}`} />
+              <span className={`block w-5 h-0.5 bg-gold transition-all duration-300 ${menuOpen ? 'opacity-0' : ''}`} />
+              <span className={`block w-5 h-0.5 bg-gold transition-all duration-300 ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
             </button>
           </div>
         </div>

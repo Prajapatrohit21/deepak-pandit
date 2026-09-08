@@ -26,17 +26,17 @@ export function Blog() {
     <main className="pt-20">
       {/* Header */}
       <section
-        className="py-20 text-center text-white relative overflow-hidden"
+        className="py-14 sm:py-20 text-center text-white relative overflow-hidden"
         style={{ background: 'linear-gradient(135deg, #1C0A00, #2D1500)' }}
         aria-labelledby="blog-heading"
       >
         <div className="absolute inset-0 bg-mandala opacity-20" aria-hidden="true" />
         <div className="relative z-10 max-w-3xl mx-auto px-4">
           <span className="section-tag text-gold/80 mb-4 inline-flex">✍️ {t(bl.badge)}</span>
-          <h1 id="blog-heading" className="text-4xl md:text-5xl font-bold text-cream font-devanagari mb-4">
+          <h1 id="blog-heading" className="text-3xl sm:text-4xl md:text-5xl font-bold text-cream font-devanagari mb-4">
             {t(bl.heading)}
           </h1>
-          <p className="text-cream/70 font-devanagari">{t(bl.subheading)}</p>
+          <p className="text-cream/70 font-devanagari text-sm sm:text-base">{t(bl.subheading)}</p>
           <div className="gold-line mt-4" />
         </div>
       </section>
@@ -54,7 +54,7 @@ export function Blog() {
                   data-aos="fade-up"
                   data-aos-delay={i * 80}
                 >
-                  <div className="p-8">
+                  <div className="p-4 sm:p-8">
                     <div className="flex items-center gap-3 mb-4 flex-wrap">
                       <span className="badge badge-gold">{t(article.category)}</span>
                       <span className="text-xs text-divine-muted font-devanagari">
@@ -125,7 +125,7 @@ export function BlogDetail() {
 
       {/* Header */}
       <section
-        className="py-24 text-white relative overflow-hidden"
+        className="py-14 sm:py-24 text-white relative overflow-hidden"
         style={{ background: 'linear-gradient(135deg, #1C0A00, #2D1500)' }}
         aria-labelledby="blog-article-heading"
       >
@@ -138,7 +138,7 @@ export function BlogDetail() {
             </span>
             <span className="text-cream/60 text-xs font-devanagari">⏱ {article.readTime} min</span>
           </div>
-          <h1 id="blog-article-heading" className="text-3xl md:text-4xl font-bold text-cream font-devanagari leading-snug mb-3">
+          <h1 id="blog-article-heading" className="text-2xl sm:text-3xl md:text-4xl font-bold text-cream font-devanagari leading-snug mb-3">
             {content.title}
           </h1>
           <div className="gold-line" style={{ margin: '1rem 0 0' }} />

@@ -72,22 +72,22 @@ export default function ServiceDetail() {
 
       {/* Hero Banner */}
       <section
-        className="py-24 text-center text-white relative overflow-hidden"
+        className="py-14 sm:py-24 text-center text-white relative overflow-hidden"
         style={{ background: 'linear-gradient(135deg, #1C0A00, #3D1000, #1C0A00)' }}
         aria-labelledby="service-detail-heading"
       >
         <div className="absolute inset-0 bg-mandala opacity-20" aria-hidden="true" />
         <div className="relative z-10 max-w-3xl mx-auto px-4">
-          <div className="text-6xl mb-4 animate-float" role="img" aria-hidden="true">{service.icon}</div>
+          <div className="text-4xl sm:text-6xl mb-4 animate-float" role="img" aria-hidden="true">{service.icon}</div>
           <span className="badge badge-gold mb-4 inline-flex">
             {t({ hi: 'वैदिक अनुष्ठान सेवा', en: 'Vedic Ritual Service' })}
           </span>
-          <h1 id="service-detail-heading" className="text-4xl md:text-5xl font-bold text-cream font-devanagari mb-3 leading-snug">
+          <h1 id="service-detail-heading" className="text-2xl sm:text-4xl md:text-5xl font-bold text-cream font-devanagari mb-3 leading-snug">
             {content.name}
           </h1>
-          <p className="text-gold font-semibold font-devanagari mb-2">{content.tagline}</p>
+          <p className="text-gold font-semibold font-devanagari mb-2 text-sm sm:text-base">{content.tagline}</p>
           <div className="gold-line" />
-          <div className="flex justify-center gap-6 mt-6 text-sm">
+          <div className="flex flex-wrap justify-center gap-4 sm:gap-6 mt-6 text-sm">
             <div className="flex items-center gap-1.5 text-cream/70">
               <span>⏱</span>
               <span className="font-devanagari">{content.duration}</span>
@@ -109,7 +109,7 @@ export default function ServiceDetail() {
             <div className="lg:col-span-2">
 
               {/* Description */}
-              <div className="gradient-border p-8 mb-8 rounded-2xl" data-aos="fade-up">
+              <div className="gradient-border p-4 sm:p-8 mb-8 rounded-2xl" data-aos="fade-up">
                 <h2 className="text-2xl font-bold text-divine-brown font-devanagari mb-4">
                   {content.name} {t({ hi: 'क्या है?', en: '— Overview' })}
                 </h2>
@@ -169,7 +169,7 @@ export default function ServiceDetail() {
               <div className="sticky top-24">
                 {/* Quick Booking */}
                 <div
-                  className="rounded-2xl p-6 shadow-divine mb-6"
+                  className="rounded-2xl p-4 sm:p-6 shadow-divine mb-6"
                   style={{ background: 'linear-gradient(135deg, #8B1A1A, #C8860A)' }}
                   data-aos="fade-left"
                 >

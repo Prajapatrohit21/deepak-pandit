@@ -27,10 +27,10 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-footer-gradient text-cream/80 pt-16 pb-24 md:pb-8 relative overflow-hidden">
+    <footer className="bg-footer-gradient text-cream/80 pt-16 pb-24 md:pb-8 relative overflow-hidden w-full">
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 mb-12">
 
           {/* Col 1: Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
@@ -38,7 +38,7 @@ export default function Footer() {
               <img
                 src={logoImg}
                 alt="मंगल पूजा - Mangal Puja"
-                className="h-20 sm:h-24 w-auto object-contain filter drop-shadow-[0_0_12px_rgba(255,215,0,0.5)]"
+                className="h-14 sm:h-16 md:h-20 w-auto object-contain filter drop-shadow-[0_0_12px_rgba(255,215,0,0.5)]"
               />
             </Link>
             <p className="text-sm leading-relaxed text-cream/60 mb-4 font-devanagari">

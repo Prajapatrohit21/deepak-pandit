@@ -23,17 +23,17 @@ export default function Testimonials() {
     <main className="pt-20">
       {/* Header */}
       <section
-        className="py-20 text-center text-white relative overflow-hidden"
+        className="py-14 sm:py-20 text-center text-white relative overflow-hidden"
         style={{ background: 'linear-gradient(135deg, #1C0A00, #2D1500)' }}
         aria-labelledby="testimonials-page-heading"
       >
         <div className="absolute inset-0 bg-mandala opacity-20" aria-hidden="true" />
         <div className="relative z-10 max-w-3xl mx-auto px-4">
           <span className="section-tag text-gold/80 mb-4 inline-flex">⭐ {t(tm.badge)}</span>
-          <h1 id="testimonials-page-heading" className="text-4xl md:text-5xl font-bold text-cream font-devanagari mb-4">
+          <h1 id="testimonials-page-heading" className="text-3xl sm:text-4xl md:text-5xl font-bold text-cream font-devanagari mb-4">
             {t(tm.heading)}
           </h1>
-          <p className="text-cream/70 font-devanagari">{t(tm.subheading)}</p>
+          <p className="text-cream/70 font-devanagari text-sm sm:text-base">{t(tm.subheading)}</p>
           <div className="gold-line mt-4" />
         </div>
       </section>

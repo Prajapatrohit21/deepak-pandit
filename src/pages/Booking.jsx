@@ -32,18 +32,18 @@ export default function Booking() {
     <main className="pt-20">
       {/* Header */}
       <section
-        className="py-20 text-center text-white relative overflow-hidden"
+        className="py-14 sm:py-20 text-center text-white relative overflow-hidden"
         style={{ background: 'linear-gradient(135deg, #1C0A00, #2D1500)' }}
         aria-labelledby="booking-page-heading"
       >
         <div className="absolute inset-0 bg-mandala opacity-20" aria-hidden="true" />
         <div className="relative z-10 max-w-3xl mx-auto px-4">
-          <div className="text-4xl mb-3 animate-float" aria-hidden="true">📅</div>
+          <div className="text-3xl sm:text-4xl mb-3 animate-float" aria-hidden="true">📅</div>
           <span className="section-tag text-gold/80 mb-4 inline-flex">{t(bk.badge)}</span>
-          <h1 id="booking-page-heading" className="text-4xl md:text-5xl font-bold text-cream font-devanagari mb-4">
+          <h1 id="booking-page-heading" className="text-3xl sm:text-4xl md:text-5xl font-bold text-cream font-devanagari mb-4">
             {t(bk.heading)}
           </h1>
-          <p className="text-cream/70 font-devanagari">{t(bk.subheading)}</p>
+          <p className="text-cream/70 font-devanagari text-sm sm:text-base">{t(bk.subheading)}</p>
           <div className="gold-line mt-4" />
         </div>
       </section>
@@ -75,7 +75,7 @@ export default function Booking() {
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-10">
             {/* Form */}
             <div className="lg:col-span-3" data-aos="fade-right">
-              <div className="gradient-border rounded-3xl p-8 bg-cream-light shadow-card">
+              <div className="gradient-border rounded-3xl p-4 sm:p-8 bg-cream-light shadow-card">
                 <h2 className="text-2xl font-bold text-divine-brown font-devanagari mb-6">
                   {t({ hi: 'पूजा बुकिंग फॉर्म', en: 'Puja Booking Form' })}
                 </h2>

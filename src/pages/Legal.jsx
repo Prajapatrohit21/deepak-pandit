@@ -16,21 +16,21 @@ function LegalPage({ titleHi, titleEn, children }) {
   return (
     <main className="pt-20">
       <section
-        className="py-16 text-center text-white relative overflow-hidden"
+        className="py-12 sm:py-20 text-center text-white relative overflow-hidden"
         style={{ background: 'linear-gradient(135deg, #1C0A00, #2D1500)' }}
       >
         <div className="absolute inset-0 bg-mandala opacity-20" aria-hidden="true" />
         <div className="relative z-10 max-w-3xl mx-auto px-4">
-          <h1 className="text-3xl md:text-4xl font-bold text-cream font-devanagari">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-cream font-devanagari break-words">
             {lang === 'hi' ? titleHi : titleEn}
           </h1>
           <div className="gold-line mt-4" />
         </div>
       </section>
 
-      <section className="py-16 bg-cream">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <div className="gradient-border rounded-2xl p-8 bg-cream-light shadow-card prose max-w-none">
+      <section className="py-10 sm:py-16 bg-cream">
+        <div className="max-w-4xl mx-auto px-3 sm:px-6">
+          <div className="gradient-border rounded-2xl p-4 sm:p-8 bg-cream-light shadow-card prose max-w-none break-words">
             {children}
           </div>
         </div>

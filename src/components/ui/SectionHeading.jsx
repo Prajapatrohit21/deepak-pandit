@@ -10,7 +10,7 @@ export default function SectionHeading({ badge, heading, subheading, light = fal
         </span>
       )}
       <h2
-        className={`text-3xl md:text-4xl font-bold leading-snug font-devanagari mb-3 ${
+        className={`text-2xl sm:text-3xl md:text-4xl font-bold leading-snug font-devanagari mb-3 break-words ${
           light ? 'text-cream' : 'text-divine-brown'
         }`}
       >
@@ -18,7 +18,7 @@ export default function SectionHeading({ badge, heading, subheading, light = fal
       </h2>
       {subheading && (
         <p
-          className={`text-base md:text-lg max-w-2xl leading-relaxed font-devanagari ${
+          className={`text-sm sm:text-base md:text-lg max-w-2xl leading-relaxed font-devanagari ${
             center ? 'mx-auto' : ''
           } ${light ? 'text-cream/70' : 'text-divine-muted'}`}
         >

@@ -52,7 +52,7 @@ function Hero() {
       <div className="absolute bottom-1/3 right-4 sm:right-12 text-gold/15 text-4xl sm:text-6xl animate-float font-devanagari select-none pointer-events-none z-0 hidden sm:block" style={{ animationDelay: '1.5s' }} aria-hidden="true">ॐ</div>
 
       {/* Main Content Container */}
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-20 sm:py-32 text-center flex flex-col items-center justify-center min-h-screen">
+      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16 sm:py-32 text-center flex flex-col items-center justify-center min-h-screen w-full">
         
         {/* Top Badge */}
         <div
@@ -65,7 +65,7 @@ function Hero() {
 
         {/* Heading */}
         <h1
-          className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.2] font-devanagari mb-6 tracking-tight drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)] animate-slide-up"
+          className="text-2xl xs:text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.2] font-devanagari mb-5 tracking-tight drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)] animate-slide-up w-full"
           style={{ animationDelay: '0.4s', opacity: 0, animationFillMode: 'forwards' }}
         >
           <span className="text-shimmer drop-shadow-[0_2px_10px_rgba(245,200,66,0.4)]">{t(hero.title).split('\n')[0]}</span>
@@ -83,28 +83,28 @@ function Hero() {
 
         {/* Highlight Pills */}
         <div
-          className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-10 text-xs sm:text-sm font-devanagari text-gold animate-slide-up"
+          className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-8 text-xs sm:text-sm font-devanagari text-gold animate-slide-up w-full"
           style={{ animationDelay: '0.7s', opacity: 0, animationFillMode: 'forwards' }}
         >
-          <span className="px-3.5 py-1.5 rounded-lg bg-black/60 backdrop-blur-md border border-gold/30 flex items-center gap-1.5 shadow-md">
+          <span className="px-3 py-1.5 rounded-lg bg-black/60 backdrop-blur-md border border-gold/30 flex items-center gap-1.5 shadow-md text-xs">
             ✨ {t({ hi: '100% प्रामाणिक वैदिक विधि', en: '100% Authentic Vedic Rituals' })}
           </span>
-          <span className="px-3.5 py-1.5 rounded-lg bg-black/60 backdrop-blur-md border border-gold/30 flex items-center gap-1.5 shadow-md">
+          <span className="px-3 py-1.5 rounded-lg bg-black/60 backdrop-blur-md border border-gold/30 flex items-center gap-1.5 shadow-md text-xs">
             🔥 {t({ hi: 'उज्जैन सिद्ध पीठ अनुष्ठान', en: 'Ujjain Siddha Peeth Puja' })}
           </span>
-          <span className="px-3.5 py-1.5 rounded-lg bg-black/60 backdrop-blur-md border border-gold/30 flex items-center gap-1.5 shadow-md">
+          <span className="px-3 py-1.5 rounded-lg bg-black/60 backdrop-blur-md border border-gold/30 flex items-center gap-1.5 shadow-md text-xs">
             📹 {t({ hi: 'लाइव वीडियो & संकल्प', en: 'Live Video & Sankalp' })}
           </span>
         </div>
 
         {/* CTAs */}
         <div
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto mb-4 animate-slide-up"
+          className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 w-full max-w-md sm:max-w-none mb-4 animate-slide-up hero-cta-group"
           style={{ animationDelay: '0.8s', opacity: 0, animationFillMode: 'forwards' }}
         >
           <Link
             to="/booking"
-            className="btn-gold text-base sm:text-lg px-8 py-4 w-full sm:w-auto font-devanagari font-bold shadow-[0_6px_25px_rgba(245,200,66,0.35)] hover:shadow-[0_8px_35px_rgba(245,200,66,0.6)] transform hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 flex items-center justify-center gap-2"
+            className="btn-gold text-base sm:text-lg px-6 sm:px-8 py-3.5 sm:py-4 w-full sm:w-auto font-devanagari font-bold shadow-[0_6px_25px_rgba(245,200,66,0.35)] hover:shadow-[0_8px_35px_rgba(245,200,66,0.6)] transform hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 flex items-center justify-center gap-2"
           >
             <span>🙏</span> {t(hero.cta1)}
           </Link>
@@ -112,7 +112,7 @@ function Hero() {
             href={WA_HREF}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-secondary text-base sm:text-lg px-8 py-4 w-full sm:w-auto font-devanagari font-semibold border-gold/70 text-gold bg-black/50 backdrop-blur-md hover:bg-gold/20 hover:border-gold shadow-lg transform hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 flex items-center justify-center gap-2"
+            className="btn-secondary text-base sm:text-lg px-6 sm:px-8 py-3.5 sm:py-4 w-full sm:w-auto font-devanagari font-semibold border-gold/70 text-gold bg-black/50 backdrop-blur-md hover:bg-gold/20 hover:border-gold shadow-lg transform hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 flex items-center justify-center gap-2"
           >
             <span>💬</span> {t(hero.cta2)}
           </a>
@@ -135,14 +135,14 @@ function TrustSection() {
   const tr = C.trust;
 
   return (
-    <section className="py-20 bg-pattern" aria-labelledby="trust-heading">
+    <section className="py-14 sm:py-20 bg-pattern" aria-labelledby="trust-heading">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <SectionHeading
           badge={t({ hi: '✅ भरोसेमंद', en: '✅ Trusted' })}
           heading={t(tr.heading)}
           subheading={t(tr.subheading)}
         />
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 mt-12">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-6 mt-10">
           {tr.badges.map((badge, i) => (
             <div
               key={i}
@@ -176,7 +176,7 @@ function ServicesSection() {
     <section className="py-20 bg-divine-dark relative overflow-hidden" aria-labelledby="services-heading">
       {/* Background Om */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none" aria-hidden="true">
-        <span className="text-[400px] text-white/2 font-devanagari leading-none">ॐ</span>
+        <span className="font-devanagari leading-none text-white/[0.02] select-none" style={{ fontSize: 'min(400px, 80vw)' }}>ॐ</span>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">

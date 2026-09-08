@@ -56,18 +56,18 @@ export default function KundliAnalysis() {
     <main className="pt-20">
       {/* Header */}
       <section
-        className="py-24 text-center text-white relative overflow-hidden"
+        className="py-14 sm:py-24 text-center text-white relative overflow-hidden"
         style={{ background: 'linear-gradient(135deg, #1C0A00, #2D1500)' }}
         aria-labelledby="kundli-heading"
       >
         <div className="absolute inset-0 bg-mandala opacity-20" aria-hidden="true" />
         <div className="relative z-10 max-w-3xl mx-auto px-4">
-          <div className="text-5xl mb-3 animate-float" aria-hidden="true">🔮</div>
+          <div className="text-4xl mb-3 animate-float" aria-hidden="true">🔮</div>
           <span className="section-tag text-gold/80 mb-4 inline-flex">{t(kd.badge)}</span>
-          <h1 id="kundli-heading" className="text-4xl md:text-5xl font-bold text-cream font-devanagari mb-4">
+          <h1 id="kundli-heading" className="text-3xl sm:text-4xl md:text-5xl font-bold text-cream font-devanagari mb-4">
             {t(kd.heading)}
           </h1>
-          <p className="text-cream/70 font-devanagari">{t(kd.subheading)}</p>
+          <p className="text-cream/70 font-devanagari text-sm sm:text-base">{t(kd.subheading)}</p>
           <div className="gold-line mt-4" />
         </div>
       </section>
@@ -79,7 +79,7 @@ export default function KundliAnalysis() {
 
             {/* Left: Form */}
             <div data-aos="fade-right">
-              <div className="gradient-border rounded-3xl p-8 bg-cream-light shadow-card">
+              <div className="gradient-border rounded-3xl p-4 sm:p-8 bg-cream-light shadow-card">
                 <h2 className="text-2xl font-bold text-divine-brown font-devanagari mb-6">
                   {t({ hi: 'अपनी जन्म विवरण भरें', en: 'Enter Your Birth Details' })}
                 </h2>

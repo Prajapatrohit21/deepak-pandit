@@ -50,17 +50,17 @@ export default function Contact() {
     <main className="pt-20">
       {/* Header */}
       <section
-        className="py-20 text-center text-white relative overflow-hidden"
+        className="py-14 sm:py-20 text-center text-white relative overflow-hidden"
         style={{ background: 'linear-gradient(135deg, #1C0A00, #2D1500)' }}
         aria-labelledby="contact-heading"
       >
         <div className="absolute inset-0 bg-mandala opacity-20" aria-hidden="true" />
         <div className="relative z-10 max-w-3xl mx-auto px-4">
           <span className="section-tag text-gold/80 mb-4 inline-flex">📞 {t(ct.badge)}</span>
-          <h1 id="contact-heading" className="text-4xl md:text-5xl font-bold text-cream font-devanagari mb-4">
+          <h1 id="contact-heading" className="text-3xl sm:text-4xl md:text-5xl font-bold text-cream font-devanagari mb-4">
             {t(ct.heading)}
           </h1>
-          <p className="text-cream/70 font-devanagari">{t(ct.subheading)}</p>
+          <p className="text-cream/70 font-devanagari text-sm sm:text-base">{t(ct.subheading)}</p>
           <div className="gold-line mt-4" />
         </div>
       </section>
@@ -89,11 +89,11 @@ export default function Contact() {
               </div>
 
               {/* Quick Actions */}
-              <div className="flex gap-3 flex-wrap mb-8">
-                <a href="tel:+916263401651" className="btn-primary font-devanagari">
+              <div className="flex gap-3 flex-col xs:flex-row flex-wrap mb-8">
+                <a href="tel:+916263401651" className="btn-primary font-devanagari flex-1 justify-center">
                   📞 {t({ hi: 'अभी कॉल करें', en: 'Call Now' })}
                 </a>
-                <a href="https://wa.me/916263401651" target="_blank" rel="noopener noreferrer" className="btn-secondary font-devanagari">
+                <a href="https://wa.me/916263401651" target="_blank" rel="noopener noreferrer" className="btn-secondary font-devanagari flex-1 justify-center">
                   💬 WhatsApp
                 </a>
               </div>
@@ -115,7 +115,7 @@ export default function Contact() {
 
             {/* Right: Contact form */}
             <div data-aos="fade-left">
-              <div className="gradient-border rounded-3xl p-8 bg-cream-light shadow-card">
+              <div className="gradient-border rounded-3xl p-4 sm:p-8 bg-cream-light shadow-card">
                 <h2 className="text-2xl font-bold text-divine-brown font-devanagari mb-6">
                   {t({ hi: 'संदेश भेजें', en: 'Send Message' })}
                 </h2>

@@ -66,17 +66,17 @@ export default function Gallery() {
     <main className="pt-20">
       {/* Header */}
       <section
-        className="py-20 text-center text-white relative overflow-hidden"
+        className="py-14 sm:py-20 text-center text-white relative overflow-hidden"
         style={{ background: 'linear-gradient(135deg, #1C0A00, #2D1500)' }}
         aria-labelledby="gallery-heading"
       >
         <div className="absolute inset-0 bg-mandala opacity-20" aria-hidden="true" />
         <div className="relative z-10 max-w-3xl mx-auto px-4">
           <span className="section-tag text-gold/80 mb-4 inline-flex">📸 {t(gl.badge)}</span>
-          <h1 id="gallery-heading" className="text-4xl md:text-5xl font-bold text-cream font-devanagari mb-4">
+          <h1 id="gallery-heading" className="text-3xl sm:text-4xl md:text-5xl font-bold text-cream font-devanagari mb-4">
             {t(gl.heading)}
           </h1>
-          <p className="text-cream/70 font-devanagari">{t(gl.subheading)}</p>
+          <p className="text-cream/70 font-devanagari text-sm sm:text-base">{t(gl.subheading)}</p>
           <div className="gold-line mt-4" />
         </div>
       </section>
@@ -85,14 +85,14 @@ export default function Gallery() {
       <section className="py-16 bg-cream">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           {/* Tab Filter */}
-          <div className="flex flex-wrap gap-2 justify-center mb-10" role="tablist">
+          <div className="flex flex-wrap gap-2 justify-center mb-10 px-2" role="tablist">
             {tabs.map((tab) => (
               <button
                 key={tab.key}
                 role="tab"
                 aria-selected={activeTab === tab.key}
                 onClick={() => setActiveTab(tab.key)}
-                className={`px-5 py-2 rounded-full text-sm font-semibold transition-all duration-200 font-devanagari ${
+                className={`px-3 sm:px-5 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 font-devanagari whitespace-nowrap ${
                   activeTab === tab.key
                     ? 'bg-gradient-to-r from-primary to-saffron text-white shadow-divine'
                     : 'bg-cream-dark text-divine-muted hover:bg-saffron/10 hover:text-saffron'

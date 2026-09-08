@@ -34,17 +34,17 @@ export default function About() {
     <main className="pt-20">
       {/* Page Header */}
       <section
-        className="py-20 text-center text-white relative overflow-hidden"
+        className="py-14 sm:py-20 text-center text-white relative overflow-hidden"
         style={{ background: 'linear-gradient(135deg, #1C0A00, #2D1500)' }}
         aria-labelledby="about-page-heading"
       >
         <div className="absolute inset-0 bg-mandala opacity-20" aria-hidden="true" />
         <div className="relative z-10 max-w-3xl mx-auto px-4">
           <span className="section-tag text-gold/80 mb-4 inline-flex">{t(ab.badge)}</span>
-          <h1 id="about-page-heading" className="text-4xl md:text-5xl font-bold text-cream font-devanagari mb-4">
+          <h1 id="about-page-heading" className="text-3xl sm:text-4xl md:text-5xl font-bold text-cream font-devanagari mb-4">
             {t(ab.heading)}
           </h1>
-          <p className="text-gold font-devanagari font-semibold mb-2">{t(ab.subheading)}</p>
+          <p className="text-gold font-devanagari font-semibold mb-2 text-sm sm:text-base">{t(ab.subheading)}</p>
           <div className="gold-line" />
         </div>
       </section>
@@ -138,7 +138,7 @@ export default function About() {
             subheading={t({ hi: 'मध्यप्रदेश के कई प्रतिष्ठित जनप्रतिनिधियों ने पंडित जी से पूजन करवाया है', en: 'Several prominent representatives of Madhya Pradesh have had puja performed by Pandit Ji' })}
             light
           />
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-8">
             {/* Real VIP Photo — first card */}
             <div
               className="gallery-item rounded-2xl overflow-hidden border border-saffron/30 shadow-lg"
