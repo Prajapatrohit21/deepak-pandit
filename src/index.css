@@ -1,0 +1,812 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================
+   CSS Custom Properties
+   ============================ */
+:root {
+  --primary: #8B1A1A;
+  --primary-light: #A52020;
+  --saffron: #C8860A;
+  --gold: #F5C842;
+  --cream: #FDF8F0;
+  --divine-dark: #1C0A00;
+  --divine-brown: #2D1B00;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ============================
+   Base Styles
+   ============================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Noto Sans Devanagari', 'Poppins', sans-serif;
+  background-color: #FDF8F0;
+  color: #2D1B00;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ============================
+   Background Patterns
+   ============================ */
+.bg-pattern {
+  background-image: 
+    radial-gradient(circle at 20% 20%, rgba(200,134,10,0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(139,26,26,0.05) 0%, transparent 50%);
+}
+
+.bg-mandala {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C8860A' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='20'/%3E%3Ccircle cx='30' cy='30' r='10'/%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* ============================
+   Preloader
+   ============================ */
+#preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: linear-gradient(135deg, #1C0A00 0%, #2D1500 50%, #1C0A00 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+#preloader.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.preloader-om {
+  font-size: 5rem;
+  color: #F5C842;
+  animation: omGlow 1.5s ease-in-out infinite alternate, omFloat 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 20px rgba(245, 200, 66, 0.8));
+}
+
+.preloader-bar {
+  width: 200px;
+  height: 3px;
+  background: rgba(245,200,66,0.2);
+  border-radius: 2px;
+  margin-top: 2rem;
+  overflow: hidden;
+}
+
+.preloader-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #C8860A, #F5C842, #C8860A);
+  border-radius: 2px;
+  animation: fillBar 2s ease-in-out forwards;
+}
+
+@keyframes omGlow {
+  0% { filter: drop-shadow(0 0 10px rgba(245,200,66,0.6)); }
+  100% { filter: drop-shadow(0 0 30px rgba(245,200,66,1)) drop-shadow(0 0 50px rgba(200,134,10,0.6)); }
+}
+
+@keyframes omFloat {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-15px) scale(1.05); }
+}
+
+@keyframes fillBar {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
+/* ============================
+   Scroll Animation (AOS override)
+   ============================ */
+[data-aos] {
+  pointer-events: none;
+}
+[data-aos].aos-animate {
+  pointer-events: auto;
+}
+
+/* ============================
+   Sticky Header
+   ============================ */
+.navbar-scrolled {
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+  box-shadow: 0 2px 20px rgba(28,10,0,0.3);
+}
+
+/* ============================
+   Custom Scrollbar
+   ============================ */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FDF8F0;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #8B1A1A, #C8860A);
+  border-radius: 3px;
+}
+
+/* ============================
+   Floating Action Buttons (Call Left, WhatsApp Right)
+   ============================ */
+.call-float-left {
+  position: fixed;
+  bottom: 2rem;
+  left: 1.5rem;
+  z-index: 999;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #DC2626 0%, #991B1B 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 20px rgba(220,38,38,0.5);
+  transition: all 0.3s ease;
+  color: white;
+  text-decoration: none;
+}
+
+.call-float-left:hover {
+  transform: scale(1.12);
+  box-shadow: 0 8px 28px rgba(220,38,38,0.75);
+}
+
+.call-float-left::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: rgba(220,38,38,0.4);
+  animation: pulseRing 1.6s ease-out infinite;
+  z-index: -1;
+}
+
+.whatsapp-float-right {
+  position: fixed;
+  bottom: 2rem;
+  right: 1.5rem;
+  z-index: 999;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 20px rgba(37,211,102,0.5);
+  transition: all 0.3s ease;
+  color: white;
+  text-decoration: none;
+}
+
+.whatsapp-float-right:hover {
+  transform: scale(1.12);
+  box-shadow: 0 8px 28px rgba(37,211,102,0.75);
+}
+
+.whatsapp-float-right::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: rgba(37,211,102,0.4);
+  animation: pulseRing 1.6s ease-out infinite;
+  z-index: -1;
+}
+
+@media (max-width: 768px) {
+  .call-float-left {
+    bottom: 4.5rem;
+    left: 1rem;
+  }
+  .whatsapp-float-right {
+    bottom: 4.5rem;
+    right: 1rem;
+  }
+}
+
+@keyframes pulseRing {
+  0% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(1.55); opacity: 0; }
+}
+
+/* ============================
+   Mobile Bottom Bar
+   ============================ */
+.mobile-bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 998;
+  display: flex;
+  background: #1C0A00;
+  border-top: 1px solid rgba(200,134,10,0.3);
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
+}
+
+.mobile-bottom-bar a,
+.mobile-bottom-bar button {
+  flex: 1;
+  padding: 0.75rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 600;
+  gap: 0.25rem;
+  transition: var(--transition);
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+.mobile-bottom-bar .btn-call {
+  color: #F5C842;
+  background: transparent;
+}
+
+.mobile-bottom-bar .btn-call:hover {
+  background: rgba(200,134,10,0.15);
+}
+
+.mobile-bottom-bar .btn-whatsapp {
+  color: #25D366;
+  background: transparent;
+}
+
+.mobile-bottom-bar .btn-book {
+  color: #fff;
+  background: linear-gradient(135deg, #8B1A1A, #C8860A);
+}
+
+.mobile-bottom-bar .btn-book:hover {
+  opacity: 0.9;
+}
+
+/* ============================
+   Gold Shimmer Text
+   ============================ */
+.text-shimmer {
+  background: linear-gradient(90deg, #C8860A 0%, #F5C842 25%, #C8860A 50%, #F5C842 75%, #C8860A 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+}
+
+/* ============================
+   Section Divider (Om Wave)
+   ============================ */
+.section-divider {
+  text-align: center;
+  position: relative;
+  margin: 1.5rem 0;
+}
+
+.section-divider::before,
+.section-divider::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: calc(50% - 3rem);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(200,134,10,0.4), transparent);
+}
+
+.section-divider::before { left: 0; }
+.section-divider::after { right: 0; }
+
+/* ============================
+   Card Hover Glow
+   ============================ */
+.service-card {
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(200,134,10,0.1);
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 48px rgba(139,26,26,0.15), 0 4px 12px rgba(200,134,10,0.15);
+  border-color: rgba(200,134,10,0.35);
+}
+
+/* ============================
+   Buttons
+   ============================ */
+.btn-primary {
+  background: linear-gradient(135deg, #8B1A1A 0%, #C8860A 100%);
+  color: white;
+  padding: 0.75rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  box-shadow: 0 4px 15px rgba(139,26,26,0.3);
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(139,26,26,0.4);
+  filter: brightness(1.05);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #C8860A;
+  padding: 0.75rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  transition: all 0.3s ease;
+  border: 2px solid #C8860A;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-secondary:hover {
+  background: rgba(200,134,10,0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(200,134,10,0.2);
+}
+
+.btn-gold {
+  background: linear-gradient(135deg, #C8860A 0%, #F5C842 100%);
+  color: #1C0A00;
+  padding: 0.875rem 2.25rem;
+  border-radius: 50px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(245,200,66,0.35);
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-gold:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 30px rgba(245,200,66,0.5);
+}
+
+/* ============================
+   Form Styling
+   ============================ */
+.form-input {
+  width: 100%;
+  padding: 0.875rem 1.25rem;
+  border: 1.5px solid rgba(200,134,10,0.3);
+  border-radius: 12px;
+  background: rgba(255,253,247,0.9);
+  color: #2D1B00;
+  font-family: 'Noto Sans Devanagari', 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  transition: var(--transition);
+  outline: none;
+}
+
+.form-input:focus {
+  border-color: #C8860A;
+  background: #FFFDF7;
+  box-shadow: 0 0 0 3px rgba(200,134,10,0.15);
+}
+
+.form-input::placeholder {
+  color: rgba(107,76,30,0.6);
+}
+
+/* ============================
+   Hero Section
+   ============================ */
+.hero-section {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, 
+    rgba(10,4,0,0.70) 0%, 
+    rgba(28,10,0,0.55) 40%, 
+    rgba(28,10,0,0.75) 100%
+  );
+}
+
+/* ============================
+   Testimonial Card
+   ============================ */
+.testimonial-card {
+  position: relative;
+}
+
+.testimonial-card::before {
+  content: '"';
+  position: absolute;
+  top: -0.5rem;
+  left: 1.5rem;
+  font-size: 5rem;
+  color: rgba(200,134,10,0.2);
+  font-family: 'Playfair Display', serif;
+  line-height: 1;
+}
+
+/* ============================
+   Gallery Image Hover
+   ============================ */
+.gallery-item {
+  overflow: hidden;
+  border-radius: 12px;
+  position: relative;
+  cursor: pointer;
+}
+
+.gallery-item img {
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.08);
+}
+
+.gallery-item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 60%, rgba(28,10,0,0.6) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover::after {
+  opacity: 1;
+}
+
+/* ============================
+   Trust Badge
+   ============================ */
+.trust-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
+}
+
+.trust-badge .count {
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #C8860A, #F5C842);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+}
+
+/* ============================
+   Star Rating
+   ============================ */
+.stars {
+  color: #F5C842;
+  letter-spacing: 0.1em;
+}
+
+/* ============================
+   Blog Card
+   ============================ */
+.blog-card {
+  transition: all 0.3s ease;
+  border: 1px solid rgba(200,134,10,0.1);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.blog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 36px rgba(139,26,26,0.12);
+  border-color: rgba(200,134,10,0.3);
+}
+
+/* ============================
+   Language Toggle
+   ============================ */
+.lang-toggle {
+  display: flex;
+  align-items: center;
+  background: rgba(255,253,247,0.1);
+  border: 1px solid rgba(200,134,10,0.3);
+  border-radius: 50px;
+  padding: 0.25rem;
+  gap: 0.125rem;
+  cursor: pointer;
+}
+
+.lang-toggle button {
+  padding: 0.25rem 0.75rem;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  background: transparent;
+  color: rgba(255,253,247,0.7);
+}
+
+.lang-toggle button.active {
+  background: linear-gradient(135deg, #8B1A1A, #C8860A);
+  color: white;
+  box-shadow: 0 2px 8px rgba(139,26,26,0.3);
+}
+
+/* Navbar lang toggle (white background context) */
+.lang-toggle.light {
+  background: rgba(200,134,10,0.1);
+  border-color: rgba(200,134,10,0.3);
+}
+
+.lang-toggle.light button {
+  color: rgba(45,27,0,0.6);
+}
+
+.lang-toggle.light button.active {
+  color: white;
+}
+
+/* ============================
+   Responsive Utilities
+   ============================ */
+.mobile-hidden { display: none; }
+
+@media (min-width: 768px) {
+  .mobile-hidden { display: block; }
+  .desktop-hidden { display: none; }
+  .mobile-bottom-bar { display: none; }
+  .whatsapp-float { bottom: 2rem; }
+}
+
+/* ============================
+   Fade Page Transition
+   ============================ */
+.page-enter {
+  opacity: 0;
+  transform: translateY(10px);
+}
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.page-exit {
+  opacity: 1;
+}
+.page-exit-active {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* ============================
+   Section Heading
+   ============================ */
+.section-tag {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #C8860A;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.section-tag::before,
+.section-tag::after {
+  content: '';
+  display: inline-block;
+  width: 2rem;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #C8860A);
+}
+
+.section-tag::after {
+  background: linear-gradient(90deg, #C8860A, transparent);
+}
+
+/* ============================
+   Gradient Border Card
+   ============================ */
+.gradient-border {
+  position: relative;
+  background: #FFFDF7;
+  border-radius: 16px;
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 17px;
+  background: linear-gradient(135deg, rgba(200,134,10,0.3), rgba(245,200,66,0.2), rgba(139,26,26,0.2));
+  z-index: -1;
+}
+
+/* ============================
+   Map Embed
+   ============================ */
+.map-container {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 2px solid rgba(200,134,10,0.2);
+  box-shadow: 0 4px 20px rgba(139,26,26,0.1);
+}
+
+/* ============================
+   FAQ Accordion
+   ============================ */
+.faq-item {
+  border: 1px solid rgba(200,134,10,0.2);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: border-color 0.3s ease;
+}
+
+.faq-item.open {
+  border-color: rgba(200,134,10,0.5);
+}
+
+.faq-question {
+  padding: 1.25rem 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(253,248,240,0.8);
+  transition: background 0.2s ease;
+}
+
+.faq-question:hover {
+  background: rgba(200,134,10,0.08);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+  background: #FFFDF7;
+}
+
+.faq-answer.open {
+  max-height: 500px;
+  padding: 1.25rem 1.5rem;
+}
+
+/* ============================
+   Print / Performance
+   ============================ */
+img {
+  loading: lazy;
+}
+
+/* Hide scrollbar on mobile nav */
+.nav-scroll::-webkit-scrollbar { display: none; }
+
+/* ============================
+   Diya Animation (Preloader)
+   ============================ */
+@keyframes diyaFlicker {
+  0%, 100% { transform: scaleX(1) scaleY(1); }
+  25% { transform: scaleX(0.95) scaleY(1.05); }
+  50% { transform: scaleX(1.05) scaleY(0.95); }
+  75% { transform: scaleX(0.98) scaleY(1.02); }
+}
+
+.diya-flame {
+  animation: diyaFlicker 0.3s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+/* ============================
+   Utility: Gold Line
+   ============================ */
+.gold-line {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #C8860A, #F5C842, #C8860A);
+  border-radius: 2px;
+  margin: 0.75rem auto;
+}
+
+/* ============================
+   Service Icon Container
+   ============================ */
+.service-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(200,134,10,0.1), rgba(245,200,66,0.15));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(200,134,10,0.2);
+}
+
+.service-card:hover .service-icon {
+  background: linear-gradient(135deg, rgba(139,26,26,0.1), rgba(200,134,10,0.15));
+  transform: scale(1.1) rotate(5deg);
+  border-color: rgba(200,134,10,0.4);
+}
+
+/* ============================
+   Video Placeholder
+   ============================ */
+.video-placeholder {
+  background: linear-gradient(135deg, #1C0A00, #2D1500);
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ============================
+   Notification Badge
+   ============================ */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.875rem;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.badge-gold {
+  background: linear-gradient(135deg, rgba(200,134,10,0.15), rgba(245,200,66,0.15));
+  color: #A06A08;
+  border: 1px solid rgba(200,134,10,0.3);
+}
+
+.badge-primary {
+  background: linear-gradient(135deg, rgba(139,26,26,0.1), rgba(165,32,32,0.1));
+  color: #8B1A1A;
+  border: 1px solid rgba(139,26,26,0.2);
+}
