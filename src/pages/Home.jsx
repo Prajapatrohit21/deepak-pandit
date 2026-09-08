@@ -3,6 +3,7 @@
 // ============================================================
 import { useEffect } from 'react';
 import heroBg from '../assets/hero_mangal_puja.jpg';
+import panditImg from '../assets/pandit_deepak_pandya.jpg';
 import { Link } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -213,19 +214,27 @@ function AboutSnippet() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Image side */}
           <div data-aos="fade-right" className="relative">
-            <div className="rounded-2xl overflow-hidden shadow-divine aspect-[4/5] bg-gradient-to-br from-primary/10 to-saffron/10 relative">
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-8">
-                <span className="text-8xl mb-4 font-devanagari text-saffron" aria-hidden="true">ॐ</span>
-                <p className="text-2xl font-bold text-divine-brown font-devanagari">{t(ab.heading)}</p>
-                <p className="text-divine-muted font-devanagari mt-2 text-sm">{t(ab.subheading)}</p>
-                <div className="mt-6 flex flex-wrap gap-2 justify-center">
-                  <span className="badge badge-gold">15+ {t({ hi: 'वर्ष', en: 'Years' })}</span>
-                  <span className="badge badge-primary">{t({ hi: 'वैदिक पंडित', en: 'Vedic Pandit' })}</span>
+            <div className="rounded-2xl overflow-hidden shadow-divine aspect-[3/4] sm:aspect-[4/5] max-h-[480px] border-2 border-gold/30 relative group bg-divine-dark">
+              <img
+                src={panditImg}
+                alt={t(ab.heading)}
+                className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
+              />
+              {/* Bottom gradient overlay with details */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent flex flex-col justify-end p-6 text-white">
+                <div className="flex flex-wrap gap-2 mb-2">
+                  <span className="badge badge-gold">15+ {t({ hi: 'वर्ष अनुभव', en: 'Years Exp' })}</span>
+                  <span className="badge badge-primary">{t({ hi: 'वैदिक पुरोहित', en: 'Vedic Priest' })}</span>
                 </div>
-                <p className="mt-4 text-xs text-divine-muted font-devanagari">{t(C.location)}</p>
+                <p className="text-xl sm:text-2xl font-bold text-cream font-devanagari drop-shadow-md">
+                  {t(C.panditName)}
+                </p>
+                <p className="text-xs text-gold/90 font-devanagari mt-1 flex items-center gap-1">
+                  📍 {t(C.location)}
+                </p>
               </div>
             </div>
-            {/* Decorative */}
+            {/* Decorative glows */}
             <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-gradient-to-br from-saffron/20 to-gold/20 rounded-full blur-2xl" aria-hidden="true" />
             <div className="absolute -top-4 -left-4 w-20 h-20 bg-gradient-to-br from-primary/20 to-saffron/20 rounded-full blur-xl" aria-hidden="true" />
           </div>

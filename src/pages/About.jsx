@@ -3,6 +3,7 @@
 // ============================================================
 import { useEffect } from 'react';
 import vipGuestImg from '../assets/vip_guest.jpg';
+import panditImg from '../assets/pandit_deepak_pandya.jpg';
 import { Link } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -55,36 +56,56 @@ export default function About() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             {/* Left: Photo + Quick stats */}
             <div data-aos="fade-right">
-              <div className="rounded-2xl overflow-hidden shadow-divine bg-gradient-to-br from-primary/10 via-saffron/10 to-gold/10 aspect-[4/5] flex flex-col items-center justify-center text-center p-8 mb-6">
-                <div className="text-7xl mb-4 animate-float" aria-hidden="true">🕉️</div>
-                <h2 className="text-2xl font-bold text-divine-brown font-devanagari">{t(C.panditName)}</h2>
-                <p className="text-saffron font-semibold mt-1 font-devanagari text-sm">{t(C.location)}</p>
-                <div className="gold-line mt-3 mb-4" />
-                <div className="grid grid-cols-2 gap-3 w-full">
-                  {[
-                    { hi: { count: '15+', label: 'वर्ष' }, en: { count: '15+', label: 'Years' } },
-                    { hi: { count: '5000+', label: 'अनुष्ठान' }, en: { count: '5000+', label: 'Rituals' } },
-                    { hi: { count: '9', label: 'सेवाएं' }, en: { count: '9', label: 'Services' } },
-                    { hi: { count: '4.9⭐', label: 'रेटिंग' }, en: { count: '4.9⭐', label: 'Rating' } },
-                  ].map((s, i) => {
-                    const sv = t(s);
-                    return (
-                      <div key={i} className="bg-cream/80 rounded-xl p-3 text-center">
-                        <p className="text-2xl font-bold text-shimmer">{sv?.count}</p>
-                        <p className="text-xs text-divine-muted font-devanagari">{sv?.label}</p>
-                      </div>
-                    );
-                  })}
+              {/* Pandit Ji Portrait Card */}
+              <div className="relative rounded-2xl overflow-hidden shadow-divine border-2 border-gold/40 mb-6 group bg-divine-dark aspect-[3/4] sm:aspect-[4/5] max-h-[520px]">
+                <img
+                  src={panditImg}
+                  alt={t(C.panditName)}
+                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                />
+                {/* Spiritual Vignette & Name Plate */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent flex flex-col justify-end p-6 text-white">
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gold/90 text-divine-dark text-xs font-bold font-devanagari self-start mb-2 shadow-sm">
+                    ✨ {t({ hi: '15+ वर्ष अनुभव', en: '15+ Years Exp' })}
+                  </div>
+                  <h2 className="text-2xl sm:text-3xl font-bold text-cream font-devanagari drop-shadow-md">
+                    {t(C.panditName)}
+                  </h2>
+                  <p className="text-gold font-devanagari text-sm mt-1 flex items-center gap-1">
+                    📍 {t(C.location)}
+                  </p>
+                  <p className="text-xs text-cream/75 font-devanagari mt-1">
+                    {t({ hi: 'वैदिक पुरोहित, महाकाल की पावन नगरी', en: 'Vedic Priest, Holy City of Mahakal' })}
+                  </p>
                 </div>
               </div>
+
+              {/* Quick stats grid */}
+              <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-2 gap-3 w-full mb-6">
+                {[
+                  { hi: { count: '15+', label: 'वर्ष अनुभव' }, en: { count: '15+', label: 'Years Exp' } },
+                  { hi: { count: '5000+', label: 'सफल अनुष्ठान' }, en: { count: '5000+', label: 'Rituals' } },
+                  { hi: { count: '9+', label: 'वैदिक सेवाएं' }, en: { count: '9+', label: 'Services' } },
+                  { hi: { count: '4.9⭐', label: 'भक्त संतुष्टि' }, en: { count: '4.9⭐', label: 'Rating' } },
+                ].map((s, i) => {
+                  const sv = t(s);
+                  return (
+                    <div key={i} className="gradient-border rounded-xl p-3.5 text-center bg-cream-light shadow-sm">
+                      <p className="text-2xl font-bold text-shimmer">{sv?.count}</p>
+                      <p className="text-xs text-divine-muted font-devanagari font-medium mt-0.5">{sv?.label}</p>
+                    </div>
+                  );
+                })}
+              </div>
+
               {/* Contact Quick */}
-              <div className="gradient-border p-5 rounded-2xl text-center">
+              <div className="gradient-border p-5 rounded-2xl text-center bg-cream-light shadow-card">
                 <p className="font-bold text-divine-brown font-devanagari mb-3">
-                  {t({ hi: 'अभी संपर्क करें', en: 'Contact Now' })}
+                  {t({ hi: 'पंडित जी से सीधा परामर्श लें', en: 'Consult Directly With Pandit Ji' })}
                 </p>
                 <div className="flex gap-3 justify-center flex-wrap">
-                  <a href="tel:+916263401651" className="btn-primary text-sm py-2 px-4">📞 6263401651</a>
-                  <a href="https://wa.me/916263401651" target="_blank" rel="noopener noreferrer" className="btn-secondary text-sm py-2 px-4">💬 WhatsApp</a>
+                  <a href="tel:+916263401651" className="btn-primary text-sm py-2.5 px-5">📞 +91 6263401651</a>
+                  <a href="https://wa.me/916263401651" target="_blank" rel="noopener noreferrer" className="btn-secondary text-sm py-2.5 px-5">💬 WhatsApp</a>
                 </div>
               </div>
             </div>
