@@ -391,6 +391,25 @@ p a, li a, .text-link {
 }
 
 /* ============================
+   Hero Section Responsiveness
+   ============================ */
+.hero-section {
+  background-position: 82% 30%;
+}
+
+@media (min-width: 640px) {
+  .hero-section {
+    background-position: 75% 25%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-section {
+    background-position: center 25%;
+  }
+}
+
+/* ============================
    Buttons
    ============================ */
 .btn-primary {

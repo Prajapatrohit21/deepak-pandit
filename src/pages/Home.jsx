@@ -23,12 +23,9 @@ function Hero() {
 
   return (
     <section
-      className="hero-section relative flex items-center justify-center text-white overflow-hidden"
+      className="hero-section relative flex items-center justify-center text-white overflow-hidden bg-cover bg-no-repeat"
       style={{
         backgroundImage: `url(${heroBg})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center 25%',
-        backgroundRepeat: 'no-repeat',
         minHeight: '100vh',
       }}
       aria-label="Hero Section"
