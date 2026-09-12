@@ -3,6 +3,7 @@
 // ============================================================
 
 const WA_NUMBER = '916263401651';
+export const WEBSITE_URL = 'https://mangaldoshpujanivaran.in/';
 
 /**
  * Build a WhatsApp deep-link with pre-filled message
@@ -25,7 +26,7 @@ export function buildBookingMessage({ name, phone, service, problem, date, lang 
 *Problem:* ${problem}
 ${date ? `*Preferred Date:* ${date}` : ''}
 
-*Source:* mangaldoshpujanivaran.com
+*Source:* ${WEBSITE_URL}
 
 Jai Shri Mahakal 🙏`;
   }
@@ -38,7 +39,7 @@ Jai Shri Mahakal 🙏`;
 *समस्या:* ${problem}
 ${date ? `*पसंदीदा तिथि:* ${date}` : ''}
 
-*स्रोत:* mangaldoshpujanivaran.com
+*स्रोत:* ${WEBSITE_URL}
 
 जय श्री महाकाल 🙏`;
 }
@@ -57,7 +58,7 @@ export function buildKundliMessage({ name, phone, dob, tob, pob, query, lang = '
 *Place of Birth:* ${pob}
 ${query ? `*Query:* ${query}` : ''}
 
-*Source:* mangaldoshpujanivaran.com
+*Source:* ${WEBSITE_URL}
 
 Jai Shri Mahakal 🙏`;
   }
@@ -71,7 +72,7 @@ Jai Shri Mahakal 🙏`;
 *जन्म स्थान:* ${pob}
 ${query ? `*जिज्ञासा:* ${query}` : ''}
 
-*स्रोत:* mangaldoshpujanivaran.com
+*स्रोत:* ${WEBSITE_URL}
 
 जय श्री महाकाल 🙏`;
 }
@@ -87,7 +88,7 @@ export function buildContactMessage({ name, phone, message, lang = 'hi' }) {
 *Phone:* ${phone}
 *Message:* ${message}
 
-*Source:* mangaldoshpujanivaran.com
+*Source:* ${WEBSITE_URL}
 
 Jai Shri Mahakal 🙏`;
   }
@@ -98,7 +99,7 @@ Jai Shri Mahakal 🙏`;
 *फोन:* ${phone}
 *संदेश:* ${message}
 
-*स्रोत:* mangaldoshpujanivaran.com
+*स्रोत:* ${WEBSITE_URL}
 
 जय श्री महाकाल 🙏`;
 }
