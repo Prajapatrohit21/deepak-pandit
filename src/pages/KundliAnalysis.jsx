@@ -8,6 +8,7 @@ import { useLanguage } from '../context/LanguageContext';
 import { CONTENT } from '../data/content';
 import { SERVICES } from '../data/services';
 import { buildKundliMessage, buildWhatsAppUrl } from '../utils/whatsapp';
+import { trackKundliSubmit } from '../utils/analytics';
 import SectionHeading from '../components/ui/SectionHeading';
 
 const C = CONTENT;
@@ -44,6 +45,7 @@ export default function KundliAnalysis() {
     setSubmitting(true);
     const message = buildKundliMessage({ ...form, lang });
     const url = buildWhatsAppUrl(message);
+    trackKundliSubmit();
     setTimeout(() => {
       window.open(url, '_blank');
       setSubmitting(false);

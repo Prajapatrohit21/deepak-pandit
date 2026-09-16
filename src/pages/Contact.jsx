@@ -7,6 +7,7 @@ import 'aos/dist/aos.css';
 import { useLanguage } from '../context/LanguageContext';
 import { CONTENT } from '../data/content';
 import { buildContactMessage, buildWhatsAppUrl } from '../utils/whatsapp';
+import { trackContactSubmit } from '../utils/analytics';
 
 const C = CONTENT;
 
@@ -39,6 +40,7 @@ export default function Contact() {
     setSubmitting(true);
     const msg = buildContactMessage({ ...form, lang });
     const url = buildWhatsAppUrl(msg);
+    trackContactSubmit();
     setTimeout(() => {
       window.open(url, '_blank');
       setSubmitting(false);

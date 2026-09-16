@@ -6,6 +6,7 @@ import { useLanguage } from '../../context/LanguageContext';
 import { CONTENT } from '../../data/content';
 import { SERVICES } from '../../data/services';
 import { buildBookingMessage, buildWhatsAppUrl } from '../../utils/whatsapp';
+import { trackBookingSubmit } from '../../utils/analytics';
 
 const C = CONTENT;
 
@@ -45,6 +46,7 @@ export default function BookingForm({ compact = false, defaultService = '' }) {
 
     const message = buildBookingMessage({ ...form, lang });
     const url = buildWhatsAppUrl(message);
+    trackBookingSubmit(form.service);
 
     // Also submit to Web3Forms for email backup (optional)
     // Replace ACCESS_KEY with actual key from web3forms.com

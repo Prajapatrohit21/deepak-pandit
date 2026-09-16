@@ -22,10 +22,19 @@ import Contact from './pages/Contact';
 import { Blog, BlogDetail } from './pages/Blog';
 import { TermsConditions, PrivacyPolicy, Disclaimer } from './pages/Legal';
 
-// Scroll to top on route change
+// Scroll to top on route change & record page_view for Google Tag
 function ScrollToTop() {
   const { pathname } = useLocation();
-  useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', 'page_view', {
+        page_path: pathname,
+        page_location: window.location.href,
+        page_title: document.title,
+      });
+    }
+  }, [pathname]);
   return null;
 }
 
