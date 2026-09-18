@@ -9,6 +9,7 @@ import { useLanguage } from '../context/LanguageContext';
 import { SERVICES } from '../data/services';
 import { CONTENT } from '../data/content';
 import BookingForm from '../components/ui/BookingForm';
+import { trackWhatsAppClick, trackPhoneCall } from '../utils/analytics';
 
 const C = CONTENT;
 
@@ -193,10 +194,10 @@ export default function ServiceDetail() {
                     {t({ hi: 'सुबह 6 बजे से रात 9 बजे तक उपलब्ध', en: 'Available 6 AM to 9 PM' })}
                   </p>
                   <div className="flex flex-col gap-2">
-                    <a href="tel:+916263401651" className="btn-primary text-sm py-2 justify-center font-devanagari">
+                    <a href="tel:+916263401651" onClick={() => trackPhoneCall('service_detail_page')} className="btn-primary text-sm py-2 justify-center font-devanagari">
                       📞 6263401651
                     </a>
-                    <a href="https://wa.me/916263401651" target="_blank" rel="noopener noreferrer" className="btn-secondary text-sm py-2 justify-center font-devanagari">
+                    <a href="https://wa.me/916263401651" onClick={() => trackWhatsAppClick('service_detail_page')} target="_blank" rel="noopener noreferrer" className="btn-secondary text-sm py-2 justify-center font-devanagari">
                       💬 WhatsApp
                     </a>
                   </div>

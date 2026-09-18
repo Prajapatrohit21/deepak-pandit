@@ -3,11 +3,12 @@
 // ============================================================
 import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
-import { LanguageProvider } from './context/LanguageContext';
+import { LanguageProvider, useLanguage } from './context/LanguageContext';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import FloatingButtons from './components/layout/FloatingButtons';
 import Preloader from './components/layout/Preloader';
+import { trackPageView } from './utils/analytics';
 
 // Pages
 import Home from './pages/Home';
@@ -22,19 +23,84 @@ import Contact from './pages/Contact';
 import { Blog, BlogDetail } from './pages/Blog';
 import { TermsConditions, PrivacyPolicy, Disclaimer } from './pages/Legal';
 
-// Scroll to top on route change & record page_view for Google Tag
+// Route titles mapping for both Hindi and English
+const ROUTE_TITLES = {
+  '/': {
+    hi: 'मंगल दोष पूजन केंद्र | उज्जैन | वैदिक पंडित दीपक पंड्या',
+    en: 'Mangal Dosh Puja Kendra | Ujjain | Pandit Deepak Pandya',
+  },
+  '/about': {
+    hi: 'परिचय — पंडित दीपक पंड्या | वैदिक पुरोहित उज्जैन सिद्ध पीठ',
+    en: 'About Pandit Deepak Pandya | Vedic Priest Ujjain',
+  },
+  '/services': {
+    hi: 'वैदिक पूजा अनुष्ठान सेवाएं | मंगल दोष, कालसर्प | उज्जैन',
+    en: 'Vedic Puja & Ritual Services | Ujjain',
+  },
+  '/kundli-analysis': {
+    hi: 'निःशुल्क जन्म कुंडली विश्लेषण | वैदिक पंडित दीपक पंड्या',
+    en: 'Free Kundali Analysis | Pandit Deepak Pandya',
+  },
+  '/gallery': {
+    hi: 'पूजन एवं सिद्ध पीठ फोटो व वीडियो गैलरी | उज्जैन',
+    en: 'Puja Photos & Video Gallery | Ujjain',
+  },
+  '/testimonials': {
+    hi: 'भक्तों के अनुभव एवं समीक्षाएं | उज्जैन अनुष्ठान केंद्र',
+    en: 'Devotee Reviews & Testimonials | Ujjain',
+  },
+  '/booking': {
+    hi: 'ऑनलाइन पूजन संकल्प एवं बुकिंग | उज्जैन',
+    en: 'Online Puja Booking & Sankalp | Ujjain',
+  },
+  '/contact': {
+    hi: 'संपर्क करें | महाकाल की नगरी, उज्जैन | 6263401651',
+    en: 'Contact Us | Near Mahakaleshwar Temple, Ujjain',
+  },
+  '/blog': {
+    hi: 'धार्मिक आलेख एवं वैदिक ज्ञान ब्लॉग | उज्जैन',
+    en: 'Vedic Blog & Religious Articles | Ujjain',
+  },
+  '/terms-conditions': {
+    hi: 'नियम एवं शर्तें | Terms & Conditions',
+    en: 'Terms & Conditions',
+  },
+  '/privacy-policy': {
+    hi: 'गोपनीयता नीति | Privacy Policy',
+    en: 'Privacy Policy',
+  },
+  '/disclaimer': {
+    hi: 'अस्वीकरण | Disclaimer',
+    en: 'Disclaimer',
+  },
+};
+
+// Scroll to top on route change, update document title, and record page_view in GA4
 function ScrollToTop() {
   const { pathname } = useLocation();
+  const { lang } = useLanguage();
+
   useEffect(() => {
     window.scrollTo(0, 0);
-    if (typeof window.gtag === 'function') {
-      window.gtag('event', 'page_view', {
-        page_path: pathname,
-        page_location: window.location.href,
-        page_title: document.title,
-      });
+
+    let pageTitle = ROUTE_TITLES[pathname] ? ROUTE_TITLES[pathname][lang] || ROUTE_TITLES[pathname].hi : null;
+    if (!pageTitle) {
+      if (pathname.startsWith('/services/')) {
+        pageTitle = lang === 'hi' ? 'पूजा विवरण | मंगल दोष पूजन केंद्र उज्जैन' : 'Puja Details | Mangal Dosh Puja Kendra Ujjain';
+      } else if (pathname.startsWith('/blog/')) {
+        pageTitle = lang === 'hi' ? 'वैदिक आलेख | मंगल दोष पूजन केंद्र उज्जैन' : 'Vedic Article | Mangal Dosh Puja Kendra Ujjain';
+      } else {
+        pageTitle = lang === 'hi' ? 'मंगल दोष पूजन केंद्र | उज्जैन' : 'Mangal Dosh Puja Kendra | Ujjain';
+      }
     }
-  }, [pathname]);
+
+    if (typeof document !== 'undefined') {
+      document.title = pageTitle;
+    }
+
+    trackPageView(pathname, pageTitle);
+  }, [pathname, lang]);
+
   return null;
 }
 

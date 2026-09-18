@@ -9,6 +9,7 @@ import { useLanguage } from '../context/LanguageContext';
 import { CONTENT } from '../data/content';
 import { BLOG_ARTICLES } from '../data/blog';
 import SectionHeading from '../components/ui/SectionHeading';
+import { trackWhatsAppClick } from '../utils/analytics';
 
 const C = CONTENT;
 
@@ -187,7 +188,13 @@ export function BlogDetail() {
                 <p className="text-cream/80 text-sm font-devanagari mb-4">
                   {t({ hi: 'उज्जैन में वैदिक विधि से पूजन', en: 'Vedic puja in Ujjain' })}
                 </p>
-                <a href="https://wa.me/916263401651" target="_blank" rel="noopener noreferrer" className="btn-gold font-devanagari">
+                <a
+                  href="https://wa.me/916263401651"
+                  onClick={() => trackWhatsAppClick('blog_detail_bottom')}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-gold font-devanagari"
+                >
                   💬 WhatsApp: 6263401651
                 </a>
               </div>
@@ -210,7 +217,13 @@ export function BlogDetail() {
                   <p className="font-bold text-divine-brown font-devanagari mb-3 text-sm">
                     {t({ hi: 'पूजन बुक करें', en: 'Book Puja' })}
                   </p>
-                  <a href="https://wa.me/916263401651" target="_blank" rel="noopener noreferrer" className="btn-primary text-sm py-2 justify-center w-full font-devanagari">
+                  <a
+                    href="https://wa.me/916263401651"
+                    onClick={() => trackWhatsAppClick('blog_detail_sidebar')}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-primary text-sm py-2 justify-center w-full font-devanagari"
+                  >
                     💬 WhatsApp
                   </a>
                 </div>

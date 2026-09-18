@@ -7,6 +7,7 @@ import 'aos/dist/aos.css';
 import { useLanguage } from '../context/LanguageContext';
 import { CONTENT } from '../data/content';
 import SectionHeading from '../components/ui/SectionHeading';
+import { trackWhatsAppClick } from '../utils/analytics';
 
 const C = CONTENT;
 
@@ -99,7 +100,13 @@ export default function Testimonials() {
           <p className="text-2xl font-bold text-divine-brown font-devanagari mb-4">
             {t({ hi: 'आप भी अपना अनुभव साझा करें', en: 'Share Your Experience Too' })}
           </p>
-          <a href="https://wa.me/916263401651" target="_blank" rel="noopener noreferrer" className="btn-gold font-devanagari">
+          <a
+            href="https://wa.me/916263401651"
+            onClick={() => trackWhatsAppClick('testimonials_page')}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-gold font-devanagari"
+          >
             💬 {t({ hi: 'WhatsApp पर संदेश भेजें', en: 'Send Message on WhatsApp' })}
           </a>
         </div>

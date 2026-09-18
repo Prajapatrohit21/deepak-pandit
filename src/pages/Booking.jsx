@@ -8,6 +8,7 @@ import 'aos/dist/aos.css';
 import { useLanguage } from '../context/LanguageContext';
 import { CONTENT } from '../data/content';
 import BookingForm from '../components/ui/BookingForm';
+import { trackWhatsAppClick, trackPhoneCall } from '../utils/analytics';
 
 const C = CONTENT;
 
@@ -96,11 +97,11 @@ export default function Booking() {
                 <p className="text-cream/70 text-sm font-devanagari mb-4">
                   {t({ hi: 'प्रातः 6 से रात्रि 9 बजे तक', en: '6 AM to 9 PM daily' })}
                 </p>
-                <a href="tel:+916263401651" className="flex items-center gap-2 hover:opacity-80 transition-opacity mb-3">
+                <a href="tel:+916263401651" onClick={() => trackPhoneCall('booking_page_sidebar')} className="flex items-center gap-2 hover:opacity-80 transition-opacity mb-3">
                   <span className="text-xl">📞</span>
                   <span className="font-bold">+91 6263401651</span>
                 </a>
-                <a href="https://wa.me/916263401651" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+                <a href="https://wa.me/916263401651" onClick={() => trackWhatsAppClick('booking_page_sidebar')} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
                   <span className="text-xl">💬</span>
                   <span className="font-bold">WhatsApp Chat</span>
                 </a>

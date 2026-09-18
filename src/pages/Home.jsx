@@ -11,6 +11,7 @@ import { useLanguage } from '../context/LanguageContext';
 import { CONTENT } from '../data/content';
 import { SERVICES } from '../data/services';
 import { WA_HREF, PHONE_HREF } from '../utils/whatsapp';
+import { trackWhatsAppClick } from '../utils/analytics';
 import SectionHeading from '../components/ui/SectionHeading';
 import ServiceCard from '../components/ui/ServiceCard';
 import BookingForm from '../components/ui/BookingForm';
@@ -108,6 +109,7 @@ function Hero() {
           </Link>
           <a
             href={WA_HREF}
+            onClick={() => trackWhatsAppClick('hero_cta')}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-secondary text-base sm:text-lg px-6 sm:px-8 py-3.5 sm:py-4 w-full sm:w-auto font-devanagari font-semibold border-gold/70 text-gold bg-black/50 backdrop-blur-md hover:bg-gold/20 hover:border-gold shadow-lg transform hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 flex items-center justify-center gap-2"

@@ -10,6 +10,7 @@ import 'aos/dist/aos.css';
 import { useLanguage } from '../context/LanguageContext';
 import { CONTENT } from '../data/content';
 import SectionHeading from '../components/ui/SectionHeading';
+import { trackWhatsAppClick, trackPhoneCall } from '../utils/analytics';
 
 const C = CONTENT;
 
@@ -104,8 +105,8 @@ export default function About() {
                   {t({ hi: 'पंडित जी से सीधा परामर्श लें', en: 'Consult Directly With Pandit Ji' })}
                 </p>
                 <div className="flex gap-3 justify-center flex-wrap">
-                  <a href="tel:+916263401651" className="btn-primary text-sm py-2.5 px-5">📞 +91 6263401651</a>
-                  <a href="https://wa.me/916263401651" target="_blank" rel="noopener noreferrer" className="btn-secondary text-sm py-2.5 px-5">💬 WhatsApp</a>
+                  <a href="tel:+916263401651" onClick={() => trackPhoneCall('about_page')} className="btn-primary text-sm py-2.5 px-5">📞 +91 6263401651</a>
+                  <a href="https://wa.me/916263401651" onClick={() => trackWhatsAppClick('about_page')} target="_blank" rel="noopener noreferrer" className="btn-secondary text-sm py-2.5 px-5">💬 WhatsApp</a>
                 </div>
               </div>
             </div>

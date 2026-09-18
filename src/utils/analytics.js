@@ -2,6 +2,8 @@
 // analytics.js — Google tag (gtag.js) tracking utilities
 // ============================================================
 
+export const GA_MEASUREMENT_ID = 'G-VSJ9RGW9HC';
+
 /**
  * Safely send an event to Google Tag / Google Ads / GA4
  */
@@ -16,12 +18,24 @@ export function trackEvent(eventName, params = {}) {
 }
 
 /**
+ * Track SPA page views across route transitions
+ */
+export function trackPageView(path, title) {
+  trackEvent('page_view', {
+    page_title: title || (typeof document !== 'undefined' ? document.title : ''),
+    page_location: typeof window !== 'undefined' ? window.location.href : '',
+    page_path: path || (typeof window !== 'undefined' ? window.location.pathname : ''),
+    send_to: GA_MEASUREMENT_ID,
+  });
+}
+
+/**
  * Track lead conversions (Google Ads / GA4 primary conversion)
  */
 export function trackLead(leadType, details = {}) {
   trackEvent('generate_lead', {
     lead_type: leadType,
-    send_to: 'G-CZVLTH4CHD',
+    send_to: GA_MEASUREMENT_ID,
     ...details,
   });
 }

@@ -8,7 +8,7 @@ import { useLanguage } from '../context/LanguageContext';
 import { CONTENT } from '../data/content';
 import { SERVICES } from '../data/services';
 import { buildKundliMessage, buildWhatsAppUrl } from '../utils/whatsapp';
-import { trackKundliSubmit } from '../utils/analytics';
+import { trackKundliSubmit, trackWhatsAppClick } from '../utils/analytics';
 import SectionHeading from '../components/ui/SectionHeading';
 
 const C = CONTENT;
@@ -171,7 +171,13 @@ export default function KundliAnalysis() {
                 <p className="text-divine-muted font-devanagari text-sm mb-3">
                   {t({ hi: 'सीधे WhatsApp पर संपर्क करें', en: 'Contact directly on WhatsApp' })}
                 </p>
-                <a href="https://wa.me/916263401651" target="_blank" rel="noopener noreferrer" className="btn-gold font-devanagari">
+                <a
+                  href="https://wa.me/916263401651"
+                  onClick={() => trackWhatsAppClick('kundli_sidebar')}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-gold font-devanagari"
+                >
                   💬 WhatsApp: 6263401651
                 </a>
               </div>

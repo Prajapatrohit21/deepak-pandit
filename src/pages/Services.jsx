@@ -9,6 +9,7 @@ import { CONTENT } from '../data/content';
 import { SERVICES } from '../data/services';
 import SectionHeading from '../components/ui/SectionHeading';
 import ServiceCard from '../components/ui/ServiceCard';
+import { trackWhatsAppClick } from '../utils/analytics';
 
 const C = CONTENT;
 
@@ -67,6 +68,7 @@ export default function Services() {
           </p>
           <a
             href="https://wa.me/916263401651"
+            onClick={() => trackWhatsAppClick('services_page')}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-gold font-devanagari text-base sm:text-lg px-6 sm:px-10 py-3.5 sm:py-4"

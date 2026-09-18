@@ -7,7 +7,7 @@ import 'aos/dist/aos.css';
 import { useLanguage } from '../context/LanguageContext';
 import { CONTENT } from '../data/content';
 import { buildContactMessage, buildWhatsAppUrl } from '../utils/whatsapp';
-import { trackContactSubmit } from '../utils/analytics';
+import { trackContactSubmit, trackPhoneCall, trackWhatsAppClick } from '../utils/analytics';
 
 const C = CONTENT;
 
@@ -92,10 +92,10 @@ export default function Contact() {
 
               {/* Quick Actions */}
               <div className="flex gap-3 flex-col xs:flex-row flex-wrap mb-8">
-                <a href="tel:+916263401651" className="btn-primary font-devanagari flex-1 justify-center">
+                <a href="tel:+916263401651" onClick={() => trackPhoneCall('contact_page_action')} className="btn-primary font-devanagari flex-1 justify-center">
                   📞 {t({ hi: 'अभी कॉल करें', en: 'Call Now' })}
                 </a>
-                <a href="https://wa.me/916263401651" target="_blank" rel="noopener noreferrer" className="btn-secondary font-devanagari flex-1 justify-center">
+                <a href="https://wa.me/916263401651" onClick={() => trackWhatsAppClick('contact_page_action')} target="_blank" rel="noopener noreferrer" className="btn-secondary font-devanagari flex-1 justify-center">
                   💬 WhatsApp
                 </a>
               </div>

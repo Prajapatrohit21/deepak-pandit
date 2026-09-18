@@ -6,6 +6,7 @@ import { useLanguage } from '../../context/LanguageContext';
 import { CONTENT } from '../../data/content';
 import { SERVICES } from '../../data/services';
 import { WA_HREF, PHONE_HREF } from '../../utils/whatsapp';
+import { trackWhatsAppClick, trackPhoneCall } from '../../utils/analytics';
 import logoImg from '../../assets/logo.png';
 
 const C = CONTENT;
@@ -46,10 +47,10 @@ export default function Footer() {
             </p>
             {/* Contact Info */}
             <div className="flex flex-col gap-2 text-sm">
-              <a href={PHONE_HREF} className="flex items-center gap-2 hover:text-gold transition-colors">
+              <a href={PHONE_HREF} onClick={() => trackPhoneCall('footer')} className="flex items-center gap-2 hover:text-gold transition-colors">
                 <span>📞</span> +91 6263401651
               </a>
-              <a href={WA_HREF} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-gold transition-colors">
+              <a href={WA_HREF} onClick={() => trackWhatsAppClick('footer')} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-gold transition-colors">
                 <span>💬</span> WhatsApp
               </a>
               <p className="flex items-start gap-2">
