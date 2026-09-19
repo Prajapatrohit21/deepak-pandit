@@ -22,6 +22,8 @@ import Booking from './pages/Booking';
 import Contact from './pages/Contact';
 import { Blog, BlogDetail } from './pages/Blog';
 import { TermsConditions, PrivacyPolicy, Disclaimer } from './pages/Legal';
+import MangalnathMandirGuide from './pages/MangalnathMandirGuide';
+import OutstationBookingGuide from './pages/OutstationBookingGuide';
 
 // Route titles mapping for both Hindi and English
 const ROUTE_TITLES = {
@@ -72,6 +74,14 @@ const ROUTE_TITLES = {
   '/disclaimer': {
     hi: 'अस्वीकरण | Disclaimer',
     en: 'Disclaimer',
+  },
+  '/mangalnath-mandir-ujjain': {
+    hi: 'मंगलनाथ मंदिर उज्जैन कैसे पहुंचे | समय, मार्ग व दर्शन गाइड',
+    en: 'How to Reach Mangalnath Temple Ujjain | Guide',
+  },
+  '/bahar-ke-shahar-puja-booking': {
+    hi: 'बाहर के शहरों से पूजा बुकिंग | ऑनलाइन संकल्प उज्जैन',
+    en: 'Outstation Puja Booking & Online Sankalp | Ujjain',
   },
 };
 
@@ -136,6 +146,8 @@ function AppContent() {
           <Route path="/terms-conditions" element={<PageWrapper><TermsConditions /></PageWrapper>} />
           <Route path="/privacy-policy" element={<PageWrapper><PrivacyPolicy /></PageWrapper>} />
           <Route path="/disclaimer" element={<PageWrapper><Disclaimer /></PageWrapper>} />
+          <Route path="/mangalnath-mandir-ujjain" element={<PageWrapper><MangalnathMandirGuide /></PageWrapper>} />
+          <Route path="/bahar-ke-shahar-puja-booking" element={<PageWrapper><OutstationBookingGuide /></PageWrapper>} />
           {/* 404 fallback */}
           <Route path="*" element={<PageWrapper><Home /></PageWrapper>} />
         </Routes>

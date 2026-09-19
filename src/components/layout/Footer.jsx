@@ -12,7 +12,7 @@ import logoImg from '../../assets/logo.png';
 const C = CONTENT;
 
 export default function Footer() {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const foot = C.footer;
   const nav = C.nav;
 
@@ -20,8 +20,9 @@ export default function Footer() {
     { to: '/', label: nav.home },
     { to: '/about', label: nav.about },
     { to: '/services', label: nav.services },
-    { to: '/gallery', label: nav.gallery },
-    { to: '/testimonials', label: nav.testimonials },
+    { to: '/kundli-analysis', label: nav.kundli },
+    { to: '/mangalnath-mandir-ujjain', label: { hi: 'मंगलनाथ मंदिर कैसे पहुंचे', en: 'Reach Mangalnath' } },
+    { to: '/bahar-ke-shahar-puja-booking', label: { hi: 'बाहर के शहरों से बुकिंग', en: 'Outstation Booking' } },
     { to: '/blog', label: nav.blog },
     { to: '/contact', label: nav.contact },
     { to: '/booking', label: nav.bookNow },
@@ -42,21 +43,26 @@ export default function Footer() {
                 className="h-14 sm:h-16 md:h-20 w-auto object-contain filter drop-shadow-[0_0_12px_rgba(255,215,0,0.5)]"
               />
             </Link>
-            <p className="text-sm leading-relaxed text-cream/60 mb-4 font-devanagari">
-              {t(foot.description)}
+            <p className="text-sm leading-relaxed text-cream/70 mb-4 font-devanagari">
+              {lang === 'hi'
+                ? 'मंगल दोष पूजन केंद्र — वैदिक पंडित दीपक पंड्या (15+ वर्षों का अनुभव)। मंगलनाथ मंदिर व महाकाल की पावन नगरी उज्जैन में समस्त वैदिक पूजन एवं अनुष्ठान।'
+                : 'Mangal Dosh Puja Nivaran — Pandit Deepak Pandya (15+ years experience). Authentic Vedic rituals and pujas at Mangalnath Temple, Ujjain.'}
             </p>
-            {/* Contact Info */}
-            <div className="flex flex-col gap-2 text-sm">
-              <a href={PHONE_HREF} onClick={() => trackPhoneCall('footer')} className="flex items-center gap-2 hover:text-gold transition-colors">
-                <span>📞</span> +91 6263401651
+            {/* Full NAP Contact Info */}
+            <div className="flex flex-col gap-2.5 text-sm">
+              <a href={PHONE_HREF} onClick={() => trackPhoneCall('footer')} className="flex items-center gap-2 hover:text-gold transition-colors font-medium">
+                <span>📞</span> +91 62634 01651
               </a>
-              <a href={WA_HREF} onClick={() => trackWhatsAppClick('footer')} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-gold transition-colors">
-                <span>💬</span> WhatsApp
+              <a href={WA_HREF} onClick={() => trackWhatsAppClick('footer')} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-gold transition-colors font-medium">
+                <span>💬</span> WhatsApp (24x7)
               </a>
-              <p className="flex items-start gap-2">
+              <a href="mailto:mangaldoshpujanivaran@gmail.com" className="flex items-center gap-2 hover:text-gold transition-colors text-xs text-cream/70">
+                <span>✉️</span> mangaldoshpujanivaran@gmail.com
+              </a>
+              <div className="flex items-start gap-2 text-xs text-cream/70 font-devanagari pt-1">
                 <span>📍</span>
-                <span className="font-devanagari">{t(C.location)}</span>
-              </p>
+                <span>मंगलनाथ मंदिर क्षेत्र, उज्जैन, मध्य प्रदेश (TODO: Confirm street address)</span>
+              </div>
             </div>
           </div>
 

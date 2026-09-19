@@ -1,7 +1,8 @@
 // ============================================================
 // Home.jsx — Full hero page with all home sections
+// Phase 5 AEO: Comparative table + FAQ section added
 // ============================================================
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import heroBg from '../assets/hero_mangal_puja.jpg';
 import panditImg from '../assets/pandit_deepak_pandya.jpg';
 import { Link } from 'react-router-dom';
@@ -330,6 +331,129 @@ function TestimonialsSection() {
   );
 }
 
+// ─── AEO: Comparative Puja Table ───────────────────────────
+const PUJA_TABLE = [
+  { slug: 'mangal-dosh-puja',      emoji: '🔴', hi: { name: 'मंगल भात पूजा',       kisLiye: 'मांगलिक दोष, विवाह बाधा',       avadhi: '3–5 घंटे' }, en: { name: 'Mangal Bhat Puja',      kisLiye: 'Manglik dosha, marriage delays', avadhi: '3–5 hrs' } },
+  { slug: 'kaal-sarp-dosh',        emoji: '🐍', hi: { name: 'कालसर्प दोष निवारण',   kisLiye: 'करियर, स्वास्थ्य, मानसिक शांति', avadhi: '4–6 घंटे' }, en: { name: 'Kaal Sarp Dosh Puja',  kisLiye: 'Career, health, mental peace',  avadhi: '4–6 hrs' } },
+  { slug: 'pitru-dosh-nivaran',    emoji: '🕯️', hi: { name: 'पितृ दोष निवारण',      kisLiye: 'पितरों की शांति, संतान लाभ',    avadhi: '3–5 घंटे' }, en: { name: 'Pitru Dosh Nivaran',   kisLiye: 'Ancestor peace, progeny blessings', avadhi: '3–5 hrs' } },
+  { slug: 'navgrah-shanti',        emoji: '⭐', hi: { name: 'नवग्रह शांति',          kisLiye: 'सर्व ग्रह दोष शमन',             avadhi: '4–5 घंटे' }, en: { name: 'Navgrah Shanti',       kisLiye: 'All planetary dosha relief',    avadhi: '4–5 hrs' } },
+  { slug: 'mahamrityunjay',        emoji: '🌿', hi: { name: 'महामृत्युंजय जाप',      kisLiye: 'गंभीर रोग, मृत्यु भय, दीर्घायु', avadhi: '3–7 घंटे' }, en: { name: 'Mahamrityunjay Jaap', kisLiye: 'Serious illness, longevity',    avadhi: '3–7 hrs' } },
+  { slug: 'rudrabhishek',          emoji: '🔱', hi: { name: 'रुद्राभिषेक',            kisLiye: 'सुख-समृद्धि, शिव कृपा',         avadhi: '2–4 घंटे' }, en: { name: 'Rudrabhishek',        kisLiye: 'Prosperity, Shiva blessings',  avadhi: '2–4 hrs' } },
+  { slug: 'vastu-shanti',          emoji: '🏠', hi: { name: 'वास्तु शांति',           kisLiye: 'नया घर, कार्यालय, वास्तु दोष', avadhi: '3–5 घंटे' }, en: { name: 'Vastu Shanti',        kisLiye: 'New home, office, vastu dosha', avadhi: '3–5 hrs' } },
+  { slug: 'navchandi-shatchandi',  emoji: '🌸', hi: { name: 'नवचंडी / शतचंडी',       kisLiye: 'विशेष मनोकामना पूर्ति',          avadhi: '1–3 दिन' }, en: { name: 'Navchandi/Shatchandi',kisLiye: 'Fulfillment of special wishes', avadhi: '1–3 days' } },
+];
+
+function PujaComparisonTable() {
+  const { t, lang } = useLanguage();
+  return (
+    <section className="py-16 bg-cream" aria-labelledby="puja-table-heading">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <SectionHeading
+          badge={t({ hi: '📋 एक नज़र में', en: '📋 At a Glance' })}
+          heading={t({ hi: 'सभी पूजाएं — एक नज़र में', en: 'All Pujas at a Glance' })}
+          subheading={t({ hi: 'कौन सी पूजा किसके लिए है, कितनी देर चलती है — यहाँ देखें', en: 'Which puja is for whom and how long it lasts — see here' })}
+        />
+        <div className="overflow-x-auto mt-8 rounded-2xl shadow-card" data-aos="fade-up">
+          <table className="w-full text-sm font-devanagari" role="table" aria-label={t({ hi: 'पूजा तुलना तालिका', en: 'Puja Comparison Table' })}>
+            <thead>
+              <tr className="bg-divine-dark text-cream">
+                <th className="text-left px-4 py-3 font-bold" scope="col">{t({ hi: 'पूजा', en: 'Puja' })}</th>
+                <th className="text-left px-4 py-3 font-bold" scope="col">{t({ hi: 'किस लिए?', en: 'Purpose' })}</th>
+                <th className="text-left px-4 py-3 font-bold" scope="col">{t({ hi: 'अवधि', en: 'Duration' })}</th>
+                <th className="text-left px-4 py-3 font-bold" scope="col">{t({ hi: 'बुकिंग', en: 'Book' })}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {PUJA_TABLE.map((row, i) => {
+                const d = lang === 'hi' ? row.hi : row.en;
+                return (
+                  <tr key={row.slug} className={i % 2 === 0 ? 'bg-white' : 'bg-cream-dark/40'}>
+                    <td className="px-4 py-3 font-semibold text-divine-brown">
+                      <Link to={`/services/${row.slug}`} className="flex items-center gap-2 hover:text-saffron transition-colors">
+                        <span>{row.emoji}</span> {d.name}
+                      </Link>
+                    </td>
+                    <td className="px-4 py-3 text-divine-muted">{d.kisLiye}</td>
+                    <td className="px-4 py-3 text-divine-muted">{d.avadhi}</td>
+                    <td className="px-4 py-3">
+                      <Link to={`/services/${row.slug}`} className="inline-flex items-center gap-1 text-xs px-3 py-1.5 rounded-full bg-saffron/10 text-saffron font-semibold border border-saffron/30 hover:bg-saffron hover:text-white transition-all duration-200">
+                        {t({ hi: 'जानें', en: 'Details' })} →
+                      </Link>
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ─── AEO: FAQ Section ──────────────────────────────────────
+const HOME_FAQS = [
+  {
+    q: { hi: 'उज्जैन में मंगल दोष पूजा कहाँ होती है?', en: 'Where is Mangal Dosh Puja done in Ujjain?' },
+    a: { hi: 'उज्जैन में मंगल दोष (मांगलिक दोष) की पूजा श्री मंगलनाथ मंदिर में होती है, जिसे पुराणों में मंगल ग्रह का जन्म स्थान माना गया है। वैदिक पंडित दीपक पंड्या यहाँ 15+ वर्षों से पूजन करवाते हैं।', en: 'Mangal Dosh puja is performed at Shri Mangalnath Mandir, Ujjain — considered the birthplace of Mars (Mangal graha) in the Puranas. Pandit Deepak Pandya has been conducting these rituals here for 15+ years.' },
+  },
+  {
+    q: { hi: 'कालसर्प दोष की पूजा उज्जैन में कैसे करवाएं?', en: 'How to get Kaal Sarp Dosh puja done in Ujjain?' },
+    a: { hi: 'उज्जैन में कालसर्प दोष निवारण के लिए +91 62634 01651 पर WhatsApp करें या बुकिंग फ़ॉर्म भरें। पंडित जी नाम, गोत्र और कुंडली देखकर उचित तिथि और विधि बताएंगे।', en: 'For Kaal Sarp Dosh puja in Ujjain, WhatsApp +91 62634 01651 or fill the booking form. Pandit ji will review your kundali and suggest the right date and procedure.' },
+  },
+  {
+    q: { hi: 'बाहर के शहर से उज्जैन पूजा बुकिंग कैसे होगी?', en: 'How to book puja in Ujjain from another city?' },
+    a: { hi: 'इंदौर, भोपाल, दिल्ली, मुंबई या किसी भी शहर से WhatsApp पर नाम, गोत्र, जन्म विवरण भेजें। पंडित जी आपकी ओर से संकल्प लेकर पूजा करेंगे और वीडियो भेजेंगे।', en: 'From Indore, Bhopal, Delhi, Mumbai or any city — send your name, gotra, and birth details via WhatsApp. Pandit ji will perform the puja on your behalf with video proof.' },
+  },
+  {
+    q: { hi: 'पूजा में कितना खर्च आता है?', en: 'What is the cost of puja?' },
+    a: { hi: 'पूजा का खर्च पूजा के प्रकार और विधि पर निर्भर करता है। सटीक जानकारी के लिए +91 62634 01651 पर सीधे संपर्क करें। सभी पूजाएं वैदिक विधि से संपन्न होती हैं।', en: 'The puja cost depends on the type and scale of ritual. For exact information, contact directly at +91 62634 01651. All pujas are performed with complete Vedic vidhi.' },
+  },
+  {
+    q: { hi: 'पंडित दीपक पंड्या कौन हैं?', en: 'Who is Pandit Deepak Pandya?' },
+    a: { hi: 'पंडित दीपक पंड्या उज्जैन के वैदिक पुरोहित हैं जिनका अनुभव 15+ वर्षों का है। वे मंगलनाथ मंदिर, राम घाट एवं महाकाल परिसर में मंगल दोष, कालसर्प, पितृ दोष, नवग्रह शांति सहित सभी अनुष्ठान संपन्न करवाते हैं।', en: 'Pandit Deepak Pandya is a Vedic priest from Ujjain with 15+ years of experience. He performs Mangal Dosh, Kaal Sarp, Pitru Dosh, Navgrah Shanti and all Vedic rituals at Mangalnath Temple, Ram Ghat, and Mahakal complex.' },
+  },
+  {
+    q: { hi: 'क्या ऑनलाइन पूजा बुकिंग संभव है?', en: 'Is online puja booking possible?' },
+    a: { hi: 'हाँ। WhatsApp (+91 62634 01651) पर या वेबसाइट के बुकिंग फ़ॉर्म के माध्यम से ऑनलाइन संकल्प और पूजा बुकिंग की जा सकती है।', en: 'Yes. Online sankalp and puja booking can be done via WhatsApp (+91 62634 01651) or the booking form on this website.' },
+  },
+];
+
+function HomeFaqSection() {
+  const { t } = useLanguage();
+  const [open, setOpen] = useState(0);
+  return (
+    <section className="py-16 bg-cream-dark" aria-labelledby="home-faq-heading">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6">
+        <SectionHeading
+          badge={t({ hi: '❓ सामान्य प्रश्न', en: '❓ Common Questions' })}
+          heading={t({ hi: 'अक्सर पूछे जाने वाले प्रश्न', en: 'Frequently Asked Questions' })}
+          subheading={t({ hi: 'उज्जैन पूजा बुकिंग, खर्च और विधि से जुड़े सवाल', en: 'Questions about Ujjain puja booking, cost, and process' })}
+        />
+        <div className="mt-8 space-y-3" data-aos="fade-up">
+          {HOME_FAQS.map((faq, i) => (
+            <div key={i} className="rounded-xl border border-saffron/20 overflow-hidden bg-white shadow-sm">
+              <button
+                className="w-full text-left font-devanagari p-4 sm:p-5 flex justify-between items-center text-divine-brown font-bold text-sm sm:text-base hover:bg-cream-dark/50 transition-colors"
+                onClick={() => setOpen(open === i ? -1 : i)}
+                aria-expanded={open === i}
+              >
+                <span>{t(faq.q)}</span>
+                <span className={`text-saffron text-xl font-bold transition-transform duration-300 shrink-0 ml-3 ${open === i ? 'rotate-45' : ''}`}>+</span>
+              </button>
+              {open === i && (
+                <div className="font-devanagari text-divine-muted text-sm leading-relaxed px-4 pb-5 sm:px-5 sm:pb-6 border-t border-cream-dark bg-cream/40">
+                  {t(faq.a)}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 // ─── Quick Booking Section ─────────────────────────────────
 function QuickBookingSection() {
   const { t } = useLanguage();
@@ -372,8 +496,10 @@ export default function Home() {
       <Hero />
       <TrustSection />
       <ServicesSection />
+      <PujaComparisonTable />
       <AboutSnippet />
       <TestimonialsSection />
+      <HomeFaqSection />
       <QuickBookingSection />
     </main>
   );
