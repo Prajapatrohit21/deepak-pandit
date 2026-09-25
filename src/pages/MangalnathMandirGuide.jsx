@@ -18,7 +18,7 @@ export default function MangalnathMandirGuide() {
     window.scrollTo(0, 0);
   }, []);
 
-  const canonicalUrl = 'https://mangaldoshpujanivaran.in/#/mangalnath-mandir-ujjain';
+  const canonicalUrl = 'https://mangaldoshpujanivaran.in/mangalnath-mandir-ujjain';
 
   const schema = {
     '@context': 'https://schema.org',

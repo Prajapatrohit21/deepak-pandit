@@ -29,11 +29,11 @@ const prerenderedBody = `
       </div>
       <nav style="display:flex;gap:16px;font-size:14px;">
         <a href="/" style="color:#F5C842;text-decoration:none;">मुख्य पृष्ठ</a>
-        <a href="/#/about" style="color:#FFF;text-decoration:none;">परिचय</a>
-        <a href="/#/services" style="color:#FFF;text-decoration:none;">पूजा सेवाएं</a>
-        <a href="/#/kundli-analysis" style="color:#FFF;text-decoration:none;">कुंडली विश्लेषण</a>
-        <a href="/#/booking" style="color:#FFF;text-decoration:none;">बुकिंग</a>
-        <a href="/#/contact" style="color:#FFF;text-decoration:none;">संपर्क</a>
+        <a href="/about" style="color:#FFF;text-decoration:none;">परिचय</a>
+        <a href="/services" style="color:#FFF;text-decoration:none;">पूजा सेवाएं</a>
+        <a href="/kundli-analysis" style="color:#FFF;text-decoration:none;">कुंडली विश्लेषण</a>
+        <a href="/booking" style="color:#FFF;text-decoration:none;">बुकिंग</a>
+        <a href="/contact" style="color:#FFF;text-decoration:none;">संपर्क</a>
       </nav>
       <div>
         <a href="tel:+916263401651" style="color:#F5C842;font-weight:bold;text-decoration:none;margin-right:12px;">📞 +91 62634 01651</a>
@@ -114,55 +114,55 @@ const prerenderedBody = `
         <article style="border:1px solid #E6D0B3;border-radius:10px;padding:20px;background:#FFF;">
           <h3 style="color:#B83000;margin-top:0;">1. मंगल भात पूजा (Mangal Bhat Puja Ujjain)</h3>
           <p>Mangal Bhat Puja Ujjain ke Mangalnath Mandir se jude kshetra me hone wali vaidik puja hai, jo Mangal grah ki shanti ke liye ki jati hai. Manglik dosh nivaran aur vivah me aa rahi badhaon ke samadhan hetu Mangalwar ko shubh mana jata hai.</p>
-          <a href="/#/services/mangal-dosh-puja" style="color:#B83000;font-weight:bold;">संपूर्ण विवरण एवं बुकिंग →</a>
+          <a href="/services/mangal-dosh-puja" style="color:#B83000;font-weight:bold;">संपूर्ण विवरण एवं बुकिंग →</a>
         </article>
 
         <article style="border:1px solid #E6D0B3;border-radius:10px;padding:20px;background:#FFF;">
           <h3 style="color:#B83000;margin-top:0;">2. कालसर्प दोष निवारण पूजा (Kaal Sarp Dosh Puja)</h3>
           <p>Kaal Sarp Dosh tab mana jata hai jab kundli me sabhi grah Rahu aur Ketu ke beech aa jate hain. Iski shanti ke liye Ujjain me Kaal Sarp Dosh Nivaran Puja vaidik vidhi se ki jati hai. Amavasya aur Nag Panchami par vishesh mahatva.</p>
-          <a href="/#/services/kaal-sarp-dosh" style="color:#B83000;font-weight:bold;">संपूर्ण विवरण एवं बुकिंग →</a>
+          <a href="/services/kaal-sarp-dosh" style="color:#B83000;font-weight:bold;">संपूर्ण विवरण एवं बुकिंग →</a>
         </article>
 
         <article style="border:1px solid #E6D0B3;border-radius:10px;padding:20px;background:#FFF;">
           <h3 style="color:#B83000;margin-top:0;">3. पितृ दोष निवारण एवं त्रिपिंडी श्राद्ध</h3>
           <p>Pitru Dosh nivaran aur Tripindi Shradh vo vaidik karm hain jo pitron ki shanti aur tript ke uddeshya se kiye jate hain. Ujjain Ram Ghat par pitro ke tarpan aur pind daan ki vaidik parampara hai.</p>
-          <a href="/#/services/pitru-dosh-nivaran" style="color:#B83000;font-weight:bold;">संपूर्ण विवरण एवं बुकिंग →</a>
+          <a href="/services/pitru-dosh-nivaran" style="color:#B83000;font-weight:bold;">संपूर्ण विवरण एवं बुकिंग →</a>
         </article>
 
         <article style="border:1px solid #E6D0B3;border-radius:10px;padding:20px;background:#FFF;">
           <h3 style="color:#B83000;margin-top:0;">4. नवग्रह शांति एवं ग्रह दोष निवारण</h3>
           <p>Navgrah Shanti puja me Surya se Ketu tak nau grahon ki shanti ke liye mantra jaap aur havan kiya jata hai. Sabhi grahon ki anukoolta ke liye vidhipurvak pujan.</p>
-          <a href="/#/services/navgrah-shanti" style="color:#B83000;font-weight:bold;">संपूर्ण विवरण एवं बुकिंग →</a>
+          <a href="/services/navgrah-shanti" style="color:#B83000;font-weight:bold;">संपूर्ण विवरण एवं बुकिंग →</a>
         </article>
 
         <article style="border:1px solid #E6D0B3;border-radius:10px;padding:20px;background:#FFF;">
           <h3 style="color:#B83000;margin-top:0;">5. महामृत्युंजय अनुष्ठान एवं जप</h3>
           <p>Mahamrityunjay anushthan Bhagwan Shiv ke Mahamrityunjay mantra ka vidhipurvak jaap hai, jo swasthya, suraksha aur dirghayu ki kamna se Mahakal nagri Ujjain me karaya jata hai.</p>
-          <a href="/#/services/mahamrityunjay" style="color:#B83000;font-weight:bold;">संपूर्ण विवरण एवं बुकिंग →</a>
+          <a href="/services/mahamrityunjay" style="color:#B83000;font-weight:bold;">संपूर्ण विवरण एवं बुकिंग →</a>
         </article>
 
         <article style="border:1px solid #E6D0B3;border-radius:10px;padding:20px;background:#FFF;">
           <h3 style="color:#B83000;margin-top:0;">6. रुद्राभिषेक (Rudrabhishek Ujjain)</h3>
           <p>Rudrabhishek me Bhagwan Shiv ka jal, doodh, panchamrit aur anya dravyon se mantron ke saath abhishek kiya jata hai. Somwar aur Shravan maas me vishesh mahatva.</p>
-          <a href="/#/services/rudrabhishek" style="color:#B83000;font-weight:bold;">संपूर्ण विवरण एवं बुकिंग →</a>
+          <a href="/services/rudrabhishek" style="color:#B83000;font-weight:bold;">संपूर्ण विवरण एवं बुकिंग →</a>
         </article>
 
         <article style="border:1px solid #E6D0B3;border-radius:10px;padding:20px;background:#FFF;">
           <h3 style="color:#B83000;margin-top:0;">7. वास्तु शांति पूजा (Vastu Shanti Puja)</h3>
           <p>Naye ghar, dukan ya karyalay me pravesh se pehle vastu dosh nivaran evam sakaratmak urja ke sanchar hetu Vastu Shanti pujan aur havan.</p>
-          <a href="/#/services/vastu-shanti" style="color:#B83000;font-weight:bold;">संपूर्ण विवरण एवं बुकिंग →</a>
+          <a href="/services/vastu-shanti" style="color:#B83000;font-weight:bold;">संपूर्ण विवरण एवं बुकिंग →</a>
         </article>
 
         <article style="border:1px solid #E6D0B3;border-radius:10px;padding:20px;background:#FFF;">
           <h3 style="color:#B83000;margin-top:0;">8. नवचंडी एवं शतचंडी अनुष्ठान</h3>
           <p>Maa Durga ki aradhana me Durga Saptashati ke path aur havan ke roop me shatru badha mukti aur sarv-manokamna purti ke liye kiya jane wala anushthan.</p>
-          <a href="/#/services/navchandi-shatchandi" style="color:#B83000;font-weight:bold;">संपूर्ण विवरण एवं बुकिंग →</a>
+          <a href="/services/navchandi-shatchandi" style="color:#B83000;font-weight:bold;">संपूर्ण विवरण एवं बुकिंग →</a>
         </article>
 
         <article style="border:1px solid #E6D0B3;border-radius:10px;padding:20px;background:#FFF;">
           <h3 style="color:#B83000;margin-top:0;">9. विस्तृत वैदिक कुंडली विश्लेषण</h3>
           <p>Janm tithi, samay aur sthan ke aadhar par grahon ki sthiti, dasha-antardasha aur doshon ka vishleshan. Online aur phone consultation uplabdh.</p>
-          <a href="/#/kundli-analysis" style="color:#B83000;font-weight:bold;">संपूर्ण विवरण एवं परामर्श →</a>
+          <a href="/kundli-analysis" style="color:#B83000;font-weight:bold;">संपूर्ण विवरण एवं परामर्श →</a>
         </article>
 
       </div>
@@ -299,3 +299,45 @@ if (html.includes('<div id="root"></div>')) {
 const notFoundPath = path.join(distDir, '404.html');
 fs.writeFileSync(notFoundPath, html, 'utf-8');
 console.log('✓ Successfully created dist/404.html fallback for GitHub Pages');
+// Static route folders generation for GitHub Pages (ensures HTTP 200 on all routes)
+const staticRoutes = [
+  'about',
+  'services',
+  'services/mangal-dosh-puja',
+  'services/kaal-sarp-dosh',
+  'services/pitru-dosh-nivaran',
+  'services/navgrah-shanti',
+  'services/mahamrityunjay',
+  'services/rudrabhishek',
+  'services/vastu-shanti',
+  'services/navchandi-shatchandi',
+  'kundli-analysis',
+  'gallery',
+  'testimonials',
+  'booking',
+  'contact',
+  'blog',
+  'blog/mangal-dosh-kya-hai',
+  'blog/kaal-sarp-dosh-lakshan',
+  'blog/pitru-dosh-karan-prabhav',
+  'blog/navgrah-shanti-puja-ujjain',
+  'blog/rudrabhishek-puja-mahakal-ujjain',
+  'blog/mahamrityunjay-mantra-jaap-ujjain',
+  'blog/mangalnath-mandir-ujjain',
+  'blog/bahar-ke-shahar-se-ujjain-puja-booking',
+  'blog/vastu-shanti-griha-pravesh-ujjain',
+  'blog/kundli-vishleshan-kaise-hoti-hai',
+  'mangalnath-mandir-ujjain',
+  'bahar-ke-shahar-puja-booking',
+  'terms-conditions',
+  'privacy-policy',
+  'disclaimer'
+];
+
+staticRoutes.forEach(route => {
+  const routeDir = path.join(distDir, route);
+  fs.mkdirSync(routeDir, { recursive: true });
+  fs.writeFileSync(path.join(routeDir, 'index.html'), html, 'utf-8');
+});
+console.log('✓ Successfully generated static HTML folders for all routes (GitHub Pages 200 OK)');
+

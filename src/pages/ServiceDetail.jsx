@@ -50,7 +50,7 @@ export default function ServiceDetail() {
   if (!service) return <Navigate to="/services" replace />;
 
   const content = lang === 'hi' ? service.hi : service.en;
-  const canonicalUrl = `https://mangaldoshpujanivaran.in/#/services/${service.slug}`;
+  const canonicalUrl = `https://mangaldoshpujanivaran.in/services/${service.slug}`;
 
   // Structured Data (Service + FAQPage)
   const serviceSchema = {
@@ -114,7 +114,7 @@ export default function ServiceDetail() {
             '@type': 'ListItem',
             position: 2,
             name: 'Services',
-            item: 'https://mangaldoshpujanivaran.in/#/services',
+            item: 'https://mangaldoshpujanivaran.in/services',
           },
           {
             '@type': 'ListItem',

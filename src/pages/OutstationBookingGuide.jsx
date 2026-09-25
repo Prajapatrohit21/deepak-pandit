@@ -19,7 +19,7 @@ export default function OutstationBookingGuide() {
     window.scrollTo(0, 0);
   }, []);
 
-  const canonicalUrl = 'https://mangaldoshpujanivaran.in/#/bahar-ke-shahar-puja-booking';
+  const canonicalUrl = 'https://mangaldoshpujanivaran.in/bahar-ke-shahar-puja-booking';
 
   const schema = {
     '@context': 'https://schema.org',
