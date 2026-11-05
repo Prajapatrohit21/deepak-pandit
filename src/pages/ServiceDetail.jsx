@@ -172,7 +172,17 @@ export default function ServiceDetail() {
       >
         <div className="absolute inset-0 bg-mandala opacity-20" aria-hidden="true" />
         <div className="relative z-10 max-w-4xl mx-auto px-4">
-          <div className="text-4xl sm:text-6xl mb-4 animate-float" role="img" aria-hidden="true">{service.icon}</div>
+          {service.image ? (
+            <div className="w-24 h-24 sm:w-32 sm:h-32 mx-auto mb-4 rounded-full overflow-hidden border-2 border-gold shadow-[0_0_20px_rgba(245,200,66,0.4)]">
+              <img
+                src={service.image}
+                alt={content.name}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          ) : (
+            <span className="text-3xl text-gold mb-4 inline-block font-bold">✦</span>
+          )}
           <span className="badge badge-gold mb-4 inline-flex">
             ✦ {t({ hi: 'उज्जैन वैदिक अनुष्ठान सेवा', en: 'Ujjain Vedic Ritual' })} ✦
           </span>

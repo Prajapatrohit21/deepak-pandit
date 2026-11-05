@@ -1,3 +1,13 @@
+import mangalImg from "../assets/hero_mangal_puja.jpg";
+import kaalSarpImg from "../assets/gallery/Kaal-Sarp-Puja-Ujjain.webp";
+import pitruImg from "../assets/gallery/g9.jpg";
+import navgrahImg from "../assets/gallery/g11.jpg";
+import mahamrityunjayImg from "../assets/gallery/g10.jpg";
+import rudrabhishekImg from "../assets/gallery/g1.jpg";
+import vastuImg from "../assets/gallery/g7.jpg";
+import navchandiImg from "../assets/gallery/g2.jpg";
+import kundliImg from "../assets/pandit_deepak_pandya.jpg";
+
 // ============================================================
 // services.js — Complete service definitions (Hindi + English)
 // Adheres strictly to business facts, SEO/AEO answer-first copy,
@@ -8,6 +18,7 @@ export const SERVICES = [
   {
     id: 'mangal-dosh-puja',
     slug: 'mangal-dosh-puja',
+    image: mangalImg,
     icon: '🪔',
     emoji: '♂️',
     relatedPujas: ['kaal-sarp-dosh', 'rudrabhishek', 'navgrah-shanti'],
@@ -132,6 +143,7 @@ export const SERVICES = [
   {
     id: 'kaal-sarp-dosh',
     slug: 'kaal-sarp-dosh',
+    image: kaalSarpImg,
     icon: '🔱',
     emoji: '🐍',
     relatedPujas: ['mangal-dosh-puja', 'rudrabhishek', 'mahamrityunjay'],
@@ -256,6 +268,7 @@ export const SERVICES = [
   {
     id: 'pitru-dosh-nivaran',
     slug: 'pitru-dosh-nivaran',
+    image: pitruImg,
     icon: '🪔',
     emoji: '🙏',
     relatedPujas: ['rudrabhishek', 'navgrah-shanti', 'mangal-dosh-puja'],
@@ -368,6 +381,7 @@ export const SERVICES = [
   {
     id: 'navgrah-shanti',
     slug: 'navgrah-shanti',
+    image: navgrahImg,
     icon: '☀️',
     emoji: '🌟',
     relatedPujas: ['mangal-dosh-puja', 'kaal-sarp-dosh', 'kundli-analysis'],
@@ -480,6 +494,7 @@ export const SERVICES = [
   {
     id: 'mahamrityunjay',
     slug: 'mahamrityunjay',
+    image: mahamrityunjayImg,
     icon: '🕉️',
     emoji: '🕉️',
     relatedPujas: ['rudrabhishek', 'kaal-sarp-dosh', 'navgrah-shanti'],
@@ -592,6 +607,7 @@ export const SERVICES = [
   {
     id: 'rudrabhishek',
     slug: 'rudrabhishek',
+    image: rudrabhishekImg,
     icon: '🔱',
     emoji: '🙏',
     relatedPujas: ['mahamrityunjay', 'mangal-dosh-puja', 'kaal-sarp-dosh'],
@@ -704,6 +720,7 @@ export const SERVICES = [
   {
     id: 'vastu-shanti',
     slug: 'vastu-shanti',
+    image: vastuImg,
     icon: '🪔',
     emoji: '🏠',
     relatedPujas: ['navgrah-shanti', 'rudrabhishek', 'mangal-dosh-puja'],
@@ -808,6 +825,7 @@ export const SERVICES = [
   {
     id: 'navchandi-shatchandi',
     slug: 'navchandi-shatchandi',
+    image: navchandiImg,
     icon: '🔱',
     emoji: '🌺',
     relatedPujas: ['mangal-dosh-puja', 'rudrabhishek', 'mahamrityunjay'],
@@ -912,6 +930,7 @@ export const SERVICES = [
   {
     id: 'kundli-analysis',
     slug: 'kundli-analysis',
+    image: kundliImg,
     icon: '📜',
     emoji: '🔮',
     relatedPujas: ['mangal-dosh-puja', 'kaal-sarp-dosh', 'navgrah-shanti'],
