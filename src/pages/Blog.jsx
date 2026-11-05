@@ -15,7 +15,7 @@ const C = CONTENT;
 
 // ─── Blog Listing ──────────────────────────────────────────
 export function Blog() {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const bl = C.blog;
 
   useEffect(() => {
@@ -77,7 +77,7 @@ export function Blog() {
                       to={`/blog/${article.slug}`}
                       className="btn-secondary text-sm py-2 px-5 font-devanagari"
                     >
-                      {t(bl.readMore)} →
+                      {lang === 'hi' ? `${article.hi.title} पढ़ें` : `Read ${article.en.title}`} →
                     </Link>
                   </div>
                 </article>

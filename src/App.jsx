@@ -28,7 +28,7 @@ import OutstationBookingGuide from './pages/OutstationBookingGuide';
 // Route titles mapping for both Hindi and English
 const ROUTE_TITLES = {
   '/': {
-    hi: 'मंगल दोष पूजन केंद्र | उज्जैन | वैदिक पंडित दीपक पंड्या',
+    hi: 'मंगल दोष पूजा उज्जैन | वैदिक पंडित दीपक पंड्या',
     en: 'Mangal Dosh Puja Kendra | Ujjain | Pandit Deepak Pandya',
   },
   '/about': {

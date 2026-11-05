@@ -6,7 +6,7 @@ import { useLanguage } from '../../context/LanguageContext';
 import { CONTENT } from '../../data/content';
 
 export default function ServiceCard({ service, featured = false }) {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const svc = service;
   const C = CONTENT;
 
@@ -60,14 +60,14 @@ export default function ServiceCard({ service, featured = false }) {
           to={`/services/${svc.slug}`}
           className="btn-secondary text-sm py-2 px-4 font-devanagari"
         >
-          {t(C.services.knowMore)}
+          {lang === 'hi' ? `${svc.hi?.name} की विधि` : `${svc.en?.name} Details`}
         </Link>
         <Link
           to="/booking"
           state={{ service: t({ hi: svc.hi?.name, en: svc.en?.name }) }}
           className="btn-primary text-sm py-2 px-4 font-devanagari"
         >
-          {t(C.services.bookService)}
+          {lang === 'hi' ? `${svc.hi?.name} बुक करें` : `Book ${svc.en?.name}`}
         </Link>
       </div>
     </article>

@@ -12,8 +12,8 @@ export default function SEO({
   const { lang } = useLanguage();
 
   const siteTitle = lang === 'hi' 
-    ? 'मंगल दोष पूजन केंद्र | उज्जैन' 
-    : 'Mangal Dosh Puja Nivaran | Ujjain';
+    ? 'मंगल दोष पूजा उज्जैन | वैदिक पंडित दीपक पंड्या' 
+    : 'Mangal Dosh Puja Nivaran | Pandit Deepak Pandya Ujjain';
 
   // Ensure title is trimmed appropriately if combined
   const fullTitle = title ? `${title}` : siteTitle;

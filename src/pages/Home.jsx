@@ -377,7 +377,7 @@ function PujaComparisonTable() {
                     <td className="px-4 py-3 text-divine-muted">{d.avadhi}</td>
                     <td className="px-4 py-3">
                       <Link to={`/services/${row.slug}`} className="inline-flex items-center gap-1 text-xs px-3 py-1.5 rounded-full bg-saffron/10 text-saffron font-semibold border border-saffron/30 hover:bg-saffron hover:text-white transition-all duration-200">
-                        {t({ hi: 'जानें', en: 'Details' })} →
+                        {lang === 'hi' ? `${d.name} जानकारी` : `${d.name} Info`} →
                       </Link>
                     </td>
                   </tr>

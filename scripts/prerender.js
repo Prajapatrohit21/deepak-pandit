@@ -114,55 +114,55 @@ const prerenderedBody = `
         <article style="border:1px solid #E6D0B3;border-radius:10px;padding:20px;background:#FFF;">
           <h3 style="color:#B83000;margin-top:0;">1. मंगल भात पूजा (Mangal Bhat Puja Ujjain)</h3>
           <p>Mangal Bhat Puja Ujjain ke Mangalnath Mandir se jude kshetra me hone wali vaidik puja hai, jo Mangal grah ki shanti ke liye ki jati hai. Manglik dosh nivaran aur vivah me aa rahi badhaon ke samadhan hetu Mangalwar ko shubh mana jata hai.</p>
-          <a href="/services/mangal-dosh-puja" style="color:#B83000;font-weight:bold;">संपूर्ण विवरण एवं बुकिंग →</a>
+          <a href="/services/mangal-dosh-puja" style="color:#B83000;font-weight:bold;">मंगल दोष पूजा की विधि एवं विवरण →</a>
         </article>
 
         <article style="border:1px solid #E6D0B3;border-radius:10px;padding:20px;background:#FFF;">
           <h3 style="color:#B83000;margin-top:0;">2. कालसर्प दोष निवारण पूजा (Kaal Sarp Dosh Puja)</h3>
           <p>Kaal Sarp Dosh tab mana jata hai jab kundli me sabhi grah Rahu aur Ketu ke beech aa jate hain. Iski shanti ke liye Ujjain me Kaal Sarp Dosh Nivaran Puja vaidik vidhi se ki jati hai. Amavasya aur Nag Panchami par vishesh mahatva.</p>
-          <a href="/services/kaal-sarp-dosh" style="color:#B83000;font-weight:bold;">संपूर्ण विवरण एवं बुकिंग →</a>
+          <a href="/services/kaal-sarp-dosh" style="color:#B83000;font-weight:bold;">कालसर्प दोष निवारण जानकारी एवं विधि →</a>
         </article>
 
         <article style="border:1px solid #E6D0B3;border-radius:10px;padding:20px;background:#FFF;">
           <h3 style="color:#B83000;margin-top:0;">3. पितृ दोष निवारण एवं त्रिपिंडी श्राद्ध</h3>
           <p>Pitru Dosh nivaran aur Tripindi Shradh vo vaidik karm hain jo pitron ki shanti aur tript ke uddeshya se kiye jate hain. Ujjain Ram Ghat par pitro ke tarpan aur pind daan ki vaidik parampara hai.</p>
-          <a href="/services/pitru-dosh-nivaran" style="color:#B83000;font-weight:bold;">संपूर्ण विवरण एवं बुकिंग →</a>
+          <a href="/services/pitru-dosh-nivaran" style="color:#B83000;font-weight:bold;">पितृ दोष निवारण विधि एवं विवरण →</a>
         </article>
 
         <article style="border:1px solid #E6D0B3;border-radius:10px;padding:20px;background:#FFF;">
           <h3 style="color:#B83000;margin-top:0;">4. नवग्रह शांति एवं ग्रह दोष निवारण</h3>
           <p>Navgrah Shanti puja me Surya se Ketu tak nau grahon ki shanti ke liye mantra jaap aur havan kiya jata hai. Sabhi grahon ki anukoolta ke liye vidhipurvak pujan.</p>
-          <a href="/services/navgrah-shanti" style="color:#B83000;font-weight:bold;">संपूर्ण विवरण एवं बुकिंग →</a>
+          <a href="/services/navgrah-shanti" style="color:#B83000;font-weight:bold;">नवग्रह शांति पूजा विधि एवं जानकारी →</a>
         </article>
 
         <article style="border:1px solid #E6D0B3;border-radius:10px;padding:20px;background:#FFF;">
           <h3 style="color:#B83000;margin-top:0;">5. महामृत्युंजय अनुष्ठान एवं जप</h3>
           <p>Mahamrityunjay anushthan Bhagwan Shiv ke Mahamrityunjay mantra ka vidhipurvak jaap hai, jo swasthya, suraksha aur dirghayu ki kamna se Mahakal nagri Ujjain me karaya jata hai.</p>
-          <a href="/services/mahamrityunjay" style="color:#B83000;font-weight:bold;">संपूर्ण विवरण एवं बुकिंग →</a>
+          <a href="/services/mahamrityunjay" style="color:#B83000;font-weight:bold;">महामृत्युंजय अनुष्ठान विधि एवं विवरण →</a>
         </article>
 
         <article style="border:1px solid #E6D0B3;border-radius:10px;padding:20px;background:#FFF;">
           <h3 style="color:#B83000;margin-top:0;">6. रुद्राभिषेक (Rudrabhishek Ujjain)</h3>
           <p>Rudrabhishek me Bhagwan Shiv ka jal, doodh, panchamrit aur anya dravyon se mantron ke saath abhishek kiya jata hai. Somwar aur Shravan maas me vishesh mahatva.</p>
-          <a href="/services/rudrabhishek" style="color:#B83000;font-weight:bold;">संपूर्ण विवरण एवं बुकिंग →</a>
+          <a href="/services/rudrabhishek" style="color:#B83000;font-weight:bold;">रुद्राभिषेक पूजन विधि एवं जानकारी →</a>
         </article>
 
         <article style="border:1px solid #E6D0B3;border-radius:10px;padding:20px;background:#FFF;">
           <h3 style="color:#B83000;margin-top:0;">7. वास्तु शांति पूजा (Vastu Shanti Puja)</h3>
           <p>Naye ghar, dukan ya karyalay me pravesh se pehle vastu dosh nivaran evam sakaratmak urja ke sanchar hetu Vastu Shanti pujan aur havan.</p>
-          <a href="/services/vastu-shanti" style="color:#B83000;font-weight:bold;">संपूर्ण विवरण एवं बुकिंग →</a>
+          <a href="/services/vastu-shanti" style="color:#B83000;font-weight:bold;">वास्तु शांति पूजन विधि एवं विवरण →</a>
         </article>
 
         <article style="border:1px solid #E6D0B3;border-radius:10px;padding:20px;background:#FFF;">
           <h3 style="color:#B83000;margin-top:0;">8. नवचंडी एवं शतचंडी अनुष्ठान</h3>
           <p>Maa Durga ki aradhana me Durga Saptashati ke path aur havan ke roop me shatru badha mukti aur sarv-manokamna purti ke liye kiya jane wala anushthan.</p>
-          <a href="/services/navchandi-shatchandi" style="color:#B83000;font-weight:bold;">संपूर्ण विवरण एवं बुकिंग →</a>
+          <a href="/services/navchandi-shatchandi" style="color:#B83000;font-weight:bold;">नवचंडी अनुष्ठान विधि एवं जानकारी →</a>
         </article>
 
         <article style="border:1px solid #E6D0B3;border-radius:10px;padding:20px;background:#FFF;">
           <h3 style="color:#B83000;margin-top:0;">9. विस्तृत वैदिक कुंडली विश्लेषण</h3>
           <p>Janm tithi, samay aur sthan ke aadhar par grahon ki sthiti, dasha-antardasha aur doshon ka vishleshan. Online aur phone consultation uplabdh.</p>
-          <a href="/kundli-analysis" style="color:#B83000;font-weight:bold;">संपूर्ण विवरण एवं परामर्श →</a>
+          <a href="/kundli-analysis" style="color:#B83000;font-weight:bold;">वैदिक जन्म कुंडली विश्लेषण परामर्श →</a>
         </article>
 
       </div>
@@ -281,7 +281,12 @@ const prerenderedBody = `
 
   <footer style="background:#1A0700;color:#E6D3B3;padding:24px 20px;text-align:center;font-size:14px;border-top:1px solid #D4AF37;">
     <p style="margin:0 0 8px;">© 2026 Mangal Dosh Puja Nivaran (मंगल दोष पूजन केंद्र), उज्जैन। सर्वाधिकार सुरक्षित।</p>
-    <p style="margin:0;">संपर्क: +91 62634 01651 | ईमेल: mangaldoshpujanivaran@gmail.com | मंगलनाथ मंदिर क्षेत्र, उज्जैन, मध्य प्रदेश</p>
+    <p style="margin:0 0 12px;">संपर्क: +91 62634 01651 | ईमेल: mangaldoshpujanivaran@gmail.com | मंगलनाथ मंदिर क्षेत्र, उज्जैन, मध्य प्रदेश</p>
+    <p style="margin:0;">
+      <a href="https://wa.me/?text=%E0%A4%AE%E0%A4%82%E0%A4%97%E0%A4%B2%20%E0%A4%A6%E0%A4%93%E0%A4%B7%20%E0%A4%AA%E0%A4%82%E0%A4%9C%E0%A4%BE%20%E0%A4%89%E0%A4%9C%E0%A5%8D%E0%A4%9C%E0%A5%88%E0%A4%A8%20%7C%20%E0%A4%B5%E0%A5%88%E0%A4%A6%E0%A4%BF%E0%A4%95%20%E0%A4%AA%E0%A4%82%E0%A4%A1%E0%A4%BF%E0%A4%A4%20%E0%A4%A6%E0%A5%80%E0%A4%AA%E0%A4%95%20%E0%A4%AA%E0%A4%82%E0%A4%A1%E0%A5%8D%E0%A4%AF%E0%A4%BE%20https%3A%2F%2Fmangaldoshpujanivaran.in%2F" style="color:#25D366;text-decoration:none;font-weight:bold;display:inline-flex;align-items:center;gap:6px;border:1px solid #25D366;padding:4px 14px;border-radius:20px;font-size:13px;">
+        WhatsApp पर शेयर करें
+      </a>
+    </p>
   </footer>
 </div>
 `;
