@@ -67,13 +67,13 @@ export default function About() {
                 {/* Spiritual Vignette & Name Plate */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent flex flex-col justify-end p-6 text-white">
                   <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gold/90 text-divine-dark text-xs font-bold font-devanagari self-start mb-2 shadow-sm">
-                    ✨ {t({ hi: '15+ वर्ष अनुभव', en: '15+ Years Exp' })}
+                    ✦ {t({ hi: '15+ वर्ष अनुभव', en: '15+ Years Exp' })}
                   </div>
                   <h2 className="text-2xl sm:text-3xl font-bold text-cream font-devanagari drop-shadow-md">
                     {t(C.panditName)}
                   </h2>
                   <p className="text-gold font-devanagari text-sm mt-1 flex items-center gap-1">
-                    📍 {t(C.location)}
+                    <span className="text-gold font-bold">✦</span> {t(C.location)}
                   </p>
                   <p className="text-xs text-cream/75 font-devanagari mt-1">
                     {t({ hi: 'वैदिक पुरोहित, महाकाल की पावन नगरी', en: 'Vedic Priest, Holy City of Mahakal' })}
@@ -188,7 +188,7 @@ export default function About() {
                 data-aos="fade-up"
                 data-aos-delay={(i + 1) * 80}
               >
-                <div className="text-5xl mb-3">{ph.emoji}</div>
+                <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-gold/15 border border-gold/40 flex items-center justify-center text-gold font-bold text-xl">✦</div>
                 <p className="text-cream/80 text-sm font-devanagari">{t(ph)}</p>
               </div>
             ))}

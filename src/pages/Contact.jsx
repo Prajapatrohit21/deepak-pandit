@@ -58,7 +58,7 @@ export default function Contact() {
       >
         <div className="absolute inset-0 bg-mandala opacity-20" aria-hidden="true" />
         <div className="relative z-10 max-w-3xl mx-auto px-4">
-          <span className="section-tag text-gold/80 mb-4 inline-flex">📞 {t(ct.badge)}</span>
+          <span className="section-tag text-gold/80 mb-4 inline-flex">{t(ct.badge)}</span>
           <h1 id="contact-heading" className="text-3xl sm:text-4xl md:text-5xl font-bold text-cream font-devanagari mb-4">
             {t(ct.heading)}
           </h1>
@@ -154,10 +154,10 @@ export default function Contact() {
                     id="contact-submit-btn">
                     {submitting
                       ? (lang === 'hi' ? '⏳ भेज रहे हैं...' : '⏳ Sending...')
-                      : `📱 ${t(ct.formSubmit)}`}
+                      : t(ct.formSubmit)}
                   </button>
                   <p className="text-center text-xs text-divine-muted font-devanagari">
-                    ✅ {t({ hi: 'संदेश WhatsApp पर भेजा जाएगा', en: 'Message will be sent on WhatsApp' })}
+                    <span className="text-gold font-bold">✦</span> {t({ hi: 'संदेश WhatsApp पर भेजा जाएगा', en: 'Message will be sent on WhatsApp' })}
                   </p>
                 </form>
               </div>

@@ -8,7 +8,7 @@ export const SERVICES = [
   {
     id: 'mangal-dosh-puja',
     slug: 'mangal-dosh-puja',
-    icon: '🔴',
+    icon: '🪔',
     emoji: '♂️',
     relatedPujas: ['kaal-sarp-dosh', 'rudrabhishek', 'navgrah-shanti'],
     relatedBlogs: ['mangal-dosh-kya-hai', 'mangalnath-mandir-ujjain'],
@@ -132,7 +132,7 @@ export const SERVICES = [
   {
     id: 'kaal-sarp-dosh',
     slug: 'kaal-sarp-dosh',
-    icon: '🐍',
+    icon: '🔱',
     emoji: '🐍',
     relatedPujas: ['mangal-dosh-puja', 'rudrabhishek', 'mahamrityunjay'],
     relatedBlogs: ['kaal-sarp-dosh-lakshan', 'mangalnath-mandir-ujjain'],
@@ -256,7 +256,7 @@ export const SERVICES = [
   {
     id: 'pitru-dosh-nivaran',
     slug: 'pitru-dosh-nivaran',
-    icon: '👣',
+    icon: '🪔',
     emoji: '🙏',
     relatedPujas: ['rudrabhishek', 'navgrah-shanti', 'mangal-dosh-puja'],
     relatedBlogs: ['pitru-dosh-karan-prabhav', 'mangalnath-mandir-ujjain'],
@@ -368,7 +368,7 @@ export const SERVICES = [
   {
     id: 'navgrah-shanti',
     slug: 'navgrah-shanti',
-    icon: '⭐',
+    icon: '☀️',
     emoji: '🌟',
     relatedPujas: ['mangal-dosh-puja', 'kaal-sarp-dosh', 'kundli-analysis'],
     relatedBlogs: ['mangal-dosh-kya-hai', 'mangalnath-mandir-ujjain'],
@@ -592,7 +592,7 @@ export const SERVICES = [
   {
     id: 'rudrabhishek',
     slug: 'rudrabhishek',
-    icon: '💧',
+    icon: '🔱',
     emoji: '🙏',
     relatedPujas: ['mahamrityunjay', 'mangal-dosh-puja', 'kaal-sarp-dosh'],
     relatedBlogs: ['mangalnath-mandir-ujjain', 'mangal-dosh-kya-hai'],
@@ -704,7 +704,7 @@ export const SERVICES = [
   {
     id: 'vastu-shanti',
     slug: 'vastu-shanti',
-    icon: '🏠',
+    icon: '🪔',
     emoji: '🏠',
     relatedPujas: ['navgrah-shanti', 'rudrabhishek', 'mangal-dosh-puja'],
     relatedBlogs: ['mangalnath-mandir-ujjain', 'mangal-dosh-kya-hai'],
@@ -808,7 +808,7 @@ export const SERVICES = [
   {
     id: 'navchandi-shatchandi',
     slug: 'navchandi-shatchandi',
-    icon: '🌸',
+    icon: '🔱',
     emoji: '🌺',
     relatedPujas: ['mangal-dosh-puja', 'rudrabhishek', 'mahamrityunjay'],
     relatedBlogs: ['mangalnath-mandir-ujjain', 'mangal-dosh-kya-hai'],

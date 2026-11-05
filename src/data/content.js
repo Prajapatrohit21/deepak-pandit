@@ -44,7 +44,7 @@ export const CONTENT = {
   // HERO
   // ──────────────────────────────────────────
   hero: {
-    badge: { hi: '🙏 उज्जैन के विश्वसनीय वैदिक पंडित', en: '🙏 Trusted Vedic Pandit of Ujjain' },
+    badge: { hi: 'उज्जैन के प्रामाणिक वैदिक पुरोहित', en: 'Trusted Vedic Pandit of Ujjain' },
     title: {
       hi: 'मंगल दोष पूजा एवं\nसमस्त वैदिक अनुष्ठान',
       en: 'Mangal Dosh Puja &\nAll Vedic Rituals',
@@ -232,8 +232,8 @@ export const CONTENT = {
       date: { hi: 'पसंदीदा तिथि', en: 'Preferred Date' },
       kundli: { hi: 'कुंडली फोटो (वैकल्पिक)', en: 'Kundali Photo (Optional)' },
     },
-    submit: { hi: '📱 WhatsApp पर बुक करें', en: '📱 Book on WhatsApp' },
-    note: { hi: '✅ फॉर्म सबमिट होते ही WhatsApp पर मैसेज जाएगा', en: '✅ WhatsApp message sent immediately on form submit' },
+    submit: { hi: 'WhatsApp पर संकल्प बुक करें', en: 'Book Sankalp on WhatsApp' },
+    note: { hi: 'तत्काल सहायता: फॉर्म सबमिट होते ही WhatsApp पर संपर्क किया जाएगा।', en: 'Instant Assistance: You will be connected on WhatsApp immediately.' },
   },
 
   // ──────────────────────────────────────────
@@ -258,7 +258,7 @@ export const CONTENT = {
   // FOOTER
   // ──────────────────────────────────────────
   footer: {
-    tagline: { hi: '🙏 जय श्री महाकाल — हर हर महादेव 🙏', en: '🙏 Jai Shri Mahakal — Har Har Mahadev 🙏' },
+    tagline: { hi: '॥ जय श्री महाकालेश्वर — हर हर महादेव ॥', en: 'Jai Shri Mahakaleshwar — Har Har Mahadev' },
     description: {
       hi: 'उज्जैन में वैदिक पंडित दीपक पंड्या जी के मार्गदर्शन में — मंगल दोष पूजन, कालसर्प दोष निवारण एवं समस्त वैदिक अनुष्ठान।',
       en: 'Under the guidance of Vaidik Pandit Deepak Pandya Ji in Ujjain — Mangal Dosh Puja, Kaal Sarp Dosh Nivaran, and all Vedic rituals.',
@@ -361,7 +361,7 @@ export const CONTENT = {
       query: { hi: 'जिज्ञासा / समस्या', en: 'Query / Problem', placeholder: { hi: 'आप किस विषय पर मार्गदर्शन चाहते हैं?', en: 'What topic do you want guidance on?' } },
       kundliPhoto: { hi: 'कुंडली फोटो (वैकल्पिक)', en: 'Kundali Photo (Optional)' },
     },
-    submit: { hi: '📱 WhatsApp पर भेजें', en: '📱 Send on WhatsApp' },
+    submit: { hi: 'WhatsApp पर विवरण भेजें', en: 'Send Details on WhatsApp' },
   },
 };
 

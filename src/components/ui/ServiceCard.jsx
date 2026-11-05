@@ -21,7 +21,7 @@ export default function ServiceCard({ service, featured = false }) {
       {featured && (
         <div className="absolute top-4 right-4">
           <span className="badge badge-gold text-xs">
-            {t({ hi: '⭐ मुख्य सेवा', en: '⭐ Main Service' })}
+            {t({ hi: 'विशेष वैदिक अनुष्ठान', en: 'Featured Vedic Puja' })}
           </span>
         </div>
       )}
@@ -50,7 +50,10 @@ export default function ServiceCard({ service, featured = false }) {
 
       {/* Duration */}
       <div className="flex items-center gap-1.5 text-xs text-divine-muted mb-4">
-        <span>⏱</span>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="text-saffron shrink-0" aria-hidden="true">
+          <circle cx="12" cy="12" r="10" />
+          <polyline points="12 6 12 12 16 14" />
+        </svg>
         <span className="font-devanagari">{t({ hi: svc.hi?.duration, en: svc.en?.duration })}</span>
       </div>
 

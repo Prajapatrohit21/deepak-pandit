@@ -39,7 +39,7 @@ export default function Booking() {
       >
         <div className="absolute inset-0 bg-mandala opacity-20" aria-hidden="true" />
         <div className="relative z-10 max-w-3xl mx-auto px-4">
-          <div className="text-3xl sm:text-4xl mb-3 animate-float" aria-hidden="true">📅</div>
+          <div className="text-3xl sm:text-4xl mb-3 text-gold animate-float" aria-hidden="true">🪔</div>
           <span className="section-tag text-gold/80 mb-4 inline-flex">{t(bk.badge)}</span>
           <h1 id="booking-page-heading" className="text-3xl sm:text-4xl md:text-5xl font-bold text-cream font-devanagari mb-4">
             {t(bk.heading)}
@@ -114,14 +114,16 @@ export default function Booking() {
                 </h3>
                 <ul className="flex flex-col gap-2">
                   {[
-                    { hi: '✅ वैदिक विधि-विधान से पूजन', en: '✅ Puja as per Vedic rituals' },
-                    { hi: '✅ 15+ वर्षों का अनुभव', en: '✅ 15+ years of experience' },
-                    { hi: '✅ शुभ मुहूर्त की व्यवस्था', en: '✅ Auspicious muhurta arranged' },
-                    { hi: '✅ पूर्ण गोपनीयता', en: '✅ Complete confidentiality' },
-                    { hi: '✅ तत्काल WhatsApp प्रतिक्रिया', en: '✅ Instant WhatsApp response' },
-                    { hi: '✅ ऑनलाइन एवं ऑफलाइन पूजन', en: '✅ Online & offline puja' },
+                    { hi: 'वैदिक विधि-विधान से पूजन', en: 'Puja as per Vedic rituals' },
+                    { hi: '15+ वर्षों का अनुभव', en: '15+ years of experience' },
+                    { hi: 'शुभ मुहूर्त की व्यवस्था', en: 'Auspicious muhurta arranged' },
+                    { hi: 'पूर्ण गोपनीयता', en: 'Complete confidentiality' },
+                    { hi: 'तत्काल WhatsApp प्रतिक्रिया', en: 'Instant WhatsApp response' },
+                    { hi: 'ऑनलाइन एवं ऑफलाइन पूजन', en: 'Online & offline puja' },
                   ].map((item, i) => (
-                    <li key={i} className="text-sm text-divine-muted font-devanagari">{t(item)}</li>
+                    <li key={i} className="text-sm text-divine-muted font-devanagari flex items-center gap-2">
+                      <span className="text-gold font-bold">✦</span> {t(item)}
+                    </li>
                   ))}
                 </ul>
               </div>
@@ -129,7 +131,7 @@ export default function Booking() {
               {/* Location */}
               <div className="bg-cream-dark rounded-2xl p-5">
                 <p className="font-bold text-divine-brown font-devanagari mb-2 flex items-center gap-2">
-                  <span>📍</span> {t({ hi: 'हमारा स्थान', en: 'Our Location' })}
+                  <span className="text-gold font-bold">✦</span> {t({ hi: 'हमारा स्थान', en: 'Our Location' })}
                 </p>
                 <p className="text-sm text-divine-muted font-devanagari">
                   {t(C.location)}

@@ -64,7 +64,7 @@ export default function KundliAnalysis() {
       >
         <div className="absolute inset-0 bg-mandala opacity-20" aria-hidden="true" />
         <div className="relative z-10 max-w-3xl mx-auto px-4">
-          <div className="text-4xl mb-3 animate-float" aria-hidden="true">🔮</div>
+          <div className="text-4xl mb-3 text-gold animate-float" aria-hidden="true">📜</div>
           <span className="section-tag text-gold/80 mb-4 inline-flex">{t(kd.badge)}</span>
           <h1 id="kundli-heading" className="text-3xl sm:text-4xl md:text-5xl font-bold text-cream font-devanagari mb-4">
             {t(kd.heading)}
@@ -131,7 +131,7 @@ export default function KundliAnalysis() {
                     {submitting ? (lang === 'hi' ? '⏳ भेज रहे हैं...' : '⏳ Sending...') : t(kd.submit)}
                   </button>
                   <p className="text-center text-xs text-divine-muted font-devanagari">
-                    ✅ {t({ hi: 'WhatsApp पर विवरण जाएगा — पंडित जी 24 घंटे में उत्तर देंगे', en: 'Details sent on WhatsApp — Pandit Ji responds within 24 hours' })}
+                    <span className="text-gold font-bold">✦</span> {t({ hi: 'WhatsApp पर विवरण जाएगा — पंडित जी 24 घंटे में उत्तर देंगे', en: 'Details sent on WhatsApp — Pandit Ji responds within 24 hours' })}
                   </p>
                 </form>
               </div>
@@ -156,14 +156,14 @@ export default function KundliAnalysis() {
               {/* Online consultation info */}
               <div className="gradient-border rounded-2xl p-6 mb-6">
                 <h3 className="font-bold text-divine-brown font-devanagari mb-3">
-                  {t({ hi: '📱 ऑनलाइन परामर्श', en: '📱 Online Consultation' })}
+                  {t({ hi: 'ऑनलाइन जन्म कुंडली परामर्श', en: 'Online Horoscope Consultation' })}
                 </h3>
                 <ul className="text-sm text-divine-muted font-devanagari flex flex-col gap-2">
-                  <li>✅ {t({ hi: 'WhatsApp वीडियो कॉल पर परामर्श', en: 'Consultation via WhatsApp video call' })}</li>
-                  <li>✅ {t({ hi: 'कुंडली PDF मेल/WhatsApp पर', en: 'Horoscope PDF on mail/WhatsApp' })}</li>
-                  <li>✅ {t({ hi: '60-90 मिनट विस्तृत सत्र', en: '60-90 minute detailed session' })}</li>
-                  <li>✅ {t({ hi: 'आगामी 5 वर्षों का भविष्यफल', en: 'Predictions for next 5 years' })}</li>
-                  <li>✅ {t({ hi: 'उपाय एवं रत्न सुझाव', en: 'Remedies and gemstone recommendations' })}</li>
+                  <li className="flex items-center gap-2"><span className="text-gold font-bold">✦</span> {t({ hi: 'WhatsApp वीडियो कॉल पर परामर्श', en: 'Consultation via WhatsApp video call' })}</li>
+                  <li className="flex items-center gap-2"><span className="text-gold font-bold">✦</span> {t({ hi: 'कुंडली PDF मेल/WhatsApp पर', en: 'Horoscope PDF on mail/WhatsApp' })}</li>
+                  <li className="flex items-center gap-2"><span className="text-gold font-bold">✦</span> {t({ hi: '60-90 मिनट विस्तृत सत्र', en: '60-90 minute detailed session' })}</li>
+                  <li className="flex items-center gap-2"><span className="text-gold font-bold">✦</span> {t({ hi: 'आगामी 5 वर्षों का भविष्यफल', en: 'Predictions for next 5 years' })}</li>
+                  <li className="flex items-center gap-2"><span className="text-gold font-bold">✦</span> {t({ hi: 'उपाय एवं रत्न सुझाव', en: 'Remedies and gemstone recommendations' })}</li>
                 </ul>
               </div>
 

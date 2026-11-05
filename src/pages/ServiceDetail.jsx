@@ -299,7 +299,7 @@ export default function ServiceDetail() {
                   </div>
                   <div className="p-4 rounded-xl bg-cream-dark/70">
                     <p className="font-bold text-divine-brown text-sm font-devanagari mb-1">
-                      🌿 {t({ hi: 'प्रमुख पूजन सामग्री', en: 'Materials (Samagri)' })}
+                      <span className="text-gold font-bold">✦</span> {t({ hi: 'प्रमुख पूजन सामग्री', en: 'Materials (Samagri)' })}
                     </p>
                     <p className="text-divine-muted text-xs sm:text-sm font-devanagari">
                       {content.vidhi?.samagri?.replace(/\/\*.*?\*\//g, '').trim()}
@@ -311,7 +311,7 @@ export default function ServiceDetail() {
               {/* 5. Kahan hoti hai (Ujjain location) */}
               <div className="p-6 rounded-2xl bg-divine-brown text-cream shadow-card" data-aos="fade-up">
                 <h2 className="text-xl sm:text-2xl font-bold font-devanagari text-gold mb-3">
-                  📍 {t({ hi: 'पूजा कहाँ होती है? (उज्जैन स्थान)', en: 'Where is the Puja Performed? (Location)' })}
+                  <span className="text-gold font-bold">✦</span> {t({ hi: 'पूजा कहाँ होती है? (उज्जैन स्थान)', en: 'Where is the Puja Performed? (Location)' })}
                 </h2>
                 <p className="font-devanagari text-sm sm:text-base leading-relaxed text-cream/90">
                   {content.location}
@@ -327,7 +327,7 @@ export default function ServiceDetail() {
               {/* 6. Kharch / cost (no number; standard wording) */}
               <div className="p-6 rounded-2xl bg-amber-50 border border-amber-200" data-aos="fade-up">
                 <h2 className="text-xl font-bold text-divine-brown font-devanagari mb-2">
-                  💰 {t({ hi: 'पूजा का खर्च कितना होता है?', en: 'What is the Puja Cost?' })}
+                  <span className="text-gold font-bold">✦</span> {t({ hi: 'पूजा का खर्च एवं दक्षिणा विवरण', en: 'Puja Cost & Dakshina Details' })}
                 </h2>
                 <p className="text-divine-brown font-medium font-devanagari text-base leading-relaxed">
                   {content.costInfo?.replace(/\/\*.*?\*\//g, '').trim()}
@@ -340,7 +340,7 @@ export default function ServiceDetail() {
               {/* 7. Best days / muhurat */}
               <div className="p-6 rounded-2xl bg-white border border-saffron/20 shadow-card" data-aos="fade-up">
                 <h2 className="text-xl font-bold text-divine-brown font-devanagari mb-2">
-                  📅 {t({ hi: 'पूजा के लिए शुभ दिन एवं मुहूर्त', en: 'Best Days & Auspicious Muhurat' })}
+                  <span className="text-gold font-bold">✦</span> {t({ hi: 'पूजा के लिए शुभ दिन एवं मुहूर्त', en: 'Best Days & Auspicious Muhurat' })}
                 </h2>
                 <p className="text-divine-muted font-devanagari text-sm sm:text-base leading-relaxed">
                   {content.bestDays?.replace(/\/\*.*?\*\//g, '').trim()}
@@ -353,7 +353,7 @@ export default function ServiceDetail() {
               {/* 8. Online / outstation booking process */}
               <div className="p-6 sm:p-8 rounded-2xl bg-cream-dark/80 border border-saffron/20 shadow-card" data-aos="fade-up">
                 <h2 className="text-xl sm:text-2xl font-bold text-divine-brown font-devanagari mb-4">
-                  🌐 {t({ hi: 'बाहर के शहरों के लिए ऑनलाइन पूजा संकल्प प्रक्रिया', en: 'Online & Outstation Booking Process' })}
+                  <span className="text-gold font-bold">✦</span> {t({ hi: 'बाहर के शहरों के लिए ऑनलाइन पूजा संकल्प प्रक्रिया', en: 'Online & Outstation Booking Process' })}
                 </h2>
                 <p className="text-divine-muted font-devanagari text-sm sm:text-base leading-relaxed mb-4">
                   {content.outstationBooking}
@@ -381,7 +381,7 @@ export default function ServiceDetail() {
               {content.faqs && content.faqs.length > 0 && (
                 <div data-aos="fade-up">
                   <h2 className="text-2xl font-bold text-divine-brown font-devanagari mb-4 flex items-center gap-2">
-                    <span>❓</span> {t({ hi: `${content.name} से जुड़े अक्सर पूछे जाने वाले सवाल`, en: 'Frequently Asked Questions' })}
+                    <span className="text-gold font-bold">✦</span> {t({ hi: `${content.name} से जुड़े अक्सर पूछे जाने वाले सवाल`, en: 'Frequently Asked Questions' })}
                   </h2>
                   <div className="flex flex-col gap-3">
                     {content.faqs.map((faq, i) => (
@@ -394,7 +394,7 @@ export default function ServiceDetail() {
               {/* 11. Internal links to 2-3 related pujas and 1-2 blog posts */}
               <div className="p-6 rounded-2xl bg-white border border-saffron/20 shadow-card" data-aos="fade-up">
                 <h3 className="text-lg font-bold text-divine-brown font-devanagari mb-4">
-                  🔗 {t({ hi: 'संबंधित वैदिक पूजाएं एवं धार्मिक आलेख', en: 'Related Pujas & Articles' })}
+                  <span className="text-gold font-bold">✦</span> {t({ hi: 'संबंधित वैदिक पूजाएं एवं धार्मिक आलेख', en: 'Related Pujas & Articles' })}
                 </h3>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
