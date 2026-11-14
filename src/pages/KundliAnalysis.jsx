@@ -1,5 +1,5 @@
 // ============================================================
-// KundliAnalysis.jsx — Kundali analysis form page
+// KundliAnalysis.jsx — Pandits Of Banaras Luxury Kundali Consultation
 // ============================================================
 import { useEffect, useState } from 'react';
 import AOS from 'aos';
@@ -8,8 +8,9 @@ import { useLanguage } from '../context/LanguageContext';
 import { CONTENT } from '../data/content';
 import { SERVICES } from '../data/services';
 import { buildKundliMessage, buildWhatsAppUrl } from '../utils/whatsapp';
-import { trackKundliSubmit, trackWhatsAppClick } from '../utils/analytics';
+import { trackKundliSubmit, trackWhatsAppClick, trackPhoneCall } from '../utils/analytics';
 import SectionHeading from '../components/ui/SectionHeading';
+import panditImg from '../assets/pandit_deepak_pandya.jpg';
 
 const C = CONTENT;
 const kundliService = SERVICES.find((s) => s.slug === 'kundli-analysis');
@@ -30,7 +31,7 @@ export default function KundliAnalysis() {
   const validate = () => {
     const errs = {};
     if (!form.name.trim()) errs.name = lang === 'hi' ? 'नाम आवश्यक है' : 'Name required';
-    if (!form.phone.trim() || !/^\d{10}$/.test(form.phone.replace(/\s|-/g, ''))) errs.phone = lang === 'hi' ? 'वैध नंबर दर्ज करें' : 'Enter valid number';
+    if (!form.phone.trim() || !/^\d{10}$/.test(form.phone.replace(/\s|-/g, ''))) errs.phone = lang === 'hi' ? 'वैध 10 अंकों का नंबर दर्ज करें' : 'Enter valid 10-digit number';
     if (!form.dob) errs.dob = lang === 'hi' ? 'जन्म तिथि आवश्यक' : 'Birth date required';
     if (!form.tob.trim()) errs.tob = lang === 'hi' ? 'जन्म समय आवश्यक' : 'Birth time required';
     if (!form.pob.trim()) errs.pob = lang === 'hi' ? 'जन्म स्थान आवश्यक' : 'Birth place required';
@@ -49,142 +50,233 @@ export default function KundliAnalysis() {
     setTimeout(() => {
       window.open(url, '_blank');
       setSubmitting(false);
+      setForm({ name: '', phone: '', dob: '', tob: '', pob: '', query: '' });
     }, 300);
   };
 
-  const content = lang === 'hi' ? kundliService?.hi : kundliService?.en;
+  const inputClass = (field) =>
+    `w-full px-4 py-3 rounded-xl border bg-white text-[#1F160F] placeholder-[#8C7A6B] text-sm font-devanagari transition-all focus:outline-none ${
+      errors[field]
+        ? 'border-red-400 focus:border-red-500 ring-1 ring-red-400'
+        : 'border-[#E8DCC8] focus:border-[#D97706] focus:ring-1 focus:ring-[#D97706]'
+    }`;
 
   return (
-    <main className="pt-20">
-      {/* Header */}
+    <main className="pt-20 bg-[#FAF7F2] text-[#2D1B00]">
+      
+      {/* ── Page Header ── */}
       <section
-        className="py-14 sm:py-24 text-center text-white relative overflow-hidden"
-        style={{ background: 'linear-gradient(135deg, #1C0A00, #2D1500)' }}
+        className="py-16 sm:py-24 text-center relative overflow-hidden bg-gradient-to-b from-[#FFFDF9] via-[#FAF6EE] to-[#F5EFE4] border-b border-[#E8DCC8]"
         aria-labelledby="kundli-heading"
       >
-        <div className="absolute inset-0 bg-mandala opacity-20" aria-hidden="true" />
-        <div className="relative z-10 max-w-3xl mx-auto px-4">
-          <div className="text-4xl mb-3 text-gold animate-float" aria-hidden="true">📜</div>
-          <span className="section-tag text-gold/80 mb-4 inline-flex">{t(kd.badge)}</span>
-          <h1 id="kundli-heading" className="text-3xl sm:text-4xl md:text-5xl font-bold text-cream font-devanagari mb-4">
+        <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[radial-gradient(circle,_rgba(245,200,66,0.18)_0%,_transparent_70%)] pointer-events-none blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full bg-[radial-gradient(circle,_rgba(139,26,26,0.06)_0%,_transparent_70%)] pointer-events-none blur-2xl" />
+
+        <div className="relative z-10 max-w-4xl mx-auto px-4">
+          <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full border border-gold/60 bg-[#FFF7E6] text-[#8C3814] text-xs font-bold font-sans uppercase tracking-wider mb-4 shadow-xs">
+            <span className="text-gold">✦</span>
+            <span>{t({ hi: 'प्रामाणिक वैदिक ज्योतिष परामर्श • उज्जैन', en: 'Authentic Vedic Astrology Consultation • Ujjain' })}</span>
+            <span className="text-gold">✦</span>
+          </span>
+
+          <h1 id="kundli-heading" className="font-heading font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#1F160F] leading-tight mb-4">
             {t(kd.heading)}
           </h1>
-          <p className="text-cream/70 font-devanagari text-sm sm:text-base">{t(kd.subheading)}</p>
-          <div className="gold-line mt-4" />
+
+          <p className="text-[#5C4D3E] font-devanagari text-base sm:text-lg max-w-2xl mx-auto leading-relaxed font-medium">
+            {t(kd.subheading)}
+          </p>
+
+          <div className="w-24 h-1 bg-gradient-to-r from-transparent via-[#D97706] to-transparent rounded-full mx-auto mt-6" />
         </div>
       </section>
 
-      {/* Form + Info */}
-      <section className="py-16 bg-cream">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+      {/* ── Form & Info Section ── */}
+      <section className="py-20 bg-[#FAF7F2]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+            
+            {/* Left Column: Astrology Guidance & Trust */}
+            <div data-aos="fade-right" className="lg:col-span-5 space-y-6">
+              <div className="bg-white rounded-3xl p-6 sm:p-8 border-2 border-[#E8DCC8] shadow-[0_10px_35px_rgba(45,27,0,0.06)]">
+                <span className="bg-[#F5C842] text-[#1C0A00] font-bold text-xs uppercase px-3 py-1 rounded-full inline-block mb-4">
+                  वैदिक कुंडली विश्लेषण
+                </span>
 
-            {/* Left: Form */}
-            <div data-aos="fade-right">
-              <div className="gradient-border rounded-3xl p-4 sm:p-8 bg-cream-light shadow-card">
-                <h2 className="text-2xl font-bold text-divine-brown font-devanagari mb-6">
-                  {t({ hi: 'अपनी जन्म विवरण भरें', en: 'Enter Your Birth Details' })}
-                </h2>
-                <form onSubmit={handleSubmit} noValidate id="kundli-form" className="flex flex-col gap-4">
-                  {/* Name */}
+                <h3 className="font-heading font-black text-2xl text-[#1F160F] mb-3">
+                  {t({ hi: 'कुंडली में क्या जांचा जाता है?', en: 'What is Analyzed in Your Horoscope?' })}
+                </h3>
+
+                <p className="text-sm text-[#4A3B2C] leading-relaxed font-devanagari mb-6 font-medium">
+                  जन्म तिथि, सटीक समय एवं जन्म स्थान के आधार पर वैदिक गणित द्वारा लग्न कुंडली, चंद्र कुंडली व नवमांश का विश्लेषण किया जाता है।
+                </p>
+
+                <ul className="space-y-3.5 text-sm font-devanagari text-[#1F160F]">
+                  <li className="flex items-center gap-3">
+                    <span className="text-[#D97706] text-base">✦</span>
+                    <span><strong>मांगलिक दोष (Mangal Dosh):</strong> विवाह में देरी, बाधा या वैवाहिक क्लेश</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <span className="text-[#D97706] text-base">✦</span>
+                    <span><strong>कालसर्प योग (Kaal Sarp Yoga):</strong> 12 प्रकार के कालसर्प दोषों की पहचान</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <span className="text-[#D97706] text-base">✦</span>
+                    <span><strong>पितृ दोष एवं गुरु चांडाल:</strong> वंश वृद्धि, स्वास्थ्य व पारिवारिक अशांति</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <span className="text-[#D97706] text-base">✦</span>
+                    <span><strong>शनि साढ़ेसाती व ढैय्या:</strong> वर्तमान दशा-महादशा का प्रभाव एवं शांति</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <span className="text-[#D97706] text-base">✦</span>
+                    <span><strong>सटीक वैदिक उपाय:</strong> जप, अनुष्ठान, दान व रत्न परामर्श</span>
+                  </li>
+                </ul>
+
+                {/* Purohit seal */}
+                <div className="mt-8 pt-6 border-t border-[#F0E6D8] flex items-center gap-4">
+                  <img
+                    src={panditImg}
+                    alt="पंडित दीपक पंड्या"
+                    className="w-14 h-14 rounded-full object-cover border-2 border-[#D97706]"
+                  />
                   <div>
-                    <label className="block text-sm font-semibold text-divine-brown mb-1.5 font-devanagari" htmlFor="kd-name">{t(kd.fields.name)}</label>
-                    <input id="kd-name" type="text" className={`form-input ${errors.name ? 'border-red-400' : ''}`} placeholder={t(kd.fields.name.placeholder)} value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} />
-                    {errors.name && <p className="text-red-500 text-xs mt-1 font-devanagari">{errors.name}</p>}
+                    <h4 className="font-heading font-bold text-sm text-[#1F160F]">पंडित दीपक पंड्या</h4>
+                    <p className="text-xs text-[#8C3814] font-medium font-devanagari">15+ वर्ष वैदिक अनुभव • उज्जैन सिद्ध पीठ</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column: Birth Details Form */}
+            <div data-aos="fade-left" className="lg:col-span-7">
+              <div className="bg-white rounded-3xl p-6 sm:p-10 border-2 border-[#E8DCC8] shadow-[0_12px_40px_rgba(45,27,0,0.08)]">
+                
+                <div className="mb-6">
+                  <h3 className="font-heading font-black text-2xl sm:text-3xl text-[#1F160F] mb-2">
+                    {t({ hi: 'जन्म विवरण दर्ज करें', en: 'Enter Birth Details for Analysis' })}
+                  </h3>
+                  <p className="text-xs sm:text-sm text-[#5C4D3E] font-devanagari">
+                    फॉर्म सबमिट करते ही आपका विवरण सीधे पंडित जी के WhatsApp पर पहुंच जाएगा।
+                  </p>
+                </div>
+
+                <form onSubmit={handleSubmit} noValidate className="space-y-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {/* Name */}
+                    <div>
+                      <label className="block text-sm font-bold text-[#1F160F] mb-1 font-devanagari">
+                        आपका पूरा नाम <span className="text-red-500">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        className={inputClass('name')}
+                        placeholder="उदा. राहुल शर्मा"
+                        value={form.name}
+                        onChange={(e) => setForm({ ...form, name: e.target.value })}
+                      />
+                      {errors.name && <p className="text-red-500 text-xs mt-1 font-devanagari">{errors.name}</p>}
+                    </div>
+
+                    {/* Phone */}
+                    <div>
+                      <label className="block text-sm font-bold text-[#1F160F] mb-1 font-devanagari">
+                        WhatsApp मोबाइल नंबर <span className="text-red-500">*</span>
+                      </label>
+                      <input
+                        type="tel"
+                        className={inputClass('phone')}
+                        placeholder="10 अंकों का मोबाइल नंबर"
+                        value={form.phone}
+                        onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                        maxLength={12}
+                      />
+                      {errors.phone && <p className="text-red-500 text-xs mt-1 font-devanagari">{errors.phone}</p>}
+                    </div>
                   </div>
 
-                  {/* Phone */}
-                  <div>
-                    <label className="block text-sm font-semibold text-divine-brown mb-1.5 font-devanagari" htmlFor="kd-phone">{t(kd.fields.phone)}</label>
-                    <input id="kd-phone" type="tel" className={`form-input ${errors.phone ? 'border-red-400' : ''}`} placeholder={t(kd.fields.phone.placeholder)} value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} maxLength={12} />
-                    {errors.phone && <p className="text-red-500 text-xs mt-1 font-devanagari">{errors.phone}</p>}
-                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    {/* DOB */}
+                    <div>
+                      <label className="block text-sm font-bold text-[#1F160F] mb-1 font-devanagari">
+                        जन्म तिथि <span className="text-red-500">*</span>
+                      </label>
+                      <input
+                        type="date"
+                        className={inputClass('dob')}
+                        value={form.dob}
+                        onChange={(e) => setForm({ ...form, dob: e.target.value })}
+                      />
+                      {errors.dob && <p className="text-red-500 text-xs mt-1 font-devanagari">{errors.dob}</p>}
+                    </div>
 
-                  {/* DOB */}
-                  <div>
-                    <label className="block text-sm font-semibold text-divine-brown mb-1.5 font-devanagari" htmlFor="kd-dob">{t(kd.fields.dob)}</label>
-                    <input id="kd-dob" type="date" className={`form-input ${errors.dob ? 'border-red-400' : ''}`} value={form.dob} onChange={(e) => setForm({ ...form, dob: e.target.value })} />
-                    {errors.dob && <p className="text-red-500 text-xs mt-1 font-devanagari">{errors.dob}</p>}
-                  </div>
+                    {/* TOB */}
+                    <div>
+                      <label className="block text-sm font-bold text-[#1F160F] mb-1 font-devanagari">
+                        जन्म समय <span className="text-red-500">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        className={inputClass('tob')}
+                        placeholder="उदा. 08:30 AM"
+                        value={form.tob}
+                        onChange={(e) => setForm({ ...form, tob: e.target.value })}
+                      />
+                      {errors.tob && <p className="text-red-500 text-xs mt-1 font-devanagari">{errors.tob}</p>}
+                    </div>
 
-                  {/* TOB */}
-                  <div>
-                    <label className="block text-sm font-semibold text-divine-brown mb-1.5 font-devanagari" htmlFor="kd-tob">{t(kd.fields.tob)}</label>
-                    <input id="kd-tob" type="text" className={`form-input ${errors.tob ? 'border-red-400' : ''}`} placeholder={t(kd.fields.tob.placeholder)} value={form.tob} onChange={(e) => setForm({ ...form, tob: e.target.value })} />
-                    {errors.tob && <p className="text-red-500 text-xs mt-1 font-devanagari">{errors.tob}</p>}
-                  </div>
-
-                  {/* POB */}
-                  <div>
-                    <label className="block text-sm font-semibold text-divine-brown mb-1.5 font-devanagari" htmlFor="kd-pob">{t(kd.fields.pob)}</label>
-                    <input id="kd-pob" type="text" className={`form-input ${errors.pob ? 'border-red-400' : ''}`} placeholder={t(kd.fields.pob.placeholder)} value={form.pob} onChange={(e) => setForm({ ...form, pob: e.target.value })} />
-                    {errors.pob && <p className="text-red-500 text-xs mt-1 font-devanagari">{errors.pob}</p>}
+                    {/* POB */}
+                    <div>
+                      <label className="block text-sm font-bold text-[#1F160F] mb-1 font-devanagari">
+                        जन्म स्थान <span className="text-red-500">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        className={inputClass('pob')}
+                        placeholder="शहर, राज्य"
+                        value={form.pob}
+                        onChange={(e) => setForm({ ...form, pob: e.target.value })}
+                      />
+                      {errors.pob && <p className="text-red-500 text-xs mt-1 font-devanagari">{errors.pob}</p>}
+                    </div>
                   </div>
 
                   {/* Query */}
                   <div>
-                    <label className="block text-sm font-semibold text-divine-brown mb-1.5 font-devanagari" htmlFor="kd-query">{t(kd.fields.query)} ({lang === 'hi' ? 'वैकल्पिक' : 'Optional'})</label>
-                    <textarea id="kd-query" className="form-input resize-none" rows={3} placeholder={t(kd.fields.query.placeholder)} value={form.query} onChange={(e) => setForm({ ...form, query: e.target.value })} />
+                    <label className="block text-sm font-bold text-[#1F160F] mb-1 font-devanagari">
+                      मुख्य समस्या या प्रश्न (विवाह, करियर, स्वास्थ्य आदि)
+                    </label>
+                    <textarea
+                      rows={3}
+                      className={`${inputClass('query')} resize-none`}
+                      placeholder="अपनी समस्या का संक्षेप में विवरण दें..."
+                      value={form.query}
+                      onChange={(e) => setForm({ ...form, query: e.target.value })}
+                    />
                   </div>
 
-                  <button type="submit" disabled={submitting} className="btn-gold w-full py-4 justify-center font-devanagari text-base mt-2 disabled:opacity-70" id="kundli-submit-btn">
-                    {submitting ? (lang === 'hi' ? '⏳ भेज रहे हैं...' : '⏳ Sending...') : t(kd.submit)}
+                  {/* Submit CTA */}
+                  <button
+                    type="submit"
+                    disabled={submitting}
+                    className="w-full py-4 rounded-xl bg-gradient-to-r from-[#D97706] to-[#B45309] hover:from-[#B45309] hover:to-[#92400E] text-white font-bold font-devanagari text-base shadow-[0_4px_16px_rgba(217,119,6,0.35)] flex items-center justify-center gap-2.5 transition-all transform hover:-translate-y-0.5 active:translate-y-0 cursor-pointer disabled:opacity-70"
+                  >
+                    <span>💬 WhatsApp पर कुंडली विश्लेषण प्राप्त करें</span>
                   </button>
-                  <p className="text-center text-xs text-divine-muted font-devanagari">
-                    <span className="text-gold font-bold">✦</span> {t({ hi: 'WhatsApp पर विवरण जाएगा — पंडित जी 24 घंटे में उत्तर देंगे', en: 'Details sent on WhatsApp — Pandit Ji responds within 24 hours' })}
+
+                  <p className="text-center text-xs text-[#6B4C1E] font-devanagari pt-1">
+                    🔒 आपका विवरण 100% गोपनीय रखा जाता है।
                   </p>
                 </form>
+
               </div>
             </div>
 
-            {/* Right: Info */}
-            <div data-aos="fade-left">
-              <h2 className="text-2xl font-bold text-divine-brown font-devanagari mb-4">
-                {t({ hi: 'कुंडली विश्लेषण में क्या मिलेगा?', en: 'What\'s Included in Kundali Analysis?' })}
-              </h2>
-              {content?.benefits && (
-                <div className="flex flex-col gap-3 mb-8">
-                  {content.benefits.map((b, i) => (
-                    <div key={i} className="flex items-center gap-3 p-3 rounded-xl bg-cream-dark">
-                      <span className="text-gold text-lg">✦</span>
-                      <p className="text-sm font-devanagari text-divine-brown">{b}</p>
-                    </div>
-                  ))}
-                </div>
-              )}
-
-              {/* Online consultation info */}
-              <div className="gradient-border rounded-2xl p-6 mb-6">
-                <h3 className="font-bold text-divine-brown font-devanagari mb-3">
-                  {t({ hi: 'ऑनलाइन जन्म कुंडली परामर्श', en: 'Online Horoscope Consultation' })}
-                </h3>
-                <ul className="text-sm text-divine-muted font-devanagari flex flex-col gap-2">
-                  <li className="flex items-center gap-2"><span className="text-gold font-bold">✦</span> {t({ hi: 'WhatsApp वीडियो कॉल पर परामर्श', en: 'Consultation via WhatsApp video call' })}</li>
-                  <li className="flex items-center gap-2"><span className="text-gold font-bold">✦</span> {t({ hi: 'कुंडली PDF मेल/WhatsApp पर', en: 'Horoscope PDF on mail/WhatsApp' })}</li>
-                  <li className="flex items-center gap-2"><span className="text-gold font-bold">✦</span> {t({ hi: '60-90 मिनट विस्तृत सत्र', en: '60-90 minute detailed session' })}</li>
-                  <li className="flex items-center gap-2"><span className="text-gold font-bold">✦</span> {t({ hi: 'आगामी 5 वर्षों का भविष्यफल', en: 'Predictions for next 5 years' })}</li>
-                  <li className="flex items-center gap-2"><span className="text-gold font-bold">✦</span> {t({ hi: 'उपाय एवं रत्न सुझाव', en: 'Remedies and gemstone recommendations' })}</li>
-                </ul>
-              </div>
-
-              <div className="bg-cream-dark rounded-2xl p-5 text-center">
-                <p className="text-divine-muted font-devanagari text-sm mb-3">
-                  {t({ hi: 'सीधे WhatsApp पर संपर्क करें', en: 'Contact directly on WhatsApp' })}
-                </p>
-                <a
-                  href="https://wa.me/916263401651"
-                  onClick={() => trackWhatsAppClick('kundli_sidebar')}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-gold font-devanagari"
-                >
-                  WhatsApp: 6263401651
-                </a>
-              </div>
-            </div>
           </div>
         </div>
       </section>
+
     </main>
   );
 }

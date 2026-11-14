@@ -1,30 +1,23 @@
 // ============================================================
-// About.jsx
+// About.jsx — Pandits Of Banaras Luxury About Page
 // ============================================================
 import { useEffect } from 'react';
 import vipGuestImg from '../assets/vip_guest.jpg';
 import panditImg from '../assets/pandit_deepak_pandya.jpg';
+import heroBg from '../assets/hero_mangal_puja.jpg';
 import { Link } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useLanguage } from '../context/LanguageContext';
 import { CONTENT } from '../data/content';
 import SectionHeading from '../components/ui/SectionHeading';
+import { WA_HREF, PHONE_HREF } from '../utils/whatsapp';
 import { trackWhatsAppClick, trackPhoneCall } from '../utils/analytics';
 
 const C = CONTENT;
 
-// VIP Photo Gallery
-const VIP_PHOTOS = [
-  { img: null, emoji: '🙏', hi: 'नेता जी के आवास पर पूजन — इंदौर', en: 'Puja at Leader\'s Residence — Indore' },
-  { img: null, emoji: '🌟', hi: 'जिला कलेक्टर के साथ — उज्जैन', en: 'With District Collector — Ujjain' },
-  { img: null, emoji: '📜', hi: 'विधायक जी का गृह प्रवेश पूजन', en: 'MLA\'s Griha Pravesh Puja' },
-  { img: null, emoji: '🏆', hi: 'सांसद जी के साथ विशेष अनुष्ठान', en: 'Special Ritual with MP Ji' },
-  { img: null, emoji: '⭐', hi: 'मंत्री जी के साथ महामृत्युंजय अनुष्ठान', en: 'Mahamrityunjay with Minister Ji' },
-];
-
 export default function About() {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const ab = C.about;
 
   useEffect(() => {
@@ -33,171 +26,235 @@ export default function About() {
   }, []);
 
   return (
-    <main className="pt-20">
-      {/* Page Header */}
+    <main className="pt-20 bg-[#FAF7F2] text-[#2D1B00]">
+      
+      {/* ── Luxury Page Header ── */}
       <section
-        className="py-14 sm:py-20 text-center text-white relative overflow-hidden"
-        style={{ background: 'linear-gradient(135deg, #1C0A00, #2D1500)' }}
+        className="py-16 sm:py-24 text-center relative overflow-hidden bg-gradient-to-b from-[#FFFDF9] via-[#FAF6EE] to-[#F5EFE4] border-b border-[#E8DCC8]"
         aria-labelledby="about-page-heading"
       >
-        <div className="absolute inset-0 bg-mandala opacity-20" aria-hidden="true" />
-        <div className="relative z-10 max-w-3xl mx-auto px-4">
-          <span className="section-tag text-gold/80 mb-4 inline-flex">{t(ab.badge)}</span>
-          <h1 id="about-page-heading" className="text-3xl sm:text-4xl md:text-5xl font-bold text-cream font-devanagari mb-4">
-            {t(ab.heading)}
+        <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[radial-gradient(circle,_rgba(245,200,66,0.18)_0%,_transparent_70%)] pointer-events-none blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full bg-[radial-gradient(circle,_rgba(139,26,26,0.06)_0%,_transparent_70%)] pointer-events-none blur-2xl" />
+
+        <div className="relative z-10 max-w-4xl mx-auto px-4">
+          <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full border border-gold/60 bg-[#FFF7E6] text-[#8C3814] text-xs font-bold font-sans uppercase tracking-wider mb-4 shadow-xs">
+            <span className="text-gold">✦</span>
+            <span>{t({ hi: 'वैदिक पुरोहित परंपरा • उज्जैन सिद्ध पीठ', en: 'Vedic Purohit Lineage • Ujjain Siddha Peeth' })}</span>
+            <span className="text-gold">✦</span>
+          </span>
+
+          <h1 id="about-page-heading" className="font-heading font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#1F160F] leading-tight mb-4">
+            {lang === 'hi' ? 'वैदिक पंडित दीपक पंड्या — परिचय एवं परंपरा' : 'About Vedic Pandit Deepak Pandya'}
           </h1>
-          <p className="text-gold font-devanagari font-semibold mb-2 text-sm sm:text-base">{t(ab.subheading)}</p>
-          <div className="gold-line" />
+
+          <p className="text-[#5C4D3E] font-devanagari text-base sm:text-lg max-w-2xl mx-auto leading-relaxed font-medium">
+            {t({
+              hi: 'महाकाल की पावन नगरी उज्जैन में 15+ वर्षों से वैदिक विधि-विधान द्वारा मंगल दोष, कालसर्प, पितृ दोष व समस्त अनुष्ठान संपन्न करवाने वाले प्रामाणिक पुरोहित।',
+              en: 'Authentic Vedic priest in the sacred city of Ujjain, performing Mangal Dosh, Kaal Sarp, Pitru Dosh, and divine Vedic rituals for 15+ years.',
+            })}
+          </p>
+
+          <div className="w-24 h-1 bg-gradient-to-r from-transparent via-[#D97706] to-transparent rounded-full mx-auto mt-6" />
         </div>
       </section>
 
-      {/* Biography */}
-      <section className="py-20 bg-cream">
+      {/* ── Biography & Lineage ── */}
+      <section className="py-20 bg-[#FAF7F2]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            {/* Left: Photo + Quick stats */}
-            <div data-aos="fade-right">
-              {/* Pandit Ji Portrait Card */}
-              <div className="relative rounded-2xl overflow-hidden shadow-divine border-2 border-gold/40 mb-6 group bg-divine-dark aspect-[3/4] sm:aspect-[4/5] max-h-[520px]">
-                <img
-                  src={panditImg}
-                  alt={t(C.panditName)}
-                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
-                />
-                {/* Spiritual Vignette & Name Plate */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent flex flex-col justify-end p-6 text-white">
-                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gold/90 text-divine-dark text-xs font-bold font-devanagari self-start mb-2 shadow-sm">
-                    ✦ {t({ hi: '15+ वर्ष अनुभव', en: '15+ Years Exp' })}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            {/* Left: Portrait Card */}
+            <div data-aos="fade-right" className="lg:col-span-5">
+              <div className="bg-white rounded-3xl p-4 border-2 border-[#E8DCC8] shadow-[0_12px_40px_rgba(45,27,0,0.08)]">
+                <div className="relative rounded-2xl overflow-hidden aspect-[4/5] bg-black">
+                  <img
+                    src={panditImg}
+                    alt={t(C.panditName)}
+                    className="w-full h-full object-cover object-top"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-6 text-white">
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#F5C842] text-[#1C0A00] text-xs font-bold font-heading self-start mb-2 uppercase tracking-wider">
+                      ✦ 15+ YRS VEDIC PUROHIT
+                    </span>
+                    <h2 className="font-heading font-black text-2xl sm:text-3xl text-cream">
+                      {t(C.panditName)}
+                    </h2>
+                    <p className="text-gold text-xs sm:text-sm font-devanagari mt-1 flex items-center gap-1">
+                      <span>📍</span> {t(C.location)}
+                    </p>
                   </div>
-                  <h2 className="text-2xl sm:text-3xl font-bold text-cream font-devanagari drop-shadow-md">
-                    {t(C.panditName)}
-                  </h2>
-                  <p className="text-gold font-devanagari text-sm mt-1 flex items-center gap-1">
-                    <span className="text-gold font-bold">✦</span> {t(C.location)}
-                  </p>
-                  <p className="text-xs text-cream/75 font-devanagari mt-1">
-                    {t({ hi: 'वैदिक पुरोहित, महाकाल की पावन नगरी', en: 'Vedic Priest, Holy City of Mahakal' })}
-                  </p>
+                </div>
+
+                {/* Quick Trust Strip below photo */}
+                <div className="mt-4 pt-3 border-t border-[#F0E6D8] flex items-center justify-between text-xs sm:text-sm text-[#5C4D3E]">
+                  <div className="flex items-center gap-1 font-bold text-[#1F160F]">
+                    <span className="text-amber-500">★★★★★</span>
+                    <span>5.0 (150+ Reviews)</span>
+                  </div>
+                  <div className="flex items-center gap-1 text-emerald-700 font-semibold">
+                    <span>✓</span> Verified Ujjain Purohit
+                  </div>
                 </div>
               </div>
+            </div>
 
-              {/* Quick stats grid */}
-              <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-2 gap-3 w-full mb-6">
-                {[
-                  { hi: { count: '15+', label: 'वर्ष अनुभव' }, en: { count: '15+', label: 'Years Exp' } },
-                  { hi: { count: '5000+', label: 'सफल अनुष्ठान' }, en: { count: '5000+', label: 'Rituals' } },
-                  { hi: { count: '9+', label: 'वैदिक सेवाएं' }, en: { count: '9+', label: 'Services' } },
-                  { hi: { count: '4.9⭐', label: 'भक्त संतुष्टि' }, en: { count: '4.9⭐', label: 'Rating' } },
-                ].map((s, i) => {
-                  const sv = t(s);
-                  return (
-                    <div key={i} className="gradient-border rounded-xl p-3.5 text-center bg-cream-light shadow-sm">
-                      <p className="text-2xl font-bold text-shimmer">{sv?.count}</p>
-                      <p className="text-xs text-divine-muted font-devanagari font-medium mt-0.5">{sv?.label}</p>
-                    </div>
-                  );
+            {/* Right: Bio Text & Values */}
+            <div data-aos="fade-left" className="lg:col-span-7 flex flex-col justify-center">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-gold/60 bg-[#FFF7E6] text-[#8C3814] text-xs font-bold uppercase tracking-wider mb-3 self-start">
+                AUTHENTIC VEDIC HERITAGE
+              </span>
+
+              <h2 className="font-heading font-black text-3xl sm:text-4xl text-[#1F160F] mb-4 leading-tight">
+                {t({
+                  hi: 'शास्त्रसम्मत वैदिक विधि एवं सनातन परंपरा के संवाहक',
+                  en: 'Bearer of Ancient Shastric Vidhi & Sanatan Tradition',
                 })}
-              </div>
+              </h2>
 
-              {/* Contact Quick */}
-              <div className="gradient-border p-5 rounded-2xl text-center bg-cream-light shadow-card">
-                <p className="font-bold text-divine-brown font-devanagari mb-3">
-                  {t({ hi: 'पंडित जी से सीधा परामर्श लें', en: 'Consult Directly With Pandit Ji' })}
-                </p>
-                <div className="flex gap-3 justify-center flex-wrap">
-                  <a href="tel:+916263401651" onClick={() => trackPhoneCall('about_page')} className="btn-primary text-sm py-2.5 px-5">📞 +91 6263401651</a>
-                  <a href="https://wa.me/916263401651" onClick={() => trackWhatsAppClick('about_page')} target="_blank" rel="noopener noreferrer" className="btn-secondary text-sm py-2.5 px-5">💬 WhatsApp</a>
+              <p className="text-base text-[#4A3B2C] leading-relaxed font-devanagari mb-5 font-medium">
+                {t({
+                  hi: 'पंडित दीपक पंड्या जी का जन्म उज्जैन के प्रतिष्ठित वैदिक ब्राह्मण परिवार में हुआ। शुक्ल यजुर्वेद परंपरा से दीक्षित होकर, उन्होंने वेद-वेदांग, कर्मकांड एवं ज्योतिष शास्त्र का गहन अध्ययन किया है। विगत 15 वर्षों से वे भगवान महाकालेश्वर की नगरी में मंगलनाथ मंदिर, रामघाट एवं सिद्धवट क्षेत्र में अनुष्ठान करवा रहे हैं।',
+                  en: 'Pandit Deepak Pandya was born into a respected Vedic Brahmin family of Ujjain. Educated in the Shukla Yajurveda tradition, he has extensively studied Karmakanda, Vedic rituals, and Astrology. For over 15 years, he has guided devotees at Mangalnath Temple, Ramghat, and sacred shrines of Ujjain.',
+                })}
+              </p>
+
+              <p className="text-base text-[#4A3B2C] leading-relaxed font-devanagari mb-6 font-medium">
+                {t({
+                  hi: 'हमारा मुख्य ध्येय प्रत्येक यजमान की समस्या का वास्तविक ज्योतिषीय कारण समझकर, निष्काम भाव व शुद्ध उच्चारण से पूजा संपन्न कराना है, ताकि संकल्प का पूर्ण फल प्राप्त हो सके।',
+                  en: 'Our primary mission is to diagnose the root astrological cause and perform rituals with pure Sanskrit mantra chanting and authentic devotion so every devotee receives the full divine fruit of their Sankalp.',
+                })}
+              </p>
+
+              {/* 4 Trust Highlights Grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+                <div className="bg-white p-3.5 rounded-2xl border border-[#E8DCC8] shadow-xs flex items-center gap-3">
+                  <span className="text-2xl">🔱</span>
+                  <div>
+                    <h4 className="font-bold text-[#1F160F] text-sm font-devanagari">शुक्ल यजुर्वेद परंपरा</h4>
+                    <p className="text-xs text-[#5C4D3E]">100% शुद्ध वैदिक मंत्रोच्चार</p>
+                  </div>
+                </div>
+                <div className="bg-white p-3.5 rounded-2xl border border-[#E8DCC8] shadow-xs flex items-center gap-3">
+                  <span className="text-2xl">🪔</span>
+                  <div>
+                    <h4 className="font-bold text-[#1F160F] text-sm font-devanagari">मंगलनाथ सिद्ध पीठ</h4>
+                    <p className="text-xs text-[#5C4D3E]">मंगल ग्रह की मूल जन्मभूमि पर पूजन</p>
+                  </div>
+                </div>
+                <div className="bg-white p-3.5 rounded-2xl border border-[#E8DCC8] shadow-xs flex items-center gap-3">
+                  <span className="text-2xl">📜</span>
+                  <div>
+                    <h4 className="font-bold text-[#1F160F] text-sm font-devanagari">पारदर्शी दक्षिणा व सामग्री</h4>
+                    <p className="text-xs text-[#5C4D3E]">कोई छिपा हुआ शुल्क नहीं</p>
+                  </div>
+                </div>
+                <div className="bg-white p-3.5 rounded-2xl border border-[#E8DCC8] shadow-xs flex items-center gap-3">
+                  <span className="text-2xl">📹</span>
+                  <div>
+                    <h4 className="font-bold text-[#1F160F] text-sm font-devanagari">लाइव वीडियो संकल्प</h4>
+                    <p className="text-xs text-[#5C4D3E]">बाहर के शहरों के यजमानों हेतु सुविधा</p>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            {/* Right: Bio */}
-            <div data-aos="fade-left">
-              <SectionHeading
-                badge={t({ hi: 'जीवन परिचय', en: 'Biography' })}
-                heading={t(ab.heading)}
-                subheading=""
-                center={false}
-              />
-              {t(ab.bio).map((para, i) => (
-                <p key={i} className="text-divine-muted leading-relaxed font-devanagari mb-4">
-                  {para}
-                </p>
-              ))}
-
-              {/* Credentials */}
-              <h3 className="text-xl font-bold text-divine-brown font-devanagari mt-8 mb-4">
-                {t(ab.credentials.heading)}
-              </h3>
-              <div className="flex flex-col gap-3">
-                {ab.credentials.items.map((item, i) => (
-                  <div key={i} className="flex items-start gap-3 p-3 rounded-xl bg-cream-dark" data-aos="fade-up" data-aos-delay={i * 60}>
-                    <span className="text-xl shrink-0" aria-hidden="true">{item.icon}</span>
-                    <p className="text-sm text-divine-brown font-devanagari font-medium">{t(item)}</p>
-                  </div>
-                ))}
+              {/* Action Buttons */}
+              <div className="flex flex-wrap gap-4">
+                <a
+                  href={PHONE_HREF}
+                  onClick={() => trackPhoneCall('about_page')}
+                  className="bg-gradient-to-r from-[#D97706] to-[#B45309] hover:from-[#B45309] hover:to-[#92400E] text-white px-7 py-3.5 rounded-xl font-bold text-sm shadow-md flex items-center gap-2 transition-all transform hover:-translate-y-0.5"
+                >
+                  <span>📞 सीधे पंडित जी से बात करें</span>
+                </a>
+                <a
+                  href={WA_HREF}
+                  onClick={() => trackWhatsAppClick('about_page')}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-[#25D366] hover:bg-[#1EBE5D] text-white px-7 py-3.5 rounded-xl font-bold text-sm shadow-md flex items-center gap-2 transition-all transform hover:-translate-y-0.5"
+                >
+                  <span>💬 WhatsApp परामर्श</span>
+                </a>
               </div>
 
-              <div className="mt-8 flex gap-4 flex-wrap">
-                <Link to="/booking" className="btn-gold font-devanagari">
-                  {t({ hi: 'अभी पूजा बुक करें', en: 'Book Puja Now' })}
-                </Link>
-                <Link to="/services" className="btn-secondary font-devanagari">
-                  {t({ hi: 'सेवाएं देखें', en: 'View Services' })}
-                </Link>
-              </div>
             </div>
+
           </div>
         </div>
       </section>
 
-      {/* VIP / Credibility Gallery */}
-      <section className="py-20 bg-divine-dark" aria-labelledby="vip-gallery-heading">
+      {/* ── VIP Devotees & Special Sankalp Section ── */}
+      <section className="py-20 bg-white border-t border-[#E8DCC8]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <SectionHeading
-            badge={t({ hi: '🏆 विशेष अतिथि', en: '🏆 VIP Guests' })}
-            heading={t({ hi: 'राजनेताओं एवं मंत्रियों का विश्वास', en: 'Trusted by Politicians & Ministers' })}
-            subheading={t({ hi: 'मध्यप्रदेश के कई प्रतिष्ठित जनप्रतिनिधियों ने पंडित जी से पूजन करवाया है', en: 'Several prominent representatives of Madhya Pradesh have had puja performed by Pandit Ji' })}
-            light
+            badge={t({ hi: 'विशिष्ट यजमान एवं अनुभव', en: 'Devotee Experiences & Rituals' })}
+            heading={t({ hi: 'उज्जैन सिद्ध पीठ में विशिष्ट अनुष्ठान', en: 'Distinguished Rituals at Ujjain' })}
+            subheading={t({
+              hi: 'देशभर के विभिन्न शहरों से आए विशिष्ट यजमानों, संतों व श्रद्धालुओं द्वारा कराए गए सफल पूजन।',
+              en: 'Successful pujas performed for distinguished guests, spiritual seekers, and devotees from across India.',
+            })}
           />
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-8">
-            {/* Real VIP Photo — first card */}
-            <div
-              className="gallery-item rounded-2xl overflow-hidden border border-saffron/30 shadow-lg"
-              data-aos="fade-up"
-              data-aos-delay={0}
-              style={{ gridColumn: 'span 1' }}
-            >
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12 items-center">
+            <div className="rounded-3xl overflow-hidden border-2 border-[#E8DCC8] shadow-lg group relative aspect-[16/10]">
               <img
                 src={vipGuestImg}
-                alt={t({ hi: 'राज्य मंत्री के साथ — विशेष पूजन', en: 'Special Puja with State Minister' })}
-                className="w-full h-full object-cover"
-                style={{ minHeight: '200px', maxHeight: '280px' }}
+                alt="विशिष्ट यजमान पूजन"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
-              <div className="bg-gradient-to-t from-black/70 to-transparent p-3 -mt-12 relative">
-                <p className="text-cream/90 text-xs font-devanagari text-center">
-                  {t({ hi: 'राज्य मंत्री के साथ — भोपाल', en: 'With State Minister — Bhopal' })}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent flex flex-col justify-end p-6 text-white">
+                <span className="bg-[#F5C842] text-[#1C0A00] font-bold text-xs uppercase px-2.5 py-1 rounded self-start mb-1.5">
+                  विशिष्ट यजमान सम्मान
+                </span>
+                <p className="font-heading font-bold text-base sm:text-lg text-cream">
+                  महाकाल एवं मंगलनाथ क्षेत्र में वैदिक संकल्प पूजन
                 </p>
               </div>
             </div>
 
-            {VIP_PHOTOS.map((ph, i) => (
-              <div
-                key={i}
-                className="gallery-item bg-gradient-to-br from-primary/20 to-saffron/10 rounded-2xl p-8 text-center border border-saffron/20"
-                data-aos="fade-up"
-                data-aos-delay={(i + 1) * 80}
-              >
-                <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-gold/15 border border-gold/40 flex items-center justify-center text-gold font-bold text-xl">✦</div>
-                <p className="text-cream/80 text-sm font-devanagari">{t(ph)}</p>
+            <div className="rounded-3xl overflow-hidden border-2 border-[#E8DCC8] shadow-lg group relative aspect-[16/10]">
+              <img
+                src={heroBg}
+                alt="मंगल भात पूजा अनुष्ठान"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent flex flex-col justify-end p-6 text-white">
+                <span className="bg-[#F5C842] text-[#1C0A00] font-bold text-xs uppercase px-2.5 py-1 rounded self-start mb-1.5">
+                  मंगलनाथ मंदिर उज्जैन
+                </span>
+                <p className="font-heading font-bold text-base sm:text-lg text-cream">
+                  विधिपूर्वक मंगल भात पूजा एवं मांगलिक दोष शांति
+                </p>
               </div>
-            ))}
+            </div>
           </div>
-          <p className="text-center text-cream/40 text-xs mt-6 font-devanagari">
-            {t({ hi: '* वास्तविक फोटो जल्द अपलोड की जाएंगी', en: '* Real photos will be uploaded soon' })}
-          </p>
         </div>
       </section>
+
+      {/* ── Consultation CTA ── */}
+      <section className="py-16 bg-gradient-to-r from-[#D97706] to-[#B45309] text-white text-center">
+        <div className="max-w-4xl mx-auto px-4">
+          <h2 className="font-heading font-black text-2xl sm:text-4xl mb-4">
+            {t({ hi: 'क्या आपकी कुंडली में मांगलिक या कालसर्प दोष है?', en: 'Do you have Mangal or Kaal Sarp Dosh in your Kundali?' })}
+          </h2>
+          <p className="text-white/90 font-devanagari text-base mb-8 max-w-2xl mx-auto">
+            {t({
+              hi: 'अपनी जन्म तिथि व समय भेजें और पंडित दीपक पंड्या जी से निःशुल्क प्राथमिक कुंडली विश्लेषण प्राप्त करें।',
+              en: 'Send your birth details and get free primary kundali consultation directly from Pandit Deepak Pandya.',
+            })}
+          </p>
+          <a
+            href={WA_HREF}
+            onClick={() => trackWhatsAppClick('about_cta_banner')}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-white text-[#8C3814] hover:bg-[#FFF8E6] px-8 py-4 rounded-xl font-bold font-devanagari text-base shadow-xl inline-flex items-center gap-2 transition-all transform hover:-translate-y-0.5"
+          >
+            <span>💬 WhatsApp पर कुंडली भेजें</span>
+          </a>
+        </div>
+      </section>
+
     </main>
   );
 }

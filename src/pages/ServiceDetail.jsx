@@ -168,14 +168,15 @@ export default function ServiceDetail() {
 
       {/* Hero Banner: 1. H1 with puja name + Ujjain */}
       <section
-        className="py-12 sm:py-20 text-center text-white relative overflow-hidden"
-        style={{ background: 'linear-gradient(135deg, #1C0A00, #3D1000, #1C0A00)' }}
+        className="py-14 sm:py-20 text-center relative overflow-hidden bg-gradient-to-b from-[#FFFDF9] via-[#FAF6EE] to-[#F5EFE4] text-[#1F160F] border-b border-[#E8DCC8]"
         aria-labelledby="service-detail-heading"
       >
-        <div className="absolute inset-0 bg-mandala opacity-20" aria-hidden="true" />
+        <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[radial-gradient(circle,_rgba(245,200,66,0.18)_0%,_transparent_70%)] pointer-events-none blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full bg-[radial-gradient(circle,_rgba(139,26,26,0.06)_0%,_transparent_70%)] pointer-events-none blur-2xl" />
+
         <div className="relative z-10 max-w-4xl mx-auto px-4">
           {service.image ? (
-            <div className="w-24 h-24 sm:w-32 sm:h-32 mx-auto mb-4 rounded-full overflow-hidden border-2 border-gold shadow-[0_0_20px_rgba(245,200,66,0.4)]">
+            <div className="w-24 h-24 sm:w-28 sm:h-28 mx-auto mb-4 rounded-3xl overflow-hidden border-2 border-[#D97706] shadow-md bg-black">
               <img
                 src={service.image}
                 alt={content.name}
@@ -183,37 +184,39 @@ export default function ServiceDetail() {
               />
             </div>
           ) : (
-            <span className="text-3xl text-gold mb-4 inline-block font-bold">✦</span>
+            <span className="text-3xl text-gold mb-3 inline-block font-bold">✦</span>
           )}
-          <span className="badge badge-gold mb-4 inline-flex">
-            ✦ {t({ hi: 'उज्जैन वैदिक अनुष्ठान सेवा', en: 'Ujjain Vedic Ritual' })} ✦
+          <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full border border-gold/60 bg-[#FFF7E6] text-[#8C3814] text-xs font-bold font-sans uppercase tracking-wider mb-3 shadow-xs">
+            <span className="text-gold">✦</span>
+            <span>{t({ hi: 'उज्जैन सिद्ध पीठ वैदिक अनुष्ठान', en: 'Ujjain Siddha Peeth Vedic Ritual' })}</span>
+            <span className="text-gold">✦</span>
           </span>
-          <h1 id="service-detail-heading" className="text-2xl sm:text-4xl md:text-5xl font-bold text-cream font-devanagari mb-3 leading-snug">
+          <h1 id="service-detail-heading" className="font-heading font-black text-2xl sm:text-4xl md:text-5xl text-[#1F160F] mb-3 leading-snug">
             {content.h1}
           </h1>
-          <p className="text-gold font-semibold font-devanagari mb-4 text-sm sm:text-base">{content.tagline}</p>
-          <div className="gold-line mb-6" />
+          <p className="text-[#8C3814] font-semibold font-devanagari mb-4 text-sm sm:text-base">{content.tagline}</p>
+          <div className="w-20 h-1 bg-gradient-to-r from-transparent via-[#D97706] to-transparent rounded-full mx-auto mb-6" />
 
           {/* Quick Metrics Bar */}
-          <div className="flex flex-wrap justify-center gap-4 sm:gap-8 text-sm">
-            <div className="flex items-center gap-2 bg-white/10 px-3.5 py-1.5 rounded-full backdrop-blur-sm">
+          <div className="flex flex-wrap justify-center gap-3 sm:gap-6 text-xs sm:text-sm">
+            <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-xl border border-[#E8DCC8] shadow-xs text-[#5C4D3E]">
               <span>⏱</span>
-              <span className="font-devanagari text-cream">{content.vidhi?.duration || '3–5 घंटे'}</span>
+              <span className="font-devanagari font-semibold">{content.vidhi?.duration || '3–5 घंटे'}</span>
             </div>
-            <div className="flex items-center gap-2 bg-white/10 px-3.5 py-1.5 rounded-full backdrop-blur-sm">
+            <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-xl border border-[#E8DCC8] shadow-xs text-[#5C4D3E]">
               <span>📍</span>
-              <span className="font-devanagari text-cream">{content.location.split('—')[0]}</span>
+              <span className="font-devanagari font-semibold">{content.location.split('—')[0]}</span>
             </div>
-            <div className="flex items-center gap-2 bg-white/10 px-3.5 py-1.5 rounded-full backdrop-blur-sm">
+            <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-xl border border-[#E8DCC8] shadow-xs text-[#8C3814] font-bold">
               <span>👤</span>
-              <span className="font-devanagari text-gold">पंडित दीपक पंड्या (15+ वर्ष अनुभव)</span>
+              <span className="font-devanagari">पंडित दीपक पंड्या (15+ वर्ष अनुभव)</span>
             </div>
           </div>
         </div>
       </section>
 
       {/* Main Content Layout */}
-      <section className="py-12 sm:py-16 bg-cream">
+      <section className="py-12 sm:py-16 bg-[#FAF7F2]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
 
