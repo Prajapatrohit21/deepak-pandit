@@ -42,21 +42,20 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled
-            ? 'bg-[#FFFDF9]/98 shadow-[0_2px_20px_rgba(45,27,0,0.08)] backdrop-blur-md py-1.5'
-            : 'bg-[#FFFDF9] py-2.5'
-        } border-b border-[#E8DCC8]`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
+          ? 'bg-[#FFFDF9]/98 shadow-[0_2px_20px_rgba(45,27,0,0.08)] backdrop-blur-md py-1.5'
+          : 'bg-[#FFFDF9] py-2.5'
+          } border-b border-[#E8DCC8]`}
         role="navigation"
         aria-label="Main Navigation"
       >
-        <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6 flex items-center justify-between gap-2">
+        <div className="max-w-7xl mx-auto px-4 sm:px-5 lg:px-6 flex items-center justify-between gap-4">
           {/* Brand Logo */}
-          <Link to="/" className="flex items-center gap-2 group py-0.5 shrink-0" aria-label="Home">
+          <Link to="/" className="flex items-center gap-3 group py-0.6 shrink-0 " aria-label="Home">
             <img
               src={logoImg}
               alt="मंगल दोष पूजन केंद्र"
-              className={`w-auto object-contain transition-all duration-300 ${scrolled ? 'h-10 sm:h-12' : 'h-12 sm:h-14 md:h-16'}`}
+              className={`w-auto object-contain transition-all duration-300 ${scrolled ? 'h-14 sm:h-16' : 'h-16 sm:h-20 md:h-24'}`}
             />
             <div className="hidden sm:flex flex-col">
               <span className="text-[#1F160F] font-heading font-black text-sm sm:text-base leading-tight">मंगल दोष पूजन केंद्र</span>
@@ -71,10 +70,9 @@ export default function Navbar() {
                 key={link.to}
                 to={link.to}
                 className={({ isActive }) =>
-                  `px-3 py-2 rounded-lg text-[13px] font-semibold transition-all duration-200 ${
-                    isActive
-                      ? 'text-[#B45309] bg-[#D97706]/10'
-                      : 'text-[#3D2E1F] hover:text-[#B45309] hover:bg-[#D97706]/5'
+                  `px-3 py-2 rounded-lg text-[13px] font-semibold transition-all duration-200 ${isActive
+                    ? 'text-[#B45309] bg-[#D97706]/10'
+                    : 'text-[#3D2E1F] hover:text-[#B45309] hover:bg-[#D97706]/5'
                   }`
                 }
               >
@@ -109,7 +107,7 @@ export default function Navbar() {
               onClick={() => trackPhoneCall('navbar')}
               className="hidden md:inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-gradient-to-r from-[#D97706] to-[#B45309] text-white text-xs font-bold shadow-sm hover:shadow-md transition-all"
             >
-              <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-2.2 2.2a15.053 15.053 0 01-6.59-6.59l2.2-2.21a.96.96 0 00.25-1.01A11.36 11.36 0 018.57 3.9c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.52c0-.55-.45-1-.99-1z"/></svg>
+              <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-2.2 2.2a15.053 15.053 0 01-6.59-6.59l2.2-2.21a.96.96 0 00.25-1.01A11.36 11.36 0 018.57 3.9c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.52c0-.55-.45-1-.99-1z" /></svg>
               +91 62634 01651
             </a>
 
@@ -140,9 +138,8 @@ export default function Navbar() {
 
         {/* ── Mobile Menu ── */}
         <div
-          className={`lg:hidden overflow-hidden transition-all duration-300 ${
-            menuOpen ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0'
-          } bg-[#FFFDF9] border-t border-[#E8DCC8]`}
+          className={`lg:hidden overflow-hidden transition-all duration-300 ${menuOpen ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0'
+            } bg-[#FFFDF9] border-t border-[#E8DCC8]`}
         >
           <div className="px-4 py-3 flex flex-col gap-1">
             {navLinks.map((link) => (
@@ -150,10 +147,9 @@ export default function Navbar() {
                 key={link.to}
                 to={link.to}
                 className={({ isActive }) =>
-                  `px-4 py-3 rounded-xl text-sm font-semibold transition-colors ${
-                    isActive
-                      ? 'text-[#B45309] bg-[#D97706]/10'
-                      : 'text-[#3D2E1F] hover:text-[#B45309] hover:bg-[#D97706]/5'
+                  `px-4 py-3 rounded-xl text-sm font-semibold transition-colors ${isActive
+                    ? 'text-[#B45309] bg-[#D97706]/10'
+                    : 'text-[#3D2E1F] hover:text-[#B45309] hover:bg-[#D97706]/5'
                   }`
                 }
               >
