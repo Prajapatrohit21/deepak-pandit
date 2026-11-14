@@ -50,10 +50,12 @@
    - **Google Tag Dynamic Injection:** Removed raw `<script src="googletagmanager.com/gtag/js...">` and `<!-- Google tag -->` comment from static `index.html`. It is now dynamically injected via `initGoogleTag()` in `src/utils/analytics.js` and `src/main.jsx`. This keeps raw Google Tag out of HTML Page Source while keeping Google Ads & GA4 tracking 100% active.
    - **Assets Directory Clean Name:** Configured `assetsDir: "static"` in `vite.config.js` so default `/assets/` directory is not exposed in Page Source.
 
-4. **Eliminated FOUC / Flash of Static Table:**
-   - Removed raw static HTML table injection (`prerenderedBody`) in `scripts/prerender.js`.
-   - Previously, visitors experienced a 1-second flash of an unstyled static table ("Quick Facts") before React rendered the Preloader.
-   - Now visitors directly see a seamless dark Vedic background and the authentic Preloader (`#preloader`), completely eliminating the discordant 1-second flash. GitHub Pages static routing and 404 generation remain intact.
+5. **Hero Redesign (Pandits Of Banaras Aesthetic):**
+   - Implemented luxury warm Vedic 2-column layout modeled on `panditsofbanaras.in` (`#FAF7F2` cream background with golden radiant lighting).
+   - **Left Column:** Eyebrow tag (`AUTHENTIC VEDIC PUJAS & VIDHIS IN UJJAIN`), Serif bold title (`MANGAL DOSH PUJAN KENDRA / UJJAIN SIDDHA PEETH`), Acharya name (`BY VEDIC PANDIT DEEPAK PANDYA`), sacred pill badge, authoritative description, Amber Call CTA (`+91 62634 01651`), WhatsApp CTA, Location pill (`श्री मंगलनाथ मंदिर क्षेत्र, उज्जैन`), and 3 trust cards (`SHUKLA YAJURVEDA`, `15+ YRS PUROHIT`, `5.0 STAR RATING`).
+   - **Right Column:** Luxury rounded container with interactive auto-advancing media slider (featuring real puja photos: Mangal Bhat, Pandit ji portrait, Kaal Sarp, Rudrabhishek, VIP Sankalp), navigation controls, category badge, and title overlay.
+   - **Google Reviews & Verification Row:** Integrated official multi-color Google 'G' icon, 5 golden stars, `5.0 (150+ Google Reviews)`, and green `✓ Verified Ujjain Purohit` badge directly below the hero slider as requested.
+   - Preserved all existing content, phone numbers, WhatsApp links, and event conversion trackers (`trackPhoneCall`, `trackWhatsAppClick`).
 
 2. **UI Professionalization & Ad Conversion Polish:**
    - **Removed Clipboard Hijacker:** Removed a legacy script in `App.jsx` that copied `🤡` to user's clipboard.

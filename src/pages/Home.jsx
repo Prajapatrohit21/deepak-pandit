@@ -5,6 +5,9 @@
 import { useEffect, useState } from 'react';
 import heroBg from '../assets/hero_mangal_puja.jpg';
 import panditImg from '../assets/pandit_deepak_pandya.jpg';
+import kaalSarpImg from '../assets/gallery/Kaal-Sarp-Puja-Ujjain.webp';
+import rudraImg from '../assets/gallery/g1.jpg';
+import vipImg from '../assets/vip_guest.jpg';
 import { Link } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -12,124 +15,302 @@ import { useLanguage } from '../context/LanguageContext';
 import { CONTENT } from '../data/content';
 import { SERVICES } from '../data/services';
 import { WA_HREF, PHONE_HREF } from '../utils/whatsapp';
-import { trackWhatsAppClick } from '../utils/analytics';
+import { trackWhatsAppClick, trackPhoneCall } from '../utils/analytics';
 import SectionHeading from '../components/ui/SectionHeading';
 import ServiceCard from '../components/ui/ServiceCard';
 import BookingForm from '../components/ui/BookingForm';
 
 const C = CONTENT;
 
-// ─── Hero Section ──────────────────────────────────────────
+// ─── Hero Media Slides ─────────────────────────────────────
+const HERO_SLIDES = [
+  {
+    image: heroBg,
+    badge: { hi: 'मंगल भात पूजा', en: 'MANGAL BHAT PUJA' },
+    title: { hi: 'श्री मंगलनाथ मंदिर वैदिक मंगल भात पूजा', en: 'Vedic Mangal Bhat Puja at Mangalnath' },
+  },
+  {
+    image: panditImg,
+    badge: { hi: 'प्रधान पुरोहित', en: 'CHIEF VEDIC PUROHIT' },
+    title: { hi: 'वैदिक पंडित दीपक पंड्या (15+ वर्षों का अनुभव)', en: 'Vedic Pandit Deepak Pandya (15+ Yrs Exp)' },
+  },
+  {
+    image: kaalSarpImg,
+    badge: { hi: 'कालसर्प दोष', en: 'KAAL SARP DOSH' },
+    title: { hi: 'कालसर्प दोष निवारण एवं महाकाल अनुष्ठान', en: 'Kaal Sarp Dosh Nivaran Ujjain' },
+  },
+  {
+    image: rudraImg,
+    badge: { hi: 'रुद्राभिषेक', en: 'RUDRABHISHEK' },
+    title: { hi: 'महाकालेश्वर ज्योतिर्लिंग महा रुद्राभिषेक पूजन', en: 'Mahakaleshwar Jyotirlinga Rudrabhishek' },
+  },
+  {
+    image: vipImg,
+    badge: { hi: 'सिद्ध पीठ अनुष्ठान', en: 'SIDDHA PEETH RITUALS' },
+    title: { hi: 'विशिष्ट यजमान एवं प्रामाणिक वैदिक संकल्प', en: 'Authentic Vedic Sankalp for Devotees' },
+  },
+];
+
+// ─── Hero Section (Pandits Of Banaras Structure) ───────────
 function Hero() {
-  const { t } = useLanguage();
-  const hero = C.hero;
+  const { t, lang } = useLanguage();
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  // Auto-play slider
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % HERO_SLIDES.length);
+    }, 4500);
+    return () => clearInterval(timer);
+  }, []);
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev === 0 ? HERO_SLIDES.length - 1 : prev - 1));
+  };
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % HERO_SLIDES.length);
+  };
 
   return (
     <section
-      className="hero-section relative flex items-center justify-center text-white overflow-hidden bg-cover bg-no-repeat"
-      style={{
-        backgroundImage: `url(${heroBg})`,
-        minHeight: '100vh',
-      }}
+      className="relative overflow-hidden bg-[#FAF7F2] text-[#2D1B00] pt-28 sm:pt-36 pb-12 sm:pb-16"
       aria-label="Hero Section"
     >
-      {/* Soft Vignette Overlay: Light & transparent so image is clearly visible */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-black/20 to-[#1C0A00]/90 z-0 pointer-events-none" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(0,0,0,0.05)_0%,_rgba(10,3,0,0.55)_100%)] z-0 pointer-events-none" />
+      {/* Subtle warm spiritual background ambient lighting */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-[radial-gradient(circle,_rgba(245,200,66,0.18)_0%,_transparent_70%)] pointer-events-none blur-3xl" />
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-[radial-gradient(circle,_rgba(139,26,26,0.06)_0%,_transparent_70%)] pointer-events-none blur-2xl" />
 
-      {/* Subtle mandala background pattern */}
+      {/* Subtle sacred mandala background pattern */}
       <div
-        className="absolute inset-0 opacity-5 pointer-events-none z-0"
+        className="absolute inset-0 opacity-[0.035] pointer-events-none"
         style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23F5C842' fill-opacity='1' fill-rule='evenodd'%3E%3Ccircle cx='40' cy='40' r='30' stroke-width='1' stroke='%23F5C842' fill='none'/%3E%3Ccircle cx='40' cy='40' r='20' stroke-width='0.5' stroke='%23F5C842' fill='none'/%3E%3Ccircle cx='40' cy='40' r='10' stroke-width='0.5' stroke='%23F5C842' fill='none'/%3E%3C/g%3E%3C/svg%3E")`,
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23C8860A' fill-rule='evenodd'%3E%3Ccircle cx='40' cy='40' r='30' stroke-width='1' stroke='%23C8860A' fill='none'/%3E%3Ccircle cx='40' cy='40' r='20' stroke-width='0.5' stroke='%23C8860A' fill='none'/%3E%3Ccircle cx='40' cy='40' r='10' stroke-width='0.5' stroke='%23C8860A' fill='none'/%3E%3C/g%3E%3C/svg%3E")`,
           backgroundSize: '80px 80px',
         }}
         aria-hidden="true"
       />
 
-      {/* Floating Om symbols */}
-      <div className="absolute top-1/4 left-4 sm:left-12 text-gold/20 text-4xl sm:text-7xl animate-float font-devanagari select-none pointer-events-none z-0 hidden sm:block" aria-hidden="true">ॐ</div>
-      <div className="absolute bottom-1/3 right-4 sm:right-12 text-gold/15 text-4xl sm:text-6xl animate-float font-devanagari select-none pointer-events-none z-0 hidden sm:block" style={{ animationDelay: '1.5s' }} aria-hidden="true">ॐ</div>
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+          
+          {/* ── LEFT COLUMN: Text & Actions ── */}
+          <div className="lg:col-span-7 flex flex-col items-start text-left">
+            
+            {/* Top Eyebrow Tag */}
+            <p className="text-xs sm:text-sm font-bold tracking-[0.16em] text-[#8C3814] uppercase font-sans mb-3 flex items-center gap-2">
+              <span className="text-gold">✦</span>
+              {t({
+                hi: 'AUTHENTIC VEDIC PUJAS & VIDHIS IN UJJAIN',
+                en: 'AUTHENTIC VEDIC PUJAS & VIDHIS IN UJJAIN',
+              })}
+            </p>
 
-      {/* Main Content Container */}
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16 sm:py-32 text-center flex flex-col items-center justify-center min-h-screen w-full">
-        
-        {/* Top Badge */}
-        <div
-          className="inline-flex items-center gap-2 px-4 sm:px-5 py-2 rounded-full border border-gold/40 bg-black/60 backdrop-blur-md text-gold text-xs sm:text-sm font-semibold tracking-wide font-devanagari mb-6 shadow-[0_4px_20px_rgba(245,200,66,0.2)] animate-slide-up hover:border-gold/60 transition-all duration-300"
-          style={{ animationDelay: '0.2s', opacity: 0, animationFillMode: 'forwards' }}
-        >
-          <span className="w-2 h-2 rounded-full bg-gold animate-ping" />
-          {t(hero.badge)}
-        </div>
+            {/* Main Title - Serif Bold */}
+            <h1 className="font-heading font-black text-3xl xs:text-4xl sm:text-5xl lg:text-[3.5rem] text-[#1F160F] leading-[1.08] mb-2 tracking-tight">
+              {lang === 'hi' ? (
+                <>
+                  मंगल दोष पूजन केंद्र
+                  <br />
+                  <span className="text-[#8C3814]">उज्जैन सिद्ध पीठ</span>
+                </>
+              ) : (
+                <>
+                  MANGAL DOSH PUJA
+                  <br />
+                  <span className="text-[#8C3814]">NIVARAN UJJAIN</span>
+                </>
+              )}
+            </h1>
 
-        {/* Heading */}
-        <h1
-          className="text-2xl xs:text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.2] font-devanagari mb-5 tracking-tight drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)] animate-slide-up w-full"
-          style={{ animationDelay: '0.4s', opacity: 0, animationFillMode: 'forwards' }}
-        >
-          <span className="text-shimmer drop-shadow-[0_2px_10px_rgba(245,200,66,0.4)]">{t(hero.title).split('\n')[0]}</span>
-          <br />
-          <span className="text-cream font-bold drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]">{t(hero.title).split('\n')[1]}</span>
-        </h1>
+            {/* Subtitle / Acharya Name */}
+            <h2 className="text-base sm:text-xl font-bold text-[#8C3814] tracking-wider uppercase font-heading mb-4">
+              {t({
+                hi: 'BY VEDIC PANDIT DEEPAK PANDYA',
+                en: 'BY VEDIC PANDIT DEEPAK PANDYA',
+              })}
+            </h2>
 
-        {/* Subtitle */}
-        <p
-          className="text-base sm:text-lg md:text-xl text-cream/95 max-w-3xl mx-auto leading-relaxed font-devanagari mb-8 drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)] font-medium animate-slide-up"
-          style={{ animationDelay: '0.6s', opacity: 0, animationFillMode: 'forwards' }}
-        >
-          {t(hero.subtitle)}
-        </p>
+            {/* Sacred Pill Badge */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-gold/70 bg-[#FFF7E6] text-[#7A3F0C] text-xs sm:text-sm font-semibold mb-5 shadow-sm">
+              <span className="text-sm">🕉️</span>
+              <span>
+                {t({
+                  hi: 'श्री मंगलनाथ मंदिर मंगल भात पूजा एवं कालसर्प दोष',
+                  en: 'Shri Mangalnath Mandir Mangal Bhat & Kaal Sarp Puja',
+                })}
+              </span>
+            </div>
 
-        {/* Highlight Pills */}
-        <div
-          className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-8 text-xs sm:text-sm font-devanagari text-gold animate-slide-up w-full"
-          style={{ animationDelay: '0.7s', opacity: 0, animationFillMode: 'forwards' }}
-        >
-          <span className="px-3.5 py-1.5 rounded-lg bg-black/60 backdrop-blur-md border border-gold/30 flex items-center gap-1.5 shadow-md text-xs">
-            <span className="text-gold font-bold">✦</span> {t({ hi: '100% प्रामाणिक वैदिक विधि', en: '100% Authentic Vedic Rituals' })}
-          </span>
-          <span className="px-3.5 py-1.5 rounded-lg bg-black/60 backdrop-blur-md border border-gold/30 flex items-center gap-1.5 shadow-md text-xs">
-            <span className="text-gold font-bold">✦</span> {t({ hi: 'उज्जैन सिद्ध पीठ अनुष्ठान', en: 'Ujjain Siddha Peeth Puja' })}
-          </span>
-          <span className="px-3.5 py-1.5 rounded-lg bg-black/60 backdrop-blur-md border border-gold/30 flex items-center gap-1.5 shadow-md text-xs">
-            <span className="text-gold font-bold">✦</span> {t({ hi: 'लाइव वीडियो एवं संकल्प सुविधा', en: 'Live Video & Sankalp Facility' })}
-          </span>
-        </div>
+            {/* Description Paragraph */}
+            <p className="text-sm sm:text-base text-[#4A3B2C] leading-relaxed mb-6 font-medium max-w-2xl font-devanagari">
+              {t({
+                hi: 'मंगल दोष पूजा निवारण, उज्जैन में पंडित दीपक पंड्या द्वारा की जाने वाली प्रामाणिक वैदिक पूजा सेवा है। 15+ वर्षों के अनुभव के साथ यहाँ मंगल भात पूजा, कालसर्प दोष, पितृ दोष, नवग्रह शांति, रुद्राभिषेक और समस्त वैदिक अनुष्ठान विधिपूर्वक कराए जाते हैं। परामर्श एवं बुकिंग 24x7 उपलब्ध है।',
+                en: 'Mangal Dosh Puja Nivaran Ujjain, led by Vedic Pandit Deepak Pandya, performs authentic Vedic rituals including Mangal Bhat Puja at Mangalnath Temple, Kaal Sarp Dosh, Pitru Dosh, Navgrah Shanti, and Mahamrityunjay Anushthan with 15+ years of Vedic heritage.',
+              })}
+            </p>
 
-        {/* CTAs */}
-        <div
-          className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 w-full max-w-md sm:max-w-none mb-4 animate-slide-up hero-cta-group"
-          style={{ animationDelay: '0.8s', opacity: 0, animationFillMode: 'forwards' }}
-        >
-          <Link
-            to="/booking"
-            className="btn-gold text-base sm:text-lg px-6 sm:px-8 py-3.5 sm:py-4 w-full sm:w-auto font-devanagari font-bold shadow-[0_6px_25px_rgba(245,200,66,0.35)] hover:shadow-[0_8px_35px_rgba(245,200,66,0.6)] transform hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 flex items-center justify-center gap-2"
-          >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className="shrink-0">
-              <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"/>
-            </svg>
-            <span>{t(hero.cta1)}</span>
-          </Link>
-          <a
-            href={WA_HREF}
-            onClick={() => trackWhatsAppClick('hero_cta')}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-secondary text-base sm:text-lg px-6 sm:px-8 py-3.5 sm:py-4 w-full sm:w-auto font-devanagari font-semibold border-gold/70 text-gold bg-black/50 backdrop-blur-md hover:bg-gold/20 hover:border-gold shadow-lg transform hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 flex items-center justify-center gap-2"
-          >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className="shrink-0 text-[#25D366]">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-            </svg>
-            <span>{t(hero.cta2)}</span>
-          </a>
-        </div>
+            {/* 2 Big Action Buttons */}
+            <div className="flex flex-wrap items-center gap-3 sm:gap-4 w-full sm:w-auto mb-5">
+              {/* Phone Button */}
+              <a
+                href={PHONE_HREF}
+                onClick={() => trackPhoneCall('hero_call_btn')}
+                className="bg-gradient-to-r from-[#D97706] to-[#B45309] hover:from-[#B45309] hover:to-[#92400E] text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-bold text-sm sm:text-base shadow-[0_4px_16px_rgba(217,119,6,0.35)] flex items-center justify-center gap-2.5 transition-all transform hover:-translate-y-0.5 active:translate-y-0"
+              >
+                <svg className="w-5 h-5 shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-2.2 2.2a15.053 15.053 0 01-6.59-6.59l2.2-2.21a.96.96 0 00.25-1.01A11.36 11.36 0 018.57 3.9c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.52c0-.55-.45-1-.99-1z"/>
+                </svg>
+                <span>+91 62634 01651</span>
+              </a>
 
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 animate-bounce hidden sm:block">
-          <div className="w-6 h-10 rounded-full border-2 border-gold/50 bg-black/40 backdrop-blur-sm flex items-start justify-center p-1 shadow-lg">
-            <div className="w-1.5 h-3 bg-gold rounded-full animate-pulse" />
+              {/* WhatsApp Button */}
+              <a
+                href={WA_HREF}
+                onClick={() => trackWhatsAppClick('hero_whatsapp_btn')}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-[#25D366] hover:bg-[#1EBE5D] text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-bold text-sm sm:text-base shadow-[0_4px_16px_rgba(37,211,102,0.35)] flex items-center justify-center gap-2.5 transition-all transform hover:-translate-y-0.5 active:translate-y-0"
+              >
+                <svg className="w-5 h-5 shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+                <span>{t({ hi: 'WhatsApp Consultation', en: 'WhatsApp Consultation' })}</span>
+              </a>
+            </div>
+
+            {/* Location Pill Badge */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white border border-[#E8DCC8] text-xs sm:text-sm text-[#5C4D3E] shadow-sm mb-6 font-devanagari">
+              <span className="text-[#C8860A]">📍</span>
+              <span>{t({ hi: 'श्री मंगलनाथ मंदिर क्षेत्र, उज्जैन (मध्य प्रदेश) 456001', en: 'Mangalnath Temple Area, Ujjain, MP 456001' })}</span>
+            </div>
+
+            {/* Trust Cards Row */}
+            <div className="grid grid-cols-3 gap-2 sm:gap-3 w-full max-w-xl">
+              <div className="bg-white/80 backdrop-blur-sm p-2.5 sm:p-3 rounded-xl border border-[#E8DCC8] text-center shadow-xs">
+                <span className="text-xs sm:text-sm font-bold text-[#1F160F] block font-heading">SHUKLA YAJURVEDA</span>
+                <span className="text-[10px] sm:text-xs text-[#8C3814] font-medium font-devanagari">100% प्रामाणिक विधि</span>
+              </div>
+              <div className="bg-white/80 backdrop-blur-sm p-2.5 sm:p-3 rounded-xl border border-[#E8DCC8] text-center shadow-xs">
+                <span className="text-xs sm:text-sm font-bold text-[#1F160F] block font-heading">15+ YRS PUROHIT</span>
+                <span className="text-[10px] sm:text-xs text-[#8C3814] font-medium font-devanagari">सिद्ध पीठ अनुभव</span>
+              </div>
+              <div className="bg-white/80 backdrop-blur-sm p-2.5 sm:p-3 rounded-xl border border-[#E8DCC8] text-center shadow-xs">
+                <span className="text-xs sm:text-sm font-bold text-[#1F160F] block font-heading">5.0 STAR RATING</span>
+                <span className="text-[10px] sm:text-xs text-[#8C3814] font-medium font-devanagari">150+ संतुष्ट भक्त</span>
+              </div>
+            </div>
+
           </div>
+
+          {/* ── RIGHT COLUMN: Interactive Media Showcase Card & Google Reviews ── */}
+          <div className="lg:col-span-5 w-full">
+            <div className="bg-white rounded-3xl p-3 sm:p-4 border-2 border-[#E8DCC8] shadow-[0_12px_40px_rgba(45,27,0,0.08)]">
+              
+              {/* Media Viewport */}
+              <div className="relative aspect-[16/11] rounded-2xl overflow-hidden bg-black shadow-inner group">
+                <img
+                  src={HERO_SLIDES[currentSlide].image}
+                  alt={t(HERO_SLIDES[currentSlide].title)}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+
+                {/* Top Overlay Icons */}
+                <div className="absolute top-3 right-3 flex items-center gap-1.5 z-10">
+                  <div className="w-7 h-7 rounded-full bg-black/60 backdrop-blur-sm flex items-center justify-center text-white text-xs shadow-md">
+                    <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/>
+                    </svg>
+                  </div>
+                  <div className="w-7 h-7 rounded-full bg-black/60 backdrop-blur-sm flex items-center justify-center text-white text-xs shadow-md">
+                    <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/>
+                    </svg>
+                  </div>
+                </div>
+
+                {/* Bottom Overlay Info */}
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/95 via-black/60 to-transparent p-3 sm:p-4 z-10 flex flex-col justify-end">
+                  <div className="flex items-center justify-between gap-2 mb-1.5">
+                    <span className="bg-[#F5C842] text-[#1C0A00] font-bold text-[10px] sm:text-xs uppercase px-2.5 py-0.5 rounded tracking-wider">
+                      {t(HERO_SLIDES[currentSlide].badge)}
+                    </span>
+                    <span className="bg-black/70 backdrop-blur-sm text-white text-[11px] px-2 py-0.5 rounded-full font-mono border border-white/20">
+                      {currentSlide + 1}/{HERO_SLIDES.length}
+                    </span>
+                  </div>
+                  <p className="font-heading font-bold text-xs sm:text-sm text-cream tracking-wide uppercase line-clamp-1 drop-shadow-sm">
+                    {t(HERO_SLIDES[currentSlide].title)}
+                  </p>
+                </div>
+              </div>
+
+              {/* Slider Navigation Controls */}
+              <div className="flex items-center justify-between py-2.5 px-1 mt-1 text-[#5C4D3E]">
+                <button
+                  onClick={prevSlide}
+                  className="text-xs sm:text-sm font-semibold hover:text-[#D97706] px-2 py-1 flex items-center gap-1 transition-colors cursor-pointer"
+                  aria-label="Previous Slide"
+                >
+                  ‹ Prev
+                </button>
+
+                {/* Dot Indicators */}
+                <div className="flex items-center gap-1.5">
+                  {HERO_SLIDES.map((_, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => setCurrentSlide(idx)}
+                      className={`h-2 transition-all duration-300 rounded-full cursor-pointer ${
+                        currentSlide === idx ? 'w-6 bg-[#D97706]' : 'w-2 bg-[#E8DCC8] hover:bg-[#D97706]/60'
+                      }`}
+                      aria-label={`Go to slide ${idx + 1}`}
+                    />
+                  ))}
+                </div>
+
+                <button
+                  onClick={nextSlide}
+                  className="text-xs sm:text-sm font-semibold hover:text-[#D97706] px-2 py-1 flex items-center gap-1 transition-colors cursor-pointer"
+                  aria-label="Next Slide"
+                >
+                  Next ›
+                </button>
+              </div>
+
+              {/* ── GOOGLE REVIEW & VERIFIED BADGE ROW (AS HIGHLIGHTED IN SCREENSHOT) ── */}
+              <div className="border-t border-[#F0E6D8] pt-3 mt-1 flex items-center justify-between flex-wrap gap-2 text-xs sm:text-sm">
+                
+                {/* Left: Google 5.0 Star Reviews */}
+                <div className="flex items-center gap-1.5">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                    <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                    <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+                    <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+                  </svg>
+                  <div className="flex text-amber-500 tracking-tighter text-sm sm:text-base leading-none">
+                    ★★★★★
+                  </div>
+                  <span className="font-bold text-[#1F160F]">5.0</span>
+                  <span className="text-[#6B4C1E] text-xs">
+                    {t({ hi: '(150+ Google समीक्षाएं)', en: '(150+ Google Reviews)' })}
+                  </span>
+                </div>
+
+                {/* Right: Verified Ujjain Purohit */}
+                <div className="flex items-center gap-1 text-emerald-700 font-semibold text-xs sm:text-sm">
+                  <svg className="w-4 h-4 shrink-0 text-emerald-600" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                  </svg>
+                  <span>{t({ hi: 'Verified Ujjain Purohit', en: 'Verified Ujjain Purohit' })}</span>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
         </div>
       </div>
     </section>

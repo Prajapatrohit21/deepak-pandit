@@ -42,11 +42,7 @@ export default function Navbar() {
     { to: '/contact', label: nav.contact },
   ];
 
-  const navBg = scrolled
-    ? 'bg-divine-dark/98 backdrop-blur-md shadow-2xl'
-    : isHome
-    ? 'bg-transparent'
-    : 'bg-divine-dark';
+  const navBg = 'bg-[#1C0A00]/95 backdrop-blur-md border-b border-gold/20 shadow-lg';
 
   return (
     <>
