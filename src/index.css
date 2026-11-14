@@ -290,7 +290,7 @@ p a, li a, .text-link {
 }
 
 /* ============================
-   Mobile Bottom Bar
+   Mobile Bottom Bar (Luxury Theme)
    ============================ */
 .mobile-bottom-bar {
   display: none;
@@ -305,9 +305,9 @@ p a, li a, .text-link {
     width: 100%;
     z-index: 998;
     display: flex;
-    background: #1C0A00;
-    border-top: 1px solid rgba(200,134,10,0.3);
-    box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
+    background: #FFFDF9;
+    border-top: 1px solid #E8DCC8;
+    box-shadow: 0 -4px 20px rgba(45, 27, 0, 0.08);
     /* Safe area for iPhone notch */
     padding-bottom: env(safe-area-inset-bottom, 0);
   }
@@ -323,7 +323,7 @@ p a, li a, .text-link {
   align-items: center;
   justify-content: center;
   font-size: 0.65rem;
-  font-weight: 600;
+  font-weight: 700;
   gap: 0.2rem;
   transition: var(--transition);
   text-decoration: none;
@@ -335,12 +335,12 @@ p a, li a, .text-link {
 }
 
 .mobile-bottom-bar .btn-call {
-  color: #F5C842;
+  color: #B45309;
   background: transparent;
 }
 
 .mobile-bottom-bar .btn-call:hover {
-  background: rgba(200,134,10,0.15);
+  background: rgba(217, 119, 6, 0.08);
 }
 
 .mobile-bottom-bar .btn-whatsapp {
@@ -348,13 +348,17 @@ p a, li a, .text-link {
   background: transparent;
 }
 
+.mobile-bottom-bar .btn-whatsapp:hover {
+  background: rgba(37, 211, 102, 0.08);
+}
+
 .mobile-bottom-bar .btn-book {
   color: #fff;
-  background: linear-gradient(135deg, #8B1A1A, #C8860A);
+  background: linear-gradient(135deg, #D97706, #B45309);
 }
 
 .mobile-bottom-bar .btn-book:hover {
-  opacity: 0.9;
+  opacity: 0.95;
 }
 
 /* ============================

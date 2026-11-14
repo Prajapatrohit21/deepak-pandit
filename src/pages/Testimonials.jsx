@@ -64,11 +64,11 @@ export default function Testimonials() {
               </svg>
               <div>
                 <div className="flex items-center gap-2">
-                  <span className="font-heading font-black text-2xl text-[#1F160F]">5.0</span>
-                  <div className="flex text-amber-500 text-lg leading-none">★★★★★</div>
+                  <span className="font-heading font-black text-2xl text-[#1F160F]">3.9</span>
+                  <div className="flex text-amber-500 text-lg leading-none">★★★★☆</div>
                 </div>
                 <p className="text-xs text-[#5C4D3E] font-medium font-devanagari">
-                  Google Verified Devotee Reviews (150+ समीक्षाएं)
+                  Google Verified Devotee Reviews (56+ समीक्षाएं)
                 </p>
               </div>
             </div>

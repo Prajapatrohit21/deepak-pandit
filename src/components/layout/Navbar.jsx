@@ -1,10 +1,13 @@
 // ============================================================
-// Navbar.jsx — Sticky header with lang toggle + mobile menu
+// Navbar.jsx — panditsofbanaras.in cream luxury style
+// Light cream bg, serif brand, amber accents, mobile responsive
 // ============================================================
 import { useState, useEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { useLanguage } from '../../context/LanguageContext';
 import { CONTENT } from '../../data/content';
+import { WA_HREF, PHONE_HREF } from '../../utils/whatsapp';
+import { trackPhoneCall, trackWhatsAppClick } from '../../utils/analytics';
 import logoImg from '../../assets/logo.png';
 
 const C = CONTENT;
@@ -13,7 +16,6 @@ export default function Navbar() {
   const { lang, toggleLang, t } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [servicesOpen, setServicesOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -22,19 +24,14 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  // Close mobile menu on route change
-  useEffect(() => {
-    setMenuOpen(false);
-    setServicesOpen(false);
-  }, [location]);
+  useEffect(() => { setMenuOpen(false); }, [location]);
 
   const nav = C.nav;
-  const isHome = location.pathname === '/';
 
   const navLinks = [
     { to: '/', label: nav.home },
     { to: '/about', label: nav.about },
-    { to: '/services', label: nav.services, hasDropdown: true },
+    { to: '/services', label: nav.services },
     { to: '/kundli-analysis', label: nav.kundli },
     { to: '/gallery', label: nav.gallery },
     { to: '/testimonials', label: nav.testimonials },
@@ -42,39 +39,42 @@ export default function Navbar() {
     { to: '/contact', label: nav.contact },
   ];
 
-  const navBg = 'bg-[#1C0A00]/95 backdrop-blur-md border-b border-gold/20 shadow-lg';
-
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${navBg} ${
-          scrolled ? 'py-2' : 'py-3'
-        }`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          scrolled
+            ? 'bg-[#FFFDF9]/98 shadow-[0_2px_20px_rgba(45,27,0,0.08)] backdrop-blur-md py-1.5'
+            : 'bg-[#FFFDF9] py-2.5'
+        } border-b border-[#E8DCC8]`}
         role="navigation"
         aria-label="Main Navigation"
-        style={{ maxWidth: '100vw', overflowX: 'hidden' }}
       >
-        <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6 flex items-center justify-between gap-2" style={{ maxWidth: '100%' }}>
-          {/* Brand Image Logo */}
-        <Link to="/" className="flex items-center group py-0.5 shrink-0" aria-label="Home">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6 flex items-center justify-between gap-2">
+          {/* Brand Logo */}
+          <Link to="/" className="flex items-center gap-2 group py-0.5 shrink-0" aria-label="Home">
             <img
               src={logoImg}
-              alt="मंगल पूजा - Mangal Puja"
-              className="h-14 sm:h-20 md:h-24 lg:h-28 w-auto object-contain transition-all duration-300 group-hover:scale-105 filter drop-shadow-[0_0_12px_rgba(255,215,0,0.5)]"
+              alt="मंगल दोष पूजन केंद्र"
+              className={`w-auto object-contain transition-all duration-300 ${scrolled ? 'h-10 sm:h-12' : 'h-12 sm:h-14 md:h-16'}`}
             />
+            <div className="hidden sm:flex flex-col">
+              <span className="text-[#1F160F] font-heading font-black text-sm sm:text-base leading-tight">मंगल दोष पूजन केंद्र</span>
+              <span className="text-[#8C7A6B] text-[10px] sm:text-xs font-medium">| उज्जैन</span>
+            </div>
           </Link>
 
           {/* Desktop Nav Links */}
-          <div className="hidden lg:flex items-center gap-1">
+          <div className="hidden lg:flex items-center gap-0.5">
             {navLinks.map((link) => (
               <NavLink
                 key={link.to}
                 to={link.to}
                 className={({ isActive }) =>
-                  `px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 font-devanagari ${
+                  `px-3 py-2 rounded-lg text-[13px] font-semibold transition-all duration-200 ${
                     isActive
-                      ? 'text-gold bg-white/10'
-                      : 'text-cream/80 hover:text-gold hover:bg-white/8'
+                      ? 'text-[#B45309] bg-[#D97706]/10'
+                      : 'text-[#3D2E1F] hover:text-[#B45309] hover:bg-[#D97706]/5'
                   }`
                 }
               >
@@ -83,76 +83,103 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* Right: Lang Toggle + Book Now + Hamburger */}
-          <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
+          {/* Right: Phone + WhatsApp + Lang + Hamburger */}
+          <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
             {/* Language Toggle */}
-            <div className="lang-toggle" role="group" aria-label="Language toggle">
+            <div className="flex rounded-lg overflow-hidden border border-[#E8DCC8] text-xs">
               <button
                 onClick={() => { if (lang !== 'hi') toggleLang(); }}
-                className={lang === 'hi' ? 'active' : ''}
+                className={`px-2 py-1.5 font-bold transition-colors ${lang === 'hi' ? 'bg-[#D97706] text-white' : 'bg-white text-[#5C4A3A] hover:bg-[#FAF7F2]'}`}
                 aria-pressed={lang === 'hi'}
               >
                 हिं
               </button>
               <button
                 onClick={() => { if (lang !== 'en') toggleLang(); }}
-                className={lang === 'en' ? 'active' : ''}
+                className={`px-2 py-1.5 font-bold transition-colors ${lang === 'en' ? 'bg-[#D97706] text-white' : 'bg-white text-[#5C4A3A] hover:bg-[#FAF7F2]'}`}
                 aria-pressed={lang === 'en'}
               >
                 EN
               </button>
             </div>
 
-            {/* Book Now CTA (desktop) */}
-            <Link
-              to="/booking"
-              className="hidden sm:inline-flex btn-gold text-sm py-2 px-4 font-devanagari"
+            {/* Phone CTA (desktop) */}
+            <a
+              href={PHONE_HREF}
+              onClick={() => trackPhoneCall('navbar')}
+              className="hidden md:inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-gradient-to-r from-[#D97706] to-[#B45309] text-white text-xs font-bold shadow-sm hover:shadow-md transition-all"
             >
-              {t(nav.bookNow)}
-            </Link>
+              <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-2.2 2.2a15.053 15.053 0 01-6.59-6.59l2.2-2.21a.96.96 0 00.25-1.01A11.36 11.36 0 018.57 3.9c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.52c0-.55-.45-1-.99-1z"/></svg>
+              +91 62634 01651
+            </a>
+
+            {/* WhatsApp CTA (desktop) */}
+            <a
+              href={WA_HREF}
+              onClick={() => trackWhatsAppClick('navbar')}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden md:inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#25D366] text-white text-xs font-bold shadow-sm hover:bg-[#1EBE5D] transition-all"
+            >
+              WhatsApp
+            </a>
 
             {/* Hamburger (mobile) */}
             <button
-              className="lg:hidden flex flex-col gap-1.5 p-2 rounded-lg hover:bg-white/10 transition-colors shrink-0"
+              className="lg:hidden flex flex-col gap-1.5 p-2 rounded-lg hover:bg-[#D97706]/10 transition-colors shrink-0"
               onClick={() => setMenuOpen(!menuOpen)}
               aria-label="Toggle menu"
               aria-expanded={menuOpen}
             >
-              <span className={`block w-5 h-0.5 bg-gold transition-all duration-300 ${menuOpen ? 'rotate-45 translate-y-2' : ''}`} />
-              <span className={`block w-5 h-0.5 bg-gold transition-all duration-300 ${menuOpen ? 'opacity-0' : ''}`} />
-              <span className={`block w-5 h-0.5 bg-gold transition-all duration-300 ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
+              <span className={`block w-5 h-0.5 bg-[#1F160F] transition-all duration-300 ${menuOpen ? 'rotate-45 translate-y-2' : ''}`} />
+              <span className={`block w-5 h-0.5 bg-[#1F160F] transition-all duration-300 ${menuOpen ? 'opacity-0' : ''}`} />
+              <span className={`block w-5 h-0.5 bg-[#1F160F] transition-all duration-300 ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
             </button>
           </div>
         </div>
 
-        {/* Mobile Menu */}
+        {/* ── Mobile Menu ── */}
         <div
           className={`lg:hidden overflow-hidden transition-all duration-300 ${
-            menuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
-          } bg-divine-dark/98 backdrop-blur-md border-t border-saffron/20`}
+            menuOpen ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0'
+          } bg-[#FFFDF9] border-t border-[#E8DCC8]`}
         >
-          <div className="px-4 py-4 flex flex-col gap-1">
+          <div className="px-4 py-3 flex flex-col gap-1">
             {navLinks.map((link) => (
               <NavLink
                 key={link.to}
                 to={link.to}
                 className={({ isActive }) =>
-                  `px-4 py-3 rounded-xl text-sm font-medium font-devanagari transition-colors ${
+                  `px-4 py-3 rounded-xl text-sm font-semibold transition-colors ${
                     isActive
-                      ? 'text-gold bg-white/10'
-                      : 'text-cream/80 hover:text-gold hover:bg-white/8'
+                      ? 'text-[#B45309] bg-[#D97706]/10'
+                      : 'text-[#3D2E1F] hover:text-[#B45309] hover:bg-[#D97706]/5'
                   }`
                 }
               >
                 {t(link.label)}
               </NavLink>
             ))}
-            <Link
-              to="/booking"
-              className="btn-gold text-center mt-2 font-devanagari"
-            >
-              {t(nav.bookNow)}
-            </Link>
+
+            {/* Mobile CTA buttons */}
+            <div className="flex gap-2 mt-3 pt-3 border-t border-[#E8DCC8]">
+              <a
+                href={PHONE_HREF}
+                onClick={() => trackPhoneCall('navbar_mobile')}
+                className="flex-1 inline-flex items-center justify-center gap-1.5 px-4 py-3 rounded-xl bg-gradient-to-r from-[#D97706] to-[#B45309] text-white text-sm font-bold"
+              >
+                📞 Call
+              </a>
+              <a
+                href={WA_HREF}
+                onClick={() => trackWhatsAppClick('navbar_mobile')}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 inline-flex items-center justify-center gap-1.5 px-4 py-3 rounded-xl bg-[#25D366] text-white text-sm font-bold"
+              >
+                💬 WhatsApp
+              </a>
+            </div>
           </div>
         </div>
       </nav>
@@ -160,7 +187,7 @@ export default function Navbar() {
       {/* Overlay for mobile menu */}
       {menuOpen && (
         <div
-          className="fixed inset-0 z-40 bg-black/40 lg:hidden"
+          className="fixed inset-0 z-40 bg-black/30 lg:hidden"
           onClick={() => setMenuOpen(false)}
         />
       )}

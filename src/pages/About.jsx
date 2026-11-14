@@ -88,8 +88,8 @@ export default function About() {
                 {/* Quick Trust Strip below photo */}
                 <div className="mt-4 pt-3 border-t border-[#F0E6D8] flex items-center justify-between text-xs sm:text-sm text-[#5C4D3E]">
                   <div className="flex items-center gap-1 font-bold text-[#1F160F]">
-                    <span className="text-amber-500">★★★★★</span>
-                    <span>5.0 (150+ Reviews)</span>
+                    <span className="text-amber-500">★★★★☆</span>
+                    <span>3.9 (56+ Reviews)</span>
                   </div>
                   <div className="flex items-center gap-1 text-emerald-700 font-semibold">
                     <span>✓</span> Verified Ujjain Purohit
