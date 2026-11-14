@@ -3,12 +3,13 @@
 // All sections: Hero, Trust, Services, Comparison, About,
 // Testimonials, FAQ, Booking — fully cream+white aesthetic
 // ============================================================
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import heroBg from '../assets/hero_mangal_puja.jpg';
 import panditImg from '../assets/pandit_deepak_pandya.jpg';
 import kaalSarpImg from '../assets/gallery/Kaal-Sarp-Puja-Ujjain.webp';
 import rudraImg from '../assets/gallery/g1.jpg';
 import vipImg from '../assets/vip_guest.jpg';
+import pujaVideo from '../assets/puja_video.mp4';
 import { Link } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -26,29 +27,40 @@ const C = CONTENT;
 // ─── Hero Media Slides ─────────────────────────────────────
 const HERO_SLIDES = [
   {
+    type: 'image',
+    image: vipImg,
+    badge: { hi: 'विशिष्ट यजमान दर्शन', en: 'VIP GUEST PUJA' },
+    title: { hi: 'विशिष्ट यजमान एवं प्रामाणिक वैदिक संकल्प', en: 'Authentic Vedic Sankalp for Devotees' },
+  },
+  {
+    type: 'video',
+    video: pujaVideo,
+    badge: { hi: 'लाइव पूजन वीडियो', en: 'LIVE PUJA VIDEO' },
+    title: { hi: 'उज्जैन मंगलनाथ मंदिर मंगल भात पूजा एवं अनुष्ठान दर्शन', en: 'Ujjain Mangal Bhat Puja & Vedic Anushthan Video' },
+  },
+  {
+    type: 'image',
     image: heroBg,
     badge: { hi: 'मंगल भात पूजा', en: 'MANGAL BHAT PUJA' },
     title: { hi: 'श्री मंगलनाथ मंदिर वैदिक मंगल भात पूजा', en: 'Vedic Mangal Bhat Puja at Mangalnath' },
   },
   {
+    type: 'image',
     image: panditImg,
     badge: { hi: 'प्रधान पुरोहित', en: 'CHIEF VEDIC PUROHIT' },
     title: { hi: 'वैदिक पंडित दीपक पंड्या (15+ वर्षों का अनुभव)', en: 'Vedic Pandit Deepak Pandya (15+ Yrs Exp)' },
   },
   {
+    type: 'image',
     image: kaalSarpImg,
     badge: { hi: 'कालसर्प दोष', en: 'KAAL SARP DOSH' },
     title: { hi: 'कालसर्प दोष निवारण एवं महाकाल अनुष्ठान', en: 'Kaal Sarp Dosh Nivaran Ujjain' },
   },
   {
+    type: 'image',
     image: rudraImg,
     badge: { hi: 'रुद्राभिषेक', en: 'RUDRABHISHEK' },
     title: { hi: 'महाकालेश्वर ज्योतिर्लिंग महा रुद्राभिषेक पूजन', en: 'Mahakaleshwar Jyotirlinga Rudrabhishek' },
-  },
-  {
-    image: vipImg,
-    badge: { hi: 'सिद्ध पीठ अनुष्ठान', en: 'SIDDHA PEETH RITUALS' },
-    title: { hi: 'विशिष्ट यजमान एवं प्रामाणिक वैदिक संकल्प', en: 'Authentic Vedic Sankalp for Devotees' },
   },
 ];
 
@@ -56,13 +68,24 @@ const HERO_SLIDES = [
 function Hero() {
   const { t, lang } = useLanguage();
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isMuted, setIsMuted] = useState(true);
+  const videoRef = useRef(null);
+  const viewportRef = useRef(null);
 
   useEffect(() => {
+    const isVideo = HERO_SLIDES[currentSlide]?.type === 'video';
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % HERO_SLIDES.length);
-    }, 4500);
+    }, isVideo ? 12000 : 4500);
     return () => clearInterval(timer);
-  }, []);
+  }, [currentSlide]);
+
+  useEffect(() => {
+    if (HERO_SLIDES[currentSlide]?.type === 'video' && videoRef.current) {
+      videoRef.current.currentTime = 0;
+      videoRef.current.play().catch(() => {});
+    }
+  }, [currentSlide]);
 
   const prevSlide = () => setCurrentSlide((prev) => (prev === 0 ? HERO_SLIDES.length - 1 : prev - 1));
   const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % HERO_SLIDES.length);
@@ -138,16 +161,63 @@ function Hero() {
           <div className="lg:col-span-5 w-full">
             <div className="bg-white rounded-3xl p-3 sm:p-4 border-2 border-[#E8DCC8] shadow-[0_12px_40px_rgba(45,27,0,0.08)]">
               {/* Media Viewport */}
-              <div className="relative aspect-[16/11] rounded-2xl overflow-hidden bg-[#1C0A00] group">
-                <img src={HERO_SLIDES[currentSlide].image} alt={t(HERO_SLIDES[currentSlide].title)} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              <div ref={viewportRef} className="relative aspect-[16/11] rounded-2xl overflow-hidden bg-[#1C0A00] group">
+                {HERO_SLIDES[currentSlide].type === 'video' ? (
+                  <video
+                    ref={videoRef}
+                    src={HERO_SLIDES[currentSlide].video}
+                    className="w-full h-full object-cover"
+                    autoPlay
+                    playsInline
+                    muted={isMuted}
+                    loop
+                  />
+                ) : (
+                  <img
+                    src={HERO_SLIDES[currentSlide].image}
+                    alt={t(HERO_SLIDES[currentSlide].title)}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                )}
+
+                {/* Top Overlay Icons */}
                 <div className="absolute top-3 right-3 flex items-center gap-1.5 z-10">
-                  <div className="w-7 h-7 rounded-full bg-black/60 backdrop-blur-sm flex items-center justify-center text-white text-xs">
-                    <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg>
-                  </div>
-                  <div className="w-7 h-7 rounded-full bg-black/60 backdrop-blur-sm flex items-center justify-center text-white text-xs">
-                    <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg>
-                  </div>
+                  {HERO_SLIDES[currentSlide].type === 'video' && (
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setIsMuted(!isMuted);
+                      }}
+                      className="w-8 h-8 rounded-full bg-black/70 backdrop-blur-sm flex items-center justify-center text-white text-xs hover:bg-black/90 transition-all cursor-pointer shadow-md"
+                      title={isMuted ? 'Unmute Audio' : 'Mute Audio'}
+                      aria-label={isMuted ? 'Unmute audio' : 'Mute audio'}
+                    >
+                      {isMuted ? (
+                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg>
+                      ) : (
+                        <svg className="w-4 h-4 text-emerald-400" fill="currentColor" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+                      )}
+                    </button>
+                  )}
+                  <button
+                    onClick={() => {
+                      if (viewportRef.current) {
+                        if (document.fullscreenElement) {
+                          document.exitFullscreen?.();
+                        } else {
+                          viewportRef.current.requestFullscreen?.();
+                        }
+                      }
+                    }}
+                    className="w-8 h-8 rounded-full bg-black/70 backdrop-blur-sm flex items-center justify-center text-white text-xs hover:bg-black/90 transition-all cursor-pointer shadow-md"
+                    title="Fullscreen"
+                    aria-label="Toggle fullscreen"
+                  >
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg>
+                  </button>
                 </div>
+
+                {/* Bottom Overlay Info */}
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/95 via-black/60 to-transparent p-3 sm:p-4 z-10">
                   <div className="flex items-center justify-between gap-2 mb-1.5">
                     <span className="bg-[#F5C842] text-[#1C0A00] font-bold text-[10px] sm:text-xs uppercase px-2.5 py-0.5 rounded tracking-wider">{t(HERO_SLIDES[currentSlide].badge)}</span>
@@ -490,7 +560,7 @@ function QuickBookingSection() {
         </div>
 
         <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-2xl" data-aos="fade-up" data-aos-delay="100">
-          <BookingForm compact />
+            <BookingForm compact />
         </div>
       </div>
     </section>
