@@ -140,7 +140,7 @@ export default function About() {
 
               <div className="mt-8 flex gap-4 flex-wrap">
                 <Link to="/booking" className="btn-gold font-devanagari">
-                  🙏 {t({ hi: 'अभी पूजा बुक करें', en: 'Book Puja Now' })}
+                  {t({ hi: 'अभी पूजा बुक करें', en: 'Book Puja Now' })}
                 </Link>
                 <Link to="/services" className="btn-secondary font-devanagari">
                   {t({ hi: 'सेवाएं देखें', en: 'View Services' })}

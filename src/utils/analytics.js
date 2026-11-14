@@ -5,6 +5,29 @@
 export const GA_MEASUREMENT_ID = 'G-VSJ9RGW9HC';
 
 /**
+ * Dynamically initialize Google Tag (gtag.js) via JavaScript.
+ * Keeps raw Google tag out of initial static Page Source while
+ * ensuring 100% full tracking for Google Ads, GA4, and Google Console.
+ */
+export function initGoogleTag() {
+  if (typeof window === 'undefined') return;
+  if (window.__gtag_loaded) return;
+  window.__gtag_loaded = true;
+
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function () {
+    window.dataLayer.push(arguments);
+  };
+  window.gtag('js', new Date());
+  window.gtag('config', GA_MEASUREMENT_ID);
+
+  const script = document.createElement('script');
+  script.async = true;
+  script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+  document.head.appendChild(script);
+}
+
+/**
  * Safely send an event to Google Tag / Google Ads / GA4
  */
 export function trackEvent(eventName, params = {}) {

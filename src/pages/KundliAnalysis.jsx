@@ -178,7 +178,7 @@ export default function KundliAnalysis() {
                   rel="noopener noreferrer"
                   className="btn-gold font-devanagari"
                 >
-                  💬 WhatsApp: 6263401651
+                  WhatsApp: 6263401651
                 </a>
               </div>
             </div>

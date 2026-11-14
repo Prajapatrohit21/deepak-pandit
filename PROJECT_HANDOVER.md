@@ -46,6 +46,10 @@
    - Added clean `LocalBusiness` JSON-LD schema in `<head>`.
    - Added unobtrusive "WhatsApp पर शेयर करें" share button in footer.
 
+3. **Page Source & Assets Protection:**
+   - **Google Tag Dynamic Injection:** Removed raw `<script src="googletagmanager.com/gtag/js...">` and `<!-- Google tag -->` comment from static `index.html`. It is now dynamically injected via `initGoogleTag()` in `src/utils/analytics.js` and `src/main.jsx`. This keeps raw Google Tag out of HTML Page Source while keeping Google Ads & GA4 tracking 100% active.
+   - **Assets Directory Clean Name:** Configured `assetsDir: "static"` in `vite.config.js` so default `/assets/` directory is not exposed in Page Source.
+
 2. **UI Professionalization & Ad Conversion Polish:**
    - **Removed Clipboard Hijacker:** Removed a legacy script in `App.jsx` that copied `🤡` to user's clipboard.
    - **Replaced Emojis with Real Photos:** All service cards now show authentic high-resolution Vedic puja photos (`hero_mangal_puja.jpg`, `Kaal-Sarp-Puja-Ujjain.webp`, `g1.jpg`, `g9.jpg`, `g10.jpg`, `g11.jpg`, `pandit_deepak_pandya.jpg`) instead of emojis.

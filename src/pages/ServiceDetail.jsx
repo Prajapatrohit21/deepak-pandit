@@ -52,6 +52,8 @@ export default function ServiceDetail() {
   const content = lang === 'hi' ? service.hi : service.en;
   const canonicalUrl = `https://mangaldoshpujanivaran.in/services/${service.slug}`;
 
+
+
   // Structured Data (Service + FAQPage)
   const serviceSchema = {
     '@context': 'https://schema.org',
@@ -233,7 +235,7 @@ export default function ServiceDetail() {
                 <h2 className="text-2xl font-bold text-divine-brown font-devanagari mb-5">
                   {content.name} — {t({ hi: 'क्या है, क्यों की जाती है और किसके लिए?', en: 'What, Why and Who?' })}
                 </h2>
-                
+
                 <div className="space-y-4">
                   <div>
                     <h3 className="text-lg font-bold text-saffron font-devanagari mb-1">
@@ -500,7 +502,7 @@ export default function ServiceDetail() {
             {/* Right: Booking Sidebar */}
             <div className="lg:col-span-1">
               <div className="sticky top-24 space-y-6">
-                
+
                 {/* 9. Short booking form */}
                 <div
                   className="rounded-2xl p-5 sm:p-6 shadow-divine"
