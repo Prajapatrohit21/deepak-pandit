@@ -10,6 +10,7 @@ import { CONTENT } from '../data/content';
 import { BLOG_ARTICLES } from '../data/blog';
 import { WA_HREF, PHONE_HREF } from '../utils/whatsapp';
 import { trackWhatsAppClick, trackPhoneCall } from '../utils/analytics';
+import SEO from '../components/common/SEO';
 import panditImg from '../assets/pandit_deepak_pandya.jpg';
 
 const C = CONTENT;
@@ -24,8 +25,21 @@ export function Blog() {
     window.scrollTo(0, 0);
   }, []);
 
+  const blogTitle = lang === 'hi'
+    ? 'वैदिक ज्ञान ब्लॉग | मंगल दोष, कालसर्प, उज्जैन पूजा विधि आलेख'
+    : 'Vedic Knowledge Blog | Mangal Dosh, Kaal Sarp, Ujjain Puja Articles';
+
+  const blogDesc = lang === 'hi'
+    ? 'पंडित दीपक पंड्या द्वारा रचित वैदिक ज्ञान आलेख — मंगल दोष, कालसर्प, पितृ दोष, उज्जैन पूजा विधि, शुभ मुहूर्त और ज्योतिष संबंधी जानकारी।'
+    : 'Vedic knowledge articles by Pandit Deepak Pandya on Mangal Dosh, Kaal Sarp, Pitru Dosh, Ujjain puja rituals, auspicious muhurta, and astrology.';
+
   return (
     <main className="pt-20 bg-[#FAF7F2] text-[#2D1B00]">
+      <SEO
+        title={blogTitle}
+        description={blogDesc}
+        canonical="https://mangaldoshpujanivaran.in/blog"
+      />
       {/* ── Page Header ── */}
       <section
         className="py-16 sm:py-24 text-center relative overflow-hidden bg-gradient-to-b from-[#FFFDF9] via-[#FAF6EE] to-[#F5EFE4] border-b border-[#E8DCC8]"
@@ -77,7 +91,11 @@ export function Blog() {
                 </div>
 
                 <h2 className="font-heading font-black text-2xl sm:text-3xl text-[#1F160F] hover:text-[#8C3814] transition-colors mb-3 leading-snug">
-                  <Link to={`/blog/${article.slug}`}>
+                  <Link
+                    to={`/blog/${article.slug}`}
+                    title={`${t({ hi: article.hi.title, en: article.en.title })} - पंडित दीपक पंड्या उज्जैन`}
+                    aria-label={`Read article: ${t({ hi: article.hi.title, en: article.en.title })}`}
+                  >
                     {t({ hi: article.hi.title, en: article.en.title })}
                   </Link>
                 </h2>
@@ -88,6 +106,8 @@ export function Blog() {
 
                 <Link
                   to={`/blog/${article.slug}`}
+                  title={`${t({ hi: article.hi.title, en: article.en.title })} — पूरा आलेख पढ़ें`}
+                  aria-label={`Read full article: ${t({ hi: article.hi.title, en: article.en.title })}`}
                   className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl border border-[#D97706] text-[#D97706] hover:bg-[#D97706] hover:text-white font-bold text-sm font-devanagari transition-all duration-200"
                 >
                   <span>{lang === 'hi' ? 'पूरा आलेख पढ़ें' : 'Read Full Article'}</span>
@@ -120,6 +140,11 @@ export function BlogDetail() {
 
   return (
     <main className="pt-20 bg-[#FAF7F2] text-[#2D1B00]">
+      <SEO
+        title={`${content.title} | पंडित दीपक पंड्या उज्जैन`}
+        description={content.excerpt}
+        canonical={`https://mangaldoshpujanivaran.in/blog/${article.slug}`}
+      />
       {/* ── Page Header ── */}
       <section
         className="py-16 sm:py-24 relative overflow-hidden bg-gradient-to-b from-[#FFFDF9] via-[#FAF6EE] to-[#F5EFE4] border-b border-[#E8DCC8]"
@@ -184,6 +209,8 @@ export function BlogDetail() {
                   <a
                     href={PHONE_HREF}
                     onClick={() => trackPhoneCall('blog_detail_cta')}
+                    title="पंडित दीपक पंड्या जी को कॉल करें: +91 62634 01651"
+                    aria-label="Call Pandit Deepak Pandya for puja consultation"
                     className="bg-[#1C0A00] text-gold hover:text-white px-5 py-2.5 rounded-xl font-bold text-xs font-devanagari transition-all"
                   >
                     📞 कॉल करें
@@ -193,6 +220,8 @@ export function BlogDetail() {
                     onClick={() => trackWhatsAppClick('blog_detail_cta')}
                     target="_blank"
                     rel="noopener noreferrer"
+                    title="WhatsApp पर पूजा परामर्श एवं बुकिंग करें"
+                    aria-label="Contact on WhatsApp for Vedic puja consultation"
                     className="bg-[#25D366] text-white hover:bg-[#1EBE5D] px-5 py-2.5 rounded-xl font-bold text-xs font-devanagari transition-all"
                   >
                     💬 WhatsApp पर बात करें
@@ -206,7 +235,7 @@ export function BlogDetail() {
               <div className="bg-white rounded-3xl p-6 border-2 border-[#E8DCC8] shadow-sm text-center">
                 <img
                   src={panditImg}
-                  alt="पंडित दीपक पंड्या"
+                  alt="वैदिक पुरोहित पंडित दीपक पंड्या - उज्जैन सिद्ध पीठ"
                   className="w-20 h-20 rounded-full object-cover mx-auto mb-3 border-2 border-[#D97706]"
                 />
                 <h4 className="font-heading font-bold text-base text-[#1F160F]">पंडित दीपक पंड्या</h4>
@@ -216,6 +245,8 @@ export function BlogDetail() {
                   onClick={() => trackWhatsAppClick('blog_sidebar')}
                   target="_blank"
                   rel="noopener noreferrer"
+                  title="पंडित दीपक पंड्या जी से WhatsApp पर परामर्श लें"
+                  aria-label="Contact Pandit Deepak Pandya on WhatsApp"
                   className="w-full py-2.5 rounded-xl bg-[#25D366] text-white font-bold text-xs font-devanagari block text-center"
                 >
                   WhatsApp पर संपर्क करें

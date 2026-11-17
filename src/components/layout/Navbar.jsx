@@ -29,14 +29,14 @@ export default function Navbar() {
   const nav = C.nav;
 
   const navLinks = [
-    { to: '/', label: nav.home },
-    { to: '/about', label: nav.about },
-    { to: '/services', label: nav.services },
-    { to: '/kundli-analysis', label: nav.kundli },
-    { to: '/gallery', label: nav.gallery },
-    { to: '/testimonials', label: nav.testimonials },
-    { to: '/blog', label: nav.blog },
-    { to: '/contact', label: nav.contact },
+    { to: '/', label: nav.home, title: 'मुख्य पृष्ठ - मंगल दोष पूजन केंद्र उज्जैन', aria: 'Home' },
+    { to: '/about', label: nav.about, title: 'वैदिक पंडित दीपक पंड्या जी का परिचय एवं 15+ वर्षों की परंपरा', aria: 'About Pandit Deepak Pandya' },
+    { to: '/services', label: nav.services, title: 'उज्जैन में समस्त वैदिक पूजा एवं अनुष्ठान सेवाएं', aria: 'Vedic Puja Services' },
+    { to: '/kundli-analysis', label: nav.kundli, title: 'जन्म कुंडली विश्लेषण एवं मांगलिक दोष परीक्षण', aria: 'Kundli Analysis' },
+    { to: '/gallery', label: nav.gallery, title: 'उज्जैन पूजा दर्शन एवं सिद्ध पीठ अनुष्ठान फोटो गैलरी', aria: 'Photo Gallery' },
+    { to: '/testimonials', label: nav.testimonials, title: 'संतुष्ट भक्तों के अनुभव एवं Google 5-स्टार समीक्षाएं', aria: 'Devotee Reviews' },
+    { to: '/blog', label: nav.blog, title: 'वैदिक ज्ञान, पूजा विधि एवं धार्मिक आलेख', aria: 'Religious Blog' },
+    { to: '/contact', label: nav.contact, title: 'पंडित जी से संपर्क एवं उज्जैन मंदिर का पता', aria: 'Contact Information' },
   ];
 
   return (
@@ -51,10 +51,15 @@ export default function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-5 lg:px-6 flex items-center justify-between gap-4">
           {/* Brand Logo */}
-          <Link to="/" className="flex items-center gap-3 group py-0.6 shrink-0 " aria-label="Home">
+          <Link
+            to="/"
+            className="flex items-center gap-3 group py-0.6 shrink-0"
+            aria-label="मंगल दोष पूजन केंद्र उज्जैन - मुख्य पृष्ठ"
+            title="मंगल दोष पूजन केंद्र उज्जैन - मुख्य पृष्ठ"
+          >
             <img
               src={logoImg}
-              alt="मंगल दोष पूजन केंद्र"
+              alt="मंगल दोष पूजन केंद्र उज्जैन - वैदिक पंडित दीपक पंड्या Logo"
               className={`w-auto object-contain transition-all duration-300 ${scrolled ? 'h-14 sm:h-16' : 'h-16 sm:h-20 md:h-24'}`}
             />
             <div className="hidden sm:flex flex-col">
@@ -69,6 +74,8 @@ export default function Navbar() {
               <NavLink
                 key={link.to}
                 to={link.to}
+                title={link.title}
+                aria-label={link.aria}
                 className={({ isActive }) =>
                   `px-3 py-2 rounded-lg text-[13px] font-semibold transition-all duration-200 ${isActive
                     ? 'text-[#B45309] bg-[#D97706]/10'
@@ -89,6 +96,8 @@ export default function Navbar() {
                 onClick={() => { if (lang !== 'hi') toggleLang(); }}
                 className={`px-2 py-1.5 font-bold transition-colors ${lang === 'hi' ? 'bg-[#D97706] text-white' : 'bg-white text-[#5C4A3A] hover:bg-[#FAF7F2]'}`}
                 aria-pressed={lang === 'hi'}
+                title="हिंदी भाषा चुनें"
+                aria-label="Switch to Hindi language"
               >
                 हिं
               </button>
@@ -96,6 +105,8 @@ export default function Navbar() {
                 onClick={() => { if (lang !== 'en') toggleLang(); }}
                 className={`px-2 py-1.5 font-bold transition-colors ${lang === 'en' ? 'bg-[#D97706] text-white' : 'bg-white text-[#5C4A3A] hover:bg-[#FAF7F2]'}`}
                 aria-pressed={lang === 'en'}
+                title="Switch to English"
+                aria-label="Switch to English language"
               >
                 EN
               </button>
@@ -105,6 +116,8 @@ export default function Navbar() {
             <a
               href={PHONE_HREF}
               onClick={() => trackPhoneCall('navbar')}
+              title="पंडित दीपक पंड्या जी को कॉल करें: +91 62634 01651"
+              aria-label="Call Pandit Deepak Pandya at +91 62634 01651"
               className="hidden md:inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-gradient-to-r from-[#D97706] to-[#B45309] text-white text-xs font-bold shadow-sm hover:shadow-md transition-all"
             >
               <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-2.2 2.2a15.053 15.053 0 01-6.59-6.59l2.2-2.21a.96.96 0 00.25-1.01A11.36 11.36 0 018.57 3.9c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.52c0-.55-.45-1-.99-1z" /></svg>
@@ -117,6 +130,8 @@ export default function Navbar() {
               onClick={() => trackWhatsAppClick('navbar')}
               target="_blank"
               rel="noopener noreferrer"
+              title="WhatsApp पर 24x7 पूजा परामर्श एवं बुकिंग"
+              aria-label="Chat with Pandit Deepak Pandya on WhatsApp"
               className="hidden md:inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#25D366] text-white text-xs font-bold shadow-sm hover:bg-[#1EBE5D] transition-all"
             >
               WhatsApp
@@ -126,7 +141,8 @@ export default function Navbar() {
             <button
               className="lg:hidden flex flex-col gap-1.5 p-2 rounded-lg hover:bg-[#D97706]/10 transition-colors shrink-0"
               onClick={() => setMenuOpen(!menuOpen)}
-              aria-label="Toggle menu"
+              aria-label="Toggle navigation menu"
+              title="नेविगेशन मेनू खोलें / बंद करें"
               aria-expanded={menuOpen}
             >
               <span className={`block w-5 h-0.5 bg-[#1F160F] transition-all duration-300 ${menuOpen ? 'rotate-45 translate-y-2' : ''}`} />
@@ -146,6 +162,8 @@ export default function Navbar() {
               <NavLink
                 key={link.to}
                 to={link.to}
+                title={link.title}
+                aria-label={link.aria}
                 className={({ isActive }) =>
                   `px-4 py-3 rounded-xl text-sm font-semibold transition-colors ${isActive
                     ? 'text-[#B45309] bg-[#D97706]/10'
@@ -162,6 +180,8 @@ export default function Navbar() {
               <a
                 href={PHONE_HREF}
                 onClick={() => trackPhoneCall('navbar_mobile')}
+                title="पंडित दीपक पंड्या जी को कॉल करें: +91 62634 01651"
+                aria-label="Call Pandit Deepak Pandya"
                 className="flex-1 inline-flex items-center justify-center gap-1.5 px-4 py-3 rounded-xl bg-gradient-to-r from-[#D97706] to-[#B45309] text-white text-sm font-bold"
               >
                 📞 Call
@@ -171,6 +191,8 @@ export default function Navbar() {
                 onClick={() => trackWhatsAppClick('navbar_mobile')}
                 target="_blank"
                 rel="noopener noreferrer"
+                title="WhatsApp पर चैट करें"
+                aria-label="Chat on WhatsApp"
                 className="flex-1 inline-flex items-center justify-center gap-1.5 px-4 py-3 rounded-xl bg-[#25D366] text-white text-sm font-bold"
               >
                 💬 WhatsApp

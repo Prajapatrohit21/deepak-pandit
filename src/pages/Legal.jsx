@@ -6,24 +6,32 @@ import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useLanguage } from '../context/LanguageContext';
+import SEO from '../components/common/SEO';
 
-function LegalPage({ titleHi, titleEn, children }) {
+function LegalPage({ titleHi, titleEn, canonical, children }) {
   const { lang } = useLanguage();
   useEffect(() => {
     AOS.init({ duration: 700, once: true });
     window.scrollTo(0, 0);
   }, []);
 
+  const title = lang === 'hi' ? titleHi : titleEn;
+
   return (
     <main className="pt-20">
+      {canonical && (
+        <SEO
+          title={`${title} | मंगल दोष पूजन केंद्र उज्जैन`}
+          canonical={canonical}
+        />
+      )}
       {/* ── Hero Header — Luxury Cream ── */}
       <section className="relative overflow-hidden bg-gradient-to-b from-[#FFFDF9] via-[#FAF6EE] to-[#F5EFE4] py-12 sm:py-20 text-center">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[500px] rounded-full bg-[#D97706]/10 blur-[120px] pointer-events-none" aria-hidden="true" />
         <div className="relative z-10 max-w-3xl mx-auto px-4">
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#1F160F] font-heading break-words">
             {lang === 'hi' ? titleHi : titleEn}
-          </h1>
-          <div className="w-20 h-1 mx-auto mt-4 rounded-full bg-gradient-to-r from-[#D97706] to-[#B45309]" />
+          </h1>          <div className="w-20 h-1 mx-auto mt-4 rounded-full bg-gradient-to-r from-[#D97706] to-[#B45309]" />
         </div>
       </section>
 
@@ -44,7 +52,7 @@ export function TermsConditions() {
   const { lang } = useLanguage();
 
   if (lang === 'en') return (
-    <LegalPage titleHi="नियम एवं शर्तें" titleEn="Terms & Conditions">
+    <LegalPage titleHi="नियम एवं शर्तें" titleEn="Terms & Conditions" canonical="https://mangaldoshpujanivaran.in/terms">
       <p className="text-[#8C7A6B] text-sm mb-6">Last updated: November 2024</p>
       <h2 className="text-xl font-bold text-[#1F160F] mb-3">1. Acceptance of Terms</h2>
       <p className="text-[#5C4A3A] leading-relaxed mb-4">By accessing and using the services of Mahadev Anushthan Kendra ("we", "us", "Pandit Ji"), you accept and agree to be bound by the terms and provisions of this agreement.</p>
@@ -66,7 +74,7 @@ export function TermsConditions() {
   );
 
   return (
-    <LegalPage titleHi="नियम एवं शर्तें" titleEn="Terms & Conditions">
+    <LegalPage titleHi="नियम एवं शर्तें" titleEn="Terms & Conditions" canonical="https://mangaldoshpujanivaran.in/terms">
       <p className="text-[#8C7A6B] text-sm mb-6">अंतिम अद्यतन: नवंबर 2024</p>
       <h2 className="text-xl font-bold text-[#1F160F] mb-3">1. शर्तों की स्वीकृति</h2>
       <p className="text-[#5C4A3A] leading-relaxed mb-4">महादेव अनुष्ठान केंद्र की सेवाओं का उपयोग करके, आप इन नियम एवं शर्तों से सहमत होते हैं।</p>
@@ -93,7 +101,7 @@ export function PrivacyPolicy() {
   const { lang } = useLanguage();
 
   if (lang === 'en') return (
-    <LegalPage titleHi="गोपनीयता नीति" titleEn="Privacy Policy">
+    <LegalPage titleHi="गोपनीयता नीति" titleEn="Privacy Policy" canonical="https://mangaldoshpujanivaran.in/privacy-policy">
       <p className="text-[#8C7A6B] text-sm mb-6">Last updated: November 2024</p>
       <h2 className="text-xl font-bold text-[#1F160F] mb-3">1. Information We Collect</h2>
       <p className="text-[#5C4A3A] leading-relaxed mb-4">We collect information that you voluntarily provide when you use our booking forms or contact us: Name, Phone number/WhatsApp number, Date/time/place of birth (for kundali analysis), Problem description, and Preferred puja date.</p>
@@ -111,7 +119,7 @@ export function PrivacyPolicy() {
   );
 
   return (
-    <LegalPage titleHi="गोपनीयता नीति" titleEn="Privacy Policy">
+    <LegalPage titleHi="गोपनीयता नीति" titleEn="Privacy Policy" canonical="https://mangaldoshpujanivaran.in/privacy-policy">
       <p className="text-[#8C7A6B] text-sm mb-6">अंतिम अद्यतन: नवंबर 2024</p>
       <h2 className="text-xl font-bold text-[#1F160F] mb-3">1. हम क्या जानकारी एकत्र करते हैं</h2>
       <p className="text-[#5C4A3A] leading-relaxed mb-4">हम आपकी स्वेच्छा से दी गई जानकारी एकत्र करते हैं जैसे: नाम, फोन/WhatsApp नंबर, जन्म तिथि/समय/स्थान (कुंडली विश्लेषण के लिए), समस्या विवरण, और पूजन तिथि।</p>

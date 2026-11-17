@@ -153,11 +153,21 @@ export default function ServiceDetail() {
       {/* Breadcrumb Navigation */}
       <nav aria-label="Breadcrumb" className="bg-[#FAF7F2] border-b border-[#E8DCC8] py-2.5 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto flex items-center gap-2 text-xs sm:text-sm text-[#8C7A6B]">
-          <Link to="/" className="hover:text-[#B45309] transition-colors">
+          <Link
+            to="/"
+            title="मुख्य पृष्ठ पर जाएं"
+            aria-label="Navigate to Home"
+            className="hover:text-[#B45309] transition-colors"
+          >
             {lang === 'hi' ? 'मुख्य पृष्ठ' : 'Home'}
           </Link>
           <span className="text-[#D4C5B0]">›</span>
-          <Link to="/services" className="hover:text-[#B45309] transition-colors">
+          <Link
+            to="/services"
+            title="उज्जैन पूजा सेवाएं सूची देखें"
+            aria-label="Navigate to Services"
+            className="hover:text-[#B45309] transition-colors"
+          >
             {lang === 'hi' ? 'पूजा सेवाएं' : 'Services'}
           </Link>
           <span className="text-[#D4C5B0]">›</span>
@@ -180,7 +190,7 @@ export default function ServiceDetail() {
             <div className="w-24 h-24 sm:w-28 sm:h-28 mx-auto mb-4 rounded-3xl overflow-hidden border-2 border-[#D97706] shadow-md bg-black">
               <img
                 src={service.image}
-                alt={content.name}
+                alt={`${content.name} उज्जैन - वैदिक पंडित दीपक पंड्या`}
                 className="w-full h-full object-cover"
               />
             </div>
@@ -334,7 +344,12 @@ export default function ServiceDetail() {
                 </p>
                 <div className="mt-4 pt-3 border-t border-white/15 flex items-center justify-between flex-wrap gap-2 text-xs text-white/70">
                   <span>पवित्र तीर्थ क्षेत्र: मंगलनाथ मंदिर / शिप्रा तट / महाकाल क्षेत्र, उज्जैन (म.प्र.)</span>
-                  <Link to="/contact" className="text-[#F5C842] underline hover:text-white transition-colors">
+                  <Link
+                    to="/contact"
+                    title="उज्जैन मंदिर एवं आश्रम पता, गूगल मैप निर्देश देखें"
+                    aria-label="View map and directions to temple"
+                    className="text-[#F5C842] underline hover:text-white transition-colors"
+                  >
                     {t({ hi: 'नक्शा एवं दिशा-निर्देश देखें →', en: 'View Map & Directions →' })}
                   </Link>
                 </div>
@@ -463,7 +478,7 @@ export default function ServiceDetail() {
                   <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full border-2 border-white p-1 shrink-0 overflow-hidden bg-white shadow-md">
                     <img
                       src={panditImg}
-                      alt="पंडित दीपक पंड्या - उज्जैन"
+                      alt="वैदिक पुरोहित पंडित दीपक पंड्या - उज्जैन सिद्ध पीठ"
                       className="w-full h-full object-cover rounded-full"
                     />
                   </div>
@@ -480,6 +495,8 @@ export default function ServiceDetail() {
                       <a
                         href={PHONE_HREF}
                         onClick={() => trackPhoneCall('service_pandit_box')}
+                        title="पंडित दीपक पंड्या जी को कॉल करें: +91 62634 01651"
+                        aria-label="Call Pandit Deepak Pandya at +91 62634 01651"
                         className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-white text-[#B45309] font-bold text-xs hover:bg-[#FFFDF9] transition-colors"
                       >
                         📞 Call +91 62634 01651
@@ -489,6 +506,8 @@ export default function ServiceDetail() {
                         onClick={() => trackWhatsAppClick('service_pandit_box')}
                         target="_blank"
                         rel="noopener noreferrer"
+                        title="WhatsApp पर पूजा परामर्श एवं दक्षिणा जानकारी प्राप्त करें"
+                        aria-label="Contact Pandit Deepak Pandya on WhatsApp"
                         className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-white/15 border border-white/30 text-white font-bold text-xs hover:bg-white/25 transition-colors"
                       >
                         💬 WhatsApp पर बात करें
@@ -532,6 +551,8 @@ export default function ServiceDetail() {
                     <a
                       href={PHONE_HREF}
                       onClick={() => trackPhoneCall('service_detail_page')}
+                      title="पंडित दीपक पंड्या जी को 24x7 कॉल करें: +91 62634 01651"
+                      aria-label="Call Pandit Deepak Pandya at +91 62634 01651"
                       className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-gradient-to-r from-[#D97706] to-[#B45309] text-white font-bold text-sm shadow-sm hover:shadow-md transition-all"
                     >
                       📞 +91 62634 01651
@@ -541,6 +562,8 @@ export default function ServiceDetail() {
                       onClick={() => trackWhatsAppClick('service_detail_page')}
                       target="_blank"
                       rel="noopener noreferrer"
+                      title="WhatsApp पर तुरंत चैट करें और पूजा बुक करें"
+                      aria-label="Chat on WhatsApp with Pandit Deepak Pandya"
                       className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-[#25D366] text-white font-bold text-sm shadow-sm hover:bg-[#1EBE5D] transition-all"
                     >
                       💬 WhatsApp चैट
@@ -558,6 +581,8 @@ export default function ServiceDetail() {
                       <Link
                         key={s.id}
                         to={`/services/${s.slug}`}
+                        title={`${lang === 'hi' ? s.hi.name : s.en.name} उज्जैन - विस्तृत विधि एवं बुकिंग`}
+                        aria-label={`View details for ${lang === 'hi' ? s.hi.name : s.en.name}`}
                         className="text-xs sm:text-sm text-[#5C4A3A] hover:text-[#B45309] transition-colors flex items-center justify-between py-2 px-2.5 rounded-xl hover:bg-[#FAF7F2]"
                       >
                         <span className="flex items-center gap-2">

@@ -9,6 +9,7 @@ import { CONTENT } from '../data/content';
 import { SERVICES } from '../data/services';
 import SectionHeading from '../components/ui/SectionHeading';
 import ServiceCard from '../components/ui/ServiceCard';
+import SEO from '../components/common/SEO';
 import { WA_HREF, PHONE_HREF } from '../utils/whatsapp';
 import { trackWhatsAppClick, trackPhoneCall } from '../utils/analytics';
 
@@ -23,8 +24,21 @@ export default function Services() {
     window.scrollTo(0, 0);
   }, []);
 
+  const servicesTitle = lang === 'hi'
+    ? 'उज्जैन वैदिक पूजा सेवाएं | मंगल दोष, कालसर्प, पितृ दोष, रुद्राभिषेक'
+    : 'Vedic Puja Services Ujjain | Mangal Dosh, Kaal Sarp, Rudrabhishek';
+
+  const servicesDesc = lang === 'hi'
+    ? 'उज्जैन में वैदिक पंडित दीपक पंड्या द्वारा मंगल भात पूजा, कालसर्प दोष, पितृ दोष निवारण, महामृत्युंजय जाप, रुद्राभिषेक और नवग्रह शांति अनुष्ठान। प्रामाणिक विधि एवं शुभ मुहूर्त।'
+    : 'Complete list of authentic Vedic Pujas in Ujjain: Mangal Dosh Bhat Puja, Kaal Sarp Dosh Nivaran, Rudrabhishek, Mahamrityunjay Jaap by Pandit Deepak Pandya.';
+
   return (
     <main className="pt-20 bg-[#FAF7F2] text-[#2D1B00]">
+      <SEO
+        title={servicesTitle}
+        description={servicesDesc}
+        canonical="https://mangaldoshpujanivaran.in/services"
+      />
       
       {/* ── Page Header ── */}
       <section
@@ -130,6 +144,8 @@ export default function Services() {
             <a
               href={PHONE_HREF}
               onClick={() => trackPhoneCall('services_cta_banner')}
+              title="पंडित दीपक पंड्या जी को कॉल करें: +91 62634 01651"
+              aria-label="Call Pandit Deepak Pandya at +91 62634 01651"
               className="bg-white text-[#8C3814] hover:bg-[#FFF8E6] px-8 py-3.5 rounded-xl font-bold font-devanagari text-sm sm:text-base shadow-xl inline-flex items-center gap-2 transition-all transform hover:-translate-y-0.5"
             >
               <span>📞 कॉल करें: +91 62634 01651</span>
@@ -139,6 +155,8 @@ export default function Services() {
               onClick={() => trackWhatsAppClick('services_cta_banner')}
               target="_blank"
               rel="noopener noreferrer"
+              title="WhatsApp पर पूजा मुहूर्त और दक्षिणा जानकारी प्राप्त करें"
+              aria-label="Contact on WhatsApp for puja muhurat and details"
               className="bg-[#25D366] hover:bg-[#1EBE5D] text-white px-8 py-3.5 rounded-xl font-bold font-devanagari text-sm sm:text-base shadow-xl inline-flex items-center gap-2 transition-all transform hover:-translate-y-0.5"
             >
               <span>💬 WhatsApp पर बात करें</span>

@@ -10,6 +10,7 @@ import { SERVICES } from '../data/services';
 import { buildKundliMessage, buildWhatsAppUrl } from '../utils/whatsapp';
 import { trackKundliSubmit, trackWhatsAppClick, trackPhoneCall } from '../utils/analytics';
 import SectionHeading from '../components/ui/SectionHeading';
+import SEO from '../components/common/SEO';
 import panditImg from '../assets/pandit_deepak_pandya.jpg';
 
 const C = CONTENT;
@@ -27,6 +28,14 @@ export default function KundliAnalysis() {
     AOS.init({ duration: 700, once: true, easing: 'ease-out-cubic', offset: 60 });
     window.scrollTo(0, 0);
   }, []);
+
+  const kundliTitle = lang === 'hi'
+    ? 'मुफ्त प्राथमिक कुंडली विश्लेषण | मांगलिक व कालसर्प दोष जांच उज्जैन'
+    : 'Free Primary Kundali Analysis | Mangal & Kaal Sarp Dosh Check Ujjain';
+
+  const kundliDesc = lang === 'hi'
+    ? 'पंडित दीपक पंड्या द्वारा वैदिक जन्म कुंडली विश्लेषण। मांगलिक दोष, कालसर्प दोष, पितृ दोष व विवाह बाधा की सटीक पहचान व वैदिक उपाय। तुरंत जन्म विवरण भेजें।'
+    : 'Get Vedic Kundali consultation by Pandit Deepak Pandya Ujjain. Accurate diagnosis of Mangal dosh, Kaal Sarp yoga, and birth chart remedies.';
 
   const validate = () => {
     const errs = {};
@@ -63,6 +72,11 @@ export default function KundliAnalysis() {
 
   return (
     <main className="pt-20 bg-[#FAF7F2] text-[#2D1B00]">
+      <SEO
+        title={kundliTitle}
+        description={kundliDesc}
+        canonical="https://mangaldoshpujanivaran.in/kundli-analysis"
+      />
       
       {/* ── Page Header ── */}
       <section
@@ -138,7 +152,7 @@ export default function KundliAnalysis() {
                 <div className="mt-8 pt-6 border-t border-[#F0E6D8] flex items-center gap-4">
                   <img
                     src={panditImg}
-                    alt="पंडित दीपक पंड्या"
+                    alt="वैदिक पुरोहित पंडित दीपक पंड्या - उज्जैन कुंडली विश्लेषण"
                     className="w-14 h-14 rounded-full object-cover border-2 border-[#D97706]"
                   />
                   <div>
@@ -260,6 +274,8 @@ export default function KundliAnalysis() {
                   <button
                     type="submit"
                     disabled={submitting}
+                    title="WhatsApp पर कुंडली भेजें और समाधान प्राप्त करें"
+                    aria-label="Submit birth details for Kundali analysis via WhatsApp"
                     className="w-full py-4 rounded-xl bg-gradient-to-r from-[#D97706] to-[#B45309] hover:from-[#B45309] hover:to-[#92400E] text-white font-bold font-devanagari text-base shadow-[0_4px_16px_rgba(217,119,6,0.35)] flex items-center justify-center gap-2.5 transition-all transform hover:-translate-y-0.5 active:translate-y-0 cursor-pointer disabled:opacity-70"
                   >
                     <span>💬 WhatsApp पर कुंडली विश्लेषण प्राप्त करें</span>

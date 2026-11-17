@@ -21,6 +21,7 @@ import { trackWhatsAppClick, trackPhoneCall } from '../utils/analytics';
 import SectionHeading from '../components/ui/SectionHeading';
 import ServiceCard from '../components/ui/ServiceCard';
 import BookingForm from '../components/ui/BookingForm';
+import SEO from '../components/common/SEO';
 
 const C = CONTENT;
 
@@ -127,11 +128,25 @@ function Hero() {
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap items-center gap-3 sm:gap-4 w-full sm:w-auto mb-5">
-              <a href={PHONE_HREF} onClick={() => trackPhoneCall('hero_call_btn')} className="bg-gradient-to-r from-[#D97706] to-[#B45309] hover:from-[#B45309] hover:to-[#92400E] text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-bold text-sm sm:text-base shadow-[0_4px_16px_rgba(217,119,6,0.35)] flex items-center justify-center gap-2.5 transition-all hover:-translate-y-0.5">
+              <a
+                href={PHONE_HREF}
+                onClick={() => trackPhoneCall('hero_call_btn')}
+                title="पंडित दीपक पंड्या जी को तुरंत कॉल करें: +91 62634 01651"
+                aria-label="Call Pandit Deepak Pandya at +91 62634 01651"
+                className="bg-gradient-to-r from-[#D97706] to-[#B45309] hover:from-[#B45309] hover:to-[#92400E] text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-bold text-sm sm:text-base shadow-[0_4px_16px_rgba(217,119,6,0.35)] flex items-center justify-center gap-2.5 transition-all hover:-translate-y-0.5"
+              >
                 <svg className="w-5 h-5 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-2.2 2.2a15.053 15.053 0 01-6.59-6.59l2.2-2.21a.96.96 0 00.25-1.01A11.36 11.36 0 018.57 3.9c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.52c0-.55-.45-1-.99-1z"/></svg>
                 +91 62634 01651
               </a>
-              <a href={WA_HREF} onClick={() => trackWhatsAppClick('hero_whatsapp_btn')} target="_blank" rel="noopener noreferrer" className="bg-[#25D366] hover:bg-[#1EBE5D] text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-bold text-sm sm:text-base shadow-[0_4px_16px_rgba(37,211,102,0.35)] flex items-center justify-center gap-2.5 transition-all hover:-translate-y-0.5">
+              <a
+                href={WA_HREF}
+                onClick={() => trackWhatsAppClick('hero_whatsapp_btn')}
+                target="_blank"
+                rel="noopener noreferrer"
+                title="WhatsApp पर 24x7 निःशुल्क पूजा परामर्श एवं बुकिंग"
+                aria-label="Chat on WhatsApp with Pandit Deepak Pandya for Puja Consultation"
+                className="bg-[#25D366] hover:bg-[#1EBE5D] text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-bold text-sm sm:text-base shadow-[0_4px_16px_rgba(37,211,102,0.35)] flex items-center justify-center gap-2.5 transition-all hover:-translate-y-0.5"
+              >
                 <svg className="w-5 h-5 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
                 {t({ hi: 'WhatsApp Consultation', en: 'WhatsApp Consultation' })}
               </a>
@@ -175,7 +190,7 @@ function Hero() {
                 ) : (
                   <img
                     src={HERO_SLIDES[currentSlide].image}
-                    alt={t(HERO_SLIDES[currentSlide].title)}
+                    alt={`${t(HERO_SLIDES[currentSlide].title)} - मंगल दोष पूजन केंद्र उज्जैन`}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                 )}
@@ -319,7 +334,12 @@ function ServicesSection() {
         </div>
 
         <div className="text-center mt-10">
-          <Link to="/services" className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-gradient-to-r from-[#D97706] to-[#B45309] text-white font-bold text-sm shadow-md hover:shadow-lg transition-all hover:-translate-y-0.5">
+          <Link
+            to="/services"
+            title="उज्जैन में सभी वैदिक पूजाएं और अनुष्ठान देखें"
+            aria-label="View all Vedic Pujas in Ujjain"
+            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-gradient-to-r from-[#D97706] to-[#B45309] text-white font-bold text-sm shadow-md hover:shadow-lg transition-all hover:-translate-y-0.5"
+          >
             {t(sv.viewAll)} →
           </Link>
         </div>
@@ -340,7 +360,11 @@ function AboutSnippet() {
           {/* Image side */}
           <div data-aos="fade-right" className="relative">
             <div className="rounded-3xl overflow-hidden aspect-[3/4] sm:aspect-[4/5] max-h-[480px] border-2 border-[#E8DCC8] relative group bg-[#1C0A00] shadow-[0_12px_40px_rgba(45,27,0,0.12)]">
-              <img src={panditImg} alt={t(ab.heading)} className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700" />
+              <img
+                src={panditImg}
+                alt="वैदिक पुरोहित पंडित दीपक पंड्या - मंगल दोष पूजन उज्जैन"
+                className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent flex flex-col justify-end p-6 text-white">
                 <div className="flex flex-wrap gap-2 mb-2">
                   <span className="px-3 py-1 rounded-full bg-[#D97706]/90 text-white text-xs font-bold">15+ {t({ hi: 'वर्ष अनुभव', en: 'Years Exp' })}</span>
@@ -372,7 +396,12 @@ function AboutSnippet() {
               ))}
             </div>
 
-            <Link to="/about" className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-[#D97706] to-[#B45309] text-white font-bold text-sm shadow-md hover:shadow-lg transition-all hover:-translate-y-0.5">
+            <Link
+              to="/about"
+              title="वैदिक पंडित दीपक पंड्या जी के बारे में और अधिक जानें"
+              aria-label="Read more about Pandit Deepak Pandya Ujjain"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-[#D97706] to-[#B45309] text-white font-bold text-sm shadow-md hover:shadow-lg transition-all hover:-translate-y-0.5"
+            >
               {t(ab.readMore)} →
             </Link>
           </div>
@@ -423,7 +452,12 @@ function TestimonialsSection() {
         </div>
 
         <div className="text-center mt-10">
-          <Link to="/testimonials" className="inline-flex items-center gap-2 px-6 py-3 rounded-full border-2 border-[#D97706] text-[#B45309] font-bold text-sm hover:bg-[#D97706] hover:text-white transition-all">
+          <Link
+            to="/testimonials"
+            title="यजमानों और भक्तों के अनुभव एवं 56+ समीक्षाएं पढ़ें"
+            aria-label="View all client reviews and testimonials"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full border-2 border-[#D97706] text-[#B45309] font-bold text-sm hover:bg-[#D97706] hover:text-white transition-all"
+          >
             {t({ hi: 'सभी समीक्षाएं देखें', en: 'View All Reviews' })} →
           </Link>
         </div>
@@ -470,14 +504,24 @@ function PujaComparisonTable() {
                 return (
                   <tr key={row.slug} className={`${i % 2 === 0 ? 'bg-white' : 'bg-[#FFFDF9]'} border-b border-[#F0E6D8] last:border-b-0`}>
                     <td className="px-4 py-3.5 font-semibold text-[#1F160F]">
-                      <Link to={`/services/${row.slug}`} className="flex items-center gap-2 hover:text-[#D97706] transition-colors">
+                      <Link
+                        to={`/services/${row.slug}`}
+                        title={`${d.name} उज्जैन - संपूर्ण विधि, मुहूर्त और बुकिंग जानकारी`}
+                        aria-label={`View details for ${d.name}`}
+                        className="flex items-center gap-2 hover:text-[#D97706] transition-colors"
+                      >
                         <span className="text-[#D97706] font-bold">✦</span> {d.name}
                       </Link>
                     </td>
                     <td className="px-4 py-3.5 text-[#5C4A3A]">{d.kisLiye}</td>
                     <td className="px-4 py-3.5 text-[#5C4A3A]">{d.avadhi}</td>
                     <td className="px-4 py-3.5">
-                      <Link to={`/services/${row.slug}`} className="inline-flex items-center gap-1 text-xs px-3 py-1.5 rounded-full bg-[#D97706]/10 text-[#B45309] font-semibold border border-[#D97706]/30 hover:bg-[#D97706] hover:text-white transition-all">
+                      <Link
+                        to={`/services/${row.slug}`}
+                        title={`${d.name} विवरण एवं मुहूर्त जानकारी देखें`}
+                        aria-label={`Book or learn more about ${d.name}`}
+                        className="inline-flex items-center gap-1 text-xs px-3 py-1.5 rounded-full bg-[#D97706]/10 text-[#B45309] font-semibold border border-[#D97706]/30 hover:bg-[#D97706] hover:text-white transition-all"
+                      >
                         {lang === 'hi' ? 'जानकारी →' : 'Details →'}
                       </Link>
                     </td>
@@ -569,13 +613,28 @@ function QuickBookingSection() {
 
 // ─── Home Page ─────────────────────────────────────────────
 export default function Home() {
+  const { lang } = useLanguage();
+
   useEffect(() => {
     AOS.init({ duration: 700, once: true, easing: 'ease-out-cubic', offset: 60 });
     window.scrollTo(0, 0);
   }, []);
 
+  const homeTitle = lang === 'hi'
+    ? 'मंगल दोष पूजा उज्जैन | मंगल भात पूजा | वैदिक पंडित दीपक पंड्या'
+    : 'Mangal Dosh Puja Ujjain | Mangal Bhat Puja | Pandit Deepak Pandya';
+  
+  const homeDesc = lang === 'hi'
+    ? 'उज्जैन श्री मंगलनाथ मंदिर में 100% प्रामाणिक वैदिक मंगल दोष भात पूजा, कालसर्प दोष निवारण, नवग्रह शांति। 15+ वर्ष अनुभवी वैदिक पुरोहित पंडित दीपक पंड्या। तुरंत संपर्क करें।'
+    : 'Authentic Mangal Dosh Bhat Puja, Kaal Sarp Dosh Nivaran at Shri Mangalnath Mandir Ujjain by Pandit Deepak Pandya. 15+ years experience. 24x7 Consultation.';
+
   return (
     <main>
+      <SEO
+        title={homeTitle}
+        description={homeDesc}
+        canonical="https://mangaldoshpujanivaran.in/"
+      />
       <Hero />
       <TrustSection />
       <ServicesSection />

@@ -9,6 +9,7 @@ import { CONTENT } from '../data/content';
 import { buildContactMessage, buildWhatsAppUrl } from '../utils/whatsapp';
 import { trackContactSubmit, trackPhoneCall, trackWhatsAppClick } from '../utils/analytics';
 import { WA_HREF, PHONE_HREF } from '../utils/whatsapp';
+import SEO from '../components/common/SEO';
 
 const C = CONTENT;
 
@@ -24,6 +25,14 @@ export default function Contact() {
     AOS.init({ duration: 700, once: true, easing: 'ease-out-cubic', offset: 60 });
     window.scrollTo(0, 0);
   }, []);
+
+  const contactTitle = lang === 'hi'
+    ? 'संपर्क करें | पंडित दीपक पंड्या उज्जैन — 24x7 वैदिक सहायता'
+    : 'Contact Pandit Deepak Pandya Ujjain — 24x7 Vedic Helpline';
+
+  const contactDesc = lang === 'hi'
+    ? 'वैदिक पंडित दीपक पंड्या उज्जैन से संपर्क करें। फोन, WhatsApp या ईमेल द्वारा मंगल दोष, कालसर्प, रुद्राभिषेक पूजा परामर्श एवं बुकिंग हेतु 24x7 उपलब्ध।'
+    : 'Contact Vedic Pandit Deepak Pandya in Ujjain for puja booking and consultation. Call or WhatsApp +91 62634 01651. 24x7 available.';
 
   const validate = () => {
     const errs = {};
@@ -58,6 +67,11 @@ export default function Contact() {
 
   return (
     <main className="pt-20 bg-[#FAF7F2] text-[#2D1B00]">
+      <SEO
+        title={contactTitle}
+        description={contactDesc}
+        canonical="https://mangaldoshpujanivaran.in/contact"
+      />
       
       {/* ── Page Header ── */}
       <section
@@ -104,6 +118,8 @@ export default function Contact() {
                   <a
                     href={PHONE_HREF}
                     onClick={() => trackPhoneCall('contact_page')}
+                    title="पंडित दीपक पंड्या जी को सीधे कॉल करें: +91 62634 01651"
+                    aria-label="Call Pandit Deepak Pandya at +91 62634 01651"
                     className="flex items-center gap-3 p-3.5 rounded-2xl bg-[#FAF7F2] hover:bg-[#FFF7E6] border border-[#E8DCC8] transition-colors"
                   >
                     <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#D97706] to-[#B45309] text-white flex items-center justify-center shrink-0">
@@ -121,6 +137,8 @@ export default function Contact() {
                     onClick={() => trackWhatsAppClick('contact_page')}
                     target="_blank"
                     rel="noopener noreferrer"
+                    title="WhatsApp पर 24x7 वैदिक पूजा परामर्श एवं बुकिंग सहायता"
+                    aria-label="Chat on WhatsApp with Pandit Deepak Pandya 24x7"
                     className="flex items-center gap-3 p-3.5 rounded-2xl bg-[#FAF7F2] hover:bg-emerald-50 border border-[#E8DCC8] transition-colors"
                   >
                     <div className="w-10 h-10 rounded-xl bg-[#25D366] text-white flex items-center justify-center shrink-0">

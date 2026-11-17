@@ -7,6 +7,7 @@ import 'aos/dist/aos.css';
 import { useLanguage } from '../context/LanguageContext';
 import { CONTENT } from '../data/content';
 import SectionHeading from '../components/ui/SectionHeading';
+import SEO from '../components/common/SEO';
 import { WA_HREF } from '../utils/whatsapp';
 import { trackWhatsAppClick } from '../utils/analytics';
 
@@ -21,8 +22,21 @@ export default function Testimonials() {
     window.scrollTo(0, 0);
   }, []);
 
+  const testimonialsTitle = lang === 'hi'
+    ? 'यजमानों के अनुभव एवं समीक्षाएं | पंडित दीपक पंड्या उज्जैन (56+ Reviews)'
+    : 'Client Reviews & Testimonials | Pandit Deepak Pandya Ujjain';
+
+  const testimonialsDesc = lang === 'hi'
+    ? 'उज्जैन में वैदिक पंडित दीपक पंड्या जी द्वारा कराई गई मंगल भात पूजा, कालसर्प शांति एवं रुद्राभिषेक पर यजमानों के सच्चे अनुभव एवं Google समीक्षाएं।'
+    : 'Read 56+ verified Google reviews and testimonials from devotees for Vedic Pujas performed by Pandit Deepak Pandya in Ujjain.';
+
   return (
     <main className="pt-20 bg-[#FAF7F2] text-[#2D1B00]">
+      <SEO
+        title={testimonialsTitle}
+        description={testimonialsDesc}
+        canonical="https://mangaldoshpujanivaran.in/testimonials"
+      />
       
       {/* ── Page Header ── */}
       <section
@@ -144,6 +158,8 @@ export default function Testimonials() {
             onClick={() => trackWhatsAppClick('testimonials_cta_banner')}
             target="_blank"
             rel="noopener noreferrer"
+            title="WhatsApp पर पूजा बुक करें एवं परामर्श प्राप्त करें"
+            aria-label="Book Vedic Puja on WhatsApp with Pandit Deepak Pandya"
             className="bg-white text-[#8C3814] hover:bg-[#FFF8E6] px-8 py-4 rounded-xl font-bold font-devanagari text-base shadow-xl inline-flex items-center gap-2 transition-all transform hover:-translate-y-0.5"
           >
             <span>💬 WhatsApp पर पूजा बुक करें</span>

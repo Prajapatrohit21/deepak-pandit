@@ -7,6 +7,7 @@ import 'aos/dist/aos.css';
 import { useLanguage } from '../context/LanguageContext';
 import { CONTENT } from '../data/content';
 import SectionHeading from '../components/ui/SectionHeading';
+import SEO from '../components/common/SEO';
 
 // Gallery images
 import g1  from '../assets/gallery/g1.jpg';
@@ -42,7 +43,7 @@ const GALLERY_ITEMS = [
 ];
 
 export default function Gallery() {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const gl = C.gallery;
   const [activeTab, setActiveTab] = useState('all');
   const [activeModalImg, setActiveModalImg] = useState(null);
@@ -51,6 +52,14 @@ export default function Gallery() {
     AOS.init({ duration: 700, once: true, easing: 'ease-out-cubic', offset: 60 });
     window.scrollTo(0, 0);
   }, []);
+
+  const galleryTitle = lang === 'hi'
+    ? 'फोटो गैलरी — उज्जैन वैदिक अनुष्ठान एवं दर्शन | पंडित दीपक पंड्या'
+    : 'Photo Gallery — Ujjain Vedic Pujas & Darshan | Pandit Deepak Pandya';
+
+  const galleryDesc = lang === 'hi'
+    ? 'उज्जैन मंगलनाथ मंदिर, महाकालेश्वर एवं राम घाट पर वैदिक पूजन, मंगल भात पूजा, कालसर्प दोष निवारण, हवन एवं विशिष्ट यजमान अनुष्ठान की तस्वीरें।'
+    : 'Visual photo gallery of authentic Vedic Pujas, Mangal Bhat Puja, Kaal Sarp Dosh rituals, and Havans conducted by Pandit Deepak Pandya in Ujjain.';
 
   const tabs = [
     { key: 'all', label: gl.tabs.all },
@@ -64,6 +73,11 @@ export default function Gallery() {
 
   return (
     <main className="pt-20 bg-[#FAF7F2] text-[#2D1B00]">
+      <SEO
+        title={galleryTitle}
+        description={galleryDesc}
+        canonical="https://mangaldoshpujanivaran.in/gallery"
+      />
       
       {/* ── Page Header ── */}
       <section
@@ -128,7 +142,7 @@ export default function Gallery() {
                 <div className="relative aspect-[4/3] overflow-hidden bg-black">
                   <img
                     src={item.img}
-                    alt={t({ hi: item.hi, en: item.en })}
+                    alt={`${t({ hi: item.hi, en: item.en })} - पंडित दीपक पंड्या उज्जैन`}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     loading="lazy"
                   />
@@ -168,7 +182,7 @@ export default function Gallery() {
             </button>
             <img
               src={activeModalImg.img}
-              alt={t({ hi: activeModalImg.hi, en: activeModalImg.en })}
+              alt={`${t({ hi: activeModalImg.hi, en: activeModalImg.en })} - पंडित दीपक पंड्या उज्जैन`}
               className="max-h-[75vh] w-auto mx-auto object-contain"
             />
             <div className="p-4 bg-white text-center">

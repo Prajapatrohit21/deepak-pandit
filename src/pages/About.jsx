@@ -11,6 +11,7 @@ import 'aos/dist/aos.css';
 import { useLanguage } from '../context/LanguageContext';
 import { CONTENT } from '../data/content';
 import SectionHeading from '../components/ui/SectionHeading';
+import SEO from '../components/common/SEO';
 import { WA_HREF, PHONE_HREF } from '../utils/whatsapp';
 import { trackWhatsAppClick, trackPhoneCall } from '../utils/analytics';
 
@@ -25,8 +26,21 @@ export default function About() {
     window.scrollTo(0, 0);
   }, []);
 
+  const aboutTitle = lang === 'hi'
+    ? 'वैदिक पंडित दीपक पंड्या परिचय | उज्जैन मंगल दोष व कालसर्प पुरोहित'
+    : 'About Vedic Pandit Deepak Pandya | Ujjain Mangal Dosh & Kaal Sarp Priest';
+
+  const aboutDesc = lang === 'hi'
+    ? 'पंडित दीपक पंड्या - उज्जैन के प्रतिष्ठित वैदिक पुरोहित। 15+ वर्षों का अनुभव, शुक्ल यजुर्वेद परंपरा, मंगलनाथ मंदिर में मंगल भात पूजा एवं कालसर्प दोष निवारण।'
+    : 'Pandit Deepak Pandya - Trusted Vedic priest in Ujjain with 15+ years of experience performing authentic Mangal Dosh, Kaal Sarp and Vedic rituals at Mangalnath Temple.';
+
   return (
     <main className="pt-20 bg-[#FAF7F2] text-[#2D1B00]">
+      <SEO
+        title={aboutTitle}
+        description={aboutDesc}
+        canonical="https://mangaldoshpujanivaran.in/about"
+      />
       
       {/* ── Luxury Page Header ── */}
       <section
@@ -69,7 +83,7 @@ export default function About() {
                 <div className="relative rounded-2xl overflow-hidden aspect-[4/5] bg-black">
                   <img
                     src={panditImg}
-                    alt={t(C.panditName)}
+                    alt="वैदिक पुरोहित पंडित दीपक पंड्या - उज्जैन मंगल दोष एवं कालसर्प पूजा"
                     className="w-full h-full object-cover object-top"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-6 text-white">
@@ -162,6 +176,8 @@ export default function About() {
                 <a
                   href={PHONE_HREF}
                   onClick={() => trackPhoneCall('about_page')}
+                  title="पंडित दीपक पंड्या जी को सीधे कॉल करें: +91 62634 01651"
+                  aria-label="Call Pandit Deepak Pandya at +91 62634 01651"
                   className="bg-gradient-to-r from-[#D97706] to-[#B45309] hover:from-[#B45309] hover:to-[#92400E] text-white px-7 py-3.5 rounded-xl font-bold text-sm shadow-md flex items-center gap-2 transition-all transform hover:-translate-y-0.5"
                 >
                   <span>📞 सीधे पंडित जी से बात करें</span>
@@ -171,6 +187,8 @@ export default function About() {
                   onClick={() => trackWhatsAppClick('about_page')}
                   target="_blank"
                   rel="noopener noreferrer"
+                  title="WhatsApp पर वैदिक पूजा परामर्श हेतु संपर्क करें"
+                  aria-label="Contact Pandit Deepak Pandya on WhatsApp for Vedic consultation"
                   className="bg-[#25D366] hover:bg-[#1EBE5D] text-white px-7 py-3.5 rounded-xl font-bold text-sm shadow-md flex items-center gap-2 transition-all transform hover:-translate-y-0.5"
                 >
                   <span>💬 WhatsApp परामर्श</span>
@@ -199,7 +217,7 @@ export default function About() {
             <div className="rounded-3xl overflow-hidden border-2 border-[#E8DCC8] shadow-lg group relative aspect-[16/10]">
               <img
                 src={vipGuestImg}
-                alt="विशिष्ट यजमान पूजन"
+                alt="विशिष्ट यजमान वैदिक संकल्प पूजन - पंडित दीपक पंड्या उज्जैन"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent flex flex-col justify-end p-6 text-white">
@@ -215,7 +233,7 @@ export default function About() {
             <div className="rounded-3xl overflow-hidden border-2 border-[#E8DCC8] shadow-lg group relative aspect-[16/10]">
               <img
                 src={heroBg}
-                alt="मंगल भात पूजा अनुष्ठान"
+                alt="मंगल भात पूजा अनुष्ठान श्री मंगलनाथ मंदिर उज्जैन - पंडित दीपक पंड्या"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent flex flex-col justify-end p-6 text-white">
@@ -248,6 +266,8 @@ export default function About() {
             onClick={() => trackWhatsAppClick('about_cta_banner')}
             target="_blank"
             rel="noopener noreferrer"
+            title="WhatsApp पर कुंडली भेजें एवं निःशुल्क परामर्श प्राप्त करें"
+            aria-label="Send Kundali on WhatsApp for free consultation with Pandit Deepak Pandya"
             className="bg-white text-[#8C3814] hover:bg-[#FFF8E6] px-8 py-4 rounded-xl font-bold font-devanagari text-base shadow-xl inline-flex items-center gap-2 transition-all transform hover:-translate-y-0.5"
           >
             <span>💬 WhatsApp पर कुंडली भेजें</span>

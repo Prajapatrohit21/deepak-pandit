@@ -27,7 +27,7 @@ export default function ServiceCard({ service, featured = false }) {
         {svc.image ? (
           <img
             src={svc.image}
-            alt={pujaName}
+            alt={`${pujaName} उज्जैन - वैदिक पंडित दीपक पंड्या`}
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             loading="lazy"
           />
@@ -78,6 +78,8 @@ export default function ServiceCard({ service, featured = false }) {
         <div className="flex gap-2.5 flex-wrap mt-auto pt-2 border-t border-[#F0E6D8]">
           <Link
             to={`/services/${svc.slug}`}
+            title={`${pujaName} - संपूर्ण विधि, समय, सामग्री व उज्जैन बुकिंग विवरण`}
+            aria-label={`${pujaName} संपूर्ण विधि व विवरण देखें`}
             className="flex-1 text-center justify-center py-2.5 px-3 rounded-xl border border-[#D97706] text-[#D97706] hover:bg-[#D97706] hover:text-white font-bold text-xs sm:text-sm font-devanagari transition-all duration-200"
           >
             {lang === 'hi' ? 'संपूर्ण विधि पढ़ें →' : 'View Details →'}
@@ -87,6 +89,8 @@ export default function ServiceCard({ service, featured = false }) {
             onClick={() => trackWhatsAppClick(`service_card_${svc.slug}`)}
             target="_blank"
             rel="noopener noreferrer"
+            title={`WhatsApp पर ${pujaName} की बुकिंग व मुहूर्त परामर्श प्राप्त करें`}
+            aria-label={`WhatsApp पर ${pujaName} की बुकिंग करें`}
             className="flex-1 text-center justify-center py-2.5 px-3 rounded-xl bg-[#25D366] hover:bg-[#1EBE5D] text-white font-bold text-xs sm:text-sm font-devanagari shadow-sm transition-all duration-200 flex items-center gap-1.5"
           >
             <svg className="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 24 24">

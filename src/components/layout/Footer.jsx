@@ -71,6 +71,8 @@ export default function Footer() {
             onClick={() => trackWhatsAppClick('footer_top_bar')}
             target="_blank"
             rel="noopener noreferrer"
+            title="WhatsApp पर 24x7 निःशुल्क पूजा परामर्श एवं बुकिंग"
+            aria-label="24x7 WhatsApp Consultation"
             className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#25D366] hover:bg-[#1EBE5D] text-white text-xs sm:text-sm font-bold shadow-md transition-all"
           >
             <span>💬 24x7 WhatsApp Consultation</span>
@@ -82,11 +84,17 @@ export default function Footer() {
 
           {/* Col 1: Brand & NAP */}
           <div className="sm:col-span-2 lg:col-span-1">
-            <Link to="/" className="inline-block mb-4">
+            <Link
+              to="/"
+              className="inline-block mb-4"
+              title="मंगल दोष पूजन केंद्र उज्जैन - मुख्य पृष्ठ"
+              aria-label="मंगल दोष पूजन केंद्र होम पेज"
+            >
               <img
                 src={logoImg}
-                alt="मंगल पूजा - Mangal Puja Ujjain"
-                className="h-16 sm:h-20 w-auto object-contain filter drop-shadow-[0_0_12px_rgba(255,215,0,0.5)] "
+                alt="मंगल दोष पूजन केंद्र उज्जैन - वैदिक पंडित दीपक पंड्या Logo"
+                className="h-16 sm:h-20 w-auto object-contain filter drop-shadow-[0_0_12px_rgba(255,215,0,0.5)]"
+                loading="lazy"
               />
             </Link>
             <p className="text-sm leading-relaxed text-cream/70 mb-4 font-devanagari">
@@ -100,6 +108,8 @@ export default function Footer() {
               <a
                 href={PHONE_HREF}
                 onClick={() => trackPhoneCall('footer')}
+                title="पंडित दीपक पंड्या जी को तुरंत कॉल करें: +91 62634 01651"
+                aria-label="Call Pandit Deepak Pandya at +91 62634 01651"
                 className="flex items-center gap-2 text-gold font-bold hover:text-white transition-colors"
               >
                 <span>📞</span> +91 62634 01651
@@ -109,12 +119,16 @@ export default function Footer() {
                 onClick={() => trackWhatsAppClick('footer')}
                 target="_blank"
                 rel="noopener noreferrer"
+                title="WhatsApp पर 24x7 चैट एवं पूजा बुकिंग"
+                aria-label="Chat with Pandit Deepak Pandya on WhatsApp"
                 className="flex items-center gap-2 text-emerald-400 font-bold hover:text-emerald-300 transition-colors"
               >
                 <span>💬</span> WhatsApp पर संपर्क (24x7)
               </a>
               <a
                 href="mailto:mangaldoshpujanivaran@gmail.com"
+                title="ईमेल द्वारा संपर्क करें: mangaldoshpujanivaran@gmail.com"
+                aria-label="Email Pandit Deepak Pandya at mangaldoshpujanivaran@gmail.com"
                 className="flex items-center gap-2 text-cream/70 hover:text-gold transition-colors text-xs"
               >
                 <span>✉️</span> mangaldoshpujanivaran@gmail.com
@@ -136,6 +150,8 @@ export default function Footer() {
                 <li key={link.to}>
                   <Link
                     to={link.to}
+                    title={`${t(link.label)} - मंगल दोष पूजन केंद्र उज्जैन`}
+                    aria-label={t(link.label)}
                     className="text-sm text-cream/70 hover:text-gold transition-colors font-devanagari flex items-center gap-1.5"
                   >
                     <span className="text-gold text-xs">✦</span>
@@ -156,6 +172,8 @@ export default function Footer() {
                 <li key={s.id}>
                   <Link
                     to={`/services/${s.slug}`}
+                    title={`${t(s.hi?.name) || s.en?.name} - संपूर्ण विधि, समय व बुकिंग विवरण`}
+                    aria-label={t(s.hi?.name) || s.en?.name}
                     className="text-sm text-cream/70 hover:text-gold transition-colors font-devanagari flex items-center gap-1.5"
                   >
                     <span className="text-gold text-xs">✦</span>
