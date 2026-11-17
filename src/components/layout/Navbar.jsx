@@ -29,7 +29,7 @@ export default function Navbar() {
   const nav = C.nav;
 
   const navLinks = [
-    { to: '/', label: nav.home, title: 'मुख्य पृष्ठ - मंगल दोष पूजन केंद्र उज्जैन', aria: 'Home' },
+    { to: '/', label: nav.home, title: 'मुख्य पृष्ठ - मंगल दोष पूजन उज्जैन', aria: 'Home' },
     { to: '/about', label: nav.about, title: 'वैदिक पंडित दीपक पंड्या जी का परिचय एवं 15+ वर्षों की परंपरा', aria: 'About Pandit Deepak Pandya' },
     { to: '/services', label: nav.services, title: 'उज्जैन में समस्त वैदिक पूजा एवं अनुष्ठान सेवाएं', aria: 'Vedic Puja Services' },
     { to: '/kundli-analysis', label: nav.kundli, title: 'जन्म कुंडली विश्लेषण एवं मांगलिक दोष परीक्षण', aria: 'Kundli Analysis' },
@@ -54,16 +54,16 @@ export default function Navbar() {
           <Link
             to="/"
             className="flex items-center gap-3 group py-0.6 shrink-0"
-            aria-label="मंगल दोष पूजन केंद्र उज्जैन - मुख्य पृष्ठ"
-            title="मंगल दोष पूजन केंद्र उज्जैन - मुख्य पृष्ठ"
+            aria-label="मंगल दोष पूजन उज्जैन - मुख्य पृष्ठ"
+            title="मंगल दोष पूजन उज्जैन - मुख्य पृष्ठ"
           >
             <img
               src={logoImg}
-              alt="मंगल दोष पूजन केंद्र उज्जैन - वैदिक पंडित दीपक पंड्या Logo"
+              alt="मंगल दोष पूजन उज्जैन - वैदिक पंडित दीपक पंड्या Logo"
               className={`w-auto object-contain transition-all duration-300 ${scrolled ? 'h-14 sm:h-16' : 'h-16 sm:h-20 md:h-24'}`}
             />
             <div className="hidden sm:flex flex-col">
-              <span className="text-[#1F160F] font-heading font-black text-sm sm:text-base leading-tight">मंगल दोष पूजन केंद्र</span>
+              <span className="text-[#1F160F] font-heading font-black text-sm sm:text-base leading-tight">मंगल दोष पूजन</span>
               <span className="text-[#8C7A6B] text-[10px] sm:text-xs font-medium">| उज्जैन</span>
             </div>
           </Link>

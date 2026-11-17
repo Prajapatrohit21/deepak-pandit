@@ -7,8 +7,8 @@ export const CONTENT = {
   // SITE-WIDE
   // ──────────────────────────────────────────
   siteName: {
-    hi: 'मंगल दोष पूजन केंद्र',
-    en: 'Mangal Dosh Pujan Kendra',
+    hi: 'मंगल दोष पूजन',
+    en: 'Mangal Dosh Pujan',
   },
   panditName: {
     hi: 'वैदिक पंडित दीपक पंड्या',
@@ -271,8 +271,8 @@ export const CONTENT = {
     privacy: { hi: 'गोपनीयता नीति', en: 'Privacy Policy' },
     disclaimer: { hi: 'अस्वीकरण', en: 'Disclaimer' },
     copyright: {
-      hi: `© ${new Date().getFullYear()} मंगल दोष पूजन केंद्र | वैदिक पंडित दीपक पंड्या — All Rights Reserved`,
-      en: `© ${new Date().getFullYear()} Mahadev Anushthan Kendra | Vaidik Pandit Deepak Pandya — All Rights Reserved`,
+      hi: `© ${new Date().getFullYear()} मंगल दोष पूजन | वैदिक पंडित दीपक पंड्या — All Rights Reserved`,
+      en: `© ${new Date().getFullYear()} Mahadev Anushthan | Vaidik Pandit Deepak Pandya — All Rights Reserved`,
     },
   },
 

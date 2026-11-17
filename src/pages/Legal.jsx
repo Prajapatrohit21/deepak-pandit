@@ -21,7 +21,7 @@ function LegalPage({ titleHi, titleEn, canonical, children }) {
     <main className="pt-20">
       {canonical && (
         <SEO
-          title={`${title} | मंगल दोष पूजन केंद्र उज्जैन`}
+          title={`${title} | मंगल दोष पूजन उज्जैन`}
           canonical={canonical}
         />
       )}
@@ -55,7 +55,7 @@ export function TermsConditions() {
     <LegalPage titleHi="नियम एवं शर्तें" titleEn="Terms & Conditions" canonical="https://mangaldoshpujanivaran.in/terms">
       <p className="text-[#8C7A6B] text-sm mb-6">Last updated: November 2024</p>
       <h2 className="text-xl font-bold text-[#1F160F] mb-3">1. Acceptance of Terms</h2>
-      <p className="text-[#5C4A3A] leading-relaxed mb-4">By accessing and using the services of Mahadev Anushthan Kendra ("we", "us", "Pandit Ji"), you accept and agree to be bound by the terms and provisions of this agreement.</p>
+      <p className="text-[#5C4A3A] leading-relaxed mb-4">By accessing and using the services of Mahadev Anushthan ("we", "us", "Pandit Ji"), you accept and agree to be bound by the terms and provisions of this agreement.</p>
       <h2 className="text-xl font-bold text-[#1F160F] mb-3">2. Services Offered</h2>
       <p className="text-[#5C4A3A] leading-relaxed mb-4">We offer faith-based Vedic religious services including Mangal Dosh Puja, Kaal Sarp Dosh Nivaran, Pitru Dosh Shraddha, Navgrah Shanti, Mahamrityunjay Anushthan, Rudrabhishek, Vastu Shanti Puja, Navchandi/Shatchandi Anushthan, and Kundali Analysis. All services are performed by Vaidik Pandit Deepak Pandya as per authentic Vedic traditions.</p>
       <h2 className="text-xl font-bold text-[#1F160F] mb-3">3. Booking & Confirmation</h2>
@@ -77,7 +77,7 @@ export function TermsConditions() {
     <LegalPage titleHi="नियम एवं शर्तें" titleEn="Terms & Conditions" canonical="https://mangaldoshpujanivaran.in/terms">
       <p className="text-[#8C7A6B] text-sm mb-6">अंतिम अद्यतन: नवंबर 2024</p>
       <h2 className="text-xl font-bold text-[#1F160F] mb-3">1. शर्तों की स्वीकृति</h2>
-      <p className="text-[#5C4A3A] leading-relaxed mb-4">महादेव अनुष्ठान केंद्र की सेवाओं का उपयोग करके, आप इन नियम एवं शर्तों से सहमत होते हैं।</p>
+      <p className="text-[#5C4A3A] leading-relaxed mb-4">महादेव अनुष्ठान की सेवाओं का उपयोग करके, आप इन नियम एवं शर्तों से सहमत होते हैं।</p>
       <h2 className="text-xl font-bold text-[#1F160F] mb-3">2. सेवाएं</h2>
       <p className="text-[#5C4A3A] leading-relaxed mb-4">हम मंगल दोष पूजन, कालसर्प दोष निवारण, पितृ दोष श्राद्ध, नवग्रह शांति, महामृत्युंजय अनुष्ठान, रुद्राभिषेक, वास्तु शांति, नवचंडी/शतचंडी अनुष्ठान एवं कुंडली विश्लेषण की सेवाएं प्रदान करते हैं। सभी सेवाएं वैदिक पंडित दीपक पंड्या जी द्वारा प्रामाणिक वैदिक विधि से संपन्न की जाती हैं।</p>
       <h2 className="text-xl font-bold text-[#1F160F] mb-3">3. बुकिंग एवं पुष्टि</h2>
@@ -142,7 +142,7 @@ export function Disclaimer() {
   if (lang === 'en') return (
     <LegalPage titleHi="अस्वीकरण" titleEn="Disclaimer" canonical="https://mangaldoshpujanivaran.in/disclaimer">
       <h2 className="text-xl font-bold text-[#1F160F] mb-3">1. Faith-Based Service</h2>
-      <p className="text-[#5C4A3A] leading-relaxed mb-4">Mahadev Anushthan Kendra provides faith-based Vedic religious and astrological services. These services are based on ancient Indian Vedic traditions, astrology, and religious beliefs. They are intended as spiritual guidance and ritual support.</p>
+      <p className="text-[#5C4A3A] leading-relaxed mb-4">Mahadev Anushthan provides faith-based Vedic religious and astrological services. These services are based on ancient Indian Vedic traditions, astrology, and religious beliefs. They are intended as spiritual guidance and ritual support.</p>
       <h2 className="text-xl font-bold text-[#1F160F] mb-3">2. No Guaranteed Results</h2>
       <p className="text-[#5C4A3A] leading-relaxed mb-4">We do NOT guarantee specific outcomes, results, cures, or material benefits from any puja, ritual, or astrological consultation performed by us. Results depend on individual karma, faith, divine grace, and many factors beyond human control. Testimonials shared on this website represent individual experiences and are not guarantees of similar results for others.</p>
       <h2 className="text-xl font-bold text-[#1F160F] mb-3">3. Not a Substitute for Professional Advice</h2>
@@ -152,14 +152,14 @@ export function Disclaimer() {
       <h2 className="text-xl font-bold text-[#1F160F] mb-3">5. Religious Beliefs</h2>
       <p className="text-[#5C4A3A] leading-relaxed mb-4">Our services are rooted in Hindu Vedic traditions. We respect all faiths and beliefs. Participation in our services is entirely voluntary and based on personal faith.</p>
       <h2 className="text-xl font-bold text-[#1F160F] mb-3">6. Limitation of Liability</h2>
-      <p className="text-[#5C4A3A] leading-relaxed">Mahadev Anushthan Kendra shall not be liable for any direct, indirect, incidental, or consequential damages arising from the use of our services, reliance on astrological guidance, or outcomes of religious rituals.</p>
+      <p className="text-[#5C4A3A] leading-relaxed">Mahadev Anushthan shall not be liable for any direct, indirect, incidental, or consequential damages arising from the use of our services, reliance on astrological guidance, or outcomes of religious rituals.</p>
     </LegalPage>
   );
 
   return (
     <LegalPage titleHi="अस्वीकरण" titleEn="Disclaimer" canonical="https://mangaldoshpujanivaran.in/disclaimer">
       <h2 className="text-xl font-bold text-[#1F160F] mb-3">1. आस्था आधारित सेवा</h2>
-      <p className="text-[#5C4A3A] leading-relaxed mb-4">महादेव अनुष्ठान केंद्र प्राचीन भारतीय वैदिक परंपराओं, ज्योतिष एवं धार्मिक विश्वासों पर आधारित आस्था-केंद्रित सेवाएं प्रदान करता है। ये सेवाएं आध्यात्मिक मार्गदर्शन एवं अनुष्ठान सहायता के रूप में हैं।</p>
+      <p className="text-[#5C4A3A] leading-relaxed mb-4">महादेव अनुष्ठान प्राचीन भारतीय वैदिक परंपराओं, ज्योतिष एवं धार्मिक विश्वासों पर आधारित आस्था-केंद्रित सेवाएं प्रदान करता है। ये सेवाएं आध्यात्मिक मार्गदर्शन एवं अनुष्ठान सहायता के रूप में हैं।</p>
       <h2 className="text-xl font-bold text-[#1F160F] mb-3">2. परिणाम की कोई गारंटी नहीं</h2>
       <p className="text-[#5C4A3A] leading-relaxed mb-4">हम किसी भी पूजन, अनुष्ठान या ज्योतिष परामर्श से किसी विशेष परिणाम, उपचार, या भौतिक लाभ की गारंटी नहीं देते। परिणाम व्यक्ति के कर्म, श्रद्धा, एवं ईश्वरीय कृपा पर निर्भर करते हैं। वेबसाइट पर दी गई प्रशंसापत्र व्यक्तिगत अनुभव हैं।</p>
       <h2 className="text-xl font-bold text-[#1F160F] mb-3">3. पेशेवर सलाह का विकल्प नहीं</h2>
@@ -167,7 +167,7 @@ export function Disclaimer() {
       <h2 className="text-xl font-bold text-[#1F160F] mb-3">4. ज्योतिषीय भविष्यवाणी</h2>
       <p className="text-[#5C4A3A] leading-relaxed mb-4">वैदिक ज्योतिष एक प्राचीन विद्या है। ज्योतिषीय भविष्यवाणियां संकेतात्मक हैं, पूर्णतः निश्चित नहीं। व्यक्ति का स्वतंत्र इच्छाशक्ति एवं कार्य भी जीवन परिणामों को महत्वपूर्ण रूप से प्रभावित करते हैं।</p>
       <h2 className="text-xl font-bold text-[#1F160F] mb-3">5. दायित्व की सीमा</h2>
-      <p className="text-[#5C4A3A] leading-relaxed">महादेव अनुष्ठान केंद्र हमारी सेवाओं के उपयोग, ज्योतिषीय मार्गदर्शन पर निर्भरता, या धार्मिक अनुष्ठानों के परिणामों से उत्पन्न किसी भी क्षति के लिए उत्तरदायी नहीं होगा।</p>
+      <p className="text-[#5C4A3A] leading-relaxed">महादेव अनुष्ठान हमारी सेवाओं के उपयोग, ज्योतिषीय मार्गदर्शन पर निर्भरता, या धार्मिक अनुष्ठानों के परिणामों से उत्पन्न किसी भी क्षति के लिए उत्तरदायी नहीं होगा।</p>
     </LegalPage>
   );
 }

@@ -133,7 +133,7 @@ export default function Preloader() {
 
       {/* Site Title */}
       <h1 className="text-cream text-sm sm:text-base font-devanagari font-semibold tracking-wide text-center px-4">
-        मंगल दोष पूजन केंद्र • उज्जैन
+        मंगल दोष पूजन • उज्जैन
       </h1>
 
       {/* Subtitle Badge */}

@@ -68,7 +68,7 @@ export default function ServiceDetail() {
         provider: {
           '@type': 'ProfessionalService',
           name: 'Mangal Dosh Puja Nivaran',
-          alternateName: 'मंगल दोष पूजन केंद्र',
+          alternateName: 'मंगल दोष पूजन',
           url: 'https://mangaldoshpujanivaran.in/',
           telephone: '+916263401651',
           email: 'mangaldoshpujanivaran@gmail.com',

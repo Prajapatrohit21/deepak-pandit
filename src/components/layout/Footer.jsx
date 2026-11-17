@@ -87,19 +87,19 @@ export default function Footer() {
             <Link
               to="/"
               className="inline-block mb-4"
-              title="मंगल दोष पूजन केंद्र उज्जैन - मुख्य पृष्ठ"
-              aria-label="मंगल दोष पूजन केंद्र होम पेज"
+              title="मंगल दोष पूजन उज्जैन - मुख्य पृष्ठ"
+              aria-label="मंगल दोष पूजन होम पेज"
             >
               <img
                 src={logoImg}
-                alt="मंगल दोष पूजन केंद्र उज्जैन - वैदिक पंडित दीपक पंड्या Logo"
+                alt="मंगल दोष पूजन उज्जैन - वैदिक पंडित दीपक पंड्या Logo"
                 className="h-16 sm:h-20 w-auto object-contain filter drop-shadow-[0_0_12px_rgba(255,215,0,0.5)]"
                 loading="lazy"
               />
             </Link>
             <p className="text-sm leading-relaxed text-cream/70 mb-4 font-devanagari">
               {lang === 'hi'
-                ? 'मंगल दोष पूजन केंद्र — वैदिक पंडित दीपक पंड्या (15+ वर्षों का अनुभव)। मंगलनाथ मंदिर व महाकाल की पावन नगरी उज्जैन में समस्त वैदिक पूजन एवं अनुष्ठान।'
+                ? 'मंगल दोष पूजन — वैदिक पंडित दीपक पंड्या (15+ वर्षों का अनुभव)। मंगलनाथ मंदिर व महाकाल की पावन नगरी उज्जैन में समस्त वैदिक पूजन एवं अनुष्ठान।'
                 : 'Mangal Dosh Puja Nivaran — Led by Vedic Pandit Deepak Pandya (15+ years experience). Authentic Vedic rituals and pujas at Mangalnath Temple, Ujjain.'}
             </p>
 
@@ -150,7 +150,7 @@ export default function Footer() {
                 <li key={link.to}>
                   <Link
                     to={link.to}
-                    title={`${t(link.label)} - मंगल दोष पूजन केंद्र उज्जैन`}
+                    title={`${t(link.label)} - मंगल दोष पूजन उज्जैन`}
                     aria-label={t(link.label)}
                     className="text-sm text-cream/70 hover:text-gold transition-colors font-devanagari flex items-center gap-1.5"
                   >
@@ -210,7 +210,7 @@ export default function Footer() {
             ॥ ॐ श्री मंगलनाथाय नमः ॥
           </p>
           <p className="text-xs text-cream/50 text-center font-devanagari">
-            © 2026 Mangal Dosh Puja Nivaran (मंगल दोष पूजन केंद्र), उज्जैन। सर्वाधिकार सुरक्षित।
+            © 2026 Mangal Dosh Puja Nivaran (मंगल दोष पूजन), उज्जैन। सर्वाधिकार सुरक्षित।
           </p>
         </div>
       </div>

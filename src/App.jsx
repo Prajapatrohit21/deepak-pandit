@@ -29,7 +29,7 @@ import OutstationBookingGuide from './pages/OutstationBookingGuide';
 const ROUTE_TITLES = {
   '/': {
     hi: 'मंगल दोष पूजा उज्जैन | वैदिक पंडित दीपक पंड्या',
-    en: 'Mangal Dosh Puja Kendra | Ujjain | Pandit Deepak Pandya',
+    en: 'Mangal Dosh Puja Ujjain | Pandit Deepak Pandya',
   },
   '/about': {
     hi: 'परिचय — पंडित दीपक पंड्या | वैदिक पुरोहित उज्जैन सिद्ध पीठ',
@@ -48,7 +48,7 @@ const ROUTE_TITLES = {
     en: 'Puja Photos & Video Gallery | Ujjain',
   },
   '/testimonials': {
-    hi: 'भक्तों के अनुभव एवं समीक्षाएं | उज्जैन अनुष्ठान केंद्र',
+    hi: 'भक्तों के अनुभव एवं समीक्षाएं | उज्जैन अनुष्ठान',
     en: 'Devotee Reviews & Testimonials | Ujjain',
   },
   '/booking': {
@@ -96,11 +96,11 @@ function ScrollToTop() {
     let pageTitle = ROUTE_TITLES[pathname] ? ROUTE_TITLES[pathname][lang] || ROUTE_TITLES[pathname].hi : null;
     if (!pageTitle) {
       if (pathname.startsWith('/services/')) {
-        pageTitle = lang === 'hi' ? 'पूजा विवरण | मंगल दोष पूजन केंद्र उज्जैन' : 'Puja Details | Mangal Dosh Puja Kendra Ujjain';
+        pageTitle = lang === 'hi' ? 'पूजा विवरण | मंगल दोष पूजा उज्जैन' : 'Puja Details | Mangal Dosh Puja Ujjain';
       } else if (pathname.startsWith('/blog/')) {
-        pageTitle = lang === 'hi' ? 'वैदिक आलेख | मंगल दोष पूजन केंद्र उज्जैन' : 'Vedic Article | Mangal Dosh Puja Kendra Ujjain';
+        pageTitle = lang === 'hi' ? 'वैदिक आलेख | मंगल दोष पूजा उज्जैन' : 'Vedic Article | Mangal Dosh Puja Ujjain';
       } else {
-        pageTitle = lang === 'hi' ? 'मंगल दोष पूजन केंद्र | उज्जैन' : 'Mangal Dosh Puja Kendra | Ujjain';
+        pageTitle = lang === 'hi' ? 'मंगल दोष पूजा | उज्जैन' : 'Mangal Dosh Puja | Ujjain';
       }
     }
 

@@ -108,7 +108,7 @@ function Hero() {
             </p>
 
             <h1 className="font-heading font-black text-3xl xs:text-4xl sm:text-5xl lg:text-[3.5rem] text-[#1F160F] leading-[1.08] mb-2 tracking-tight">
-              {lang === 'hi' ? (<>मंगल दोष पूजन केंद्र<br /><span className="text-[#8C3814]">उज्जैन सिद्ध पीठ</span></>) : (<>MANGAL DOSH PUJA<br /><span className="text-[#8C3814]">NIVARAN UJJAIN</span></>)}
+              {lang === 'hi' ? (<>मंगल दोष पूजन<br /><span className="text-[#8C3814]">उज्जैन सिद्ध पीठ</span></>) : (<>MANGAL DOSH PUJA<br /><span className="text-[#8C3814]">NIVARAN UJJAIN</span></>)}
             </h1>
 
             <h2 className="text-base sm:text-xl font-bold text-[#8C3814] tracking-wider uppercase font-heading mb-4">
@@ -190,7 +190,7 @@ function Hero() {
                 ) : (
                   <img
                     src={HERO_SLIDES[currentSlide].image}
-                    alt={`${t(HERO_SLIDES[currentSlide].title)} - मंगल दोष पूजन केंद्र उज्जैन`}
+                    alt={`${t(HERO_SLIDES[currentSlide].title)} - मंगल दोष पूजन उज्जैन`}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                 )}
