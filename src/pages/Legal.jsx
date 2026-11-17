@@ -140,7 +140,7 @@ export function Disclaimer() {
   const { lang } = useLanguage();
 
   if (lang === 'en') return (
-    <LegalPage titleHi="अस्वीकरण" titleEn="Disclaimer">
+    <LegalPage titleHi="अस्वीकरण" titleEn="Disclaimer" canonical="https://mangaldoshpujanivaran.in/disclaimer">
       <h2 className="text-xl font-bold text-[#1F160F] mb-3">1. Faith-Based Service</h2>
       <p className="text-[#5C4A3A] leading-relaxed mb-4">Mahadev Anushthan Kendra provides faith-based Vedic religious and astrological services. These services are based on ancient Indian Vedic traditions, astrology, and religious beliefs. They are intended as spiritual guidance and ritual support.</p>
       <h2 className="text-xl font-bold text-[#1F160F] mb-3">2. No Guaranteed Results</h2>
@@ -157,7 +157,7 @@ export function Disclaimer() {
   );
 
   return (
-    <LegalPage titleHi="अस्वीकरण" titleEn="Disclaimer">
+    <LegalPage titleHi="अस्वीकरण" titleEn="Disclaimer" canonical="https://mangaldoshpujanivaran.in/disclaimer">
       <h2 className="text-xl font-bold text-[#1F160F] mb-3">1. आस्था आधारित सेवा</h2>
       <p className="text-[#5C4A3A] leading-relaxed mb-4">महादेव अनुष्ठान केंद्र प्राचीन भारतीय वैदिक परंपराओं, ज्योतिष एवं धार्मिक विश्वासों पर आधारित आस्था-केंद्रित सेवाएं प्रदान करता है। ये सेवाएं आध्यात्मिक मार्गदर्शन एवं अनुष्ठान सहायता के रूप में हैं।</p>
       <h2 className="text-xl font-bold text-[#1F160F] mb-3">2. परिणाम की कोई गारंटी नहीं</h2>

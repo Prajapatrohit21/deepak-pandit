@@ -159,6 +159,8 @@ export default function MangalnathMandirGuide() {
               <a
                 href={PHONE_HREF}
                 onClick={() => trackPhoneCall('reach_guide_page')}
+                title="मंगलनाथ मंदिर पहुंचने के मार्ग हेतु पंडित दीपक पंड्या को कॉल करें"
+                aria-label="Call Pandit Deepak Pandya for Mangalnath Temple route and puja guidance"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-[#B45309] font-bold text-sm hover:bg-[#FFFDF9] transition-colors"
               >
                 📞 Call: +91 62634 01651
@@ -168,6 +170,8 @@ export default function MangalnathMandirGuide() {
                 onClick={() => trackWhatsAppClick('reach_guide_page')}
                 target="_blank"
                 rel="noopener noreferrer"
+                title="WhatsApp पर मंगलनाथ मंदिर मार्ग एवं पूजा सामग्री जानकारी प्राप्त करें"
+                aria-label="WhatsApp Pandit Deepak Pandya for Mangalnath Temple directions and puja details"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/15 border border-white/30 text-white font-bold text-sm hover:bg-white/25 transition-colors"
               >
                 💬 WhatsApp पर मार्ग व पूजा जानकारी लें
