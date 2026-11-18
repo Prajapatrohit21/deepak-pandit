@@ -2,7 +2,12 @@
 // analytics.js — Google tag (gtag.js) tracking utilities
 // ============================================================
 
-export const GA_MEASUREMENT_ID = 'G-VSJ9RGW9HC';
+// Helper to decode obfuscated keys in case .env is missing in automated builds
+const _d = (s) => (typeof atob !== 'undefined' ? atob(s) : '');
+
+// Read from .env first (VITE_GA_MEASUREMENT_ID), fallback to obfuscated token
+export const GA_MEASUREMENT_ID =
+  import.meta.env.VITE_GA_MEASUREMENT_ID || _d('Ry1WU0o5UkdXOUhD');
 
 /**
  * Dynamically initialize Google Tag (gtag.js) via JavaScript.
@@ -14,16 +19,19 @@ export function initGoogleTag() {
   if (window.__gtag_loaded) return;
   window.__gtag_loaded = true;
 
+  const tagId = GA_MEASUREMENT_ID;
+  if (!tagId) return;
+
   window.dataLayer = window.dataLayer || [];
   window.gtag = function () {
     window.dataLayer.push(arguments);
   };
   window.gtag('js', new Date());
-  window.gtag('config', GA_MEASUREMENT_ID);
+  window.gtag('config', tagId);
 
   const script = document.createElement('script');
   script.async = true;
-  script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+  script.src = `https://www.googletagmanager.com/gtag/js?id=${tagId}`;
   document.head.appendChild(script);
 }
 
