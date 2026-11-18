@@ -621,12 +621,12 @@ export default function Home() {
   }, []);
 
   const homeTitle = lang === 'hi'
-    ? 'मंगल दोष पूजा उज्जैन | मंगल भात पूजा | वैदिक पंडित दीपक पंड्या'
-    : 'Mangal Dosh Puja Ujjain | Mangal Bhat Puja | Pandit Deepak Pandya';
+    ? 'मंगल दोष पूजा उज्जैन | मंगल दोष निवारण पूजा | वैदिक पंडित दीपक पंड्या'
+    : 'Mangal Dosh Puja Ujjain | Mangal Dosh Nivaran Pooja | Pandit Deepak Pandya';
   
   const homeDesc = lang === 'hi'
-    ? 'उज्जैन श्री मंगलनाथ मंदिर में 100% प्रामाणिक वैदिक मंगल दोष भात पूजा, कालसर्प दोष निवारण, नवग्रह शांति। 15+ वर्ष अनुभवी वैदिक पुरोहित पंडित दीपक पंड्या। तुरंत संपर्क करें।'
-    : 'Authentic Mangal Dosh Bhat Puja, Kaal Sarp Dosh Nivaran at Shri Mangalnath Mandir Ujjain by Pandit Deepak Pandya. 15+ years experience. 24x7 Consultation.';
+    ? 'उज्जैन श्री मंगलनाथ मंदिर में 100% प्रामाणिक मंगल दोष पूजा, मंगल दोष निवारण पूजा, कालसर्प दोष निवारण। 15+ वर्ष अनुभवी वैदिक पुरोहित पंडित दीपक पंड्या — पूजा विधि, दक्षिणा व बुकिंग जानकारी के लिए अभी संपर्क करें।'
+    : 'Authentic Mangal Dosh Puja & Mangal Dosh Nivaran Pooja at Shri Mangalnath Mandir Ujjain by Pandit Deepak Pandya. 15+ years experience, transparent pricing, real photos. Book now — 24x7.';
 
   return (
     <main>

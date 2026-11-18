@@ -26,12 +26,12 @@ export function Blog() {
   }, []);
 
   const blogTitle = lang === 'hi'
-    ? 'वैदिक ज्ञान ब्लॉग | मंगल दोष, कालसर्प, उज्जैन पूजा विधि आलेख'
-    : 'Vedic Knowledge Blog | Mangal Dosh, Kaal Sarp, Ujjain Puja Articles';
+    ? 'मांगलिक दोष क्या होता है | मंगल दोष उपाय | वैदिक ज्ञान ब्लॉग उज्जैन'
+    : 'Manglik Dosh Kya Hota Hai | Mangal Dosh Remedies | Vedic Blog Ujjain';
 
   const blogDesc = lang === 'hi'
-    ? 'पंडित दीपक पंड्या द्वारा रचित वैदिक ज्ञान आलेख — मंगल दोष, कालसर्प, पितृ दोष, उज्जैन पूजा विधि, शुभ मुहूर्त और ज्योतिष संबंधी जानकारी।'
-    : 'Vedic knowledge articles by Pandit Deepak Pandya on Mangal Dosh, Kaal Sarp, Pitru Dosh, Ujjain puja rituals, auspicious muhurta, and astrology.';
+    ? 'पंडित दीपक पंड्या द्वारा — मांगलिक दोष क्या होता है, मांगलिक दोष कब खत्म होता है, मंगल दोष निवारण के उपाय, कालसर्प दोष, उज्जैन पूजा विधि पर विस्तृत वैदिक आलेख।'
+    : 'Expert Vedic articles by Pandit Deepak Pandya: What is Manglik Dosh, Mangal Dosh Nivaran remedies, Kaal Sarp Dosh, Ujjain puja vidhi and muhurat guidance.';
 
   return (
     <main className="pt-20 bg-[#FAF7F2] text-[#2D1B00]">

@@ -27,12 +27,12 @@ export default function About() {
   }, []);
 
   const aboutTitle = lang === 'hi'
-    ? 'वैदिक पंडित दीपक पंड्या परिचय | उज्जैन मंगल दोष व कालसर्प पुरोहित'
-    : 'About Vedic Pandit Deepak Pandya | Ujjain Mangal Dosh & Kaal Sarp Priest';
+    ? 'पंडित दीपक पंड्या उज्जैन | मंगल दोष पूजा पंडित | 15+ वर्ष अनुभव'
+    : 'Pandit Deepak Pandya Ujjain | Mangal Dosh Puja Pandit | 15+ Years Experience';
 
   const aboutDesc = lang === 'hi'
-    ? 'पंडित दीपक पंड्या - उज्जैन के प्रतिष्ठित वैदिक पुरोहित। 15+ वर्षों का अनुभव, शुक्ल यजुर्वेद परंपरा, मंगलनाथ मंदिर में मंगल भात पूजा एवं कालसर्प दोष निवारण।'
-    : 'Pandit Deepak Pandya - Trusted Vedic priest in Ujjain with 15+ years of experience performing authentic Mangal Dosh, Kaal Sarp and Vedic rituals at Mangalnath Temple.';
+    ? 'पंडित दीपक पंड्या — उज्जैन के विश्वसनीय मंगल दोष पूजा पंडित। 15+ वर्षों का अनुभव, शुक्ल यजुर्वेद परंपरा, मंगलनाथ मंदिर में मंगल दोष निवारण पूजा, मांगलिक दोष उपाय एवं कालसर्प दोष निवारण।'
+    : 'Pandit Deepak Pandya — Trusted Mangal Dosh Puja Pandit in Ujjain with 15+ years. Specializes in Mangal Dosh Nivaran Pooja, Manglik dosh remedies, Kaal Sarp ritual at Mangalnath Temple.';
 
   return (
     <main className="pt-20 bg-[#FAF7F2] text-[#2D1B00]">

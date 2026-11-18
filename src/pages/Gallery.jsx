@@ -54,12 +54,12 @@ export default function Gallery() {
   }, []);
 
   const galleryTitle = lang === 'hi'
-    ? 'फोटो गैलरी — उज्जैन वैदिक अनुष्ठान एवं दर्शन | पंडित दीपक पंड्या'
-    : 'Photo Gallery — Ujjain Vedic Pujas & Darshan | Pandit Deepak Pandya';
+    ? 'मंगल दोष पूजा फोटो गैलरी | उज्जैन वैदिक अनुष्ठान | पंडित दीपक पंड्या'
+    : 'Mangal Dosh Puja Photos Gallery | Ujjain Vedic Rituals | Pandit Deepak Pandya';
 
   const galleryDesc = lang === 'hi'
-    ? 'उज्जैन मंगलनाथ मंदिर, महाकालेश्वर एवं राम घाट पर वैदिक पूजन, मंगल भात पूजा, कालसर्प दोष निवारण, हवन एवं विशिष्ट यजमान अनुष्ठान की तस्वीरें।'
-    : 'Visual photo gallery of authentic Vedic Pujas, Mangal Bhat Puja, Kaal Sarp Dosh rituals, and Havans conducted by Pandit Deepak Pandya in Ujjain.';
+    ? 'उज्जैन मंगलनाथ मंदिर में मंगल दोष पूजा, मंगल दोष निवारण पूजा, कालसर्प दोष निवारण और हवन की असली तस्वीरें। पंडित दीपक पंड्या के साथ प्रामाणिक वैदिक अनुष्ठान।'
+    : 'Real photos of Mangal Dosh Puja, Mangal Dosh Nivaran Pooja, Kaal Sarp Dosh rituals and Havans at Mangalnath Temple Ujjain by Pandit Deepak Pandya.';
 
   const tabs = [
     { key: 'all', label: gl.tabs.all },

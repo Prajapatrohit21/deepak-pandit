@@ -30,12 +30,12 @@ export default function KundliAnalysis() {
   }, []);
 
   const kundliTitle = lang === 'hi'
-    ? 'मुफ्त प्राथमिक कुंडली विश्लेषण | मांगलिक व कालसर्प दोष जांच उज्जैन'
-    : 'Free Primary Kundali Analysis | Mangal & Kaal Sarp Dosh Check Ujjain';
+    ? 'मुफ्त कुंडली विश्लेषण उज्जैन | मांगलिक दोष क्या होता है — जांच करें'
+    : 'Free Kundali Analysis Ujjain | Manglik Dosh Kya Hota Hai — Check Now';
 
   const kundliDesc = lang === 'hi'
-    ? 'पंडित दीपक पंड्या द्वारा वैदिक जन्म कुंडली विश्लेषण। मांगलिक दोष, कालसर्प दोष, पितृ दोष व विवाह बाधा की सटीक पहचान व वैदिक उपाय। तुरंत जन्म विवरण भेजें।'
-    : 'Get Vedic Kundali consultation by Pandit Deepak Pandya Ujjain. Accurate diagnosis of Mangal dosh, Kaal Sarp yoga, and birth chart remedies.';
+    ? 'पंडित दीपक पंड्या से मुफ्त वैदिक कुंडली विश्लेषण — मांगलिक दोष क्या होता है, मांगलिक दोष कुंडली में कैसे देखें, कालसर्प दोष व पितृ दोष की सटीक पहचान और वैदिक उपाय।'
+    : 'Free Vedic Kundali consultation by Pandit Deepak Pandya Ujjain. Find out what Manglik dosh is, check Manglik dosh in kundali, Kaal Sarp yoga and accurate Vedic remedies.';
 
   const validate = () => {
     const errs = {};

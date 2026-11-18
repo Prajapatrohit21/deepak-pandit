@@ -18,9 +18,9 @@ export function LanguageProvider({ children }) {
     document.documentElement.lang = lang;
     // Update <title> based on language
     if (lang === 'en') {
-      document.title = 'Mahadev Anushthan | Mangal Dosh Puja Ujjain | Pandit Deepak Pandya';
+      document.title = 'Mangal Dosh Puja Ujjain | Mangal Dosh Nivaran Pooja | Pandit Deepak Pandya';
     } else {
-      document.title = 'मंगल दोष पूजन | उज्जैन | वैदिक पंडित दीपक पंड्या';
+      document.title = 'मंगल दोष पूजा उज्जैन | मंगल दोष निवारण पूजा | पंडित दीपक पंड्या';
     }
   }, [lang]);
 

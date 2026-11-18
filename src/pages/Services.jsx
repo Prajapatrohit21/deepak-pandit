@@ -25,12 +25,12 @@ export default function Services() {
   }, []);
 
   const servicesTitle = lang === 'hi'
-    ? 'उज्जैन वैदिक पूजा सेवाएं | मंगल दोष, कालसर्प, पितृ दोष, रुद्राभिषेक'
-    : 'Vedic Puja Services Ujjain | Mangal Dosh, Kaal Sarp, Rudrabhishek';
+    ? 'मंगल दोष पूजा उज्जैन | मंगल दोष निवारण पूजा, कालसर्प, रुद्राभिषेक सेवाएं'
+    : 'Mangal Dosh Puja Ujjain | Mangal Dosh Nivaran Pooja & Vedic Puja Services';
 
   const servicesDesc = lang === 'hi'
-    ? 'उज्जैन में वैदिक पंडित दीपक पंड्या द्वारा मंगल भात पूजा, कालसर्प दोष, पितृ दोष निवारण, महामृत्युंजय जाप, रुद्राभिषेक और नवग्रह शांति अनुष्ठान। प्रामाणिक विधि एवं शुभ मुहूर्त।'
-    : 'Complete list of authentic Vedic Pujas in Ujjain: Mangal Dosh Bhat Puja, Kaal Sarp Dosh Nivaran, Rudrabhishek, Mahamrityunjay Jaap by Pandit Deepak Pandya.';
+    ? 'उज्जैन में पंडित दीपक पंड्या द्वारा मंगल दोष पूजा, मंगल दोष निवारण पूजा, मांगलिक दोष उपाय, कालसर्प दोष, पितृ दोष निवारण, महामृत्युंजय जाप और रुद्राभिषेक। पूरी विधि, मुहूर्त व दक्षिणा जानकारी।'
+    : 'Complete Vedic Puja services in Ujjain by Pandit Deepak Pandya: Mangal Dosh Puja, Mangal Dosh Nivaran Pooja, Manglik dosh remedies, Kaal Sarp Dosh Nivaran, Rudrabhishek. Transparent pricing & muhurat.';
 
   return (
     <main className="pt-20 bg-[#FAF7F2] text-[#2D1B00]">

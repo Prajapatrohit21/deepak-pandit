@@ -24,11 +24,11 @@ export default function Testimonials() {
 
   const testimonialsTitle = lang === 'hi'
     ? 'यजमानों के अनुभव एवं समीक्षाएं | पंडित दीपक पंड्या उज्जैन (56+ Reviews)'
-    : 'Client Reviews & Testimonials | Pandit Deepak Pandya Ujjain';
+    : 'Mangal Dosh Puja Ujjain Reviews | Pandit Deepak Pandya 56+ Google Ratings';
 
   const testimonialsDesc = lang === 'hi'
-    ? 'उज्जैन में वैदिक पंडित दीपक पंड्या जी द्वारा कराई गई मंगल भात पूजा, कालसर्प शांति एवं रुद्राभिषेक पर यजमानों के सच्चे अनुभव एवं Google समीक्षाएं।'
-    : 'Read 56+ verified Google reviews and testimonials from devotees for Vedic Pujas performed by Pandit Deepak Pandya in Ujjain.';
+    ? 'उज्जैन में मंगल दोष पूजा, मंगल दोष निवारण पूजा एवं कालसर्प शांति पर 56+ Google समीक्षाएं। पंडित दीपक पंड्या के साथ अनुभव — असली यजमानों की सच्ची प्रतिक्रिया पढ़ें।'
+    : 'Read 56+ verified Google reviews for Mangal Dosh Puja Ujjain, Mangal Dosh Nivaran Pooja and Kaal Sarp rituals performed by Pandit Deepak Pandya. Real devotee testimonials.';
 
   return (
     <main className="pt-20 bg-[#FAF7F2] text-[#2D1B00]">

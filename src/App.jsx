@@ -25,43 +25,42 @@ import { TermsConditions, PrivacyPolicy, Disclaimer } from './pages/Legal';
 import MangalnathMandirGuide from './pages/MangalnathMandirGuide';
 import OutstationBookingGuide from './pages/OutstationBookingGuide';
 
-// Route titles mapping for both Hindi and English
 const ROUTE_TITLES = {
   '/': {
-    hi: 'मंगल दोष पूजा उज्जैन | वैदिक पंडित दीपक पंड्या',
-    en: 'Mangal Dosh Puja Ujjain | Pandit Deepak Pandya',
+    hi: 'मंगल दोष पूजा उज्जैन | मंगल दोष निवारण पूजा | पंडित दीपक पंड्या',
+    en: 'Mangal Dosh Puja Ujjain | Mangal Dosh Nivaran Pooja | Pandit Deepak Pandya',
   },
   '/about': {
-    hi: 'परिचय — पंडित दीपक पंड्या | वैदिक पुरोहित उज्जैन सिद्ध पीठ',
-    en: 'About Pandit Deepak Pandya | Vedic Priest Ujjain',
+    hi: 'पंडित दीपक पंड्या उज्जैन | मंगल दोष पूजा पंडित | 15+ वर्ष अनुभव',
+    en: 'Pandit Deepak Pandya Ujjain | Mangal Dosh Puja Pandit | 15+ Years',
   },
   '/services': {
-    hi: 'वैदिक पूजा अनुष्ठान सेवाएं | मंगल दोष, कालसर्प | उज्जैन',
-    en: 'Vedic Puja & Ritual Services | Ujjain',
+    hi: 'मंगल दोष पूजा उज्जैन | मंगल दोष निवारण पूजा, कालसर्प, रुद्राभिषेक',
+    en: 'Mangal Dosh Puja Ujjain | Mangal Dosh Nivaran Pooja & Vedic Services',
   },
   '/kundli-analysis': {
-    hi: 'निःशुल्क जन्म कुंडली विश्लेषण | वैदिक पंडित दीपक पंड्या',
-    en: 'Free Kundali Analysis | Pandit Deepak Pandya',
+    hi: 'मुफ्त कुंडली विश्लेषण | मांगलिक दोष क्या होता है | उज्जैन',
+    en: 'Free Kundali Analysis | Manglik Dosh Kya Hota Hai | Ujjain',
   },
   '/gallery': {
-    hi: 'पूजन एवं सिद्ध पीठ फोटो व वीडियो गैलरी | उज्जैन',
-    en: 'Puja Photos & Video Gallery | Ujjain',
+    hi: 'मंगल दोष पूजा फोटो गैलरी | उज्जैन वैदिक अनुष्ठान | पंडित दीपक पंड्या',
+    en: 'Mangal Dosh Puja Photos Gallery | Ujjain Vedic Rituals | Pandit Deepak Pandya',
   },
   '/testimonials': {
-    hi: 'भक्तों के अनुभव एवं समीक्षाएं | उज्जैन अनुष्ठान',
-    en: 'Devotee Reviews & Testimonials | Ujjain',
+    hi: 'मंगल दोष पूजा उज्जैन समीक्षाएं | पंडित दीपक पंड्या 56+ Google Ratings',
+    en: 'Mangal Dosh Puja Ujjain Reviews | Pandit Deepak Pandya 56+ Ratings',
   },
   '/booking': {
-    hi: 'ऑनलाइन पूजन संकल्प एवं बुकिंग | उज्जैन',
-    en: 'Online Puja Booking & Sankalp | Ujjain',
+    hi: 'मंगल दोष पूजा बुकिंग उज्जैन | दक्षिणा, विधि व मुहूर्त जानकारी',
+    en: 'Mangal Dosh Puja Ujjain Cost & Booking | Vidhi, Muhurat Info',
   },
   '/contact': {
-    hi: 'संपर्क करें | महाकाल की नगरी, उज्जैन | 6263401651',
-    en: 'Contact Us | Near Mahakaleshwar Temple, Ujjain',
+    hi: 'संपर्क करें | पंडित दीपक पंड्या उज्जैन | मंगल दोष पूजा बुकिंग 6263401651',
+    en: 'Contact Pandit Deepak Pandya Ujjain | Mangal Dosh Puja Booking',
   },
   '/blog': {
-    hi: 'धार्मिक आलेख एवं वैदिक ज्ञान ब्लॉग | उज्जैन',
-    en: 'Vedic Blog & Religious Articles | Ujjain',
+    hi: 'मांगलिक दोष क्या होता है | मंगल दोष उपाय | वैदिक ज्ञान ब्लॉग उज्जैन',
+    en: 'Manglik Dosh Kya Hota Hai | Mangal Dosh Remedies | Vedic Blog Ujjain',
   },
   '/terms-conditions': {
     hi: 'नियम एवं शर्तें | Terms & Conditions',
@@ -76,12 +75,12 @@ const ROUTE_TITLES = {
     en: 'Disclaimer',
   },
   '/mangalnath-mandir-ujjain': {
-    hi: 'मंगलनाथ मंदिर उज्जैन कैसे पहुंचे | समय, मार्ग व दर्शन गाइड',
-    en: 'How to Reach Mangalnath Temple Ujjain | Guide',
+    hi: 'मंगलनाथ मंदिर उज्जैन — मंगल दोष पूजा स्थल | समय, मार्ग व दर्शन गाइड',
+    en: 'Mangalnath Temple Ujjain — Mangal Dosh Puja Location | Timings & Guide',
   },
   '/bahar-ke-shahar-puja-booking': {
-    hi: 'बाहर के शहरों से पूजा बुकिंग | ऑनलाइन संकल्प उज्जैन',
-    en: 'Outstation Puja Booking & Online Sankalp | Ujjain',
+    hi: 'बाहर के शहरों से मंगल दोष पूजा बुकिंग | ऑनलाइन संकल्प उज्जैन',
+    en: 'Outstation Mangal Dosh Puja Booking Ujjain | Online Sankalp',
   },
 };
 
@@ -96,11 +95,11 @@ function ScrollToTop() {
     let pageTitle = ROUTE_TITLES[pathname] ? ROUTE_TITLES[pathname][lang] || ROUTE_TITLES[pathname].hi : null;
     if (!pageTitle) {
       if (pathname.startsWith('/services/')) {
-        pageTitle = lang === 'hi' ? 'पूजा विवरण | मंगल दोष पूजा उज्जैन' : 'Puja Details | Mangal Dosh Puja Ujjain';
+        pageTitle = lang === 'hi' ? 'पूजा विवरण | मंगल दोष पूजा उज्जैन — पंडित दीपक पंड्या' : 'Puja Details | Mangal Dosh Puja Ujjain — Pandit Deepak Pandya';
       } else if (pathname.startsWith('/blog/')) {
-        pageTitle = lang === 'hi' ? 'वैदिक आलेख | मंगल दोष पूजा उज्जैन' : 'Vedic Article | Mangal Dosh Puja Ujjain';
+        pageTitle = lang === 'hi' ? 'वैदिक आलेख | मांगलिक दोष, मंगल दोष उपाय | उज्जैन' : 'Vedic Article | Manglik Dosh, Mangal Dosh Remedies | Ujjain';
       } else {
-        pageTitle = lang === 'hi' ? 'मंगल दोष पूजा | उज्जैन' : 'Mangal Dosh Puja | Ujjain';
+        pageTitle = lang === 'hi' ? 'मंगल दोष पूजा | उज्जैन — पंडित दीपक पंड्या' : 'Mangal Dosh Puja Ujjain | Pandit Deepak Pandya';
       }
     }
 

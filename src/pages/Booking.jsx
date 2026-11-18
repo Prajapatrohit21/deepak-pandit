@@ -28,12 +28,12 @@ export default function Booking() {
   }, []);
 
   const bookingTitle = lang === 'hi'
-    ? 'पूजा बुकिंग उज्जैन | मंगल भात, कालसर्प, रुद्राभिषेक शुभ मुहूर्त'
-    : 'Book Puja in Ujjain | Mangal Bhat, Kaal Sarp, Rudrabhishek Muhurat';
+    ? 'मंगल दोष पूजा बुकिंग उज्जैन | दक्षिणा, विधि व मुहूर्त जानकारी'
+    : 'Mangal Dosh Puja Ujjain Cost & Booking | Vidhi, Muhurat, Pandit Deepak Pandya';
 
   const bookingDesc = lang === 'hi'
-    ? 'उज्जैन में वैदिक पंडित दीपक पंड्या से पूजा बुक करें। मंगल भात पूजा, कालसर्प दोष, रुद्राभिषेक सहित सभी वैदिक अनुष्ठान के लिए शुभ मुहूर्त एवं ऑनलाइन संकल्प सेवा उपलब्ध।'
-    : 'Book any Vedic Puja in Ujjain with Pandit Deepak Pandya. Mangal Bhat Puja, Kaal Sarp Dosh, Rudrabhishek — in-person or online sankalp with video proof.';
+    ? 'उज्जैन में मंगल दोष पूजा बुकिंग — मंगल दोष पूजा दक्षिणा, क्या शामिल है, विधि, मुहूर्त एवं ऑनलाइन संकल्प की सम्पूर्ण जानकारी। पंडित दीपक पंड्या से आज ही संपर्क करें।'
+    : 'Book Mangal Dosh Puja in Ujjain with Pandit Deepak Pandya. Know the puja cost, what is included, dakshina, vidhi and muhurat. In-person or online sankalp with video proof.';
 
   const steps = [
     { n: '1', hi: 'विवरण भरें', en: '1. Fill Details', desc: 'नाम, मोबाइल, पूजा का प्रकार एवं समस्या' },

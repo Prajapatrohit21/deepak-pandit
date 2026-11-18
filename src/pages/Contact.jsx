@@ -27,12 +27,12 @@ export default function Contact() {
   }, []);
 
   const contactTitle = lang === 'hi'
-    ? 'संपर्क करें | पंडित दीपक पंड्या उज्जैन — 24x7 वैदिक सहायता'
-    : 'Contact Pandit Deepak Pandya Ujjain — 24x7 Vedic Helpline';
+    ? 'मंगल दोष पूजा बुकिंग उज्जैन | संपर्क करें — पंडित दीपक पंड्या'
+    : 'Mangal Dosh Puja Booking Ujjain | Contact Pandit Deepak Pandya';
 
   const contactDesc = lang === 'hi'
-    ? 'वैदिक पंडित दीपक पंड्या उज्जैन से संपर्क करें। फोन, WhatsApp या ईमेल द्वारा मंगल दोष, कालसर्प, रुद्राभिषेक पूजा परामर्श एवं बुकिंग हेतु 24x7 उपलब्ध।'
-    : 'Contact Vedic Pandit Deepak Pandya in Ujjain for puja booking and consultation. Call or WhatsApp +91 62634 01651. 24x7 available.';
+    ? 'उज्जैन में मंगल दोष पूजा बुकिंग व परामर्श के लिए पंडित दीपक पंड्या से संपर्क करें। फोन, WhatsApp +91 62634 01651 — 24x7 उपलब्ध। मंगल दोष, मांगलिक दोष व कालसर्प पूजा विधि जानकारी।'
+    : 'Book Mangal Dosh Puja in Ujjain — Contact Pandit Deepak Pandya via Call or WhatsApp +91 62634 01651. 24x7 available for Mangal Dosh Nivaran, Manglik dosh and Kaal Sarp puja queries.';
 
   const validate = () => {
     const errs = {};
