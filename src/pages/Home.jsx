@@ -628,12 +628,90 @@ export default function Home() {
     ? 'उज्जैन श्री मंगलनाथ मंदिर में 100% प्रामाणिक मंगल दोष पूजा, मंगल दोष निवारण पूजा, कालसर्प दोष निवारण। 15+ वर्ष अनुभवी वैदिक पुरोहित पंडित दीपक पंड्या — पूजा विधि, दक्षिणा व बुकिंग जानकारी के लिए अभी संपर्क करें।'
     : 'Authentic Mangal Dosh Puja & Mangal Dosh Nivaran Pooja at Shri Mangalnath Mandir Ujjain by Pandit Deepak Pandya. 15+ years experience, transparent pricing, real photos. Book now — 24x7.';
 
+  // AEO/GEO: FAQPage schema for Home FAQs (English — AI crawlers prefer English)
+  const homeFaqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    '@id': 'https://mangaldoshpujanivaran.in/#faq',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'Where is Mangal Dosh Puja done in Ujjain?',
+        acceptedAnswer: { '@type': 'Answer', text: 'Mangal Dosh Puja (Mangalik Dosh Puja) is performed at Shri Mangalnath Mandir, Ujjain — considered the birthplace of Mars (Mangal) in the Puranas. Pandit Deepak Pandya has been conducting authentic Vedic rituals here for 15+ years.' },
+      },
+      {
+        '@type': 'Question',
+        name: 'What is Manglik Dosh and how is it removed?',
+        acceptedAnswer: { '@type': 'Answer', text: 'Manglik Dosh (Mangal Dosh) is a Vedic astrological condition caused by Mars in certain houses of the birth chart (kundali). It is traditionally remedied through Mangal Dosh Nivaran Pooja, Mangal Bhat Puja, and specific Vedic rituals performed at Mangalnath Temple Ujjain.' },
+      },
+      {
+        '@type': 'Question',
+        name: 'What is the cost of Mangal Dosh Puja in Ujjain?',
+        acceptedAnswer: { '@type': 'Answer', text: 'The cost (dakshina) of Mangal Dosh Puja in Ujjain depends on the type of ritual — Mangal Bhat Puja, Mangal Dosh Nivaran Pooja, Kaal Sarp Dosh Nivaran, etc. Contact Pandit Deepak Pandya at +91 62634 01651 for exact pricing and inclusions.' },
+      },
+      {
+        '@type': 'Question',
+        name: 'How to book Mangal Dosh Puja in Ujjain from another city?',
+        acceptedAnswer: { '@type': 'Answer', text: 'You can book Mangal Dosh Puja in Ujjain from anywhere in India (Indore, Bhopal, Delhi, Mumbai, Pune, Gujarat) by sending your name, gotra, and birth details via WhatsApp to +91 62634 01651. Pandit Deepak Pandya will perform the puja on your behalf with live video proof.' },
+      },
+      {
+        '@type': 'Question',
+        name: 'How to get Kaal Sarp Dosh Puja done in Ujjain?',
+        acceptedAnswer: { '@type': 'Answer', text: 'For Kaal Sarp Dosh Nivaran puja in Ujjain, WhatsApp +91 62634 01651 or fill the online booking form. Pandit Deepak Pandya will review your kundali, suggest the right muhurat, and perform the puja at Mangalnath Mandir or Mahakal complex.' },
+      },
+      {
+        '@type': 'Question',
+        name: 'Is online puja booking possible in Ujjain?',
+        acceptedAnswer: { '@type': 'Answer', text: 'Yes. Online sankalp and Mangal Dosh Puja booking is available via WhatsApp (+91 62634 01651) or the booking form on this website. You will receive live video of the puja.' },
+      },
+    ],
+  };
+
+  // AEO/GEO: LocalBusiness + speakable schema
+  const localBusinessSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ReligiousOrganization',
+    '@id': 'https://mangaldoshpujanivaran.in/#business',
+    name: 'Pandit Deepak Pandya — Mangal Dosh Puja Ujjain',
+    alternateName: ['Mangal Dosh Puja Ujjain', 'Mangal Dosh Nivaran Pooja Ujjain'],
+    description: 'Authentic Mangal Dosh Puja, Mangal Dosh Nivaran Pooja, Kaal Sarp Dosh Nivaran and all Vedic rituals at Mangalnath Temple Ujjain by Pandit Deepak Pandya with 15+ years experience.',
+    url: 'https://mangaldoshpujanivaran.in/',
+    telephone: '+916263401651',
+    priceRange: '₹₹',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Mangalnath Mandir Road',
+      addressLocality: 'Ujjain',
+      addressRegion: 'Madhya Pradesh',
+      postalCode: '456006',
+      addressCountry: 'IN',
+    },
+    geo: { '@type': 'GeoCoordinates', latitude: 23.1829, longitude: 75.7682 },
+    openingHoursSpecification: [{ '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'], opens: '05:00', closes: '21:00' }],
+    aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '56', bestRating: '5' },
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['h1', '.hero-description', '#home-faq-heading'],
+    },
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Vedic Puja Services Ujjain',
+      itemListElement: [
+        { '@type': 'Offer', name: 'Mangal Dosh Puja Ujjain', description: 'Authentic Mangal Dosh Puja at Mangalnath Temple Ujjain' },
+        { '@type': 'Offer', name: 'Mangal Dosh Nivaran Pooja', description: 'Vedic Mangal Dosh Nivaran Pooja with proper vidhi and muhurat' },
+        { '@type': 'Offer', name: 'Kaal Sarp Dosh Nivaran', description: 'Kaal Sarp Dosh Puja at Mangalnath Mandir Ujjain' },
+        { '@type': 'Offer', name: 'Rudrabhishek', description: 'Rudrabhishek at Mahakaleshwar Ujjain' },
+      ],
+    },
+  };
+
   return (
     <main>
       <SEO
         title={homeTitle}
         description={homeDesc}
         canonical="https://mangaldoshpujanivaran.in/"
+        schema={[homeFaqSchema, localBusinessSchema]}
       />
       <Hero />
       <TrustSection />

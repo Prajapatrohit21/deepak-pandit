@@ -70,12 +70,42 @@ export default function KundliAnalysis() {
         : 'border-[#E8DCC8] focus:border-[#D97706] focus:ring-1 focus:ring-[#D97706]'
     }`;
 
+  // AEO/GEO: FAQPage schema for Manglik Dosh queries (high volume: 3600+/mo)
+  const kundliFaqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    '@id': 'https://mangaldoshpujanivaran.in/kundli-analysis#faq',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'Manglik Dosh kya hota hai? (मांगलिक दोष क्या होता है?)',
+        acceptedAnswer: { '@type': 'Answer', text: 'Manglik Dosh (also called Mangal Dosh or Kuja Dosh) is a Vedic astrological condition that occurs when planet Mars (Mangal) is placed in the 1st, 2nd, 4th, 7th, 8th, or 12th house of the birth chart (kundali). It is traditionally associated with delays in marriage and marital disharmony. It is remedied through Mangal Dosh Nivaran Pooja at Mangalnath Temple Ujjain.' },
+      },
+      {
+        '@type': 'Question',
+        name: 'Manglik Dosh in kundali — how to check?',
+        acceptedAnswer: { '@type': 'Answer', text: 'Manglik Dosh in kundali is identified when Mars (Mangal) occupies houses 1, 2, 4, 7, 8, or 12 in the Lagna (ascendant) chart. A qualified Vedic astrologer like Pandit Deepak Pandya can analyse your birth chart and confirm Manglik Dosh. Send your birth date, time, and place via WhatsApp to +91 62634 01651 for a free preliminary analysis.' },
+      },
+      {
+        '@type': 'Question',
+        name: 'Manglik Dosh kab khatam hota hai? (मांगलिक दोष कब खत्म होता है?)',
+        acceptedAnswer: { '@type': 'Answer', text: 'According to Vedic tradition, Manglik Dosh is considered to reduce or end after age 28 in many cases, as Mars\'s influence weakens. However, specific Mangal Dosh Nivaran Pooja, Mangal Bhat Puja, and remedies like fasting on Tuesdays can spiritually pacify its effects at any age. Consult Pandit Deepak Pandya for a personalised remedy plan.' },
+      },
+      {
+        '@type': 'Question',
+        name: 'Manglik Dosh ko kaise dur kare? (मांगलिक दोष को कैसे दूर करें?)',
+        acceptedAnswer: { '@type': 'Answer', text: 'Manglik Dosh remedies (upay) include: 1) Mangal Dosh Nivaran Pooja at Mangalnath Temple Ujjain. 2) Mangal Bhat Puja — offering bhaat (cooked rice) to Mars. 3) Chanting Mangal Stotra and Hanuman Chalisa. 4) Wearing red coral (moonga) after proper muhurat. 5) Fasting on Tuesdays. Contact Pandit Deepak Pandya (+91 62634 01651) for the right remedy based on your kundali.' },
+      },
+    ],
+  };
+
   return (
     <main className="pt-20 bg-[#FAF7F2] text-[#2D1B00]">
       <SEO
         title={kundliTitle}
         description={kundliDesc}
         canonical="https://mangaldoshpujanivaran.in/kundli-analysis"
+        schema={kundliFaqSchema}
       />
       
       {/* ── Page Header ── */}

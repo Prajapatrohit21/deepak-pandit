@@ -32,12 +32,29 @@ export default function Services() {
     ? 'उज्जैन में पंडित दीपक पंड्या द्वारा मंगल दोष पूजा, मंगल दोष निवारण पूजा, मांगलिक दोष उपाय, कालसर्प दोष, पितृ दोष निवारण, महामृत्युंजय जाप और रुद्राभिषेक। पूरी विधि, मुहूर्त व दक्षिणा जानकारी।'
     : 'Complete Vedic Puja services in Ujjain by Pandit Deepak Pandya: Mangal Dosh Puja, Mangal Dosh Nivaran Pooja, Manglik dosh remedies, Kaal Sarp Dosh Nivaran, Rudrabhishek. Transparent pricing & muhurat.';
 
+  // AEO/GEO: HowTo schema — "How to book Mangal Dosh Puja in Ujjain"
+  const howToSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: 'How to Book Mangal Dosh Puja in Ujjain',
+    description: 'Step-by-step guide to book Mangal Dosh Puja or Mangal Dosh Nivaran Pooja at Mangalnath Temple Ujjain with Pandit Deepak Pandya.',
+    totalTime: 'PT10M',
+    step: [
+      { '@type': 'HowToStep', name: 'Contact Pandit Deepak Pandya', text: 'Call or WhatsApp Pandit Deepak Pandya at +91 62634 01651 to inquire about Mangal Dosh Puja, Mangal Dosh Nivaran Pooja, or any Vedic ritual in Ujjain.' },
+      { '@type': 'HowToStep', name: 'Share Your Kundali Details', text: 'Send your name, gotra, birth date, birth time, and birth place. Pandit ji will check your kundali and confirm Manglik Dosh or Kaal Sarp Dosh.' },
+      { '@type': 'HowToStep', name: 'Fix Muhurat and Puja Date', text: 'Based on your kundali, an auspicious muhurat (date and time) for the Mangal Dosh Puja will be fixed at Mangalnath Temple, Ujjain.' },
+      { '@type': 'HowToStep', name: 'Pay Dakshina and Confirm', text: 'Confirm your Mangal Dosh Puja booking by paying the dakshina. Online sankalp with video proof is also available for outstation devotees.' },
+      { '@type': 'HowToStep', name: 'Attend or Watch the Puja', text: 'Visit Ujjain in person or receive a live video of your Mangal Dosh Nivaran Pooja performed by Pandit Deepak Pandya at Mangalnath Mandir.' },
+    ],
+  };
+
   return (
     <main className="pt-20 bg-[#FAF7F2] text-[#2D1B00]">
       <SEO
         title={servicesTitle}
         description={servicesDesc}
         canonical="https://mangaldoshpujanivaran.in/services"
+        schema={howToSchema}
       />
       
       {/* ── Page Header ── */}

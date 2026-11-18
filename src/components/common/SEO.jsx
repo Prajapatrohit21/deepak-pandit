@@ -40,12 +40,12 @@ export default function SEO({
       {description && <meta name="twitter:description" content={description} />}
       <meta name="twitter:image" content={ogImage} />
 
-      {/* Structured Data */}
-      {schema && (
-        <script type="application/ld+json">
-          {JSON.stringify(schema)}
+      {/* Structured Data — supports single object or array of schemas */}
+      {schema && (Array.isArray(schema) ? schema : [schema]).map((s, i) => (
+        <script key={i} type="application/ld+json">
+          {JSON.stringify(s)}
         </script>
-      )}
+      ))}
     </Helmet>
   );
 }
