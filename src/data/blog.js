@@ -1,7 +1,3 @@
-// ============================================================
-// blog.js — Seed blog articles (Hindi + English)
-// ============================================================
-
 export const BLOG_ARTICLES = [
   {
     id: 'mangal-dosh-kya-hai',
@@ -253,7 +249,6 @@ Performing Kaal Sarp Dosh Puja at Mahakaleshwar Temple in Ujjain is considered e
     },
   },
 
-  // ── Article 4: Navgrah Shanti ──────────────────────────────
   {
     id: 'navgrah-shanti-puja-ujjain',
     slug: 'navgrah-shanti-puja-ujjain',
@@ -355,7 +350,6 @@ Contact **Pandit Deepak Pandya**:
     },
   },
 
-  // ── Article 5: Rudrabhishek ────────────────────────────────
   {
     id: 'rudrabhishek-puja-mahakal-ujjain',
     slug: 'rudrabhishek-puja-mahakal-ujjain',
@@ -392,7 +386,7 @@ Contact **Pandit Deepak Pandya**:
 
 ## पूजा सामग्री
 
-पंचामृत, बिल्वपत्र, धतूरा, भांग, सफेद फूल, कच्चा दूध, गंगाजल, चंदन, रुद्राक्ष माला। *(PANDIT_VERIFY)*
+पंचामृत, बिल्वपत्र, धतूरा, भांग, सफेद फूल, कच्चा दूध, गंगाजल, चंदन, रुद्राक्ष माला।
 
 ## बुकिंग करें
 
@@ -438,7 +432,6 @@ Ujjain is the abode of **Lord Mahakaleshwar** — one of the 12 Jyotirlinga. Rud
     },
   },
 
-  // ── Article 6: Mahamrityunjay ─────────────────────────────
   {
     id: 'mahamrityunjay-mantra-jaap-ujjain',
     slug: 'mahamrityunjay-mantra-jaap-ujjain',
@@ -473,7 +466,7 @@ Ujjain is the abode of **Lord Mahakaleshwar** — one of the 12 Jyotirlinga. Rud
 | गंभीर रोग | 1,25,000 |
 | महामृत्युंजय अनुष्ठान | 5,00,000+ |
 
-*(जाप की सटीक संख्या पंडित जी कुंडली देखकर तय करेंगे। PANDIT_VERIFY)*
+*(जाप की सटीक संख्या पंडित जी कुंडली देखकर तय करेंगे।)*
 
 ## उज्जैन में अनुष्ठान का महत्व
 
@@ -527,7 +520,6 @@ Ujjain is the home of **Mahakaleshwar** — the lord of time and death. Mahamrit
     },
   },
 
-  // ── Article 7: Mangalnath Mandir Guide ────────────────────
   {
     id: 'mangalnath-mandir-ujjain',
     slug: 'mangalnath-mandir-ujjain',
@@ -553,7 +545,7 @@ Ujjain is the home of **Mahakaleshwar** — the lord of time and death. Mahamrit
 | दोपहर 3:00 – रात 9:00 | सायंकालीन दर्शन |
 | मंगलवार | विशेष दर्शन और पूजन |
 
-*(PANDIT_VERIFY — समय परिवर्तित हो सकते हैं)*
+*(समय परिवर्तित हो सकते हैं)*
 
 ## उज्जैन कैसे पहुंचें?
 
@@ -624,7 +616,6 @@ Station to Mangalnath Mandir: ~4 km (10-15 min by auto/taxi).
     },
   },
 
-  // ── Article 8: Outstation Booking Guide ───────────────────
   {
     id: 'bahar-ke-shahar-se-ujjain-puja-booking',
     slug: 'bahar-ke-shahar-se-ujjain-puja-booking',
@@ -721,7 +712,6 @@ In Vedic tradition, **Sankalp** means declaring the purpose of the puja and the 
     },
   },
 
-  // ── Article 9: Vastu Shanti ────────────────────────────────
   {
     id: 'vastu-shanti-griha-pravesh-ujjain',
     slug: 'vastu-shanti-griha-pravesh-ujjain',
@@ -756,7 +746,7 @@ In Vedic tradition, **Sankalp** means declaring the purpose of the puja and the 
 
 ## मुहूर्त का महत्व
 
-वास्तु शांति के लिए **शुभ तिथि, वार और नक्षत्र** देखना अत्यंत आवश्यक है। पंडित जी आपकी सुविधा के अनुसार मुहूर्त निकालते हैं। *(PANDIT_VERIFY)*
+वास्तु शांति के लिए **शुभ तिथि, वार और नक्षत्र** देखना अत्यंत आवश्यक है। पंडित जी आपकी सुविधा के अनुसार मुहूर्त निकालते हैं।
 
 ## घर पर पूजा सेवा
 
@@ -804,7 +794,6 @@ According to Vastu Shastra, every space has directional energy. Construction def
     },
   },
 
-  // ── Article 10: Kundli Analysis ───────────────────────────
   {
     id: 'kundli-vishleshan-kaise-hoti-hai',
     slug: 'kundli-vishleshan-kaise-hoti-hai',

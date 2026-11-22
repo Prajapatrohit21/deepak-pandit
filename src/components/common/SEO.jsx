@@ -15,7 +15,6 @@ export default function SEO({
     ? 'मंगल दोष पूजा उज्जैन | वैदिक पंडित दीपक पंड्या' 
     : 'Mangal Dosh Puja Nivaran | Pandit Deepak Pandya Ujjain';
 
-  // Ensure title is trimmed appropriately if combined
   const fullTitle = title ? `${title}` : siteTitle;
   const canonicalUrl = canonical || (typeof window !== 'undefined' ? window.location.href : 'https://mangaldoshpujanivaran.in/');
 
@@ -26,7 +25,6 @@ export default function SEO({
       {description && <meta name="description" content={description} />}
       <link rel="canonical" href={canonicalUrl} />
 
-      {/* Open Graph */}
       <meta property="og:type" content={ogType} />
       <meta property="og:title" content={fullTitle} />
       {description && <meta property="og:description" content={description} />}
@@ -34,13 +32,11 @@ export default function SEO({
       <meta property="og:image" content={ogImage} />
       <meta property="og:locale" content={lang === 'hi' ? 'hi_IN' : 'en_US'} />
 
-      {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={fullTitle} />
       {description && <meta name="twitter:description" content={description} />}
       <meta name="twitter:image" content={ogImage} />
 
-      {/* Structured Data — supports single object or array of schemas */}
       {schema && (Array.isArray(schema) ? schema : [schema]).map((s, i) => (
         <script key={i} type="application/ld+json">
           {JSON.stringify(s)}

@@ -1,6 +1,3 @@
-// ============================================================
-// Blog.jsx + BlogDetail.jsx — Pandits Of Banaras Luxury Vedic Articles
-// ============================================================
 import { useEffect } from 'react';
 import { Link, useParams, Navigate } from 'react-router-dom';
 import AOS from 'aos';
@@ -15,7 +12,6 @@ import panditImg from '../assets/pandit_deepak_pandya.jpg';
 
 const C = CONTENT;
 
-// ─── Blog Listing ──────────────────────────────────────────
 export function Blog() {
   const { t, lang } = useLanguage();
   const bl = C.blog;
@@ -40,7 +36,6 @@ export function Blog() {
         description={blogDesc}
         canonical="https://mangaldoshpujanivaran.in/blog"
       />
-      {/* ── Page Header ── */}
       <section
         className="py-16 sm:py-24 text-center relative overflow-hidden bg-gradient-to-b from-[#FFFDF9] via-[#FAF6EE] to-[#F5EFE4] border-b border-[#E8DCC8]"
         aria-labelledby="blog-heading"
@@ -67,7 +62,6 @@ export function Blog() {
         </div>
       </section>
 
-      {/* ── Articles List ── */}
       <section className="py-20 bg-[#FAF7F2]">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <div className="flex flex-col gap-8">
@@ -122,7 +116,6 @@ export function Blog() {
   );
 }
 
-// ─── Blog Detail ──────────────────────────────────────────
 export function BlogDetail() {
   const { slug } = useParams();
   const { lang, t } = useLanguage();
@@ -145,7 +138,6 @@ export function BlogDetail() {
         description={content.excerpt}
         canonical={`https://mangaldoshpujanivaran.in/blog/${article.slug}`}
       />
-      {/* ── Page Header ── */}
       <section
         className="py-16 sm:py-24 relative overflow-hidden bg-gradient-to-b from-[#FFFDF9] via-[#FAF6EE] to-[#F5EFE4] border-b border-[#E8DCC8]"
         aria-labelledby="blog-article-heading"
@@ -172,11 +164,9 @@ export function BlogDetail() {
         </div>
       </section>
 
-      {/* ── Article Content ── */}
       <section className="py-16 bg-[#FAF7F2]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
-            {/* Main content */}
             <article className="lg:col-span-8 bg-white rounded-3xl p-6 sm:p-10 border-2 border-[#E8DCC8] shadow-sm">
               <div className="prose prose-lg max-w-none font-devanagari text-[#4A3B2C] leading-relaxed">
                 {content.content.trim().split('\n\n').map((para, i) => {
@@ -197,7 +187,6 @@ export function BlogDetail() {
                 })}
               </div>
 
-              {/* Consultation CTA inside article */}
               <div className="mt-10 p-6 rounded-2xl bg-[#FFFDF9] border border-gold/40 text-center">
                 <h4 className="font-heading font-bold text-lg text-[#1F160F] mb-2">
                   क्या आप उज्जैन में पूजा अनुष्ठान कराना चाहते हैं?
@@ -230,7 +219,6 @@ export function BlogDetail() {
               </div>
             </article>
 
-            {/* Sidebar */}
             <aside className="lg:col-span-4 space-y-6">
               <div className="bg-white rounded-3xl p-6 border-2 border-[#E8DCC8] shadow-sm text-center">
                 <img

@@ -1,6 +1,3 @@
-// ============================================================
-// FloatingButtons.jsx — Floating Call (Left) + WhatsApp (Right) & Mobile Bar
-// ============================================================
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../../context/LanguageContext';
 import { WA_HREF, PHONE_HREF } from '../../utils/whatsapp';
@@ -11,7 +8,6 @@ export default function FloatingButtons() {
 
   return (
     <>
-      {/* Floating Call Icon on LEFT */}
       <a
         href={PHONE_HREF}
         onClick={() => trackPhoneCall('floating_left')}
@@ -25,7 +21,6 @@ export default function FloatingButtons() {
         </svg>
       </a>
 
-      {/* Floating WhatsApp Icon on RIGHT */}
       <a
         href={WA_HREF}
         onClick={() => trackWhatsAppClick('floating_right')}
@@ -41,7 +36,6 @@ export default function FloatingButtons() {
         </svg>
       </a>
 
-      {/* Mobile Bottom Action Bar */}
       <div className="mobile-bottom-bar" role="navigation" aria-label="Quick actions">
         <a
           href={PHONE_HREF}

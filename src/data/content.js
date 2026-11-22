@@ -1,11 +1,4 @@
-// ============================================================
-// content.js — Bilingual site content (hi + en)
-// ============================================================
-
 export const CONTENT = {
-  // ──────────────────────────────────────────
-  // SITE-WIDE
-  // ──────────────────────────────────────────
   siteName: {
     hi: 'मंगल दोष पूजन',
     en: 'Mangal Dosh Pujan',
@@ -25,9 +18,6 @@ export const CONTENT = {
   phone: '6263401651',
   whatsapp: '916263401651',
 
-  // ──────────────────────────────────────────
-  // NAV
-  // ──────────────────────────────────────────
   nav: {
     home: { hi: 'होम', en: 'Home' },
     about: { hi: 'परिचय', en: 'About' },
@@ -40,9 +30,6 @@ export const CONTENT = {
     blog: { hi: 'ब्लॉग', en: 'Blog' },
   },
 
-  // ──────────────────────────────────────────
-  // HERO
-  // ──────────────────────────────────────────
   hero: {
     badge: { hi: 'उज्जैन के प्रामाणिक वैदिक पुरोहित', en: 'Trusted Vedic Pandit of Ujjain' },
     title: {
@@ -62,9 +49,6 @@ export const CONTENT = {
     ],
   },
 
-  // ──────────────────────────────────────────
-  // TRUST BADGES
-  // ──────────────────────────────────────────
   trust: {
     heading: { hi: 'हम पर भरोसा क्यों करें?', en: 'Why Trust Us?' },
     subheading: {
@@ -105,9 +89,6 @@ export const CONTENT = {
     ],
   },
 
-  // ──────────────────────────────────────────
-  // SERVICES SECTION
-  // ──────────────────────────────────────────
   services: {
     badge: { hi: 'हमारी सेवाएं', en: 'Our Services' },
     heading: { hi: 'वैदिक अनुष्ठान एवं पूजा सेवाएं', en: 'Vedic Rituals & Puja Services' },
@@ -120,9 +101,6 @@ export const CONTENT = {
     knowMore: { hi: 'अधिक जानें', en: 'Know More' },
   },
 
-  // ──────────────────────────────────────────
-  // ABOUT SECTION (Home snippet)
-  // ──────────────────────────────────────────
   aboutSnippet: {
     badge: { hi: 'पंडित जी के बारे में', en: 'About Pandit Ji' },
     heading: { hi: 'वैदिक पंडित दीपक पंड्या', en: 'Vaidik Pandit Deepak Pandya' },
@@ -140,9 +118,6 @@ export const CONTENT = {
     readMore: { hi: 'पूरा परिचय पढ़ें', en: 'Read Full Profile' },
   },
 
-  // ──────────────────────────────────────────
-  // TESTIMONIALS
-  // ──────────────────────────────────────────
   testimonials: {
     badge: { hi: 'श्रद्धालुओं के अनुभव', en: 'Devotee Experiences' },
     heading: { hi: 'हजारों परिवारों का विश्वास', en: 'Trusted by Thousands of Families' },
@@ -214,9 +189,6 @@ export const CONTENT = {
     ],
   },
 
-  // ──────────────────────────────────────────
-  // BOOKING FORM
-  // ──────────────────────────────────────────
   booking: {
     badge: { hi: 'त्वरित बुकिंग', en: 'Quick Booking' },
     heading: { hi: 'अभी अपनी पूजा बुक करें', en: 'Book Your Puja Now' },
@@ -236,9 +208,6 @@ export const CONTENT = {
     note: { hi: 'तत्काल सहायता: फॉर्म सबमिट होते ही WhatsApp पर संपर्क किया जाएगा।', en: 'Instant Assistance: You will be connected on WhatsApp immediately.' },
   },
 
-  // ──────────────────────────────────────────
-  // CONTACT
-  // ──────────────────────────────────────────
   contact: {
     badge: { hi: 'संपर्क करें', en: 'Contact Us' },
     heading: { hi: 'हमसे संपर्क करें', en: 'Get in Touch' },
@@ -254,9 +223,6 @@ export const CONTENT = {
     formSubmit: { hi: 'संदेश भेजें', en: 'Send Message' },
   },
 
-  // ──────────────────────────────────────────
-  // FOOTER
-  // ──────────────────────────────────────────
   footer: {
     tagline: { hi: '॥ जय श्री महाकालेश्वर — हर हर महादेव ॥', en: 'Jai Shri Mahakaleshwar — Har Har Mahadev' },
     description: {
@@ -276,9 +242,6 @@ export const CONTENT = {
     },
   },
 
-  // ──────────────────────────────────────────
-  // ABOUT PAGE
-  // ──────────────────────────────────────────
   about: {
     badge: { hi: 'हमारा परिचय', en: 'About Us' },
     heading: { hi: 'वैदिक पंडित दीपक पंड्या', en: 'Vaidik Pandit Deepak Pandya' },
@@ -308,9 +271,6 @@ export const CONTENT = {
     },
   },
 
-  // ──────────────────────────────────────────
-  // GALLERY
-  // ──────────────────────────────────────────
   gallery: {
     badge: { hi: 'गैलरी', en: 'Gallery' },
     heading: { hi: 'पूजन एवं अनुष्ठान की झलकियां', en: 'Glimpses of Puja & Rituals' },
@@ -327,9 +287,6 @@ export const CONTENT = {
     },
   },
 
-  // ──────────────────────────────────────────
-  // BLOG
-  // ──────────────────────────────────────────
   blog: {
     badge: { hi: 'वैदिक ज्ञान', en: 'Vedic Knowledge' },
     heading: { hi: 'ज्योतिष एवं वैदिक लेख', en: 'Astrology & Vedic Articles' },
@@ -342,9 +299,6 @@ export const CONTENT = {
     minRead: { hi: 'मिनट पठन', en: 'min read' },
   },
 
-  // ──────────────────────────────────────────
-  // KUNDLI ANALYSIS PAGE
-  // ──────────────────────────────────────────
   kundli: {
     badge: { hi: 'कुंडली विश्लेषण', en: 'Kundali Analysis' },
     heading: { hi: 'अपनी जन्म कुंडली का वैदिक विश्लेषण करवाएं', en: 'Get Your Birth Horoscope Vedic Analysis' },

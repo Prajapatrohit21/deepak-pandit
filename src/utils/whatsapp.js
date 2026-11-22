@@ -1,21 +1,11 @@
-// ============================================================
-// whatsapp.js — WhatsApp URL builder utilities
-// ============================================================
-
 const WA_NUMBER = '916263401651';
 export const WEBSITE_URL = 'https://mangaldoshpujanivaran.in/';
 
-/**
- * Build a WhatsApp deep-link with pre-filled message
- */
 export function buildWhatsAppUrl(message) {
   const encoded = encodeURIComponent(message);
   return `https://wa.me/${WA_NUMBER}?text=${encoded}`;
 }
 
-/**
- * Build booking WhatsApp message from form data
- */
 export function buildBookingMessage({ name, phone, service, problem, date, lang = 'hi' }) {
   if (lang === 'en') {
     return `🙏 *New Puja Booking Request*
@@ -44,9 +34,6 @@ ${date ? `*पसंदीदा तिथि:* ${date}` : ''}
 जय श्री महाकाल 🙏`;
 }
 
-/**
- * Build Kundali analysis WhatsApp message
- */
 export function buildKundliMessage({ name, phone, dob, tob, pob, query, lang = 'hi' }) {
   if (lang === 'en') {
     return `🔮 *Kundali Analysis Request*
@@ -77,9 +64,6 @@ ${query ? `*जिज्ञासा:* ${query}` : ''}
 जय श्री महाकाल 🙏`;
 }
 
-/**
- * Build contact WhatsApp message
- */
 export function buildContactMessage({ name, phone, message, lang = 'hi' }) {
   if (lang === 'en') {
     return `📞 *Contact Message*

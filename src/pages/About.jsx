@@ -1,6 +1,3 @@
-// ============================================================
-// About.jsx — Pandits Of Banaras Luxury About Page
-// ============================================================
 import { useEffect } from 'react';
 import vipGuestImg from '../assets/vip_guest.jpg';
 import panditImg from '../assets/pandit_deepak_pandya.jpg';
@@ -42,7 +39,6 @@ export default function About() {
         canonical="https://mangaldoshpujanivaran.in/about"
       />
       
-      {/* ── Luxury Page Header ── */}
       <section
         className="py-16 sm:py-24 text-center relative overflow-hidden bg-gradient-to-b from-[#FFFDF9] via-[#FAF6EE] to-[#F5EFE4] border-b border-[#E8DCC8]"
         aria-labelledby="about-page-heading"
@@ -72,12 +68,10 @@ export default function About() {
         </div>
       </section>
 
-      {/* ── Biography & Lineage ── */}
       <section className="py-20 bg-[#FAF7F2]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
-            {/* Left: Portrait Card */}
             <div data-aos="fade-right" className="lg:col-span-5">
               <div className="bg-white rounded-3xl p-4 border-2 border-[#E8DCC8] shadow-[0_12px_40px_rgba(45,27,0,0.08)]">
                 <div className="relative rounded-2xl overflow-hidden aspect-[4/5] bg-black">
@@ -99,7 +93,6 @@ export default function About() {
                   </div>
                 </div>
 
-                {/* Quick Trust Strip below photo */}
                 <div className="mt-4 pt-3 border-t border-[#F0E6D8] flex items-center justify-between text-xs sm:text-sm text-[#5C4D3E]">
                   <div className="flex items-center gap-1 font-bold text-[#1F160F]">
                     <span className="text-amber-500">★★★★☆</span>
@@ -112,7 +105,6 @@ export default function About() {
               </div>
             </div>
 
-            {/* Right: Bio Text & Values */}
             <div data-aos="fade-left" className="lg:col-span-7 flex flex-col justify-center">
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-gold/60 bg-[#FFF7E6] text-[#8C3814] text-xs font-bold uppercase tracking-wider mb-3 self-start">
                 AUTHENTIC VEDIC HERITAGE
@@ -139,7 +131,6 @@ export default function About() {
                 })}
               </p>
 
-              {/* 4 Trust Highlights Grid */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
                 <div className="bg-white p-3.5 rounded-2xl border border-[#E8DCC8] shadow-xs flex items-center gap-3">
                   <span className="text-2xl">🔱</span>
@@ -171,7 +162,6 @@ export default function About() {
                 </div>
               </div>
 
-              {/* Action Buttons */}
               <div className="flex flex-wrap gap-4">
                 <a
                   href={PHONE_HREF}
@@ -201,7 +191,6 @@ export default function About() {
         </div>
       </section>
 
-      {/* ── VIP Devotees & Special Sankalp Section ── */}
       <section className="py-20 bg-white border-t border-[#E8DCC8]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <SectionHeading
@@ -249,7 +238,6 @@ export default function About() {
         </div>
       </section>
 
-      {/* ── Consultation CTA ── */}
       <section className="py-16 bg-gradient-to-r from-[#D97706] to-[#B45309] text-white text-center">
         <div className="max-w-4xl mx-auto px-4">
           <h2 className="font-heading font-black text-2xl sm:text-4xl mb-4">

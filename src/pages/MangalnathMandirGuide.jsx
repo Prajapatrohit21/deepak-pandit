@@ -1,8 +1,3 @@
-// ============================================================
-// MangalnathMandirGuide.jsx — Guide on how to reach Mangalnath Mandir, Ujjain
-// Local SEO + AEO for pilgrims traveling from Indore, Bhopal, etc.
-// Design: panditsofbanaras.in luxury cream style
-// ============================================================
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import AOS from 'aos';
@@ -50,7 +45,6 @@ export default function MangalnathMandirGuide() {
         schema={schema}
       />
 
-      {/* ── Breadcrumb ── */}
       <nav aria-label="Breadcrumb" className="bg-[#FAF7F2] border-b border-[#E8DCC8] py-2.5 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto flex items-center gap-2 text-xs sm:text-sm text-[#8C7A6B]">
           <Link to="/" className="hover:text-[#B45309] transition-colors">{lang === 'hi' ? 'मुख्य पृष्ठ' : 'Home'}</Link>
@@ -59,9 +53,7 @@ export default function MangalnathMandirGuide() {
         </div>
       </nav>
 
-      {/* ── Hero Header — Luxury Cream ── */}
       <section className="relative overflow-hidden bg-gradient-to-b from-[#FFFDF9] via-[#FAF6EE] to-[#F5EFE4] py-14 sm:py-20 text-center">
-        {/* ambient glow */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-[#D97706]/10 blur-[120px] pointer-events-none" aria-hidden="true" />
         <div className="relative z-10 max-w-3xl mx-auto px-4">
           <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-[#D97706]/10 text-[#B45309] text-xs font-semibold tracking-wide mb-4">
@@ -77,11 +69,9 @@ export default function MangalnathMandirGuide() {
         </div>
       </section>
 
-      {/* ── Main Content ── */}
       <section className="py-12 sm:py-16 bg-[#FAF7F2]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 space-y-8">
 
-          {/* Quick Answer Box */}
           <div className="bg-[#D97706]/10 border-l-4 border-[#D97706] rounded-r-2xl p-5 sm:p-6" data-aos="fade-up">
             <h2 className="text-base font-bold text-[#1F160F] uppercase mb-2">⚡ संक्षेप में उत्तर / Direct Answer</h2>
             <p className="text-[#3D2E1F] font-medium leading-relaxed text-base sm:text-lg">
@@ -89,7 +79,6 @@ export default function MangalnathMandirGuide() {
             </p>
           </div>
 
-          {/* Travel Modes */}
           <div className="rounded-3xl border border-[#E8DCC8] p-6 sm:p-8 bg-white" data-aos="fade-up">
             <h2 className="text-2xl font-bold text-[#1F160F] font-heading mb-6">
               परिवहन के विभिन्न साधनों से मंगलनाथ मंदिर कैसे पहुंचे?
@@ -127,7 +116,6 @@ export default function MangalnathMandirGuide() {
             </div>
           </div>
 
-          {/* Temple Timings & Puja Details */}
           <div className="rounded-3xl border border-[#E8DCC8] p-6 sm:p-8 bg-white" data-aos="fade-up">
             <h2 className="text-2xl font-bold text-[#1F160F] font-heading mb-4">
               मंगलनाथ मंदिर दर्शन एवं भात पूजा का समय
@@ -147,7 +135,6 @@ export default function MangalnathMandirGuide() {
             </p>
           </div>
 
-          {/* Pandit Ji Assistance CTA */}
           <div className="rounded-3xl bg-gradient-to-r from-[#D97706] to-[#B45309] p-6 sm:p-8 text-white" data-aos="fade-up">
             <h2 className="text-xl sm:text-2xl font-bold font-heading mb-2">
               उज्जैन आगमन पर सहायता एवं पूजा बुकिंग

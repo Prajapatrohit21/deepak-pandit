@@ -1,6 +1,3 @@
-// ============================================================
-// Gallery.jsx — Pandits Of Banaras Luxury Visual Gallery
-// ============================================================
 import { useEffect, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -9,7 +6,6 @@ import { CONTENT } from '../data/content';
 import SectionHeading from '../components/ui/SectionHeading';
 import SEO from '../components/common/SEO';
 
-// Gallery images
 import g1  from '../assets/gallery/g1.jpg';
 import g2  from '../assets/gallery/g2.jpg';
 import g3  from '../assets/gallery/g3.jpg';
@@ -79,7 +75,6 @@ export default function Gallery() {
         canonical="https://mangaldoshpujanivaran.in/gallery"
       />
       
-      {/* ── Page Header ── */}
       <section
         className="py-16 sm:py-24 text-center relative overflow-hidden bg-gradient-to-b from-[#FFFDF9] via-[#FAF6EE] to-[#F5EFE4] border-b border-[#E8DCC8]"
         aria-labelledby="gallery-heading"
@@ -106,7 +101,6 @@ export default function Gallery() {
         </div>
       </section>
 
-      {/* ── Filter Tabs ── */}
       <section className="py-8 bg-white border-b border-[#E8DCC8]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
@@ -127,7 +121,6 @@ export default function Gallery() {
         </div>
       </section>
 
-      {/* ── Photo Grid ── */}
       <section className="py-16 bg-[#FAF7F2]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
@@ -163,7 +156,6 @@ export default function Gallery() {
         </div>
       </section>
 
-      {/* ── Lightbox Modal ── */}
       {activeModalImg && (
         <div
           className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4"

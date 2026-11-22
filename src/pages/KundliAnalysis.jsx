@@ -1,6 +1,3 @@
-// ============================================================
-// KundliAnalysis.jsx — Pandits Of Banaras Luxury Kundali Consultation
-// ============================================================
 import { useEffect, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -70,7 +67,6 @@ export default function KundliAnalysis() {
         : 'border-[#E8DCC8] focus:border-[#D97706] focus:ring-1 focus:ring-[#D97706]'
     }`;
 
-  // AEO/GEO: FAQPage schema for Manglik Dosh queries (high volume: 3600+/mo)
   const kundliFaqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -108,7 +104,6 @@ export default function KundliAnalysis() {
         schema={kundliFaqSchema}
       />
       
-      {/* ── Page Header ── */}
       <section
         className="py-16 sm:py-24 text-center relative overflow-hidden bg-gradient-to-b from-[#FFFDF9] via-[#FAF6EE] to-[#F5EFE4] border-b border-[#E8DCC8]"
         aria-labelledby="kundli-heading"
@@ -135,12 +130,10 @@ export default function KundliAnalysis() {
         </div>
       </section>
 
-      {/* ── Form & Info Section ── */}
       <section className="py-20 bg-[#FAF7F2]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
             
-            {/* Left Column: Astrology Guidance & Trust */}
             <div data-aos="fade-right" className="lg:col-span-5 space-y-6">
               <div className="bg-white rounded-3xl p-6 sm:p-8 border-2 border-[#E8DCC8] shadow-[0_10px_35px_rgba(45,27,0,0.06)]">
                 <span className="bg-[#F5C842] text-[#1C0A00] font-bold text-xs uppercase px-3 py-1 rounded-full inline-block mb-4">
@@ -178,7 +171,6 @@ export default function KundliAnalysis() {
                   </li>
                 </ul>
 
-                {/* Purohit seal */}
                 <div className="mt-8 pt-6 border-t border-[#F0E6D8] flex items-center gap-4">
                   <img
                     src={panditImg}
@@ -193,7 +185,6 @@ export default function KundliAnalysis() {
               </div>
             </div>
 
-            {/* Right Column: Birth Details Form */}
             <div data-aos="fade-left" className="lg:col-span-7">
               <div className="bg-white rounded-3xl p-6 sm:p-10 border-2 border-[#E8DCC8] shadow-[0_12px_40px_rgba(45,27,0,0.08)]">
                 
@@ -208,7 +199,6 @@ export default function KundliAnalysis() {
 
                 <form onSubmit={handleSubmit} noValidate className="space-y-4">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    {/* Name */}
                     <div>
                       <label className="block text-sm font-bold text-[#1F160F] mb-1 font-devanagari">
                         आपका पूरा नाम <span className="text-red-500">*</span>
@@ -223,7 +213,6 @@ export default function KundliAnalysis() {
                       {errors.name && <p className="text-red-500 text-xs mt-1 font-devanagari">{errors.name}</p>}
                     </div>
 
-                    {/* Phone */}
                     <div>
                       <label className="block text-sm font-bold text-[#1F160F] mb-1 font-devanagari">
                         WhatsApp मोबाइल नंबर <span className="text-red-500">*</span>
@@ -241,7 +230,6 @@ export default function KundliAnalysis() {
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                    {/* DOB */}
                     <div>
                       <label className="block text-sm font-bold text-[#1F160F] mb-1 font-devanagari">
                         जन्म तिथि <span className="text-red-500">*</span>
@@ -255,7 +243,6 @@ export default function KundliAnalysis() {
                       {errors.dob && <p className="text-red-500 text-xs mt-1 font-devanagari">{errors.dob}</p>}
                     </div>
 
-                    {/* TOB */}
                     <div>
                       <label className="block text-sm font-bold text-[#1F160F] mb-1 font-devanagari">
                         जन्म समय <span className="text-red-500">*</span>
@@ -270,7 +257,6 @@ export default function KundliAnalysis() {
                       {errors.tob && <p className="text-red-500 text-xs mt-1 font-devanagari">{errors.tob}</p>}
                     </div>
 
-                    {/* POB */}
                     <div>
                       <label className="block text-sm font-bold text-[#1F160F] mb-1 font-devanagari">
                         जन्म स्थान <span className="text-red-500">*</span>
@@ -286,7 +272,6 @@ export default function KundliAnalysis() {
                     </div>
                   </div>
 
-                  {/* Query */}
                   <div>
                     <label className="block text-sm font-bold text-[#1F160F] mb-1 font-devanagari">
                       मुख्य समस्या या प्रश्न (विवाह, करियर, स्वास्थ्य आदि)
@@ -300,7 +285,6 @@ export default function KundliAnalysis() {
                     />
                   </div>
 
-                  {/* Submit CTA */}
                   <button
                     type="submit"
                     disabled={submitting}

@@ -8,12 +8,6 @@ import vastuImg from "../assets/gallery/g7.jpg";
 import navchandiImg from "../assets/gallery/g2.jpg";
 import kundliImg from "../assets/pandit_deepak_pandya.jpg";
 
-// ============================================================
-// services.js — Complete service definitions (Hindi + English)
-// Adheres strictly to business facts, SEO/AEO answer-first copy,
-// and required 13-point page structure.
-// ============================================================
-
 export const SERVICES = [
   {
     id: 'mangal-dosh-puja',
@@ -43,16 +37,16 @@ export const SERVICES = [
           'संकल्प: जातक के नाम, गोत्र एवं कुलदेवता के स्मरण के साथ वैदिक संकल्प।',
           'गणेश-गौरी पूजन एवं नवग्रह आवाहन: विघ्नों के निवारण हेतु प्रथम पूज्य गणेश जी का अर्चन।',
           'मंगल यंत्र पूजन: शुद्ध तांबे के मंगल यंत्र का पंचामृत अभिषेक एवं स्थापन।',
-          'भात पूजा: मंगलनाथ शिवलिंग पर वैदिक मंत्रोच्चार के साथ भात (चावल) का अर्पण। /* PANDIT_VERIFY */',
+          'भात पूजा: मंगलनाथ शिवलिंग पर वैदिक मंत्रोच्चार के साथ भात (चावल) का अर्पण।',
           'मंगल गायत्री एवं जप: मंगल ग्रह के पौराणिक एवं वैदिक मंत्रों का सविधि जप।',
           'हवन एवं आरती: शुद्ध घी, समिधा एवं जड़ी-बूटियों से मंगल शांति हवन व महाआरती।',
         ],
         duration: '3–5 घंटे',
-        samagri: 'भात (चावल), लाल वस्त्र, लाल चंदन, लाल पुष्प, गुड़, मूंगफली, श्रीफल, धूप, दीप, नवग्रह समिधा (पंडित जी द्वारा प्रबंधित)। /* PANDIT_VERIFY */',
+        samagri: 'भात (चावल), लाल वस्त्र, लाल चंदन, लाल पुष्प, गुड़, मूंगफली, श्रीफल, धूप, दीप, नवग्रह समिधा (पंडित जी द्वारा प्रबंधित)।',
       },
       location: 'श्री मंगलनाथ मंदिर क्षेत्र, उज्जैन (मध्य प्रदेश) — जिसे पुराणों में मंगल ग्रह का प्राकट्य स्थल माना गया है।',
-      costInfo: 'Puja ka kharch puja ke prakar par nirbhar karta hai. Sahi jankari ke liye call ya WhatsApp karein. /* PRICE_TODO */',
-      bestDays: 'मंगलवार, अंगारक चतुर्थी, एवं विशेष मंगल ग्रह गोचर के दिन मंगल शांति के लिए श्रेष्ठ माने जाते हैं। /* PANDIT_VERIFY */',
+      costInfo: 'Puja ka kharch puja ke prakar par nirbhar karta hai. Sahi jankari ke liye call ya WhatsApp karein.',
+      bestDays: 'मंगलवार, अंगारक चतुर्थी, एवं विशेष मंगल ग्रह गोचर के दिन मंगल शांति के लिए श्रेष्ठ माने जाते हैं।',
       outstationBooking: 'यदि आप इंदौर, भोपाल, दिल्ली, मुंबई, पुणे, गुजरात या अन्य किसी शहर से आ रहे हैं या नहीं आ पा रहे हैं, तो WhatsApp (+91 62634 01651) पर नाम, गोत्र और जन्म विवरण देकर ऑनलाइन संकल्प अथवा उज्जैन आगमन की तिथि पूर्व-आरक्षित कर सकते हैं।',
       benefits: [
         'विवाह में आ रहे व्यवधान व देरी का निवारण होता है',
@@ -63,7 +57,7 @@ export const SERVICES = [
       faqs: [
         {
           q: 'Mangal Bhat Puja kya hai?',
-          a: 'Mangal grah ki shanti ke liye ki jane wali vaidik puja, jisme bhat (chawal) ka vishesh prayog hota hai. /* PANDIT_VERIFY */',
+          a: 'Mangal grah ki shanti ke liye ki jane wali vaidik puja, jisme bhat (chawal) ka vishesh prayog hota hai.',
         },
         {
           q: 'Mangal Bhat Puja kisko karani chahiye?',
@@ -71,7 +65,7 @@ export const SERVICES = [
         },
         {
           q: 'Puja ka kharch kitna hota hai?',
-          a: 'Kharch puja ke prakar aur samagri par nirbhar karta hai. Sahi jankari ke liye call ya WhatsApp karein. /* PRICE_TODO */',
+          a: 'Kharch puja ke prakar aur samagri par nirbhar karta hai. Sahi jankari ke liye call ya WhatsApp karein.',
         },
         {
           q: 'Kya bahar ke shahar se online sankalp ho sakta hai?',
@@ -79,7 +73,7 @@ export const SERVICES = [
         },
         {
           q: 'Puja ke liye kaun sa din shubh hai?',
-          a: 'Mangalwar ko Mangal grah ki puja ke liye shubh mana jata hai. /* PANDIT_VERIFY */',
+          a: 'Mangalwar ko Mangal grah ki puja ke liye shubh mana jata hai.',
         },
       ],
     },
@@ -98,16 +92,16 @@ export const SERVICES = [
           'Vedic Sankalp with devotee\'s name, Gotra, and family lineage.',
           'Ganesh-Gauri Puja and Navgrah Invocation for obstacle removal.',
           'Mangal Yantra Puja with Panchamrit Abhishek.',
-          'Bhat Puja: Offering consecrated cooked rice with Vedic chants. /* PANDIT_VERIFY */',
+          'Bhat Puja: Offering consecrated cooked rice with Vedic chants.',
           'Mangal Gayatri and Vedic mantra Japa recitation.',
           'Havan (sacred fire sacrifice) and Mangal Maha Aarti.',
         ],
         duration: '3–5 Hours',
-        samagri: 'Rice, red cloth, red sandalwood, red flowers, jaggery, coconuts, incense, and Havan samagri. /* PANDIT_VERIFY */',
+        samagri: 'Rice, red cloth, red sandalwood, red flowers, jaggery, coconuts, incense, and Havan samagri.',
       },
       location: 'Mangalnath Temple region, Ujjain (Madhya Pradesh) — the mythological birthplace of Mars.',
-      costInfo: 'Puja ka kharch puja ke prakar par nirbhar karta hai. Sahi jankari ke liye call ya WhatsApp karein. /* PRICE_TODO */',
-      bestDays: 'Tuesdays, Angarak Chaturthi, and auspicious planetary transit days. /* PANDIT_VERIFY */',
+      costInfo: 'Puja ka kharch puja ke prakar par nirbhar karta hai. Sahi jankari ke liye call ya WhatsApp karein.',
+      bestDays: 'Tuesdays, Angarak Chaturthi, and auspicious planetary transit days.',
       outstationBooking: 'Devotees from Indore, Bhopal, Delhi, Mumbai, Pune, Gujarat, or overseas can book in advance or arrange online Sankalp via WhatsApp (+91 62634 01651).',
       benefits: [
         'Removes obstacles and delays in marriage',
@@ -118,7 +112,7 @@ export const SERVICES = [
       faqs: [
         {
           q: 'What is Mangal Bhat Puja?',
-          a: 'A Vedic ritual dedicated to pacifying Mars using consecrated rice (Bhat) offerings. /* PANDIT_VERIFY */',
+          a: 'A Vedic ritual dedicated to pacifying Mars using consecrated rice (Bhat) offerings.',
         },
         {
           q: 'Who should perform Mangal Bhat Puja?',
@@ -126,7 +120,7 @@ export const SERVICES = [
         },
         {
           q: 'What is the puja cost?',
-          a: 'Puja ka kharch puja ke prakar par nirbhar karta hai. Sahi jankari ke liye call ya WhatsApp karein. /* PRICE_TODO */',
+          a: 'Puja ka kharch puja ke prakar par nirbhar karta hai. Sahi jankari ke liye call ya WhatsApp karein.',
         },
         {
           q: 'Can outstation devotees book online?',
@@ -134,7 +128,7 @@ export const SERVICES = [
         },
         {
           q: 'Which day is best for the puja?',
-          a: 'Tuesday is traditionally considered the most auspicious day for Mars rituals. /* PANDIT_VERIFY */',
+          a: 'Tuesday is traditionally considered the most auspicious day for Mars rituals.',
         },
       ],
     },
@@ -170,14 +164,14 @@ export const SERVICES = [
           'भगवान शिव का दूध व पंचामृत से विशेष रुद्राभिषेक।',
           'राहु-केतु मंत्र जप एवं शांति स्तोत्र पाठ।',
           'विशेष नवग्रह एवं कालसर्प शांति हवन।',
-          'चांदी के नाग-नागिन जोड़े का सविधि विसर्जन एवं आरती। /* PANDIT_VERIFY */',
+          'चांदी के नाग-नागिन जोड़े का सविधि विसर्जन एवं आरती।',
         ],
         duration: '4–6 घंटे',
-        samagri: 'चांदी का नाग-नागिन जोड़ा, दूध, काले तिल, धतूरा, बेलपत्र, आक के फूल, सप्तधान्य (पंडित जी द्वारा व्यवस्था)। /* PANDIT_VERIFY */',
+        samagri: 'चांदी का नाग-नागिन जोड़ा, दूध, काले तिल, धतूरा, बेलपत्र, आक के फूल, सप्तधान्य (पंडित जी द्वारा व्यवस्था)।',
       },
-      location: 'उज्जैन में शिप्रा नदी के पवित्र तट एवं सिद्धवट अथवा महाकालेश्वर क्षेत्र। /* PANDIT_VERIFY */',
-      costInfo: 'Puja ka kharch puja ke prakar par nirbhar karta hai. Sahi jankari ke liye call ya WhatsApp karein. /* PRICE_TODO */',
-      bestDays: 'सोमवती अमावस्या, नाग पंचमी, महाशिवरात्रि, प्रदोष एवं श्रावण मास के सोमवार। /* PANDIT_VERIFY */',
+      location: 'उज्जैन में शिप्रा नदी के पवित्र तट एवं सिद्धवट अथवा महाकालेश्वर क्षेत्र।',
+      costInfo: 'Puja ka kharch puja ke prakar par nirbhar karta hai. Sahi jankari ke liye call ya WhatsApp karein.',
+      bestDays: 'सोमवती अमावस्या, नाग पंचमी, महाशिवरात्रि, प्रदोष एवं श्रावण मास के सोमवार।',
       outstationBooking: 'देशभर के श्रद्धालु WhatsApp (+91 62634 01651) पर अपनी कुंडली भेजकर शुभ मुहूर्त व अग्रिम बुकिंग सुनिश्चित कर सकते हैं।',
       benefits: [
         'कार्यक्षेत्र एवं व्यापार में निरंतर आ रही रुकावटों से मुक्ति',
@@ -192,15 +186,15 @@ export const SERVICES = [
         },
         {
           q: 'Ujjain me Kaal Sarp puja kahan hoti hai?',
-          a: 'Aam taur par Shipra nadi ke tat aur Siddhvat kshetra jaise sthanon par. Sthan ki jankari booking par di jati hai. /* PANDIT_VERIFY */',
+          a: 'Aam taur par Shipra nadi ke tat aur Siddhvat kshetra jaise sthanon par. Sthan ki jankari booking par di jati hai.',
         },
         {
           q: 'Puja ka kharch kitna hota hai?',
-          a: 'Kharch puja ke prakar par nirbhar karta hai. Call ya WhatsApp par sahi jankari milegi. /* PRICE_TODO */',
+          a: 'Kharch puja ke prakar par nirbhar karta hai. Call ya WhatsApp par sahi jankari milegi.',
         },
         {
           q: 'Kaal Sarp puja kab karani chahiye?',
-          a: 'Amavasya, Nag Panchami, Mahashivratri aur Shravan ke din shubh mane jate hain. Kundli dekhkar pandit ji tithi batate hain. /* PANDIT_VERIFY */',
+          a: 'Amavasya, Nag Panchami, Mahashivratri aur Shravan ke din shubh mane jate hain. Kundli dekhkar pandit ji tithi batate hain.',
         },
         {
           q: 'Kya puja online book ho sakti hai?',
@@ -225,14 +219,14 @@ export const SERVICES = [
           'Rudrabhishek on Shivalinga with milk and sacred waters.',
           'Chanting of Rahu and Ketu propitiation mantras.',
           'Sacred fire Havan with prescribed herbal samagri.',
-          'Ritual offering and immersion of the silver snake pair. /* PANDIT_VERIFY */',
+          'Ritual offering and immersion of the silver snake pair.',
         ],
         duration: '4–6 Hours',
-        samagri: 'Silver snake pair, black sesame, Belpatra, Datura, milk, and 7 sacred grains. /* PANDIT_VERIFY */',
+        samagri: 'Silver snake pair, black sesame, Belpatra, Datura, milk, and 7 sacred grains.',
       },
-      location: 'Sacred banks of River Shipra and Siddhvat area in Ujjain. /* PANDIT_VERIFY */',
-      costInfo: 'Puja ka kharch puja ke prakar par nirbhar karta hai. Sahi jankari ke liye call ya WhatsApp karein. /* PRICE_TODO */',
-      bestDays: 'Somvati Amavasya, Nag Panchami, Mahashivratri, and Shravan Mondays. /* PANDIT_VERIFY */',
+      location: 'Sacred banks of River Shipra and Siddhvat area in Ujjain.',
+      costInfo: 'Puja ka kharch puja ke prakar par nirbhar karta hai. Sahi jankari ke liye call ya WhatsApp karein.',
+      bestDays: 'Somvati Amavasya, Nag Panchami, Mahashivratri, and Shravan Mondays.',
       outstationBooking: 'Devotees across India can submit their birth chart via WhatsApp (+91 62634 01651) for date confirmation and booking.',
       benefits: [
         'Relief from career and business stagnancy',
@@ -247,15 +241,15 @@ export const SERVICES = [
         },
         {
           q: 'Where does Kaal Sarp Puja take place in Ujjain?',
-          a: 'Typically on the banks of River Shipra and sanctified Siddhvat regions. Specific venue is shared upon booking. /* PANDIT_VERIFY */',
+          a: 'Typically on the banks of River Shipra and sanctified Siddhvat regions. Specific venue is shared upon booking.',
         },
         {
           q: 'What is the cost of the puja?',
-          a: 'Puja ka kharch puja ke prakar par nirbhar karta hai. Sahi jankari ke liye call ya WhatsApp karein. /* PRICE_TODO */',
+          a: 'Puja ka kharch puja ke prakar par nirbhar karta hai. Sahi jankari ke liye call ya WhatsApp karein.',
         },
         {
           q: 'When should it be performed?',
-          a: 'Amavasya, Nag Panchami, and Mahashivratri are highly auspicious. Pandit Ji prescribes dates upon chart inspection. /* PANDIT_VERIFY */',
+          a: 'Amavasya, Nag Panchami, and Mahashivratri are highly auspicious. Pandit Ji prescribes dates upon chart inspection.',
         },
         {
           q: 'Can it be booked online?',
@@ -291,17 +285,17 @@ export const SERVICES = [
       vidhi: {
         steps: [
           'तीर्थ स्नान एवं आचमन-संकल्प।',
-          'ब्रह्मा, विष्णु एवं रुद्र (महेश) के निमित्त तीन पिंडों की रचना व पूजन। /* PANDIT_VERIFY */',
+          'ब्रह्मा, विष्णु एवं रुद्र (महेश) के निमित्त तीन पिंडों की रचना व पूजन।',
           'वैदिक तर्पण: तिल, जौ, कुश एवं गंगाजल से पितृ तर्पण।',
           'पितृ गायत्री पाठ एवं विशेष शांति मंत्र हवन।',
           'ब्राह्मण भोजन संकल्प, दीपदान एवं गौ-सेवा।',
         ],
         duration: '5–8 घंटे',
-        samagri: 'काले तिल, जौ, कुशा, श्वेत वस्त्र, शहद, दूध, घी, तीन प्रकार के पिंडों के लिए आटा। /* PANDIT_VERIFY */',
+        samagri: 'काले तिल, जौ, कुशा, श्वेत वस्त्र, शहद, दूध, घी, तीन प्रकार के पिंडों के लिए आटा।',
       },
-      location: 'उज्जैन स्थित राम घाट, सिद्धवट अथवा गयाकोठा तीर्थ। /* PANDIT_VERIFY */',
-      costInfo: 'Puja ka kharch puja ke prakar par nirbhar karta hai. Sahi jankari ke liye call ya WhatsApp karein. /* PRICE_TODO */',
-      bestDays: 'पितृ पक्ष (महालय), सर्वपितृ अमावस्या, सोमवती अमावस्या, और हर माह की दर्श अमावस्या। /* PANDIT_VERIFY */',
+      location: 'उज्जैन स्थित राम घाट, सिद्धवट अथवा गयाकोठा तीर्थ।',
+      costInfo: 'Puja ka kharch puja ke prakar par nirbhar karta hai. Sahi jankari ke liye call ya WhatsApp karein.',
+      bestDays: 'पितृ पक्ष (महालय), सर्वपितृ अमावस्या, सोमवती अमावस्या, और हर माह की दर्श अमावस्या।',
       outstationBooking: 'श्रद्धालु WhatsApp (+91 62634 01651) पर पूर्वजों के नाम व गोत्र विवरण भेजकर तिथि आरक्षित कर सकते हैं।',
       benefits: [
         'पितरों का आशीर्वाद प्राप्त होता है और वंश वृद्धि की बाधाएं दूर होती हैं',
@@ -315,7 +309,7 @@ export const SERVICES = [
         },
         {
           q: 'Tripindi Shradh kya hota hai?',
-          a: 'Tin pidhiyon ke pitron ke liye kiya jane wala vishesh shradh karm. /* PANDIT_VERIFY */',
+          a: 'Tin pidhiyon ke pitron ke liye kiya jane wala vishesh shradh karm.',
         },
         {
           q: 'Ye karm kab karna chahiye?',
@@ -323,7 +317,7 @@ export const SERVICES = [
         },
         {
           q: 'Kharch kitna hota hai?',
-          a: 'Kharch karm ke prakar par nirbhar karta hai. Sahi jankari ke liye call ya WhatsApp karein. /* PRICE_TODO */',
+          a: 'Kharch karm ke prakar par nirbhar karta hai. Sahi jankari ke liye call ya WhatsApp karein.',
         },
       ],
     },
@@ -340,17 +334,17 @@ export const SERVICES = [
       vidhi: {
         steps: [
           'Sacred holy dip and preliminary Sankalp.',
-          'Pinda preparation and worship dedicated to the Trinity. /* PANDIT_VERIFY */',
+          'Pinda preparation and worship dedicated to the Trinity.',
           'Vedic Tarpan with sesame, barley, Kusha grass, and water.',
           'Pitru Gayatri recitations and ancestral peace Havan.',
           'Brahmin Bhojan sankalp and Go-seva.',
         ],
         duration: '5–8 Hours',
-        samagri: 'Black sesame, barley, Kusha, white cloth, honey, milk, ghee, and flour. /* PANDIT_VERIFY */',
+        samagri: 'Black sesame, barley, Kusha, white cloth, honey, milk, ghee, and flour.',
       },
-      location: 'Ram Ghat and Siddhvat on the banks of holy Shipra, Ujjain. /* PANDIT_VERIFY */',
-      costInfo: 'Puja ka kharch puja ke prakar par nirbhar karta hai. Sahi jankari ke liye call ya WhatsApp karein. /* PRICE_TODO */',
-      bestDays: 'Pitru Paksha, Sarva Pitru Amavasya, Somvati Amavasya, and monthly New Moon. /* PANDIT_VERIFY */',
+      location: 'Ram Ghat and Siddhvat on the banks of holy Shipra, Ujjain.',
+      costInfo: 'Puja ka kharch puja ke prakar par nirbhar karta hai. Sahi jankari ke liye call ya WhatsApp karein.',
+      bestDays: 'Pitru Paksha, Sarva Pitru Amavasya, Somvati Amavasya, and monthly New Moon.',
       outstationBooking: 'Contact Pandit Deepak Pandya over WhatsApp (+91 62634 01651) with family lineage details.',
       benefits: [
         'Unlocks ancestral blessings and protects progeny',
@@ -364,7 +358,7 @@ export const SERVICES = [
         },
         {
           q: 'What is Tripindi Shraddha?',
-          a: 'A specialized rite targeting peace across three generations of ancestors. /* PANDIT_VERIFY */',
+          a: 'A specialized rite targeting peace across three generations of ancestors.',
         },
         {
           q: 'When should it be performed?',
@@ -372,7 +366,7 @@ export const SERVICES = [
         },
         {
           q: 'What is the ritual cost?',
-          a: 'Puja ka kharch puja ke prakar par nirbhar karta hai. Sahi jankari ke liye call ya WhatsApp karein. /* PRICE_TODO */',
+          a: 'Puja ka kharch puja ke prakar par nirbhar karta hai. Sahi jankari ke liye call ya WhatsApp karein.',
         },
       ],
     },
@@ -410,10 +404,10 @@ export const SERVICES = [
           'ग्रह शांति आरती एवं दान संकल्प।',
         ],
         duration: '4–7 घंटे',
-        samagri: 'नवग्रह समिधा, नौ रंग के पुष्प, नवधान्य, नवग्रह यंत्र, तिल, जौ, घी। /* PANDIT_VERIFY */',
+        samagri: 'नवग्रह समिधा, नौ रंग के पुष्प, नवधान्य, नवग्रह यंत्र, तिल, जौ, घी।',
       },
       location: 'उज्जैन स्थित सिद्ध पीठ व महाकालेश्वर क्षेत्र।',
-      costInfo: 'Puja ka kharch puja ke prakar par nirbhar karta hai. Sahi jankari ke liye call ya WhatsApp karein. /* PRICE_TODO */',
+      costInfo: 'Puja ka kharch puja ke prakar par nirbhar karta hai. Sahi jankari ke liye call ya WhatsApp karein.',
       bestDays: 'कुंडली में ग्रह गोचर व वार के अनुसार पंडित जी द्वारा निर्धारित शुभ तिथि।',
       outstationBooking: 'WhatsApp (+91 62634 01651) पर जन्म विवरण साझा कर ऑनलाइन या प्रत्यक्ष बुकिंग कर सकते हैं।',
       benefits: [
@@ -459,11 +453,11 @@ export const SERVICES = [
           'Planetary Aarti and charity offerings.',
         ],
         duration: '4–7 Hours',
-        samagri: 'Nine woods, nine colored cloths, nine grains, and Navgrah Yantra. /* PANDIT_VERIFY */',
+        samagri: 'Nine woods, nine colored cloths, nine grains, and Navgrah Yantra.',
       },
       location: 'Sanctified Vedic shrines in Ujjain.',
-      costInfo: 'Puja ka kharch puja ke prakar par nirbhar karta hai. Sahi jankari ke liye call ya WhatsApp karein. /* PRICE_TODO */',
-      bestDays: 'Determined based on birth chart planetary positions. /* PANDIT_VERIFY */',
+      costInfo: 'Puja ka kharch puja ke prakar par nirbhar karta hai. Sahi jankari ke liye call ya WhatsApp karein.',
+      bestDays: 'Determined based on birth chart planetary positions.',
       outstationBooking: 'Send horoscope details via WhatsApp (+91 62634 01651) to consult on dates.',
       benefits: [
         'Balances planetary influences across life domains',
@@ -518,16 +512,16 @@ export const SERVICES = [
         steps: [
           'रोग-निवारण एवं आयु-वृद्धि हेतु मुख्य यजमान का संकल्प।',
           'भगवान महाकाल के प्रतीक शिवलिंग की स्थापना व अभिषेक।',
-          'योग्य वैदिक ब्राह्मणों द्वारा संपुटित महामृत्युंजय मंत्र का निरंतर जप। /* PANDIT_VERIFY */',
+          'योग्य वैदिक ब्राह्मणों द्वारा संपुटित महामृत्युंजय मंत्र का निरंतर जप।',
           'दशांश हवन: गिलोय, बेलपत्र, दुर्वा, घी और गुग्गल से आहुतियां।',
           'पूर्णाहुति, महाआरती एवं रक्षा सूत्र बंधन।',
         ],
         duration: '2–3 दिन (1,25,000 जप)',
-        samagri: 'रुद्राक्ष माला, गिलोय, बेलपत्र, दुर्वा, पंचामृत, शुद्ध घी, हवन समिधा। /* PANDIT_VERIFY */',
+        samagri: 'रुद्राक्ष माला, गिलोय, बेलपत्र, दुर्वा, पंचामृत, शुद्ध घी, हवन समिधा।',
       },
       location: 'उज्जैन महाकालेश्वर तीर्थ क्षेत्र।',
-      costInfo: 'Puja ka kharch puja ke prakar par nirbhar karta hai. Sahi jankari ke liye call ya WhatsApp karein. /* PRICE_TODO */',
-      bestDays: 'सोमवार, प्रदोष, महाशिवरात्रि, अथवा तात्कालिक आवश्यकता अनुसार तुरंत आरंभ। /* PANDIT_VERIFY */',
+      costInfo: 'Puja ka kharch puja ke prakar par nirbhar karta hai. Sahi jankari ke liye call ya WhatsApp karein.',
+      bestDays: 'सोमवार, प्रदोष, महाशिवरात्रि, अथवा तात्कालिक आवश्यकता अनुसार तुरंत आरंभ।',
       outstationBooking: 'अस्पताल में भर्ती या दूरस्थ परिजनों के लिए उनके नाम व गोत्र से ऑनलाइन संकल्प लेकर अनुष्ठान कराया जाता है। WhatsApp: +91 62634 01651.',
       benefits: [
         'गंभीर शारीरिक व्याधियों में चमत्कारी स्वास्थ्य लाभ',
@@ -541,7 +535,7 @@ export const SERVICES = [
         },
         {
           q: 'Jaap ki sankhya kitni hoti hai?',
-          a: 'Sankalp aur avadhi ke anusar tay hoti hai. /* PANDIT_VERIFY */',
+          a: 'Sankalp aur avadhi ke anusar tay hoti hai.',
         },
         {
           q: 'Kya kisi aur ke naam se sankalp ho sakta hai?',
@@ -549,7 +543,7 @@ export const SERVICES = [
         },
         {
           q: 'Kharch kitna hota hai?',
-          a: 'Jaap ki sankhya aur avadhi par nirbhar karta hai. Call ya WhatsApp karein. /* PRICE_TODO */',
+          a: 'Jaap ki sankhya aur avadhi par nirbhar karta hai. Call ya WhatsApp karein.',
         },
       ],
     },
@@ -567,16 +561,16 @@ export const SERVICES = [
         steps: [
           'Solemn healing Sankalp on behalf of the devotee or patient.',
           'Consecration and ritual bathing of the Shivalinga.',
-          'Dedicated recitation by Vedic priests with count tracking. /* PANDIT_VERIFY */',
+          'Dedicated recitation by Vedic priests with count tracking.',
           'Sacred fire Havan with healing herbs (Giloy, Durva, Belpatra).',
           'Purnahuti, Maha Aarti, and protective thread sanctification.',
         ],
         duration: '2–3 Days (1,25,000 Japa)',
-        samagri: 'Rudraksha, Giloy, Belpatra, Panchamrit, Ghee, and sacred woods. /* PANDIT_VERIFY */',
+        samagri: 'Rudraksha, Giloy, Belpatra, Panchamrit, Ghee, and sacred woods.',
       },
       location: 'Sacred Mahakaleshwar zone in Ujjain.',
-      costInfo: 'Puja ka kharch puja ke prakar par nirbhar karta hai. Sahi jankari ke liye call ya WhatsApp karein. /* PRICE_TODO */',
-      bestDays: 'Mondays, Pradosh, Shivratri, or immediately for emergencies. /* PANDIT_VERIFY */',
+      costInfo: 'Puja ka kharch puja ke prakar par nirbhar karta hai. Sahi jankari ke liye call ya WhatsApp karein.',
+      bestDays: 'Mondays, Pradosh, Shivratri, or immediately for emergencies.',
       outstationBooking: 'Can be conducted on behalf of distant family members via WhatsApp (+91 62634 01651).',
       benefits: [
         'Remarkable health rejuvenation during critical ailments',
@@ -590,7 +584,7 @@ export const SERVICES = [
         },
         {
           q: 'What is the standard recitation count?',
-          a: 'Typically 125,000 recitations or customized as per resolve. /* PANDIT_VERIFY */',
+          a: 'Typically 125,000 recitations or customized as per resolve.',
         },
         {
           q: 'Can it be done on behalf of someone else?',
@@ -598,7 +592,7 @@ export const SERVICES = [
         },
         {
           q: 'What is the cost?',
-          a: 'Puja ka kharch puja ke prakar par nirbhar karta hai. Sahi jankari ke liye call ya WhatsApp karein. /* PRICE_TODO */',
+          a: 'Puja ka kharch puja ke prakar par nirbhar karta hai. Sahi jankari ke liye call ya WhatsApp karein.',
         },
       ],
     },
@@ -636,10 +630,10 @@ export const SERVICES = [
           'भोग, कर्पूर आरती एवं शिव पंचाक्षर मंत्र जप।',
         ],
         duration: '2–3 घंटे',
-        samagri: 'गंगाजल, गाय का कच्चा दूध, दही, घी, शहद, शक्कर, बेलपत्र, धतूरा, भांग, भस्म, सफेद फूल। /* PANDIT_VERIFY */',
+        samagri: 'गंगाजल, गाय का कच्चा दूध, दही, घी, शहद, शक्कर, बेलपत्र, धतूरा, भांग, भस्म, सफेद फूल।',
       },
       location: 'उज्जैन महाकालेश्वर ज्योतिर्लिंग क्षेत्र अथवा मंगलनाथ क्षेत्र।',
-      costInfo: 'Puja ka kharch puja ke prakar par nirbhar karta hai. Sahi jankari ke liye call ya WhatsApp karein. /* PRICE_TODO */',
+      costInfo: 'Puja ka kharch puja ke prakar par nirbhar karta hai. Sahi jankari ke liye call ya WhatsApp karein.',
       bestDays: 'सोमवार, प्रदोष, मासिक शिवरात्रि एवं श्रावण मास।',
       outstationBooking: 'WhatsApp (+91 62634 01651) पर नाम एवं गोत्र भेजकर ऑनलाइन अभिषेक का संकल्प करा सकते हैं।',
       benefits: [
@@ -658,11 +652,11 @@ export const SERVICES = [
         },
         {
           q: 'Samagri kya lagti hai?',
-          a: 'General samagri pandit ji batate hain; booking par list di jati hai. /* PANDIT_VERIFY */',
+          a: 'General samagri pandit ji batate hain; booking par list di jati hai.',
         },
         {
           q: 'Laghu aur mahan Rudrabhishek me kya antar hai?',
-          a: 'Path aur vidhi ke vistar me antar hota hai; pandit ji batate hain. /* PANDIT_VERIFY */',
+          a: 'Path aur vidhi ke vistar me antar hota hai; pandit ji batate hain.',
         },
       ],
     },
@@ -685,10 +679,10 @@ export const SERVICES = [
           'Aarti, Naivedya, and Shanti Path.',
         ],
         duration: '2–3 Hours',
-        samagri: 'Cow milk, curd, honey, ghee, sugarcane juice, Gangajal, Belpatra, and flowers. /* PANDIT_VERIFY */',
+        samagri: 'Cow milk, curd, honey, ghee, sugarcane juice, Gangajal, Belpatra, and flowers.',
       },
       location: 'Mahakaleshwar area and divine shrines in Ujjain.',
-      costInfo: 'Puja ka kharch puja ke prakar par nirbhar karta hai. Sahi jankari ke liye call ya WhatsApp karein. /* PRICE_TODO */',
+      costInfo: 'Puja ka kharch puja ke prakar par nirbhar karta hai. Sahi jankari ke liye call ya WhatsApp karein.',
       bestDays: 'Mondays, Pradosh, and Shravan month.',
       outstationBooking: 'Live video and remote Sankalp accessible over WhatsApp (+91 62634 01651).',
       benefits: [
@@ -707,11 +701,11 @@ export const SERVICES = [
         },
         {
           q: 'What materials are needed?',
-          a: 'General samagri list is coordinated by Pandit Ji upon booking. /* PANDIT_VERIFY */',
+          a: 'General samagri list is coordinated by Pandit Ji upon booking.',
         },
         {
           q: 'Difference between Laghu and Maha Rudrabhishek?',
-          a: 'Varies by the number of recitations and procedural scale. /* PANDIT_VERIFY */',
+          a: 'Varies by the number of recitations and procedural scale.',
         },
       ],
     },
@@ -749,10 +743,10 @@ export const SERVICES = [
           'गृह प्रवेश, आरती एवं शांति पाठ।',
         ],
         duration: '3–5 घंटे',
-        samagri: 'वास्तु यंत्र, पंचरत्न, तांबे का कलश, पंचगव्य, हवन सामग्री, पीली सरसों। /* PANDIT_VERIFY */',
+        samagri: 'वास्तु यंत्र, पंचरत्न, तांबे का कलश, पंचगव्य, हवन सामग्री, पीली सरसों।',
       },
-      location: 'उज्जैन एवं आसपास के क्षेत्रों में आपके गृह/व्यापार स्थल पर अथवा मंदिर में विशेष संकल्प। /* PANDIT_VERIFY */',
-      costInfo: 'Puja ka kharch puja ke prakar par nirbhar karta hai. Sahi jankari ke liye call ya WhatsApp karein. /* PRICE_TODO */',
+      location: 'उज्जैन एवं आसपास के क्षेत्रों में आपके गृह/व्यापार स्थल पर अथवा मंदिर में विशेष संकल्प।',
+      costInfo: 'Puja ka kharch puja ke prakar par nirbhar karta hai. Sahi jankari ke liye call ya WhatsApp karein.',
       bestDays: 'शुभ गृह प्रवेश मुहूर्त, अक्षय तृतीया, एवं पंडित जी द्वारा कुंडली अनुसार निर्धारित तिथि।',
       outstationBooking: 'WhatsApp (+91 62634 01651) पर वास्तु नक्शा या विवरण भेजकर परामर्श व पूजन तिथि बुक करें।',
       benefits: [
@@ -767,11 +761,11 @@ export const SERVICES = [
         },
         {
           q: 'Kya ye ghar par hoti hai?',
-          a: 'Haan, pandit ji sthan par aakar puja karate hain. Ujjain aur aas-paas ki jankari ke liye sampark karein. /* PANDIT_VERIFY */',
+          a: 'Haan, pandit ji sthan par aakar puja karate hain. Ujjain aur aas-paas ki jankari ke liye sampark karein.',
         },
         {
           q: 'Kharch kitna hota hai?',
-          a: 'Puja ke vistar par nirbhar karta hai. Call ya WhatsApp karein. /* PRICE_TODO */',
+          a: 'Puja ke vistar par nirbhar karta hai. Call ya WhatsApp karein.',
         },
       ],
     },
@@ -794,10 +788,10 @@ export const SERVICES = [
           'Ceremonial entrance, Aarti, and blessings.',
         ],
         duration: '3–5 Hours',
-        samagri: 'Vastu Yantra, copper Kalash, Panchagavya, Havan herbs, and yellow mustard. /* PANDIT_VERIFY */',
+        samagri: 'Vastu Yantra, copper Kalash, Panchagavya, Havan herbs, and yellow mustard.',
       },
-      location: 'At your residence/premises in Ujjain and neighboring regions. /* PANDIT_VERIFY */',
-      costInfo: 'Puja ka kharch puja ke prakar par nirbhar karta hai. Sahi jankari ke liye call ya WhatsApp karein. /* PRICE_TODO */',
+      location: 'At your residence/premises in Ujjain and neighboring regions.',
+      costInfo: 'Puja ka kharch puja ke prakar par nirbhar karta hai. Sahi jankari ke liye call ya WhatsApp karein.',
       bestDays: 'Auspicious Griha Pravesh dates verified from birth charts.',
       outstationBooking: 'Inquire over WhatsApp (+91 62634 01651) with house blueprint or date preferences.',
       benefits: [
@@ -812,11 +806,11 @@ export const SERVICES = [
         },
         {
           q: 'Is it conducted at home?',
-          a: 'Yes, Pandit Ji visits premises in and around Ujjain. Contact for details. /* PANDIT_VERIFY */',
+          a: 'Yes, Pandit Ji visits premises in and around Ujjain. Contact for details.',
         },
         {
           q: 'What is the cost?',
-          a: 'Puja ka kharch puja ke prakar par nirbhar karta hai. Sahi jankari ke liye call ya WhatsApp karein. /* PRICE_TODO */',
+          a: 'Puja ka kharch puja ke prakar par nirbhar karta hai. Sahi jankari ke liye call ya WhatsApp karein.',
         },
       ],
     },
@@ -848,16 +842,16 @@ export const SERVICES = [
       vidhi: {
         steps: [
           'घट स्थापना एवं अखंड ज्योति प्रज्वलन।',
-          'नवार्ण मंत्र जप एवं दुर्गा सप्तशती के 9 या 100 संपुटित पाठ। /* PANDIT_VERIFY */',
+          'नवार्ण मंत्र जप एवं दुर्गा सप्तशती के 9 या 100 संपुटित पाठ।',
           'चंडी हवन: खीर, शहद, कमल गट्टे और बेलपत्र से विशेष आहुतियां।',
           'कन्या पूजन एवं सुहासिनी सत्कार।',
           'महाआरती, पूर्णाहुति एवं प्रसाद वितरण।',
         ],
         duration: 'नवचंडी: 2 दिन | शतचंडी: 7-9 दिन',
-        samagri: 'दुर्गा यंत्र, लाल पुष्प, कमल गट्टे, हवन सामग्री, नौ प्रकार के फल, पंचमेवा। /* PANDIT_VERIFY */',
+        samagri: 'दुर्गा यंत्र, लाल पुष्प, कमल गट्टे, हवन सामग्री, नौ प्रकार के फल, पंचमेवा।',
       },
       location: 'उज्जैन की पवित्र सिद्ध शक्ति पीठ भूमि पर।',
-      costInfo: 'Puja ka kharch puja ke prakar par nirbhar karta hai. Sahi jankari ke liye call ya WhatsApp karein. /* PRICE_TODO */',
+      costInfo: 'Puja ka kharch puja ke prakar par nirbhar karta hai. Sahi jankari ke liye call ya WhatsApp karein.',
       bestDays: 'चैत्र व शारदीय नवरात्रि, गुप्त नवरात्रि, अथवा पंडित जी द्वारा निर्धारित शुभ तिथि।',
       outstationBooking: 'WhatsApp (+91 62634 01651) पर संकल्प विवरण साझा कर अनुष्ठान बुक कर सकते हैं।',
       benefits: [
@@ -868,7 +862,7 @@ export const SERVICES = [
       faqs: [
         {
           q: 'Navchandi aur Shatchandi me kya antar hai?',
-          a: 'Path aur havan ke vistar me antar hota hai. /* PANDIT_VERIFY */',
+          a: 'Path aur havan ke vistar me antar hota hai.',
         },
         {
           q: 'Kaun se din shubh hain?',
@@ -876,7 +870,7 @@ export const SERVICES = [
         },
         {
           q: 'Kitna samay lagta hai?',
-          a: 'Anushthan ke prakar ke anusar. Call ya WhatsApp par jankari milegi. /* PRICE_TODO */',
+          a: 'Anushthan ke prakar ke anusar. Call ya WhatsApp par jankari milegi.',
         },
       ],
     },
@@ -893,17 +887,17 @@ export const SERVICES = [
       vidhi: {
         steps: [
           'Ghatasthapana and Akhanda Jyoti invocation.',
-          'Navarna mantra chanting and scripted Durga Saptashati path. /* PANDIT_VERIFY */',
+          'Navarna mantra chanting and scripted Durga Saptashati path.',
           'Chandi Havan with lotus seeds, kheer, and sacred herbs.',
           'Kanya Puja (honoring young girls as Divine Mother).',
           'Purnahuti, Maha Aarti, and Prasadam distribution.',
         ],
         duration: 'Navchandi: 2 Days | Shatchandi: 7-9 Days',
-        samagri: 'Durga Yantra, red flowers, lotus seeds, dry fruits, and Havan samagri. /* PANDIT_VERIFY */',
+        samagri: 'Durga Yantra, red flowers, lotus seeds, dry fruits, and Havan samagri.',
       },
       location: 'Sanctified Shakti regions in Ujjain.',
-      costInfo: 'Puja ka kharch puja ke prakar par nirbhar karta hai. Sahi jankari ke liye call ya WhatsApp karein. /* PRICE_TODO */',
-      bestDays: 'Navratri periods or auspicious astrological dates. /* PANDIT_VERIFY */',
+      costInfo: 'Puja ka kharch puja ke prakar par nirbhar karta hai. Sahi jankari ke liye call ya WhatsApp karein.',
+      bestDays: 'Navratri periods or auspicious astrological dates.',
       outstationBooking: 'Coordinate via WhatsApp (+91 62634 01651) with devotion and संकल्प details.',
       benefits: [
         'Protection against adversarial plots and legal struggles',
@@ -913,7 +907,7 @@ export const SERVICES = [
       faqs: [
         {
           q: 'Difference between Navchandi and Shatchandi?',
-          a: 'Differs by the scale of recitations (9 vs 100 recitations) and Havan depth. /* PANDIT_VERIFY */',
+          a: 'Differs by the scale of recitations (9 vs 100 recitations) and Havan depth.',
         },
         {
           q: 'Which days are auspicious?',
@@ -921,7 +915,7 @@ export const SERVICES = [
         },
         {
           q: 'How much time does it take?',
-          a: 'Depends on the scale (2 to 9 days). Contact via WhatsApp for schedule. /* PRICE_TODO */',
+          a: 'Depends on the scale (2 to 9 days). Contact via WhatsApp for schedule.',
         },
       ],
     },
@@ -962,7 +956,7 @@ export const SERVICES = [
         samagri: 'सटीक जन्म तिथि, जन्म समय (AM/PM) एवं जन्म स्थान का नाम।',
       },
       location: 'प्रत्यक्ष रूप से उज्जैन में अथवा घर बैठे WhatsApp/फोन पर ऑनलाइन परामर्श।',
-      costInfo: 'Puja ka kharch puja ke prakar par nirbhar karta hai. Sahi jankari ke liye call ya WhatsApp karein. /* PRICE_TODO */',
+      costInfo: 'Puja ka kharch puja ke prakar par nirbhar karta hai. Sahi jankari ke liye call ya WhatsApp karein.',
       bestDays: 'सभी 7 दिन परामर्श हेतु समय उपलब्ध (अग्रिम समय लेना श्रेयस्कर)।',
       outstationBooking: 'देश-विदेश के श्रद्धालु WhatsApp (+91 62634 01651) पर अपना जन्म विवरण भेजकर ऑनलाइन परामर्श बुक कर सकते हैं।',
       benefits: [
@@ -1007,7 +1001,7 @@ export const SERVICES = [
         samagri: 'Accurate Date of Birth, exact Time of Birth, and Place of Birth.',
       },
       location: 'Available in person at Ujjain or via online WhatsApp consultation worldwide.',
-      costInfo: 'Puja ka kharch puja ke prakar par nirbhar karta hai. Sahi jankari ke liye call ya WhatsApp karein. /* PRICE_TODO */',
+      costInfo: 'Puja ka kharch puja ke prakar par nirbhar karta hai. Sahi jankari ke liye call ya WhatsApp karein.',
       bestDays: 'Available all 7 days with prior appointment.',
       outstationBooking: 'Submit your birth details directly over WhatsApp (+91 62634 01651).',
       benefits: [

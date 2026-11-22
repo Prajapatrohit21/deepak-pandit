@@ -1,9 +1,3 @@
-// ============================================================
-// prerender.js — Post-build static route generator for GitHub Pages SPA
-// Generates 404.html and static route folders ensuring clean HTTP 200
-// responses without flashing unstyled/foreign static tables to visitors.
-// ============================================================
-
 import fs from 'fs';
 import path from 'path';
 
@@ -17,12 +11,10 @@ if (!fs.existsSync(indexPath)) {
 
 let html = fs.readFileSync(indexPath, 'utf-8');
 
-// Generate dist/404.html with the same bundle for GitHub Pages SPA fallback
 const notFoundPath = path.join(distDir, '404.html');
 fs.writeFileSync(notFoundPath, html, 'utf-8');
 console.log('✓ Successfully created dist/404.html fallback for GitHub Pages');
 
-// Static route folders generation for GitHub Pages (ensures HTTP 200 on all routes)
 const staticRoutes = [
   'about',
   'services',

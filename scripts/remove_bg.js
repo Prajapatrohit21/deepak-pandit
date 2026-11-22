@@ -12,19 +12,16 @@ async function processLogo() {
     .raw()
     .toBuffer({ resolveWithObject: true });
 
-  // Convert black background to transparent
   for (let i = 0; i < data.length; i += 4) {
     const r = data[i];
     const g = data[i + 1];
     const b = data[i + 2];
 
-    // Check if pixel is dark/black
     if (r < 30 && g < 30 && b < 30) {
       data[i + 3] = 0; // Alpha = 0 (transparent)
     } else {
       const brightness = Math.max(r, g, b);
       if (brightness < 60) {
-        // Feather edge
         data[i + 3] = Math.round(((brightness - 30) / 30) * 255);
       }
     }

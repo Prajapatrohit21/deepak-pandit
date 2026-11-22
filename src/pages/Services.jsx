@@ -1,6 +1,3 @@
-// ============================================================
-// Services.jsx — Pandits Of Banaras Luxury Services Listing
-// ============================================================
 import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -32,7 +29,6 @@ export default function Services() {
     ? 'उज्जैन में पंडित दीपक पंड्या द्वारा मंगल दोष पूजा, मंगल दोष निवारण पूजा, मांगलिक दोष उपाय, कालसर्प दोष, पितृ दोष निवारण, महामृत्युंजय जाप और रुद्राभिषेक। पूरी विधि, मुहूर्त व दक्षिणा जानकारी।'
     : 'Complete Vedic Puja services in Ujjain by Pandit Deepak Pandya: Mangal Dosh Puja, Mangal Dosh Nivaran Pooja, Manglik dosh remedies, Kaal Sarp Dosh Nivaran, Rudrabhishek. Transparent pricing & muhurat.';
 
-  // AEO/GEO: HowTo schema — "How to book Mangal Dosh Puja in Ujjain"
   const howToSchema = {
     '@context': 'https://schema.org',
     '@type': 'HowTo',
@@ -57,7 +53,6 @@ export default function Services() {
         schema={howToSchema}
       />
       
-      {/* ── Page Header ── */}
       <section
         className="py-16 sm:py-24 text-center relative overflow-hidden bg-gradient-to-b from-[#FFFDF9] via-[#FAF6EE] to-[#F5EFE4] border-b border-[#E8DCC8]"
         aria-labelledby="services-page-heading"
@@ -84,7 +79,6 @@ export default function Services() {
         </div>
       </section>
 
-      {/* ── Services Grid ── */}
       <section className="py-20 bg-[#FAF7F2]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -97,7 +91,6 @@ export default function Services() {
         </div>
       </section>
 
-      {/* ── Puja Inclusions & Standards Bar ── */}
       <section className="py-16 bg-white border-t border-b border-[#E8DCC8]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <SectionHeading
@@ -145,7 +138,6 @@ export default function Services() {
         </div>
       </section>
 
-      {/* ── Direct Booking CTA ── */}
       <section className="py-16 bg-gradient-to-r from-[#D97706] to-[#B45309] text-white text-center">
         <div className="max-w-4xl mx-auto px-4">
           <h2 className="font-heading font-black text-2xl sm:text-4xl mb-3">

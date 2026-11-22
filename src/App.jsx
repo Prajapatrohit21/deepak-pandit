@@ -1,6 +1,3 @@
-// ============================================================
-// App.jsx — Root app with routing
-// ============================================================
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import { LanguageProvider, useLanguage } from './context/LanguageContext';
@@ -10,7 +7,6 @@ import FloatingButtons from './components/layout/FloatingButtons';
 import Preloader from './components/layout/Preloader';
 import { trackPageView } from './utils/analytics';
 
-// Pages
 import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
@@ -84,7 +80,6 @@ const ROUTE_TITLES = {
   },
 };
 
-// Scroll to top on route change, update document title, and record page_view in GA4
 function ScrollToTop() {
   const { pathname } = useLocation();
   const { lang } = useLanguage();
@@ -113,7 +108,6 @@ function ScrollToTop() {
   return null;
 }
 
-// Page wrapper with fade-in animation
 function PageWrapper({ children }) {
   return (
     <div style={{ animation: 'fadeIn 0.4s ease forwards' }}>
@@ -147,7 +141,6 @@ function AppContent() {
           <Route path="/disclaimer" element={<PageWrapper><Disclaimer /></PageWrapper>} />
           <Route path="/mangalnath-mandir-ujjain" element={<PageWrapper><MangalnathMandirGuide /></PageWrapper>} />
           <Route path="/bahar-ke-shahar-puja-booking" element={<PageWrapper><OutstationBookingGuide /></PageWrapper>} />
-          {/* 404 fallback */}
           <Route path="*" element={<PageWrapper><Home /></PageWrapper>} />
         </Routes>
       </div>

@@ -6,7 +6,6 @@ async function generateOgImage() {
   const width = 1200;
   const height = 630;
 
-  // Read pandit image if available
   let panditBuffer = null;
   const panditPath = path.resolve('src/assets/pandit_deepak_pandya.jpg');
   if (fs.existsSync(panditPath)) {
@@ -132,7 +131,6 @@ async function generateOgImage() {
   ];
 
   if (panditBuffer) {
-    // Add gold halo behind pandit
     composites.push({
       input: Buffer.from(`
         <svg width="236" height="236">

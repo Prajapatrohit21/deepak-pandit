@@ -1,7 +1,3 @@
-// ============================================================
-// Navbar.jsx — panditsofbanaras.in cream luxury style
-// Light cream bg, serif brand, amber accents, mobile responsive
-// ============================================================
 import { useState, useEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { useLanguage } from '../../context/LanguageContext';
@@ -50,7 +46,6 @@ export default function Navbar() {
         aria-label="Main Navigation"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-5 lg:px-6 flex items-center justify-between gap-4">
-          {/* Brand Logo */}
           <Link
             to="/"
             className="flex items-center gap-3 group py-0.6 shrink-0"
@@ -68,7 +63,6 @@ export default function Navbar() {
             </div>
           </Link>
 
-          {/* Desktop Nav Links */}
           <div className="hidden lg:flex items-center gap-0.5">
             {navLinks.map((link) => (
               <NavLink
@@ -88,9 +82,7 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* Right: Phone + WhatsApp + Lang + Hamburger */}
           <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
-            {/* Language Toggle */}
             <div className="flex rounded-lg overflow-hidden border border-[#E8DCC8] text-xs">
               <button
                 onClick={() => { if (lang !== 'hi') toggleLang(); }}
@@ -112,7 +104,6 @@ export default function Navbar() {
               </button>
             </div>
 
-            {/* Phone CTA (desktop) */}
             <a
               href={PHONE_HREF}
               onClick={() => trackPhoneCall('navbar')}
@@ -124,7 +115,6 @@ export default function Navbar() {
               +91 62634 01651
             </a>
 
-            {/* WhatsApp CTA (desktop) */}
             <a
               href={WA_HREF}
               onClick={() => trackWhatsAppClick('navbar')}
@@ -137,7 +127,6 @@ export default function Navbar() {
               WhatsApp
             </a>
 
-            {/* Hamburger (mobile) */}
             <button
               className="lg:hidden flex flex-col gap-1.5 p-2 rounded-lg hover:bg-[#D97706]/10 transition-colors shrink-0"
               onClick={() => setMenuOpen(!menuOpen)}
@@ -152,7 +141,6 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* ── Mobile Menu ── */}
         <div
           className={`lg:hidden overflow-hidden transition-all duration-300 ${menuOpen ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0'
             } bg-[#FFFDF9] border-t border-[#E8DCC8]`}
@@ -175,7 +163,6 @@ export default function Navbar() {
               </NavLink>
             ))}
 
-            {/* Mobile CTA buttons */}
             <div className="flex gap-2 mt-3 pt-3 border-t border-[#E8DCC8]">
               <a
                 href={PHONE_HREF}
@@ -202,7 +189,6 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* Overlay for mobile menu */}
       {menuOpen && (
         <div
           className="fixed inset-0 z-40 bg-black/30 lg:hidden"

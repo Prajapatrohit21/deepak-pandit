@@ -1,8 +1,3 @@
-// ============================================================
-// OutstationBookingGuide.jsx — Guide for devotees booking from other cities
-// (Indore, Bhopal, Delhi, Mumbai, Pune, Gujarat, etc.)
-// Design: panditsofbanaras.in luxury cream style
-// ============================================================
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import AOS from 'aos';
@@ -73,7 +68,6 @@ export default function OutstationBookingGuide() {
         schema={schema}
       />
 
-      {/* ── Breadcrumb ── */}
       <nav aria-label="Breadcrumb" className="bg-[#FAF7F2] border-b border-[#E8DCC8] py-2.5 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto flex items-center gap-2 text-xs sm:text-sm text-[#8C7A6B]">
           <Link to="/" className="hover:text-[#B45309] transition-colors">{lang === 'hi' ? 'मुख्य पृष्ठ' : 'Home'}</Link>
@@ -82,7 +76,6 @@ export default function OutstationBookingGuide() {
         </div>
       </nav>
 
-      {/* ── Hero Header — Luxury Cream ── */}
       <section className="relative overflow-hidden bg-gradient-to-b from-[#FFFDF9] via-[#FAF6EE] to-[#F5EFE4] py-14 sm:py-20 text-center">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-[#D97706]/10 blur-[120px] pointer-events-none" aria-hidden="true" />
         <div className="relative z-10 max-w-3xl mx-auto px-4">
@@ -99,11 +92,9 @@ export default function OutstationBookingGuide() {
         </div>
       </section>
 
-      {/* ── Main Content ── */}
       <section className="py-12 sm:py-16 bg-[#FAF7F2]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 space-y-8">
 
-          {/* Quick Answer */}
           <div className="bg-[#D97706]/10 border-l-4 border-[#D97706] rounded-r-2xl p-5 sm:p-6" data-aos="fade-up">
             <h2 className="text-base font-bold text-[#1F160F] uppercase mb-2">⚡ संक्षेप में उत्तर / Direct Answer</h2>
             <p className="text-[#3D2E1F] font-medium leading-relaxed text-base sm:text-lg">
@@ -111,7 +102,6 @@ export default function OutstationBookingGuide() {
             </p>
           </div>
 
-          {/* 3 Steps */}
           <div className="rounded-3xl border border-[#E8DCC8] p-6 sm:p-8 bg-white" data-aos="fade-up">
             <h2 className="text-2xl font-bold text-[#1F160F] font-heading mb-6">
               3 सरल चरणों में बाहर के शहरों से पूजा कैसे बुक करें?
@@ -131,7 +121,6 @@ export default function OutstationBookingGuide() {
             </div>
           </div>
 
-          {/* City Coverage */}
           <div className="rounded-3xl border border-[#E8DCC8] p-6 sm:p-8 bg-white" data-aos="fade-up">
             <h2 className="text-2xl font-bold text-[#1F160F] font-heading mb-4">
               किन शहरों के श्रद्धालुओं के लिए विशेष व्यवस्था है?
@@ -146,7 +135,6 @@ export default function OutstationBookingGuide() {
             </div>
           </div>
 
-          {/* Booking Form Card */}
           <div className="rounded-3xl border border-[#E8DCC8] p-6 sm:p-8 bg-white" data-aos="fade-up">
             <h2 className="text-xl sm:text-2xl font-bold text-[#1F160F] font-heading mb-2">
               ऑनलाइन पूजा हेतु विवरण भेजें

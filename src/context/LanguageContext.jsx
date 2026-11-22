@@ -1,22 +1,15 @@
-// ============================================================
-// LanguageContext.jsx — Global language state (hi/en)
-// ============================================================
 import { createContext, useContext, useState, useEffect } from 'react';
 
 const LanguageContext = createContext();
 
 export function LanguageProvider({ children }) {
   const [lang, setLang] = useState(() => {
-    // Restore from localStorage, default to 'hi'
     return localStorage.getItem('mak_lang') || 'hi';
   });
 
   useEffect(() => {
-    // Persist to localStorage
     localStorage.setItem('mak_lang', lang);
-    // Update <html lang> attribute for SEO
     document.documentElement.lang = lang;
-    // Update <title> based on language
     if (lang === 'en') {
       document.title = 'Mangal Dosh Puja Ujjain | Mangal Dosh Nivaran Pooja | Pandit Deepak Pandya';
     } else {
@@ -24,7 +17,6 @@ export function LanguageProvider({ children }) {
     }
   }, [lang]);
 
-  /** Helper: get localized string from a { hi, en } object */
   const t = (obj) => {
     if (!obj) return '';
     if (typeof obj === 'string') return obj;

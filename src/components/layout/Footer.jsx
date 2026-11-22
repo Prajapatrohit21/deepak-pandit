@@ -1,6 +1,3 @@
-// ============================================================
-// Footer.jsx — Pandits Of Banaras Luxury Vedic Footer
-// ============================================================
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../../context/LanguageContext';
 import { CONTENT } from '../../data/content';
@@ -33,16 +30,13 @@ export default function Footer() {
   return (
     <footer className="bg-[#1C0A00] text-cream/80 pt-16 pb-24 md:pb-8 relative overflow-hidden w-full border-t border-gold/30">
 
-      {/* Background Om watermark */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none opacity-5" aria-hidden="true">
         <span className="font-devanagari text-white text-[280px]">ॐ</span>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
 
-        {/* Top Trust & Verification Banner inside Footer */}
         <div className="bg-[#2D1400]/70 border border-gold/30 rounded-2xl p-4 sm:p-6 mb-12 flex flex-wrap items-center justify-between gap-4 backdrop-blur-sm">
-          {/* Google Review Badge */}
           <div className="flex items-center gap-2">
             <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24" aria-hidden="true">
               <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
@@ -57,7 +51,6 @@ export default function Footer() {
             </span>
           </div>
 
-          {/* Verified Purohit Badge */}
           <div className="flex items-center gap-1.5 text-emerald-400 text-xs sm:text-sm font-semibold">
             <svg className="w-5 h-5 shrink-0 text-emerald-400" viewBox="0 0 24 24" fill="currentColor">
               <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
@@ -65,7 +58,6 @@ export default function Footer() {
             <span>{t({ hi: 'उज्जैन सिद्ध पीठ अधिकृत वैदिक पुरोहित', en: 'Verified Ujjain Siddha Peeth Purohit' })}</span>
           </div>
 
-          {/* Direct WhatsApp Pill */}
           <a
             href={WA_HREF}
             onClick={() => trackWhatsAppClick('footer_top_bar')}
@@ -79,10 +71,8 @@ export default function Footer() {
           </a>
         </div>
 
-        {/* 4 Columns Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 mb-12">
 
-          {/* Col 1: Brand & NAP */}
           <div className="sm:col-span-2 lg:col-span-1">
             <Link
               to="/"
@@ -103,7 +93,6 @@ export default function Footer() {
                 : 'Mangal Dosh Puja Nivaran — Led by Vedic Pandit Deepak Pandya (15+ years experience). Authentic Vedic rituals and pujas at Mangalnath Temple, Ujjain.'}
             </p>
 
-            {/* Full NAP Contact Info */}
             <div className="flex flex-col gap-2.5 text-sm">
               <a
                 href={PHONE_HREF}
@@ -139,7 +128,6 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* Social Media Links */}
             <div className="mt-5 pt-4 border-t border-gold/20">
               <p className="text-xs font-semibold text-gold mb-3 font-devanagari flex items-center gap-1.5">
                 <span>✦</span>
@@ -176,7 +164,6 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Col 2: Quick Links */}
           <div>
             <h3 className="text-gold font-bold mb-4 font-heading text-sm uppercase tracking-widest border-b border-gold/20 pb-2">
               {t(foot.quickLinks)}
@@ -198,7 +185,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Col 3: Services */}
           <div>
             <h3 className="text-gold font-bold mb-4 font-heading text-sm uppercase tracking-widest border-b border-gold/20 pb-2">
               {t(foot.services)}
@@ -220,7 +206,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Col 4: Timings & Outstation Sankalp */}
           <div>
             <h3 className="text-gold font-bold mb-4 font-heading text-sm uppercase tracking-widest border-b border-gold/20 pb-2">
               {t({ hi: 'परामर्श व अनुष्ठान समय', en: 'Consultation & Timings' })}
@@ -240,7 +225,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom Bar */}
         <div className="border-t border-gold/20 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-gold font-heading text-sm text-center font-bold tracking-wider">
             ॥ ॐ श्री मंगलनाथाय नमः ॥

@@ -1,7 +1,3 @@
-// ============================================================
-// Legal.jsx — Terms, Privacy Policy, Disclaimer pages
-// Design: panditsofbanaras.in luxury cream style
-// ============================================================
 import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -25,7 +21,6 @@ function LegalPage({ titleHi, titleEn, canonical, children }) {
           canonical={canonical}
         />
       )}
-      {/* ── Hero Header — Luxury Cream ── */}
       <section className="relative overflow-hidden bg-gradient-to-b from-[#FFFDF9] via-[#FAF6EE] to-[#F5EFE4] py-12 sm:py-20 text-center">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[500px] rounded-full bg-[#D97706]/10 blur-[120px] pointer-events-none" aria-hidden="true" />
         <div className="relative z-10 max-w-3xl mx-auto px-4">
@@ -35,7 +30,6 @@ function LegalPage({ titleHi, titleEn, canonical, children }) {
         </div>
       </section>
 
-      {/* ── Content ── */}
       <section className="py-10 sm:py-16 bg-[#FAF7F2]">
         <div className="max-w-4xl mx-auto px-3 sm:px-6">
           <div className="rounded-3xl border border-[#E8DCC8] p-4 sm:p-8 bg-white prose max-w-none break-words">
@@ -47,7 +41,6 @@ function LegalPage({ titleHi, titleEn, canonical, children }) {
   );
 }
 
-// ─── Terms & Conditions ────────────────────────────────────
 export function TermsConditions() {
   const { lang } = useLanguage();
 
@@ -96,7 +89,6 @@ export function TermsConditions() {
   );
 }
 
-// ─── Privacy Policy ────────────────────────────────────────
 export function PrivacyPolicy() {
   const { lang } = useLanguage();
 
@@ -135,7 +127,6 @@ export function PrivacyPolicy() {
   );
 }
 
-// ─── Disclaimer ────────────────────────────────────────────
 export function Disclaimer() {
   const { lang } = useLanguage();
 

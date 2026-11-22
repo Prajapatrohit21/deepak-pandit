@@ -1,6 +1,3 @@
-// ============================================================
-// Contact.jsx — Pandits Of Banaras Luxury Contact Page
-// ============================================================
 import { useEffect, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -73,7 +70,6 @@ export default function Contact() {
         canonical="https://mangaldoshpujanivaran.in/contact"
       />
       
-      {/* ── Page Header ── */}
       <section
         className="py-16 sm:py-24 text-center relative overflow-hidden bg-gradient-to-b from-[#FFFDF9] via-[#FAF6EE] to-[#F5EFE4] border-b border-[#E8DCC8]"
         aria-labelledby="contact-heading"
@@ -100,12 +96,10 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* ── Contact Details & Form ── */}
       <section className="py-20 bg-[#FAF7F2]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
             
-            {/* Left: Contact Info Cards & Map */}
             <div data-aos="fade-right" className="lg:col-span-5 space-y-5">
               
               <div className="bg-white rounded-3xl p-6 sm:p-7 border-2 border-[#E8DCC8] shadow-sm">
@@ -114,7 +108,6 @@ export default function Contact() {
                 </span>
 
                 <div className="space-y-4 text-sm font-devanagari">
-                  {/* Phone */}
                   <a
                     href={PHONE_HREF}
                     onClick={() => trackPhoneCall('contact_page')}
@@ -131,7 +124,6 @@ export default function Contact() {
                     </div>
                   </a>
 
-                  {/* WhatsApp */}
                   <a
                     href={WA_HREF}
                     onClick={() => trackWhatsAppClick('contact_page')}
@@ -150,7 +142,6 @@ export default function Contact() {
                     </div>
                   </a>
 
-                  {/* Email */}
                   <div className="flex items-center gap-3 p-3.5 rounded-2xl bg-[#FAF7F2] border border-[#E8DCC8]">
                     <div className="w-10 h-10 rounded-xl bg-[#1C0A00] text-gold flex items-center justify-center shrink-0">
                       ✉️
@@ -161,7 +152,6 @@ export default function Contact() {
                     </div>
                   </div>
 
-                  {/* Location */}
                   <div className="flex items-start gap-3 p-3.5 rounded-2xl bg-[#FAF7F2] border border-[#E8DCC8]">
                     <div className="w-10 h-10 rounded-xl bg-[#8C3814] text-white flex items-center justify-center shrink-0 mt-0.5">
                       📍
@@ -174,7 +164,6 @@ export default function Contact() {
                     </div>
                   </div>
 
-                  {/* Social Media Links */}
                   <div className="p-3.5 rounded-2xl bg-[#FAF7F2] border border-[#E8DCC8]">
                     <p className="text-xs text-[#8C3814] font-bold mb-2.5 font-devanagari">
                       {lang === 'hi' ? 'सोशल मीडिया पर जुड़ें' : 'Connect on Social Media'}
@@ -211,7 +200,6 @@ export default function Contact() {
                 </div>
               </div>
 
-              {/* Map Container */}
               <div className="rounded-3xl overflow-hidden border-2 border-[#E8DCC8] shadow-sm aspect-[16/10] bg-white">
                 <iframe
                   title="Mangalnath Temple Ujjain Map"
@@ -227,7 +215,6 @@ export default function Contact() {
 
             </div>
 
-            {/* Right: Message Form */}
             <div data-aos="fade-left" className="lg:col-span-7">
               <div className="bg-white rounded-3xl p-6 sm:p-10 border-2 border-[#E8DCC8] shadow-[0_12px_40px_rgba(45,27,0,0.08)]">
                 
@@ -244,7 +231,6 @@ export default function Contact() {
                 </div>
 
                 <form onSubmit={handleSubmit} noValidate className="space-y-4">
-                  {/* Name */}
                   <div>
                     <label className="block text-sm font-bold text-[#1F160F] mb-1 font-devanagari">
                       आपका नाम <span className="text-red-500">*</span>
@@ -259,7 +245,6 @@ export default function Contact() {
                     {errors.name && <p className="text-red-500 text-xs mt-1 font-devanagari">{errors.name}</p>}
                   </div>
 
-                  {/* Phone */}
                   <div>
                     <label className="block text-sm font-bold text-[#1F160F] mb-1 font-devanagari">
                       मोबाइल नंबर <span className="text-red-500">*</span>
@@ -275,7 +260,6 @@ export default function Contact() {
                     {errors.phone && <p className="text-red-500 text-xs mt-1 font-devanagari">{errors.phone}</p>}
                   </div>
 
-                  {/* Message */}
                   <div>
                     <label className="block text-sm font-bold text-[#1F160F] mb-1 font-devanagari">
                       आपका संदेश / समस्या <span className="text-red-500">*</span>
@@ -290,7 +274,6 @@ export default function Contact() {
                     {errors.message && <p className="text-red-500 text-xs mt-1 font-devanagari">{errors.message}</p>}
                   </div>
 
-                  {/* Submit Button */}
                   <button
                     type="submit"
                     disabled={submitting}

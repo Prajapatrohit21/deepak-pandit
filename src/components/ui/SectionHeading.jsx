@@ -1,6 +1,3 @@
-// ============================================================
-// SectionHeading.jsx — Pandits Of Banaras Luxury Vedic Header
-// ============================================================
 export default function SectionHeading({ badge, heading, subheading, light = false, center = true }) {
   return (
     <div className={`mb-10 ${center ? 'text-center' : ''}`} data-aos="fade-up">

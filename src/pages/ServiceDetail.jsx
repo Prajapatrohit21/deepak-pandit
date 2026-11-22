@@ -1,9 +1,3 @@
-// ============================================================
-// ServiceDetail.jsx — Individual service detail page
-// Implements the strict 13-point AEO/SEO structure, Answer-First,
-// Question-based headings, Schema, and Breadcrumbs.
-// Design: panditsofbanaras.in luxury cream style, 100% mobile friendly
-// ============================================================
 import { useEffect, useState } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import AOS from 'aos';
@@ -17,7 +11,6 @@ import { WA_HREF, PHONE_HREF } from '../utils/whatsapp';
 import { trackWhatsAppClick, trackPhoneCall } from '../utils/analytics';
 import panditImg from '../assets/pandit_deepak_pandya.jpg';
 
-// FAQ Accordion / Expandable Item
 function FaqItem({ q, a, index }) {
   const [open, setOpen] = useState(index === 0);
   return (
@@ -55,7 +48,6 @@ export default function ServiceDetail() {
   const content = lang === 'hi' ? service.hi : service.en;
   const canonicalUrl = `https://mangaldoshpujanivaran.in/services/${service.slug}`;
 
-  // Structured Data (Service + FAQPage + BreadcrumbList)
   const serviceSchema = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -130,19 +122,16 @@ export default function ServiceDetail() {
     ],
   };
 
-  // Find related blogs
   const relatedBlogs = (service.relatedBlogs || [])
     .map((blogSlug) => BLOG_ARTICLES.find((b) => b.slug === blogSlug))
     .filter(Boolean);
 
-  // Find related services
   const relatedServices = (service.relatedPujas || [])
     .map((sSlug) => SERVICES.find((s) => s.slug === sSlug))
     .filter(Boolean);
 
   return (
     <main className="pt-20">
-      {/* SEO Head Tags */}
       <SEO
         title={service.meta?.title || `${content.name} | पंडित दीपक पंड्या उज्जैन`}
         description={service.meta?.description || content.directAnswer.slice(0, 155)}
@@ -150,7 +139,6 @@ export default function ServiceDetail() {
         schema={serviceSchema}
       />
 
-      {/* Breadcrumb Navigation */}
       <nav aria-label="Breadcrumb" className="bg-[#FAF7F2] border-b border-[#E8DCC8] py-2.5 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto flex items-center gap-2 text-xs sm:text-sm text-[#8C7A6B]">
           <Link
@@ -177,7 +165,6 @@ export default function ServiceDetail() {
         </div>
       </nav>
 
-      {/* Hero Banner: 1. H1 with puja name + Ujjain */}
       <section
         className="py-14 sm:py-20 text-center relative overflow-hidden bg-gradient-to-b from-[#FFFDF9] via-[#FAF6EE] to-[#F5EFE4] text-[#1F160F] border-b border-[#E8DCC8]"
         aria-labelledby="service-detail-heading"
@@ -208,7 +195,6 @@ export default function ServiceDetail() {
           <p className="text-[#8C3814] font-semibold mb-4 text-sm sm:text-base">{content.tagline}</p>
           <div className="w-20 h-1 bg-gradient-to-r from-transparent via-[#D97706] to-transparent rounded-full mx-auto mb-6" />
 
-          {/* Quick Metrics Bar */}
           <div className="flex flex-wrap justify-center gap-3 sm:gap-4 text-xs sm:text-sm">
             <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-xl border border-[#E8DCC8] shadow-xs text-[#5C4A3A]">
               <span>⏱</span>
@@ -226,15 +212,12 @@ export default function ServiceDetail() {
         </div>
       </section>
 
-      {/* Main Content Layout */}
       <section className="py-12 sm:py-16 bg-[#FAF7F2]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10">
 
-            {/* Left 2 Cols: The 13 Points in exact order */}
             <div className="lg:col-span-2 flex flex-col gap-6 sm:gap-8">
 
-              {/* 2. 40-60 word direct answer (Answer-First Box) */}
               <div className="bg-[#D97706]/10 border-l-4 border-[#D97706] rounded-r-2xl p-5 sm:p-6 shadow-sm" data-aos="fade-up">
                 <h2 className="text-base font-bold text-[#1F160F] uppercase tracking-wide mb-2 flex items-center gap-2">
                   <span>⚡</span> {t({ hi: 'संक्षेप में उत्तर / Direct Answer', en: 'Quick Summary' })}
@@ -244,7 +227,6 @@ export default function ServiceDetail() {
                 </p>
               </div>
 
-              {/* 3. Kya hai, kyun ki jati hai, kin logon ke liye */}
               <div className="rounded-3xl border border-[#E8DCC8] p-6 sm:p-8 bg-white" data-aos="fade-up">
                 <h2 className="text-2xl font-bold text-[#1F160F] font-heading mb-5">
                   {content.name} — {t({ hi: 'क्या है, क्यों की जाती है और किसके लिए?', en: 'What, Why and Who?' })}
@@ -279,7 +261,6 @@ export default function ServiceDetail() {
                   </div>
                 </div>
 
-                {/* Key Benefits */}
                 <div className="mt-6 pt-6 border-t border-[#F0E6D8]">
                   <h3 className="text-lg font-bold text-[#1F160F] mb-3">
                     {t({ hi: 'पूजन के प्रमुख लाभ', en: 'Key Spiritual Benefits' })}
@@ -295,7 +276,6 @@ export default function ServiceDetail() {
                 </div>
               </div>
 
-              {/* 4. Vidhi step by step (general), avadhi, samagri (general) */}
               <div className="rounded-3xl border border-[#E8DCC8] p-6 sm:p-8 bg-white" data-aos="fade-up">
                 <h2 className="text-2xl font-bold text-[#1F160F] font-heading mb-4">
                   {t({ hi: 'पूजा विधि (स्टेप बाय स्टेप), अवधि एवं सामग्री', en: 'Step-by-Step Vidhi, Duration & Samagri' })}
@@ -308,7 +288,7 @@ export default function ServiceDetail() {
                   <ol className="space-y-3 list-decimal list-inside text-[#5C4A3A] text-sm sm:text-base leading-relaxed">
                     {content.vidhi?.steps?.map((step, idx) => (
                       <li key={idx} className="pl-2">
-                        <span className="text-[#1F160F] font-medium">{step.replace(/\/\*.*?\*\//g, '').trim()}</span>
+                        <span className="text-[#1F160F] font-medium">{step.trim()}</span>
                       </li>
                     ))}
                   </ol>
@@ -328,13 +308,12 @@ export default function ServiceDetail() {
                       <span className="text-[#D97706] font-bold">✦</span> {t({ hi: 'प्रमुख पूजन सामग्री', en: 'Materials (Samagri)' })}
                     </p>
                     <p className="text-[#5C4A3A] text-xs sm:text-sm">
-                      {content.vidhi?.samagri?.replace(/\/\*.*?\*\//g, '').trim()}
+                      {content.vidhi?.samagri?.trim()}
                     </p>
                   </div>
                 </div>
               </div>
 
-              {/* 5. Kahan hoti hai (Ujjain location) */}
               <div className="p-6 sm:p-8 rounded-3xl bg-[#1C0A00] text-white" data-aos="fade-up">
                 <h2 className="text-xl sm:text-2xl font-bold text-[#F5C842] mb-3">
                   ✦ {t({ hi: 'पूजा कहाँ होती है? (उज्जैन स्थान)', en: 'Where is the Puja Performed? (Location)' })}
@@ -355,33 +334,30 @@ export default function ServiceDetail() {
                 </div>
               </div>
 
-              {/* 6. Kharch / cost */}
               <div className="p-6 sm:p-8 rounded-3xl bg-[#FFFDF9] border border-[#E8DCC8]" data-aos="fade-up">
                 <h2 className="text-xl font-bold text-[#1F160F] mb-2">
                   <span className="text-[#D97706]">✦</span> {t({ hi: 'पूजा का खर्च एवं दक्षिणा विवरण', en: 'Puja Cost & Dakshina Details' })}
                 </h2>
                 <p className="text-[#3D2E1F] font-medium text-base leading-relaxed">
-                  {content.costInfo?.replace(/\/\*.*?\*\//g, '').trim()}
+                  {content.costInfo?.trim()}
                 </p>
                 <p className="text-xs text-[#8C7A6B] mt-2">
                   नोट: संकल्प के प्रकार (व्यक्तिगत, सपरिवार अथवा विशेष अनुष्ठान) एवं सामग्री के अनुसार दक्षिणा तय की जाती है। पारदर्शी जानकारी के लिए कॉल या WhatsApp करें।
                 </p>
               </div>
 
-              {/* 7. Best days / muhurat */}
               <div className="p-6 sm:p-8 rounded-3xl bg-white border border-[#E8DCC8]" data-aos="fade-up">
                 <h2 className="text-xl font-bold text-[#1F160F] mb-2">
                   <span className="text-[#D97706]">✦</span> {t({ hi: 'पूजा के लिए शुभ दिन एवं मुहूर्त', en: 'Best Days & Auspicious Muhurat' })}
                 </h2>
                 <p className="text-[#5C4A3A] text-sm sm:text-base leading-relaxed">
-                  {content.bestDays?.replace(/\/\*.*?\*\//g, '').trim()}
+                  {content.bestDays?.trim()}
                 </p>
                 <p className="text-xs text-[#B45309] mt-2 font-medium">
                   {t({ hi: 'पंडित दीपक पंड्या जी जातक की कुंडली का परीक्षण कर सर्वथा अनुकूल तिथि व लग्न मुहूर्त निकालते हैं।', en: 'Pandit Deepak Pandya advises the exact muhurat after analyzing your birth chart.' })}
                 </p>
               </div>
 
-              {/* 8. Online / outstation booking process */}
               <div className="p-6 sm:p-8 rounded-3xl bg-[#FFFDF9] border border-[#E8DCC8]" data-aos="fade-up">
                 <h2 className="text-xl sm:text-2xl font-bold text-[#1F160F] mb-4">
                   <span className="text-[#D97706]">✦</span> {t({ hi: 'बाहर के शहरों के लिए ऑनलाइन पूजा संकल्प प्रक्रिया', en: 'Online & Outstation Booking Process' })}
@@ -408,7 +384,6 @@ export default function ServiceDetail() {
                 </div>
               </div>
 
-              {/* 10. 4-8 visible FAQs */}
               {content.faqs && content.faqs.length > 0 && (
                 <div data-aos="fade-up">
                   <h2 className="text-2xl font-bold text-[#1F160F] font-heading mb-4 flex items-center gap-2">
@@ -416,20 +391,18 @@ export default function ServiceDetail() {
                   </h2>
                   <div className="flex flex-col gap-3">
                     {content.faqs.map((faq, i) => (
-                      <FaqItem key={i} q={faq.q} a={faq.a.replace(/\/\*.*?\*\//g, '').trim()} index={i} />
+                      <FaqItem key={i} q={faq.q} a={faq.a.trim()} index={i} />
                     ))}
                   </div>
                 </div>
               )}
 
-              {/* 11. Internal links to related pujas and blogs */}
               <div className="p-6 rounded-3xl bg-white border border-[#E8DCC8]" data-aos="fade-up">
                 <h3 className="text-lg font-bold text-[#1F160F] mb-4">
                   <span className="text-[#D97706]">✦</span> {t({ hi: 'संबंधित वैदिक पूजाएं एवं धार्मिक आलेख', en: 'Related Pujas & Articles' })}
                 </h3>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {/* Related Pujas */}
                   <div>
                     <h4 className="text-sm font-bold text-[#B45309] uppercase mb-2">अन्य संबंधित पूजाएं:</h4>
                     <div className="flex flex-col gap-2">
@@ -446,7 +419,6 @@ export default function ServiceDetail() {
                     </div>
                   </div>
 
-                  {/* Related Blogs */}
                   {relatedBlogs.length > 0 && (
                     <div>
                       <h4 className="text-sm font-bold text-[#B45309] uppercase mb-2">पढ़ें उपयोगी आलेख:</h4>
@@ -467,12 +439,10 @@ export default function ServiceDetail() {
                 </div>
               </div>
 
-              {/* 12. Last updated date */}
               <div className="text-xs text-[#8C7A6B] text-right pt-2">
                 <span>अंतिम अद्यतन (Last Updated): {service.lastUpdated || '2026-09-19'} | प्रामाणिक वैदिक परंपरा उज्जैन</span>
               </div>
 
-              {/* 13. Pandit Box: Pandit Deepak Pandya */}
               <div className="rounded-3xl p-6 sm:p-8 bg-gradient-to-r from-[#D97706] to-[#B45309] text-white shadow-xl" data-aos="fade-up">
                 <div className="flex flex-col sm:flex-row items-center gap-6">
                   <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full border-2 border-white p-1 shrink-0 overflow-hidden bg-white shadow-md">
@@ -519,11 +489,9 @@ export default function ServiceDetail() {
 
             </div>
 
-            {/* Right: Booking Sidebar */}
             <div className="lg:col-span-1">
               <div className="sticky top-24 space-y-6">
 
-                {/* 9. Short booking form */}
                 <div
                   className="rounded-3xl p-5 sm:p-6 shadow-md border border-[#E8DCC8] bg-white"
                   data-aos="fade-left"
@@ -539,7 +507,6 @@ export default function ServiceDetail() {
                   </div>
                 </div>
 
-                {/* Instant Assistance Box */}
                 <div className="rounded-3xl p-5 text-center bg-white border border-[#E8DCC8] shadow-sm" data-aos="fade-left" data-aos-delay="100">
                   <p className="font-bold text-[#1F160F] mb-1 text-base">
                     {t({ hi: 'सीधे पंडित जी से बात करें', en: 'Speak Directly to Pandit Ji' })}
@@ -571,7 +538,6 @@ export default function ServiceDetail() {
                   </div>
                 </div>
 
-                {/* Other Services Navigation */}
                 <div className="p-5 bg-white rounded-3xl border border-[#E8DCC8] shadow-sm" data-aos="fade-left" data-aos-delay="150">
                   <h3 className="font-bold text-[#1F160F] mb-3 text-sm flex items-center gap-1.5 font-heading">
                     <span>🕉️</span> {t({ hi: 'सभी वैदिक अनुष्ठान सेवाएं', en: 'All Puja Services' })}

@@ -1,6 +1,3 @@
-// ============================================================
-// ServiceCard.jsx — Pandits Of Banaras Luxury Service Card
-// ============================================================
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../../context/LanguageContext';
 import { WA_HREF } from '../../utils/whatsapp';
@@ -22,7 +19,6 @@ export default function ServiceCard({ service, featured = false }) {
       }`}
       data-aos="fade-up"
     >
-      {/* Real Puja Photo Thumbnail */}
       <div className="relative h-52 w-full overflow-hidden bg-black">
         {svc.image ? (
           <img
@@ -38,7 +34,6 @@ export default function ServiceCard({ service, featured = false }) {
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
 
-        {/* Featured / Category Pill Badge */}
         <div className="absolute top-3 left-3 flex items-center gap-2">
           <span className="bg-[#F5C842] text-[#1C0A00] font-bold text-[10px] sm:text-xs uppercase px-2.5 py-1 rounded shadow-md tracking-wider">
             {featured
@@ -47,7 +42,6 @@ export default function ServiceCard({ service, featured = false }) {
           </span>
         </div>
 
-        {/* Duration Badge Bottom Right */}
         <div className="absolute bottom-3 right-3 bg-black/70 backdrop-blur-sm text-white text-xs px-2.5 py-1 rounded-full font-medium flex items-center gap-1.5 border border-white/20">
           <svg className="w-3 h-3 text-gold" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
             <circle cx="12" cy="12" r="10" />
@@ -58,23 +52,19 @@ export default function ServiceCard({ service, featured = false }) {
       </div>
 
       <div className="p-5 sm:p-6 flex-1 flex flex-col">
-        {/* Name - Serif Bold */}
         <h3 className="font-heading font-black text-xl text-[#1F160F] group-hover:text-[#8C3814] transition-colors mb-1.5 leading-snug">
           {pujaName}
         </h3>
 
-        {/* Tagline */}
         <p className="text-xs text-[#8C3814] font-semibold mb-3 font-devanagari flex items-center gap-1">
           <span className="text-gold">✦</span>
           <span>{t({ hi: svc.hi?.tagline, en: svc.en?.tagline })}</span>
         </p>
 
-        {/* Short description */}
         <p className="text-sm text-[#4A3B2C] leading-relaxed font-devanagari mb-5 line-clamp-3 flex-1 font-medium">
           {t({ hi: svc.hi?.shortDesc, en: svc.en?.shortDesc })}
         </p>
 
-        {/* CTAs */}
         <div className="flex gap-2.5 flex-wrap mt-auto pt-2 border-t border-[#F0E6D8]">
           <Link
             to={`/services/${svc.slug}`}

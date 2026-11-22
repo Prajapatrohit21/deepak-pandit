@@ -1,6 +1,3 @@
-// ============================================================
-// Testimonials.jsx — Pandits Of Banaras Luxury Devotee Reviews
-// ============================================================
 import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -38,7 +35,6 @@ export default function Testimonials() {
         canonical="https://mangaldoshpujanivaran.in/testimonials"
       />
       
-      {/* ── Page Header ── */}
       <section
         className="py-16 sm:py-24 text-center relative overflow-hidden bg-gradient-to-b from-[#FFFDF9] via-[#FAF6EE] to-[#F5EFE4] border-b border-[#E8DCC8]"
         aria-labelledby="testimonials-page-heading"
@@ -65,7 +61,6 @@ export default function Testimonials() {
         </div>
       </section>
 
-      {/* ── Google 5.0 Star Trust Banner ── */}
       <section className="py-8 bg-white border-b border-[#E8DCC8]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="bg-[#FAF7F2] rounded-2xl p-4 sm:p-6 border border-[#E8DCC8] flex flex-wrap items-center justify-between gap-4">
@@ -94,7 +89,6 @@ export default function Testimonials() {
         </div>
       </section>
 
-      {/* ── Testimonials Grid ── */}
       <section className="py-20 bg-[#FAF7F2]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -106,7 +100,6 @@ export default function Testimonials() {
                 data-aos-delay={(i % 3) * 60}
               >
                 <div>
-                  {/* Google Star Rating & Quote Mark */}
                   <div className="flex items-center justify-between mb-4">
                     <div className="flex text-amber-500 text-base leading-none">
                       {'★'.repeat(review.rating)}
@@ -114,13 +107,11 @@ export default function Testimonials() {
                     <span className="text-2xl text-gold/30 font-serif">“</span>
                   </div>
 
-                  {/* Devotee Review Text */}
                   <p className="text-sm sm:text-base text-[#4A3B2C] leading-relaxed font-devanagari mb-6 font-medium italic">
                     "{t(review.text)}"
                   </p>
                 </div>
 
-                {/* Author Info */}
                 <div className="pt-4 border-t border-[#F0E6D8] flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <div className="w-11 h-11 rounded-full bg-gradient-to-br from-[#D97706] to-[#B45309] flex items-center justify-center text-white font-bold text-sm shadow-sm">
@@ -141,7 +132,6 @@ export default function Testimonials() {
         </div>
       </section>
 
-      {/* ── Consultation CTA ── */}
       <section className="py-16 bg-gradient-to-r from-[#D97706] to-[#B45309] text-white text-center">
         <div className="max-w-4xl mx-auto px-4">
           <h2 className="font-heading font-black text-2xl sm:text-4xl mb-3">

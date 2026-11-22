@@ -1,6 +1,3 @@
-// ============================================================
-// Booking.jsx — Pandits Of Banaras Luxury Dedicated Booking Page
-// ============================================================
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import AOS from 'aos';
@@ -49,7 +46,6 @@ export default function Booking() {
         canonical="https://mangaldoshpujanivaran.in/booking"
       />
       
-      {/* ── Page Header ── */}
       <section
         className="py-16 sm:py-24 text-center relative overflow-hidden bg-gradient-to-b from-[#FFFDF9] via-[#FAF6EE] to-[#F5EFE4] border-b border-[#E8DCC8]"
         aria-labelledby="booking-page-heading"
@@ -76,7 +72,6 @@ export default function Booking() {
         </div>
       </section>
 
-      {/* ── 3-Step Process Timeline ── */}
       <section className="py-10 bg-white border-b border-[#E8DCC8]">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
@@ -95,12 +90,10 @@ export default function Booking() {
         </div>
       </section>
 
-      {/* ── Main Booking Layout ── */}
       <section className="py-20 bg-[#FAF7F2]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
             
-            {/* Form Column */}
             <div data-aos="fade-right" className="lg:col-span-7">
               <div className="bg-white rounded-3xl p-6 sm:p-10 border-2 border-[#E8DCC8] shadow-[0_12px_40px_rgba(45,27,0,0.08)]">
                 <div className="mb-6">
@@ -115,10 +108,8 @@ export default function Booking() {
               </div>
             </div>
 
-            {/* Information Column */}
             <div data-aos="fade-left" className="lg:col-span-5 space-y-6">
               
-              {/* Purohit Assurance Card */}
               <div className="bg-white rounded-3xl p-6 sm:p-7 border-2 border-[#E8DCC8] shadow-sm">
                 <div className="flex items-center gap-4 mb-4">
                   <img
@@ -137,7 +128,6 @@ export default function Booking() {
                 </p>
               </div>
 
-              {/* Outstation Sankalp Details Card */}
               <div className="bg-[#FFFDF9] rounded-3xl p-6 sm:p-7 border-2 border-gold/40 shadow-sm">
                 <span className="inline-flex items-center gap-1.5 text-[#D97706] font-bold text-xs uppercase tracking-wider mb-2">
                   <span>📹</span> बाहर के शहरों के यजमानों हेतु

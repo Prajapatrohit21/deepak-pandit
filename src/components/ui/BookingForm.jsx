@@ -1,6 +1,3 @@
-// ============================================================
-// BookingForm.jsx — Pandits Of Banaras Luxury Booking Form
-// ============================================================
 import { useState } from 'react';
 import { useLanguage } from '../../context/LanguageContext';
 import { CONTENT } from '../../data/content';
@@ -65,7 +62,6 @@ export default function BookingForm({ compact = false, defaultService = '' }) {
   return (
     <form onSubmit={handleSubmit} noValidate className="w-full" id="booking-form">
       <div className={`grid gap-4 ${compact ? 'grid-cols-1 sm:grid-cols-2' : 'grid-cols-1'}`}>
-        {/* Name */}
         <div>
           <label className="block text-sm font-bold text-[#1F160F] mb-1.5 font-devanagari" htmlFor="booking-name">
             {t(bk.fields.name)} <span className="text-red-500">*</span>
@@ -82,7 +78,6 @@ export default function BookingForm({ compact = false, defaultService = '' }) {
           {errors.name && <p className="text-red-500 text-xs mt-1 font-devanagari">{errors.name}</p>}
         </div>
 
-        {/* Phone */}
         <div>
           <label className="block text-sm font-bold text-[#1F160F] mb-1.5 font-devanagari" htmlFor="booking-phone">
             {t(bk.fields.phone)} <span className="text-red-500">*</span>
@@ -100,7 +95,6 @@ export default function BookingForm({ compact = false, defaultService = '' }) {
           {errors.phone && <p className="text-red-500 text-xs mt-1 font-devanagari">{errors.phone}</p>}
         </div>
 
-        {/* Service Dropdown */}
         <div className={compact ? 'sm:col-span-2' : ''}>
           <label className="block text-sm font-bold text-[#1F160F] mb-1.5 font-devanagari" htmlFor="booking-service">
             {t(bk.fields.service)} <span className="text-red-500">*</span>
@@ -121,7 +115,6 @@ export default function BookingForm({ compact = false, defaultService = '' }) {
           {errors.service && <p className="text-red-500 text-xs mt-1 font-devanagari">{errors.service}</p>}
         </div>
 
-        {/* Problem */}
         <div className={compact ? 'sm:col-span-2' : ''}>
           <label className="block text-sm font-bold text-[#1F160F] mb-1.5 font-devanagari" htmlFor="booking-problem">
             {t(bk.fields.problem)} <span className="text-red-500">*</span>
@@ -137,7 +130,6 @@ export default function BookingForm({ compact = false, defaultService = '' }) {
           {errors.problem && <p className="text-red-500 text-xs mt-1 font-devanagari">{errors.problem}</p>}
         </div>
 
-        {/* Date (optional) */}
         <div className={compact ? 'sm:col-span-2' : ''}>
           <label className="block text-sm font-bold text-[#1F160F] mb-1.5 font-devanagari" htmlFor="booking-date">
             {t(bk.fields.date)} ({lang === 'hi' ? 'वैकल्पिक' : 'Optional'})
@@ -153,7 +145,6 @@ export default function BookingForm({ compact = false, defaultService = '' }) {
         </div>
       </div>
 
-      {/* Submit Button */}
       <button
         type="submit"
         disabled={submitting}
