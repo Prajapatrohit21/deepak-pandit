@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../../context/LanguageContext';
 import { WA_HREF, PHONE_HREF } from '../../utils/whatsapp';
-import { trackWhatsAppClick, trackPhoneCall } from '../../utils/analytics';
 
 export default function FloatingButtons() {
   const { lang } = useLanguage();
@@ -10,7 +9,6 @@ export default function FloatingButtons() {
     <>
       <a
         href={PHONE_HREF}
-        onClick={() => trackPhoneCall('floating_left')}
         className="call-float-left"
         aria-label="पंडित दीपक पंड्या जी को कॉल करें: +91 62634 01651"
         id="call-float-btn"
@@ -23,7 +21,6 @@ export default function FloatingButtons() {
 
       <a
         href={WA_HREF}
-        onClick={() => trackWhatsAppClick('floating_right')}
         target="_blank"
         rel="noopener noreferrer"
         className="whatsapp-float-right"
@@ -39,7 +36,6 @@ export default function FloatingButtons() {
       <div className="mobile-bottom-bar" role="navigation" aria-label="Quick actions">
         <a
           href={PHONE_HREF}
-          onClick={() => trackPhoneCall('mobile_bottom_bar')}
           className="btn-call"
           id="mobile-call-btn"
           title="पंडित दीपक पंड्या जी को कॉल करें (+91 62634 01651)"
@@ -53,7 +49,6 @@ export default function FloatingButtons() {
 
         <a
           href={WA_HREF}
-          onClick={() => trackWhatsAppClick('mobile_bottom_bar')}
           target="_blank"
           rel="noopener noreferrer"
           className="btn-whatsapp"

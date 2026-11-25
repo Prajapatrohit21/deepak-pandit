@@ -5,7 +5,6 @@ import 'aos/dist/aos.css';
 import { useLanguage } from '../context/LanguageContext';
 import SEO from '../components/common/SEO';
 import BookingForm from '../components/ui/BookingForm';
-import { trackWhatsAppClick, trackPhoneCall } from '../utils/analytics';
 
 export default function OutstationBookingGuide() {
   const { lang, t } = useLanguage();

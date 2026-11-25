@@ -6,7 +6,6 @@ import { useLanguage } from '../context/LanguageContext';
 import { CONTENT } from '../data/content';
 import BookingForm from '../components/ui/BookingForm';
 import { WA_HREF, PHONE_HREF } from '../utils/whatsapp';
-import { trackWhatsAppClick, trackPhoneCall } from '../utils/analytics';
 import SectionHeading from '../components/ui/SectionHeading';
 import SEO from '../components/common/SEO';
 import panditImg from '../assets/pandit_deepak_pandya.jpg';
@@ -153,7 +152,6 @@ export default function Booking() {
                 <div className="mt-5 pt-4 border-t border-[#F0E6D8] flex flex-wrap gap-3">
                   <a
                     href={PHONE_HREF}
-                    onClick={() => trackPhoneCall('booking_page_sidebar')}
                     title="पंडित दीपक पंड्या जी को सीधे कॉल करें: +91 62634 01651"
                     aria-label="Call Pandit Deepak Pandya to book puja"
                     className="bg-[#1C0A00] text-gold hover:text-white px-4 py-2.5 rounded-xl font-bold text-xs flex items-center gap-1.5 transition-all"
@@ -162,7 +160,6 @@ export default function Booking() {
                   </a>
                   <a
                     href={WA_HREF}
-                    onClick={() => trackWhatsAppClick('booking_page_sidebar')}
                     target="_blank"
                     rel="noopener noreferrer"
                     title="WhatsApp पर तुरंत पूजा बुकिंग करें"

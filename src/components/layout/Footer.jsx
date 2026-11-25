@@ -3,7 +3,6 @@ import { useLanguage } from '../../context/LanguageContext';
 import { CONTENT } from '../../data/content';
 import { SERVICES } from '../../data/services';
 import { WA_HREF, PHONE_HREF } from '../../utils/whatsapp';
-import { trackWhatsAppClick, trackPhoneCall } from '../../utils/analytics';
 import logoImg from '../../assets/logo.png';
 
 const C = CONTENT;
@@ -60,7 +59,6 @@ export default function Footer() {
 
           <a
             href={WA_HREF}
-            onClick={() => trackWhatsAppClick('footer_top_bar')}
             target="_blank"
             rel="noopener noreferrer"
             title="WhatsApp पर 24x7 निःशुल्क पूजा परामर्श एवं बुकिंग"
@@ -96,7 +94,6 @@ export default function Footer() {
             <div className="flex flex-col gap-2.5 text-sm">
               <a
                 href={PHONE_HREF}
-                onClick={() => trackPhoneCall('footer')}
                 title="पंडित दीपक पंड्या जी को तुरंत कॉल करें: +91 62634 01651"
                 aria-label="Call Pandit Deepak Pandya at +91 62634 01651"
                 className="flex items-center gap-2 text-gold font-bold hover:text-white transition-colors"
@@ -105,7 +102,6 @@ export default function Footer() {
               </a>
               <a
                 href={WA_HREF}
-                onClick={() => trackWhatsAppClick('footer')}
                 target="_blank"
                 rel="noopener noreferrer"
                 title="WhatsApp पर 24x7 चैट एवं पूजा बुकिंग"

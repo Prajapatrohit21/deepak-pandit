@@ -8,7 +8,6 @@ import { BLOG_ARTICLES } from '../data/blog';
 import BookingForm from '../components/ui/BookingForm';
 import SEO from '../components/common/SEO';
 import { WA_HREF, PHONE_HREF } from '../utils/whatsapp';
-import { trackWhatsAppClick, trackPhoneCall } from '../utils/analytics';
 import panditImg from '../assets/pandit_deepak_pandya.jpg';
 
 function FaqItem({ q, a, index }) {
@@ -464,7 +463,6 @@ export default function ServiceDetail() {
                     <div className="flex flex-wrap gap-3 justify-center sm:justify-start">
                       <a
                         href={PHONE_HREF}
-                        onClick={() => trackPhoneCall('service_pandit_box')}
                         title="पंडित दीपक पंड्या जी को कॉल करें: +91 62634 01651"
                         aria-label="Call Pandit Deepak Pandya at +91 62634 01651"
                         className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-white text-[#B45309] font-bold text-xs hover:bg-[#FFFDF9] transition-colors"
@@ -473,7 +471,6 @@ export default function ServiceDetail() {
                       </a>
                       <a
                         href={WA_HREF}
-                        onClick={() => trackWhatsAppClick('service_pandit_box')}
                         target="_blank"
                         rel="noopener noreferrer"
                         title="WhatsApp पर पूजा परामर्श एवं दक्षिणा जानकारी प्राप्त करें"
@@ -517,7 +514,6 @@ export default function ServiceDetail() {
                   <div className="flex flex-col gap-2.5">
                     <a
                       href={PHONE_HREF}
-                      onClick={() => trackPhoneCall('service_detail_page')}
                       title="पंडित दीपक पंड्या जी को 24x7 कॉल करें: +91 62634 01651"
                       aria-label="Call Pandit Deepak Pandya at +91 62634 01651"
                       className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-gradient-to-r from-[#D97706] to-[#B45309] text-white font-bold text-sm shadow-sm hover:shadow-md transition-all"
@@ -526,7 +522,6 @@ export default function ServiceDetail() {
                     </a>
                     <a
                       href={WA_HREF}
-                      onClick={() => trackWhatsAppClick('service_detail_page')}
                       target="_blank"
                       rel="noopener noreferrer"
                       title="WhatsApp पर तुरंत चैट करें और पूजा बुक करें"

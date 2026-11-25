@@ -10,7 +10,6 @@ import { CONTENT } from '../data/content';
 import SectionHeading from '../components/ui/SectionHeading';
 import SEO from '../components/common/SEO';
 import { WA_HREF, PHONE_HREF } from '../utils/whatsapp';
-import { trackWhatsAppClick, trackPhoneCall } from '../utils/analytics';
 
 const C = CONTENT;
 
@@ -165,7 +164,6 @@ export default function About() {
               <div className="flex flex-wrap gap-4">
                 <a
                   href={PHONE_HREF}
-                  onClick={() => trackPhoneCall('about_page')}
                   title="पंडित दीपक पंड्या जी को सीधे कॉल करें: +91 62634 01651"
                   aria-label="Call Pandit Deepak Pandya at +91 62634 01651"
                   className="bg-gradient-to-r from-[#D97706] to-[#B45309] hover:from-[#B45309] hover:to-[#92400E] text-white px-7 py-3.5 rounded-xl font-bold text-sm shadow-md flex items-center gap-2 transition-all transform hover:-translate-y-0.5"
@@ -174,7 +172,6 @@ export default function About() {
                 </a>
                 <a
                   href={WA_HREF}
-                  onClick={() => trackWhatsAppClick('about_page')}
                   target="_blank"
                   rel="noopener noreferrer"
                   title="WhatsApp पर वैदिक पूजा परामर्श हेतु संपर्क करें"
@@ -251,7 +248,6 @@ export default function About() {
           </p>
           <a
             href={WA_HREF}
-            onClick={() => trackWhatsAppClick('about_cta_banner')}
             target="_blank"
             rel="noopener noreferrer"
             title="WhatsApp पर कुंडली भेजें एवं निःशुल्क परामर्श प्राप्त करें"

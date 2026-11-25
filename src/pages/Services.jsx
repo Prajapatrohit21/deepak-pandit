@@ -8,7 +8,6 @@ import SectionHeading from '../components/ui/SectionHeading';
 import ServiceCard from '../components/ui/ServiceCard';
 import SEO from '../components/common/SEO';
 import { WA_HREF, PHONE_HREF } from '../utils/whatsapp';
-import { trackWhatsAppClick, trackPhoneCall } from '../utils/analytics';
 
 const C = CONTENT;
 
@@ -152,7 +151,6 @@ export default function Services() {
           <div className="flex flex-wrap items-center justify-center gap-4">
             <a
               href={PHONE_HREF}
-              onClick={() => trackPhoneCall('services_cta_banner')}
               title="पंडित दीपक पंड्या जी को कॉल करें: +91 62634 01651"
               aria-label="Call Pandit Deepak Pandya at +91 62634 01651"
               className="bg-white text-[#8C3814] hover:bg-[#FFF8E6] px-8 py-3.5 rounded-xl font-bold font-devanagari text-sm sm:text-base shadow-xl inline-flex items-center gap-2 transition-all transform hover:-translate-y-0.5"
@@ -161,7 +159,6 @@ export default function Services() {
             </a>
             <a
               href={WA_HREF}
-              onClick={() => trackWhatsAppClick('services_cta_banner')}
               target="_blank"
               rel="noopener noreferrer"
               title="WhatsApp पर पूजा मुहूर्त और दक्षिणा जानकारी प्राप्त करें"

@@ -5,7 +5,6 @@ import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import FloatingButtons from './components/layout/FloatingButtons';
 import Preloader from './components/layout/Preloader';
-import { trackPageView } from './utils/analytics';
 
 import Home from './pages/Home';
 import About from './pages/About';
@@ -101,8 +100,6 @@ function ScrollToTop() {
     if (typeof document !== 'undefined') {
       document.title = pageTitle;
     }
-
-    trackPageView(pathname, pageTitle);
   }, [pathname, lang]);
 
   return null;

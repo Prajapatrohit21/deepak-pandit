@@ -4,7 +4,6 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useLanguage } from '../context/LanguageContext';
 import SEO from '../components/common/SEO';
-import { trackWhatsAppClick, trackPhoneCall } from '../utils/analytics';
 
 const WA_HREF = 'https://wa.me/916263401651?text=Jai%20Shri%20Mahakal%2C%20mujhe%20Mangalnath%20Mandir%20puja%20booking%20aur%20pahunchne%20ki%20jankari%20chahiye';
 const PHONE_HREF = 'tel:+916263401651';
@@ -145,7 +144,6 @@ export default function MangalnathMandirGuide() {
             <div className="flex flex-wrap gap-3">
               <a
                 href={PHONE_HREF}
-                onClick={() => trackPhoneCall('reach_guide_page')}
                 title="मंगलनाथ मंदिर पहुंचने के मार्ग हेतु पंडित दीपक पंड्या को कॉल करें"
                 aria-label="Call Pandit Deepak Pandya for Mangalnath Temple route and puja guidance"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-[#B45309] font-bold text-sm hover:bg-[#FFFDF9] transition-colors"
@@ -154,7 +152,6 @@ export default function MangalnathMandirGuide() {
               </a>
               <a
                 href={WA_HREF}
-                onClick={() => trackWhatsAppClick('reach_guide_page')}
                 target="_blank"
                 rel="noopener noreferrer"
                 title="WhatsApp पर मंगलनाथ मंदिर मार्ग एवं पूजा सामग्री जानकारी प्राप्त करें"

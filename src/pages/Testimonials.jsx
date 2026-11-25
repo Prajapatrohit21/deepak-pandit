@@ -6,7 +6,6 @@ import { CONTENT } from '../data/content';
 import SectionHeading from '../components/ui/SectionHeading';
 import SEO from '../components/common/SEO';
 import { WA_HREF } from '../utils/whatsapp';
-import { trackWhatsAppClick } from '../utils/analytics';
 
 const C = CONTENT;
 
@@ -145,7 +144,6 @@ export default function Testimonials() {
           </p>
           <a
             href={WA_HREF}
-            onClick={() => trackWhatsAppClick('testimonials_cta_banner')}
             target="_blank"
             rel="noopener noreferrer"
             title="WhatsApp पर पूजा बुक करें एवं परामर्श प्राप्त करें"

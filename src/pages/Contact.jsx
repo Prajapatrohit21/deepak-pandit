@@ -4,7 +4,6 @@ import 'aos/dist/aos.css';
 import { useLanguage } from '../context/LanguageContext';
 import { CONTENT } from '../data/content';
 import { buildContactMessage, buildWhatsAppUrl } from '../utils/whatsapp';
-import { trackContactSubmit, trackPhoneCall, trackWhatsAppClick } from '../utils/analytics';
 import { WA_HREF, PHONE_HREF } from '../utils/whatsapp';
 import SEO from '../components/common/SEO';
 
@@ -47,7 +46,6 @@ export default function Contact() {
     setSubmitting(true);
     const msg = buildContactMessage({ ...form, lang });
     const url = buildWhatsAppUrl(msg);
-    trackContactSubmit();
     setTimeout(() => {
       window.open(url, '_blank');
       setSubmitting(false);
@@ -110,7 +108,6 @@ export default function Contact() {
                 <div className="space-y-4 text-sm font-devanagari">
                   <a
                     href={PHONE_HREF}
-                    onClick={() => trackPhoneCall('contact_page')}
                     title="पंडित दीपक पंड्या जी को सीधे कॉल करें: +91 62634 01651"
                     aria-label="Call Pandit Deepak Pandya at +91 62634 01651"
                     className="flex items-center gap-3 p-3.5 rounded-2xl bg-[#FAF7F2] hover:bg-[#FFF7E6] border border-[#E8DCC8] transition-colors"
@@ -126,7 +123,6 @@ export default function Contact() {
 
                   <a
                     href={WA_HREF}
-                    onClick={() => trackWhatsAppClick('contact_page')}
                     target="_blank"
                     rel="noopener noreferrer"
                     title="WhatsApp पर 24x7 वैदिक पूजा परामर्श एवं बुकिंग सहायता"

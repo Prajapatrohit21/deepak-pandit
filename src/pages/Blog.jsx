@@ -6,7 +6,6 @@ import { useLanguage } from '../context/LanguageContext';
 import { CONTENT } from '../data/content';
 import { BLOG_ARTICLES } from '../data/blog';
 import { WA_HREF, PHONE_HREF } from '../utils/whatsapp';
-import { trackWhatsAppClick, trackPhoneCall } from '../utils/analytics';
 import SEO from '../components/common/SEO';
 import panditImg from '../assets/pandit_deepak_pandya.jpg';
 
@@ -197,7 +196,6 @@ export function BlogDetail() {
                 <div className="flex flex-wrap items-center justify-center gap-3">
                   <a
                     href={PHONE_HREF}
-                    onClick={() => trackPhoneCall('blog_detail_cta')}
                     title="पंडित दीपक पंड्या जी को कॉल करें: +91 62634 01651"
                     aria-label="Call Pandit Deepak Pandya for puja consultation"
                     className="bg-[#1C0A00] text-gold hover:text-white px-5 py-2.5 rounded-xl font-bold text-xs font-devanagari transition-all"
@@ -206,7 +204,6 @@ export function BlogDetail() {
                   </a>
                   <a
                     href={WA_HREF}
-                    onClick={() => trackWhatsAppClick('blog_detail_cta')}
                     target="_blank"
                     rel="noopener noreferrer"
                     title="WhatsApp पर पूजा परामर्श एवं बुकिंग करें"
@@ -230,7 +227,6 @@ export function BlogDetail() {
                 <p className="text-xs text-[#8C3814] font-medium font-devanagari mb-4">15+ वर्ष वैदिक अनुभव • उज्जैन सिद्ध पीठ</p>
                 <a
                   href={WA_HREF}
-                  onClick={() => trackWhatsAppClick('blog_sidebar')}
                   target="_blank"
                   rel="noopener noreferrer"
                   title="पंडित दीपक पंड्या जी से WhatsApp पर परामर्श लें"

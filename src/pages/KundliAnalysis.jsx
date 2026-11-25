@@ -5,7 +5,6 @@ import { useLanguage } from '../context/LanguageContext';
 import { CONTENT } from '../data/content';
 import { SERVICES } from '../data/services';
 import { buildKundliMessage, buildWhatsAppUrl } from '../utils/whatsapp';
-import { trackKundliSubmit, trackWhatsAppClick, trackPhoneCall } from '../utils/analytics';
 import SectionHeading from '../components/ui/SectionHeading';
 import SEO from '../components/common/SEO';
 import panditImg from '../assets/pandit_deepak_pandya.jpg';
@@ -52,7 +51,6 @@ export default function KundliAnalysis() {
     setSubmitting(true);
     const message = buildKundliMessage({ ...form, lang });
     const url = buildWhatsAppUrl(message);
-    trackKundliSubmit();
     setTimeout(() => {
       window.open(url, '_blank');
       setSubmitting(false);

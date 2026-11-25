@@ -3,7 +3,6 @@ import { Link, NavLink, useLocation } from 'react-router-dom';
 import { useLanguage } from '../../context/LanguageContext';
 import { CONTENT } from '../../data/content';
 import { WA_HREF, PHONE_HREF } from '../../utils/whatsapp';
-import { trackPhoneCall, trackWhatsAppClick } from '../../utils/analytics';
 import logoImg from '../../assets/logo.png';
 
 const C = CONTENT;
@@ -106,7 +105,6 @@ export default function Navbar() {
 
             <a
               href={PHONE_HREF}
-              onClick={() => trackPhoneCall('navbar')}
               title="पंडित दीपक पंड्या जी को कॉल करें: +91 62634 01651"
               aria-label="Call Pandit Deepak Pandya at +91 62634 01651"
               className="hidden md:inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-gradient-to-r from-[#D97706] to-[#B45309] text-white text-xs font-bold shadow-sm hover:shadow-md transition-all"
@@ -117,7 +115,6 @@ export default function Navbar() {
 
             <a
               href={WA_HREF}
-              onClick={() => trackWhatsAppClick('navbar')}
               target="_blank"
               rel="noopener noreferrer"
               title="WhatsApp पर 24x7 पूजा परामर्श एवं बुकिंग"
@@ -166,7 +163,6 @@ export default function Navbar() {
             <div className="flex gap-2 mt-3 pt-3 border-t border-[#E8DCC8]">
               <a
                 href={PHONE_HREF}
-                onClick={() => trackPhoneCall('navbar_mobile')}
                 title="पंडित दीपक पंड्या जी को कॉल करें: +91 62634 01651"
                 aria-label="Call Pandit Deepak Pandya"
                 className="flex-1 inline-flex items-center justify-center gap-1.5 px-4 py-3 rounded-xl bg-gradient-to-r from-[#D97706] to-[#B45309] text-white text-sm font-bold"
@@ -175,7 +171,6 @@ export default function Navbar() {
               </a>
               <a
                 href={WA_HREF}
-                onClick={() => trackWhatsAppClick('navbar_mobile')}
                 target="_blank"
                 rel="noopener noreferrer"
                 title="WhatsApp पर चैट करें"

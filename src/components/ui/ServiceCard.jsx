@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../../context/LanguageContext';
 import { WA_HREF } from '../../utils/whatsapp';
-import { trackWhatsAppClick } from '../../utils/analytics';
 
 export default function ServiceCard({ service, featured = false }) {
   const { t, lang } = useLanguage();
@@ -76,7 +75,6 @@ export default function ServiceCard({ service, featured = false }) {
           </Link>
           <a
             href={pujaWaUrl}
-            onClick={() => trackWhatsAppClick(`service_card_${svc.slug}`)}
             target="_blank"
             rel="noopener noreferrer"
             title={`WhatsApp पर ${pujaName} की बुकिंग व मुहूर्त परामर्श प्राप्त करें`}
